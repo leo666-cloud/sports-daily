@@ -74,8 +74,8 @@
     <p class='side-h'><span>历史期次</span><span class='mono'>1</span></p>
     <div class='hist'><ul class='dates'><li><button class='dbtn' type='button' aria-current='true'><span class='d'>2026-09-29</span><span class='w'>周二</span><span class='badge-new'>最新</span></button></li></ul></div>
     <p class='foot'>历史保留最近 7 个自然日。</p>
-    <button class='totop' id='theme'>外观</button>
-    <button class='totop' id='totop'>回到顶部</button>
+    <button class='totop' id='theme' title='切换亮暗'><span id='theme-ico'>☾</span><span>外观</span></button>
+    <button class='totop' id='totop' title='回到顶部'><span>↑</span><span>回到顶部</span></button>
   </aside>
   <main>
     <article>
@@ -302,7 +302,7 @@ var t=document.querySelector('.ticker-track');
 if(t){var w=t.scrollWidth/2;if(w>0)t.style.setProperty('--marquee',Math.round(Math.min(Math.max(w/85,26),90))+'s')}
 document.getElementById('totop').onclick=function(){scrollTo({top:0,behavior:'smooth'})};
 var s=null;try{s=localStorage.getItem('sd-theme')}catch(e){}
-function ap(v){document.documentElement.setAttribute('data-theme',v)}
+function ap(v){document.documentElement.setAttribute('data-theme',v);var ic=document.getElementById('theme-ico');if(ic)ic.textContent=v==='dark'?'☀':'☾'}
 ap(s||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));
 document.getElementById('theme').onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';ap(n);try{localStorage.setItem('sd-theme',n)}catch(e){}};
 document.querySelectorAll('.chip').forEach(function(c){c.onclick=function(){var el=document.getElementById(c.dataset.sec);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}});
