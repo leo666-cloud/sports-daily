@@ -397,12 +397,16 @@ fbtns.forEach(function(b){b.onclick=function(){
 </script>
 <script>
 (function(){
-  var c=document.getElementById('wx'); if(!c) return;
+  var wb=document.getElementById('weather');
+  if(!wb) return;
+  wb.textContent='定位中…';
+  var c=document.getElementById('wx');
   var mh=document.querySelector('.masthead');
-  function resize(){c.width=mh.offsetWidth;c.height=mh.offsetHeight;}
+  function resize(){if(!c)return;c.width=mh.offsetWidth;c.height=mh.offsetHeight;}
   resize(); addEventListener('resize',resize);
   var drops=[];
   function loop(){
+    if(!c) return;
     var ctx=c.getContext('2d');
     ctx.clearRect(0,0,c.width,c.height);
     var t=Date.now();
@@ -432,7 +436,7 @@ fbtns.forEach(function(b){b.onclick=function(){
       for(var i=0;i<140;i++) drops.push({kind:'rain',x:Math.random()*c.width,y:Math.random()*c.height,len:18+Math.random()*18,speed:10+Math.random()*8});
     } else if(rain.indexOf(code)>=0){
       mh.classList.add('wx-rain');
-      var n = (code>=63||code===82)?140:90;
+      var n=(code>=63||code===82)?140:90;
       for(var i=0;i<n;i++) drops.push({kind:'rain',x:Math.random()*c.width,y:Math.random()*c.height,len:14+Math.random()*14,speed:7+Math.random()*6});
     } else if(snow.indexOf(code)>=0){
       mh.classList.add('wx-snow');
@@ -444,22 +448,35 @@ fbtns.forEach(function(b){b.onclick=function(){
     }
     loop();
   }
+  function renderCity(city,code,temp,wind){
+    wb.innerHTML='';
+    var m={0:['☀️','晴'],1:['🌤️','大致晴'],2:['⛅','多云'],3:['☁️','阴'],45:['🌫️','雾'],48:['🌫️','雾凇'],51:['🌦️','毛毛雨'],53:['🌦️','毛毛雨'],55:['🌧️','浓毛毛雨'],56:['🌧️','冻毛毛雨'],57:['🌧️','冻毛毛雨'],61:['🌦️','小雨'],63:['🌧️','中雨'],65:['🌧️','大雨'],66:['🌧️','冻雨'],67:['🌧️','冻雨'],71:['🌨️','小雪'],73:['🌨️','中雪'],75:['❄️','大雪'],77:['❄️','雪粒'],80:['🌦️','小阵雨'],81:['🌧️','阵雨'],82:['⛈️','强阵雨'],85:['🌨️','阵雪'],86:['❄️','强阵雪'],95:['⛈️','雷暴'],96:['⛈️','雷暴冰雹'],99:['⛈️','强雷暴']};
+    var ic=m[code]?m[code][0]:'🌡️', lb=m[code]?m[code][1]:'';
+    function sp(cls,txt){var e=document.createElement('span');e.className=cls;e.textContent=txt;wb.appendChild(e)}
+    sp('w-ico',ic); sp('w-city',city); sp('w-temp',temp+'°C'); sp('w-label',lb+' · 风'+wind+'km/h');
+  }
+  async function getLoc(){
+    try{
+      var r=await fetch('https://ipwho.is/?fields=success,latitude,longitude,city,country').then(function(x){return x.json()});
+      if(r && r.success!==false && r.latitude){return {lat:r.latitude,lng:r.longitude,city:r.city||''}}
+    }catch(e){}
+    try{
+      var r2=await fetch('https://ipapi.co/json/').then(function(x){return x.json()});
+      if(r2 && r2.latitude){return {lat:r2.latitude,lng:r2.longitude,city:r2.city||r2.region_name||''}}
+    }catch(e){}
+    throw new Error('geo failed');
+  }
   (async function(){
     try{
-      var loc=await fetch('https://ipapi.co/json/').then(function(r){return r.json()});
-      var lat=loc.latitude,lng=loc.longitude,city=loc.city||loc.region_name||'';
-      var w=await fetch('https://api.open-meteo.com/v1/forecast?latitude='+lat+'&longitude='+lng+'&current=temperature_2m,weather_code,wind_speed_10m&timezone=auto').then(function(r){return r.json()});
+      var loc=await getLoc();
+      var w=await fetch('https://api.open-meteo.com/v1/forecast?latitude='+loc.lat+'&longitude='+loc.lng+'&current=temperature_2m,weather_code,wind_speed_10m&timezone=auto').then(function(r){return r.json()});
       var code=w.current.weather_code;
       var temp=Math.round(w.current.temperature_2m);
       var wind=Math.round(w.current.wind_speed_10m);
-      var m={0:['☀️','晴'],1:['🌤️','大致晴'],2:['⛅','多云'],3:['☁️','阴'],45:['🌫️','雾'],48:['🌫️','雾凇'],51:['🌦️','毛毛雨'],53:['🌦️','毛毛雨'],55:['🌧️','浓毛毛雨'],56:['🌧️','冻毛毛雨'],57:['🌧️','冻毛毛雨'],61:['🌦️','小雨'],63:['🌧️','中雨'],65:['🌧️','大雨'],66:['🌧️','冻雨'],67:['🌧️','冻雨'],71:['🌨️','小雪'],73:['🌨️','中雪'],75:['❄️','大雪'],77:['❄️','雪粒'],80:['🌦️','小阵雨'],81:['🌧️','阵雨'],82:['⛈️','强阵雨'],85:['🌨️','阵雪'],86:['❄️','强阵雪'],95:['⛈️','雷暴'],96:['⛈️','雷暴冰雹'],99:['⛈️','强雷暴']};
-      var ic=m[code]?m[code][0]:'🌡️', lb=m[code]?m[code][1]:'';
-      var wb=document.getElementById('weather');
-      function sp(cls,txt){var e=document.createElement('span');e.className=cls;e.textContent=txt;wb.appendChild(e)}
-      sp('w-ico',ic); sp('w-city',city); sp('w-temp',temp+'°C'); sp('w-label',lb+' · 风'+wind+'km/h');
+      renderCity(loc.city,code,temp,wind);
       setFX(code);
     }catch(e){
-      var wb=document.getElementById('weather'); if(wb) wb.style.display='none';
+      wb.textContent='天气暂不可用';
     }
   })();
 })();
