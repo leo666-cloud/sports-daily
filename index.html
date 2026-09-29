@@ -34,6 +34,20 @@ fbtns.forEach(function(b){b.onclick=function(){
 .masthead.wx-haze{background:radial-gradient(ellipse 140% 110% at 50% 0%, rgba(160,150,130,.55), transparent 70%),linear-gradient(180deg,#4a453c 0%,#5a5448 55%,#2e2a24 100%)!important}
 .masthead.wx-dust{background:radial-gradient(ellipse 140% 110% at 50% 0%, rgba(190,160,100,.55), transparent 70%),linear-gradient(180deg,#5a4a2e 0%,#6b5a38 55%,#332a1a 100%)!important}
 @media (max-width:760px){#weather{top:auto;bottom:14px;right:14px}}
+.side.wx-sun,.side.wx-cloud,.side.wx-rain,.side.wx-snow,.side.wx-storm,.side.wx-fog,.side.wx-haze,.side.wx-dust{border-radius:16px;padding:14px;margin:-6px -10px;box-shadow:0 8px 28px rgba(0,0,0,.18)}
+.side.wx-sun{background:radial-gradient(ellipse 80% 60% at 80% 0%,rgba(255,200,90,.55),rgba(20,40,30,0) 70%),linear-gradient(180deg,#3a2a14,#1a2a22)}
+.side.wx-cloud{background:linear-gradient(180deg,#3a404c,#20242c)}
+.side.wx-rain{background:linear-gradient(180deg,#0a1828,#081018)}
+.side.wx-snow{background:linear-gradient(180deg,#253045,#182030)}
+.side.wx-storm{background:linear-gradient(180deg,#080818,#060610)}
+.side.wx-fog{background:linear-gradient(180deg,#3a4048,#2a2e34)}
+.side.wx-haze{background:linear-gradient(180deg,#4a453c,#2e2a24)}
+.side.wx-dust{background:linear-gradient(180deg,#5a4a2e,#332a1a)}
+.side.wx-sun .side-h,.side.wx-cloud .side-h,.side.wx-rain .side-h,.side.wx-snow .side-h,.side.wx-storm .side-h,.side.wx-fog .side-h,.side.wx-haze .side-h,.side.wx-dust .side-h{color:rgba(255,255,255,.65)}
+.side.wx-sun .foot,.side.wx-cloud .foot,.side.wx-rain .foot,.side.wx-snow .foot,.side.wx-storm .foot,.side.wx-fog .foot,.side.wx-haze .foot,.side.wx-dust .foot{color:rgba(255,255,255,.55)}
+.side.wx-sun .totop,.side.wx-cloud .totop,.side.wx-rain .totop,.side.wx-snow .totop,.side.wx-storm .totop,.side.wx-fog .totop,.side.wx-haze .totop,.side.wx-dust .totop{border-color:rgba(255,255,255,.55);color:#fff}
+.side.wx-sun .dbtn,.side.wx-cloud .dbtn,.side.wx-rain .dbtn,.side.wx-snow .dbtn,.side.wx-storm .dbtn,.side.wx-fog .dbtn,.side.wx-haze .dbtn,.side.wx-dust .dbtn{color:#fff}
+.side.wx-sun .dbtn .w,.side.wx-cloud .dbtn .w,.side.wx-rain .dbtn .w,.side.wx-snow .dbtn .w,.side.wx-storm .dbtn .w,.side.wx-fog .dbtn .w,.side.wx-haze .dbtn .w,.side.wx-dust .dbtn .w{color:rgba(255,255,255,.55)}
 </style>
 </head>
 <body>
@@ -362,7 +376,7 @@ if(s){ap(s)}else{
     }catch(e){}
   })();
 }
-document.getElementById('theme').onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';ap(n);try{localStorage.setItem('sd-theme',n)}catch(e){}};
+document.getElementById('theme').onclick=function(){var n=document.documentElement.getAttribute('data-theme']==='dark'?'light':'dark';ap(n);try{localStorage.setItem('sd-theme',n)}catch(e){}};
 document.querySelectorAll('.chip').forEach(function(c){c.onclick=function(){var el=document.getElementById(c.dataset.sec);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}});
 
 var fbtns=document.querySelectorAll('#sb-filt .f');
@@ -405,6 +419,10 @@ fbtns.forEach(function(b){b.onclick=function(){
   wb.textContent='定位中…';
   var c=document.getElementById('wx');
   var mh=document.querySelector('.masthead');
+  var side=document.querySelector('.side');
+  var ALL_WX=['wx-sun','wx-cloud','wx-rain','wx-snow','wx-storm','wx-fog','wx-haze','wx-dust'];
+  function wxOn(cls){mh.classList.add(cls); if(side) side.classList.add(cls);}
+  function wxClear(){mh.classList.remove.apply(mh.classList,ALL_WX); if(side) side.classList.remove.apply(side.classList,ALL_WX);}
   function resize(){if(!c)return;c.width=mh.offsetWidth;c.height=mh.offsetHeight;}
   resize(); addEventListener('resize',resize);
   var drops=[], flash=0, nextBolt=0, boltSeq=[], sunX=0, sunY=0;
@@ -486,9 +504,9 @@ fbtns.forEach(function(b){b.onclick=function(){
     var rain=[51,53,55,56,57,61,63,65,66,67,80,81,82];
     var storm=[95,96,99];
     var snow=[71,73,75,77,85,86];
-    mh.classList.remove('wx-sun','wx-cloud','wx-rain','wx-snow','wx-storm','wx-fog','wx-haze','wx-dust');
+    wxClear();
     if(storm.indexOf(code)>=0){
-      mh.classList.add('wx-storm');
+      wxOn('wx-storm');
       for(var i=0;i<360;i++){
         var near=Math.random();
         drops.push({kind:'rain',x:Math.random()*(c.width+200)-100,y:Math.random()*c.height,
@@ -500,7 +518,7 @@ fbtns.forEach(function(b){b.onclick=function(){
       }
       for(var j=0;j<18;j++) drops.push({kind:'cloud',x:Math.random()*c.width,y:Math.random()*c.height*0.5,r:120+Math.random()*180,color:'rgba(40,40,60,.35)',v:0.4+Math.random()*0.5});
     } else if(rain.indexOf(code)>=0){
-      mh.classList.add('wx-rain');
+      wxOn('wx-rain');
       var heavy=(code>=63||code===82);
       var n=heavy?320:200;
       for(var i=0;i<n;i++){
@@ -514,7 +532,7 @@ fbtns.forEach(function(b){b.onclick=function(){
       }
       for(var j=0;j<12;j++) drops.push({kind:'cloud',x:Math.random()*c.width,y:Math.random()*c.height*0.5,r:100+Math.random()*150,color:'rgba(80,100,130,.3)',v:0.3+Math.random()*0.4});
     } else if(snow.indexOf(code)>=0){
-      mh.classList.add('wx-snow');
+      wxOn('wx-snow');
       for(var i=0;i<260;i++){
         var layer=Math.random();
         drops.push({kind:'snow',x:Math.random()*c.width,y:Math.random()*c.height,
@@ -524,14 +542,14 @@ fbtns.forEach(function(b){b.onclick=function(){
           swing:layer>0.7?1.2:0.6, amp:30+Math.random()*40, freq:800+Math.random()*800});
       }
     } else if(code===0||code===1){
-      mh.classList.add('wx-sun');
+      wxOn('wx-sun');
       drops.push({kind:'suncore',r:180});
       for(var i=0;i<80;i++){
         drops.push({kind:'sun',x:Math.random()*c.width,y:Math.random()*c.height,
           r:20+Math.random()*70,a:0.06+Math.random()*0.12,v:0.2+Math.random()*0.4});
       }
     } else if(code===2||code===3){
-      mh.classList.add('wx-cloud');
+      wxOn('wx-cloud');
       for(var i=0;i<26;i++){
         var dark=Math.random()>0.5;
         drops.push({kind:'cloud',x:Math.random()*c.width,y:Math.random()*c.height*0.7,
@@ -540,7 +558,7 @@ fbtns.forEach(function(b){b.onclick=function(){
           v:0.5+Math.random()*0.8});
       }
     } else if(code===45||code===48){
-      mh.classList.add('wx-fog');
+      wxOn('wx-fog');
       for(var i=0;i<40;i++){
         drops.push({kind:'cloud',x:Math.random()*c.width,y:Math.random()*c.height,
           r:180+Math.random()*260,
@@ -554,7 +572,7 @@ fbtns.forEach(function(b){b.onclick=function(){
           v:0.1+Math.random()*0.15});
       }
     } else if(code===46){
-      mh.classList.add('wx-haze');
+      wxOn('wx-haze');
       for(var i=0;i<50;i++){
         drops.push({kind:'cloud',x:Math.random()*c.width,y:Math.random()*c.height,
           r:150+Math.random()*220,
@@ -562,7 +580,7 @@ fbtns.forEach(function(b){b.onclick=function(){
           v:0.08+Math.random()*0.18});
       }
     } else if(code===47){
-      mh.classList.add('wx-dust');
+      wxOn('wx-dust');
       for(var i=0;i<30;i++){
         drops.push({kind:'cloud',x:Math.random()*c.width,y:Math.random()*c.height,
           r:140+Math.random()*200,
