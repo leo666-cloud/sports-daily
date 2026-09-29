@@ -41,8 +41,8 @@
 .sb-r .rs{font-size:12px;font-weight:600;color:var(--sport-action);white-space:nowrap;font-family:var(--font-mono)}
 @media (max-width:640px){.sb-m a{grid-template-columns:minmax(0,1fr) auto auto;gap:8px}.sb-m .away{display:none}.sb-r a{grid-template-columns:auto minmax(0,1fr);gap:8px}.sb-r .rs{grid-column:2;text-align:left}}
 /* scoreboard filter chips */
-.filt{display:flex;flex-wrap:wrap;gap:6px;margin:6px 4px 0}
-.filt .f{appearance:none;border:1px solid var(--sys-sep);background:transparent;color:var(--sys-label-2);font:500 12px/1 inherit;padding:4px 11px;border-radius:999px;cursor:pointer;transition:all .15s}
+.filt{display:flex;flex-wrap:wrap;gap:5px;margin:2px 2px 0}
+.filt .f{appearance:none;border:1px solid var(--sys-sep);background:transparent;color:var(--sys-label-2);font:500 11px/1 inherit;padding:3px 8px;border-radius:999px;cursor:pointer;transition:all .15s;letter-spacing:-.1px}
 .filt .f:hover{border-color:var(--sport-action);color:var(--sys-label)}
 .filt .f.active{background:var(--sport-action);border-color:var(--sport-action);color:#fff}
 :root[data-theme=dark] .filt .f{color:#9aa0a6;border-color:rgba(255,255,255,.14)}
