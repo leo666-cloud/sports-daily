@@ -17,10 +17,11 @@ fbtns.forEach(function(b){b.onclick=function(){
 }});
 </script>
 <style>
-.masthead{position:relative;overflow:hidden}
-#wx{position:absolute;inset:0;pointer-events:none;z-index:0}
-.mast-inner{position:relative;z-index:1}
-#weather{position:absolute;top:22px;right:32px;z-index:2;display:flex;align-items:center;gap:10px;padding:8px 14px;border:1px solid rgba(255,255,255,.14);border-radius:999px;background:rgba(255,255,255,.06);backdrop-filter:blur(8px);color:#F2F3F5;font:500 13px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.02em}
+.masthead{position:relative;overflow:hidden;z-index:0}
+.shell{position:relative;z-index:2}
+#wx{position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:1}
+.mast-inner{position:relative;z-index:2}
+#weather{position:absolute;top:22px;right:32px;z-index:3;display:flex;align-items:center;gap:10px;padding:8px 14px;border:1px solid rgba(255,255,255,.14);border-radius:999px;background:rgba(255,255,255,.06);backdrop-filter:blur(8px);color:#F2F3F5;font:500 13px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.02em}
 #weather .w-ico{font-size:18px;line-height:1}
 #weather .w-city{color:#F2F3F5}
 #weather .w-temp{font-weight:700;font-size:15px}
@@ -423,7 +424,7 @@ fbtns.forEach(function(b){b.onclick=function(){
   var ALL_WX=['wx-sun','wx-cloud','wx-rain','wx-snow','wx-storm','wx-fog','wx-haze','wx-dust'];
   function wxOn(cls){mh.classList.add(cls); if(side) side.classList.add(cls);}
   function wxClear(){mh.classList.remove.apply(mh.classList,ALL_WX); if(side) side.classList.remove.apply(side.classList,ALL_WX);}
-  function resize(){if(!c)return;c.width=mh.offsetWidth;c.height=mh.offsetHeight;}
+  function resize(){if(!c)return;c.width=window.innerWidth;c.height=window.innerHeight;}
   resize(); addEventListener('resize',resize);
   var drops=[], flash=0, nextBolt=0, boltSeq=[], sunX=0, sunY=0;
   function loop(){
