@@ -327,7 +327,20 @@ if(t){var w=t.scrollWidth/2;if(w>0)t.style.setProperty('--marquee',Math.round(Ma
 document.getElementById('totop').onclick=function(){scrollTo({top:0,behavior:'smooth'})};
 var s=null;try{s=localStorage.getItem('sd-theme')}catch(e){}
 function ap(v){document.documentElement.setAttribute('data-theme',v);var ic=document.getElementById('theme-ico');if(ic)ic.textContent=v==='dark'?'☀':'☾'}
-ap(s||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));
+if(s){ap(s)}else{
+  ap(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+  (async function(){
+    try{
+      var loc=await fetch('https://ipapi.co/json/').then(function(r){return r.json()});
+      var lat=loc.latitude,lng=loc.longitude,tz=loc.timezone||'Asia/Shanghai';
+      if(!lat||!lng) return;
+      var sun=await fetch('https://api.sunrisesunset.io/json?lat='+lat+'&lng='+lng+'&date=today&timezone='+encodeURIComponent(tz)).then(function(r){return r.json()});
+      var sr=new Date(sun.results.sunrise), ss=new Date(sun.results.sunset), now=new Date();
+      var auto=(now>=sr&&now<=ss)?'light':'dark';
+      if(!localStorage.getItem('sd-theme')) ap(auto);
+    }catch(e){}
+  })();
+}
 document.getElementById('theme').onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';ap(n);try{localStorage.setItem('sd-theme',n)}catch(e){}};
 document.querySelectorAll('.chip').forEach(function(c){c.onclick=function(){var el=document.getElementById(c.dataset.sec);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}});
 
