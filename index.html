@@ -16,10 +16,28 @@ fbtns.forEach(function(b){b.onclick=function(){
   });
 }});
 </script>
+<style>
+.masthead{position:relative;overflow:hidden}
+#wx{position:absolute;inset:0;pointer-events:none;z-index:0}
+.mast-inner{position:relative;z-index:1}
+#weather{position:absolute;top:22px;right:32px;z-index:2;display:flex;align-items:center;gap:10px;padding:8px 14px;border:1px solid rgba(255,255,255,.14);border-radius:999px;background:rgba(255,255,255,.06);backdrop-filter:blur(8px);color:#F2F3F5;font:500 13px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.02em}
+#weather .w-ico{font-size:18px;line-height:1}
+#weather .w-city{color:#c9cdd4}
+#weather .w-temp{font-weight:700;font-size:15px}
+#weather .w-label{color:#E0A32E}
+.masthead.wx-sun{background:radial-gradient(ellipse 60% 80% at 78% -10%, rgba(255,196,80,.22), transparent 60%),linear-gradient(180deg,#0F1114,#14241d)!important}
+.masthead.wx-cloud{background:linear-gradient(180deg,#15181d,#23272e)!important}
+.masthead.wx-rain{background:linear-gradient(180deg,#0e141b,#1a2230)!important}
+.masthead.wx-snow{background:linear-gradient(180deg,#11151c,#232a36)!important}
+.masthead.wx-storm{background:linear-gradient(180deg,#0c0e14,#1c1f2e)!important}
+@media (max-width:760px){#weather{top:auto;bottom:14px;right:14px}}
+</style>
 </head>
 <body>
 <div class='progress'><i id='prog'></i></div>
 <section class='masthead'>
+  <canvas id='wx'></canvas>
+  <div id='weather' aria-live='polite'></div>
   <div class='mast-inner'>
     <div>
       <p class='eyebrow'><span class='livedot'></span>Sports &amp; Athletics · Daily Brief <span class='dim'>/ 工作日 09:30 自动更新</span></p>
@@ -375,6 +393,75 @@ fbtns.forEach(function(b){b.onclick=function(){
     li.addEventListener('mousemove',position);
     li.addEventListener('mouseleave',function(){prev.style.display='none'});
   });
+})();
+</script>
+<script>
+(function(){
+  var c=document.getElementById('wx'); if(!c) return;
+  var mh=document.querySelector('.masthead');
+  function resize(){c.width=mh.offsetWidth;c.height=mh.offsetHeight;}
+  resize(); addEventListener('resize',resize);
+  var drops=[];
+  function loop(){
+    var ctx=c.getContext('2d');
+    ctx.clearRect(0,0,c.width,c.height);
+    var t=Date.now();
+    drops.forEach(function(d){
+      if(d.kind==='rain'){
+        ctx.strokeStyle='rgba(174,194,224,.5)';ctx.lineWidth=1.1;
+        ctx.beginPath();ctx.moveTo(d.x,d.y);ctx.lineTo(d.x-1,d.y+d.len);ctx.stroke();
+        d.y+=d.speed;d.x-=0.4;
+        if(d.y>c.height){d.y=-20;d.x=Math.random()*c.width;}
+      } else if(d.kind==='snow'){
+        ctx.fillStyle='rgba(255,255,255,.85)';
+        ctx.beginPath();ctx.arc(d.x,d.y,d.r,0,Math.PI*2);ctx.fill();
+        d.y+=d.speed;d.x+=Math.sin(d.y/25+t/900)*0.6;
+        if(d.y>c.height){d.y=-10;d.x=Math.random()*c.width;}
+      }
+    });
+    requestAnimationFrame(loop);
+  }
+  function setFX(code){
+    drops=[];
+    var rain=[51,53,55,56,57,61,63,65,66,67,80,81,82];
+    var storm=[95,96,99];
+    var snow=[71,73,75,77,85,86];
+    mh.classList.remove('wx-sun','wx-cloud','wx-rain','wx-snow','wx-storm');
+    if(storm.indexOf(code)>=0){
+      mh.classList.add('wx-storm');
+      for(var i=0;i<140;i++) drops.push({kind:'rain',x:Math.random()*c.width,y:Math.random()*c.height,len:18+Math.random()*18,speed:10+Math.random()*8});
+    } else if(rain.indexOf(code)>=0){
+      mh.classList.add('wx-rain');
+      var n = (code>=63||code===82)?140:90;
+      for(var i=0;i<n;i++) drops.push({kind:'rain',x:Math.random()*c.width,y:Math.random()*c.height,len:14+Math.random()*14,speed:7+Math.random()*6});
+    } else if(snow.indexOf(code)>=0){
+      mh.classList.add('wx-snow');
+      for(var i=0;i<90;i++) drops.push({kind:'snow',x:Math.random()*c.width,y:Math.random()*c.height,r:1.5+Math.random()*2.5,speed:0.8+Math.random()*1.4});
+    } else if(code===0||code===1){
+      mh.classList.add('wx-sun');
+    } else if(code===2||code===3||code===45||code===48){
+      mh.classList.add('wx-cloud');
+    }
+    loop();
+  }
+  (async function(){
+    try{
+      var loc=await fetch('https://ipapi.co/json/').then(function(r){return r.json()});
+      var lat=loc.latitude,lng=loc.longitude,city=loc.city||loc.region_name||'';
+      var w=await fetch('https://api.open-meteo.com/v1/forecast?latitude='+lat+'&longitude='+lng+'&current=temperature_2m,weather_code,wind_speed_10m&timezone=auto').then(function(r){return r.json()});
+      var code=w.current.weather_code;
+      var temp=Math.round(w.current.temperature_2m);
+      var wind=Math.round(w.current.wind_speed_10m);
+      var m={0:['☀️','晴'],1:['🌤️','大致晴'],2:['⛅','多云'],3:['☁️','阴'],45:['🌫️','雾'],48:['🌫️','雾凇'],51:['🌦️','毛毛雨'],53:['🌦️','毛毛雨'],55:['🌧️','浓毛毛雨'],56:['🌧️','冻毛毛雨'],57:['🌧️','冻毛毛雨'],61:['🌦️','小雨'],63:['🌧️','中雨'],65:['🌧️','大雨'],66:['🌧️','冻雨'],67:['🌧️','冻雨'],71:['🌨️','小雪'],73:['🌨️','中雪'],75:['❄️','大雪'],77:['❄️','雪粒'],80:['🌦️','小阵雨'],81:['🌧️','阵雨'],82:['⛈️','强阵雨'],85:['🌨️','阵雪'],86:['❄️','强阵雪'],95:['⛈️','雷暴'],96:['⛈️','雷暴冰雹'],99:['⛈️','强雷暴']};
+      var ic=m[code]?m[code][0]:'🌡️', lb=m[code]?m[code][1]:'';
+      var wb=document.getElementById('weather');
+      function sp(cls,txt){var e=document.createElement('span');e.className=cls;e.textContent=txt;wb.appendChild(e)}
+      sp('w-ico',ic); sp('w-city',city); sp('w-temp',temp+'°C'); sp('w-label',lb+' · 风'+wind+'km/h');
+      setFX(code);
+    }catch(e){
+      var wb=document.getElementById('weather'); if(wb) wb.style.display='none';
+    }
+  })();
 })();
 </script>
 </body>
