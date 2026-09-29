@@ -482,15 +482,24 @@ fbtns.forEach(function(b){b.onclick=function(){
     sp('w-ico',ic); sp('w-city',city); sp('w-temp',temp+'°C'); sp('w-label',lb+' · 风'+wind+'km/h');
   }
   async function getLoc(){
+    var cityCn='';
     try{
-      var r=await fetch('https://ipwho.is/?fields=success,latitude,longitude,city,country').then(function(x){return x.json()});
-      if(r && r.success!==false && r.latitude){return {lat:r.latitude,lng:r.longitude,city:r.city||''}}
+      var q=await fetch('https://qifu-api.baidubce.com/ip/local/geo/v1/district').then(function(r){return r.json()});
+      if(q && q.data && q.data.city){cityCn=String(q.data.city).replace(/市$/,'');}
     }catch(e){}
+    var lat,lng;
     try{
-      var r2=await fetch('https://ipapi.co/json/').then(function(x){return x.json()});
-      if(r2 && r2.latitude){return {lat:r2.latitude,lng:r2.longitude,city:r2.city||r2.region_name||''}}
+      var r=await fetch('https://ipwho.is/?fields=success,latitude,longitude,city').then(function(x){return x.json()});
+      if(r && r.success!==false && r.latitude){lat=r.latitude;lng=r.longitude;if(!cityCn)cityCn=r.city||'';}
     }catch(e){}
-    throw new Error('geo failed');
+    if(!lat){
+      try{
+        var r2=await fetch('https://ipapi.co/json/').then(function(x){return x.json()});
+        if(r2 && r2.latitude){lat=r2.latitude;lng=r2.longitude;if(!cityCn)cityCn=r2.city||r2.region_name||'';}
+      }catch(e){}
+    }
+    if(!lat) throw new Error('geo failed');
+    return {lat:lat,lng:lng,city:cityCn};
   }
   (async function(){
     try{
