@@ -501,16 +501,52 @@ fbtns.forEach(function(b){b.onclick=function(){
     if(!lat) throw new Error('geo failed');
     return {lat:lat,lng:lng,city:cityCn};
   }
+  var QW_HOST='pg3qqubnkm.re.qweatherapi.com';
+  var QW_KEY='e83435ce53fb48448342b3c2602a3e43';
+  function catOfText(t){
+    if(t.indexOf('雷')>=0) return 'storm';
+    if(t.indexOf('雪')>=0||t.indexOf('霰')>=0||t.indexOf('冰粒')>=0) return 'snow';
+    if(t.indexOf('雨')>=0) return 'rain';
+    if(t.indexOf('雾')>=0||t.indexOf('霾')>=0||t.indexOf('尘')>=0||t.indexOf('沙')>=0) return 'cloud';
+    if(t.indexOf('晴')>=0) return 'sun';
+    return 'cloud';
+  }
+  function emojiFor(c){return {sun:'☀️',cloud:'⛅',rain:'🌧️',snow:'🌨️',storm:'⛈️'}[c]||'🌡️'}
+  function renderCn(city,text,temp,wind,cat){
+    wb.innerHTML='';
+    function sp(cls,txt){var e=document.createElement('span');e.className=cls;e.textContent=txt;wb.appendChild(e)}
+    sp('w-ico',emojiFor(cat)); sp('w-city',city); sp('w-temp',temp+'°C'); sp('w-label',text+' · 风'+wind+'km/h');
+  }
+  function setFXCat(cat){
+    var codeMap={sun:0,cloud:3,rain:63,snow:71,storm:95};
+    setFX(codeMap[cat]||3);
+  }
   (async function(){
     try{
       var loc=await getLoc();
-      var w=await fetch('https://api.open-meteo.com/v1/forecast?latitude='+loc.lat+'&longitude='+loc.lng+'&current=temperature_2m,weather_code,wind_speed_10m&timezone=auto').then(function(r){return r.json()});
-      var code=w.current.weather_code;
-      var temp=Math.round(w.current.temperature_2m);
-      var wind=Math.round(w.current.wind_speed_10m);
-      renderCity(loc.city,code,temp,wind);
+      var g=await fetch('https://'+QW_HOST+'/geo/v2/city/lookup?location='+loc.lng+','+loc.lat+'&key='+QW_KEY).then(function(r){return r.json()});
+      var id=(g.location&&g.location[0]&&g.location[0].id)||'101210101';
+      if((!loc.city)&&g.location&&g.location[0]&&g.location[0].name) loc.city=g.location[0].name;
+      var w=await fetch('https://'+QW_HOST+'/v7/weather/now?location='+id+'&key='+QW_KEY).then(function(r){return r.json()});
+      if(w.code!=='200'||!w.now) throw new Error('qweather '+w.code);
+      var n=w.now;
+      var temp=Math.round(Number(n.temp));
+      var wind=Math.round(Number(n.windSpeed));
+      var text=n.text||'';
+      var cat=catOfText(text);
+      renderCn(loc.city,text,temp,wind,cat);
+      setFXCat(cat);
+      return;
+    }catch(e){}
+    try{
+      var loc2=await getLoc();
+      var w2=await fetch('https://api.open-meteo.com/v1/forecast?latitude='+loc2.lat+'&longitude='+loc2.lng+'&current=temperature_2m,weather_code,wind_speed_10m&timezone=auto').then(function(r){return r.json()});
+      var code=w2.current.weather_code;
+      var temp=Math.round(w2.current.temperature_2m);
+      var wind=Math.round(w2.current.wind_speed_10m);
+      renderCity(loc2.city,code,temp,wind);
       setFX(code);
-    }catch(e){
+    }catch(e2){
       wb.textContent='天气暂不可用';
     }
   })();
