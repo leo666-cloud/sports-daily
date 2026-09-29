@@ -30,6 +30,7 @@ fbtns.forEach(function(b){b.onclick=function(){
 .masthead.wx-rain{background:radial-gradient(ellipse 120% 90% at 50% -10%, rgba(90,140,200,.45), transparent 60%),linear-gradient(180deg,#0a1828 0%,#1a3050 55%,#081018 100%)!important}
 .masthead.wx-snow{background:radial-gradient(ellipse 120% 90% at 50% -10%, rgba(230,240,255,.4), transparent 60%),linear-gradient(180deg,#253045 0%,#4a5a7a 55%,#182030 100%)!important}
 .masthead.wx-storm{background:radial-gradient(ellipse 120% 90% at 50% -10%, rgba(140,130,220,.5), transparent 60%),linear-gradient(180deg,#080818 0%,#1e1e3a 55%,#060610 100%)!important}
+.masthead.wx-fog{background:radial-gradient(ellipse 140% 110% at 50% 0%, rgba(180,188,196,.6), transparent 70%),linear-gradient(180deg,#3a4048 0%,#4a5058 55%,#2a2e34 100%)!important}
 @media (max-width:760px){#weather{top:auto;bottom:14px;right:14px}}
 </style>
 </head>
@@ -478,7 +479,7 @@ fbtns.forEach(function(b){b.onclick=function(){
     var rain=[51,53,55,56,57,61,63,65,66,67,80,81,82];
     var storm=[95,96,99];
     var snow=[71,73,75,77,85,86];
-    mh.classList.remove('wx-sun','wx-cloud','wx-rain','wx-snow','wx-storm');
+    mh.classList.remove('wx-sun','wx-cloud','wx-rain','wx-snow','wx-storm','wx-fog');
     if(storm.indexOf(code)>=0){
       mh.classList.add('wx-storm');
       for(var i=0;i<360;i++){
@@ -522,7 +523,7 @@ fbtns.forEach(function(b){b.onclick=function(){
         drops.push({kind:'sun',x:Math.random()*c.width,y:Math.random()*c.height,
           r:20+Math.random()*70,a:0.06+Math.random()*0.12,v:0.2+Math.random()*0.4});
       }
-    } else if(code===2||code===3||code===45||code===48){
+    } else if(code===2||code===3){
       mh.classList.add('wx-cloud');
       for(var i=0;i<26;i++){
         var dark=Math.random()>0.5;
@@ -530,6 +531,20 @@ fbtns.forEach(function(b){b.onclick=function(){
           r:90+Math.random()*180,
           color:dark?'rgba(120,130,150,.28)':'rgba(210,220,235,.18)',
           v:0.5+Math.random()*0.8});
+      }
+    } else if(code===45||code===48){
+      mh.classList.add('wx-fog');
+      for(var i=0;i<40;i++){
+        drops.push({kind:'cloud',x:Math.random()*c.width,y:Math.random()*c.height,
+          r:180+Math.random()*260,
+          color:'rgba(190,198,206,'+(0.10+Math.random()*0.10)+')',
+          v:0.15+Math.random()*0.25});
+      }
+      for(var k=0;k<10;k++){
+        drops.push({kind:'cloud',x:Math.random()*c.width,y:c.height*(0.3+Math.random()*0.7),
+          r:120+Math.random()*140,
+          color:'rgba(210,218,226,'+(0.08+Math.random()*0.08)+')',
+          v:0.1+Math.random()*0.15});
       }
     }
     loop();
@@ -567,18 +582,18 @@ fbtns.forEach(function(b){b.onclick=function(){
     if(t.indexOf('雷')>=0) return 'storm';
     if(t.indexOf('雪')>=0||t.indexOf('霰')>=0||t.indexOf('冰粒')>=0) return 'snow';
     if(t.indexOf('雨')>=0) return 'rain';
-    if(t.indexOf('雾')>=0||t.indexOf('霾')>=0||t.indexOf('尘')>=0||t.indexOf('沙')>=0) return 'cloud';
+    if(t.indexOf('雾')>=0||t.indexOf('霾')>=0||t.indexOf('尘')>=0||t.indexOf('沙')>=0) return 'fog';
     if(t.indexOf('晴')>=0) return 'sun';
     return 'cloud';
   }
-  function emojiFor(c){return {sun:'☀️',cloud:'⛅',rain:'🌧️',snow:'🌨️',storm:'⛈️'}[c]||'🌡️'}
+  function emojiFor(c){return {sun:'☀️',cloud:'⛅',fog:'🌫️',rain:'🌧️',snow:'🌨️',storm:'⛈️'}[c]||'🌡️'}
   function renderCn(city,text,temp,wind,cat){
     wb.innerHTML='';
     function sp(cls,txt){var e=document.createElement('span');e.className=cls;e.textContent=txt;wb.appendChild(e)}
     sp('w-ico',emojiFor(cat)); sp('w-city',city); sp('w-temp',temp+'°C'); sp('w-label',text+' · 风'+wind+'km/h');
   }
   function setFXCat(cat){
-    var codeMap={sun:0,cloud:3,rain:63,snow:71,storm:95};
+    var codeMap={sun:0,cloud:3,fog:45,rain:63,snow:71,storm:95};
     setFX(codeMap[cat]||3);
   }
   (async function(){
