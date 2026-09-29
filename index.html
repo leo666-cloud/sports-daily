@@ -25,11 +25,11 @@ fbtns.forEach(function(b){b.onclick=function(){
 #weather .w-city{color:#c9cdd4}
 #weather .w-temp{font-weight:700;font-size:15px}
 #weather .w-label{color:#E0A32E}
-.masthead.wx-sun{background:radial-gradient(ellipse 70% 100% at 80% -20%, rgba(255,196,80,.55), rgba(255,160,60,.18) 45%, transparent 70%),linear-gradient(180deg,#1a1610 0%,#2a2418 55%,#14241d 100%)!important}
-.masthead.wx-cloud{background:radial-gradient(ellipse 100% 100% at 50% 0%, rgba(180,190,205,.18), transparent 60%),linear-gradient(180deg,#2a2f38 0%,#3a404c 55%,#1c2028 100%)!important}
-.masthead.wx-rain{background:radial-gradient(ellipse 100% 80% at 50% 0%, rgba(80,120,170,.25), transparent 60%),linear-gradient(180deg,#0c1622 0%,#16283d 55%,#0a121c 100%)!important}
-.masthead.wx-snow{background:radial-gradient(ellipse 100% 80% at 50% 0%, rgba(220,230,245,.22), transparent 60%),linear-gradient(180deg,#1c2230 0%,#34405a 55%,#141a26 100%)!important}
-.masthead.wx-storm{background:radial-gradient(ellipse 100% 80% at 50% 0%, rgba(120,110,180,.28), transparent 60%),linear-gradient(180deg,#0a0a14 0%,#1a1a2e 55%,#080810 100%)!important}
+.masthead.wx-sun{background:radial-gradient(ellipse 60% 90% at 82% -10%, rgba(255,200,90,.85), rgba(255,150,50,.35) 40%, rgba(20,40,30,0) 70%),radial-gradient(ellipse 100% 100% at 20% 110%, rgba(60,90,70,.4), transparent 60%),linear-gradient(180deg,#2a1f10 0%,#4a3820 45%,#1a2a22 100%)!important}
+.masthead.wx-cloud{background:radial-gradient(ellipse 120% 100% at 50% -10%, rgba(200,210,225,.4), transparent 55%),linear-gradient(180deg,#3a404c 0%,#525a68 50%,#20242c 100%)!important}
+.masthead.wx-rain{background:radial-gradient(ellipse 120% 90% at 50% -10%, rgba(90,140,200,.45), transparent 60%),linear-gradient(180deg,#0a1828 0%,#1a3050 55%,#081018 100%)!important}
+.masthead.wx-snow{background:radial-gradient(ellipse 120% 90% at 50% -10%, rgba(230,240,255,.4), transparent 60%),linear-gradient(180deg,#253045 0%,#4a5a7a 55%,#182030 100%)!important}
+.masthead.wx-storm{background:radial-gradient(ellipse 120% 90% at 50% -10%, rgba(140,130,220,.5), transparent 60%),linear-gradient(180deg,#080818 0%,#1e1e3a 55%,#060610 100%)!important}
 @media (max-width:760px){#weather{top:auto;bottom:14px;right:14px}}
 </style>
 </head>
@@ -227,7 +227,7 @@ fbtns.forEach(function(b){b.onclick=function(){
         </div>
         <div class='item'>
           <div class='ihead'><span class='src'>央视</span><h3>亚运跳水女 1 米板：林珊 263.05 夺金，龙艺萍 254.25 摘银</h3><span class='t'>09-28 09:37</span><a class='go' href='http://m.toutiao.com/group/7690394343743537679/' target='_blank'>阅读原文<u></u></a></div>
-          <ul><li><strong>详情</strong>林莎六轮 263.05 分夺冠，龙艺萍 254.25 分摘银，中国跳水队在该项目实现亚运 9 连冠。男子/女子 1 米板双金入账，跳水队本届已收获第 5 金。</li></ul>
+          <ul><li><strong>详情</strong>林珊六轮 263.05 分夺冠，龙艺萍 254.25 分摘银，中国跳水队在该项目实现亚运 9 连冠。男子/女子 1 米板双金入账，跳水队本届已收获第 5 金。</li></ul>
         </div>
         <div class='item'>
           <div class='ihead'><span class='src'>广州日报</span><h3>亚运花游收官：中国队包揽双人+集体两枚金牌</h3><span class='t'>09-28 23:47</span><a class='go' href='http://news.dayoo.com/guangzhou/150954.shtml' target='_blank'>阅读原文<u></u></a></div>
@@ -404,73 +404,133 @@ fbtns.forEach(function(b){b.onclick=function(){
   var mh=document.querySelector('.masthead');
   function resize(){if(!c)return;c.width=mh.offsetWidth;c.height=mh.offsetHeight;}
   resize(); addEventListener('resize',resize);
-  var drops=[], flash=0, nextBolt=0;
+  var drops=[], flash=0, nextBolt=0, boltSeq=[], sunX=0, sunY=0;
   function loop(){
     if(!c) return;
     var ctx=c.getContext('2d');
     ctx.clearRect(0,0,c.width,c.height);
     var t=Date.now();
+    var W=c.width, H=c.height;
     drops.forEach(function(d){
       if(d.kind==='rain'){
-        ctx.strokeStyle='rgba(190,215,245,.65)';ctx.lineWidth=1.2;
-        ctx.beginPath();ctx.moveTo(d.x,d.y);ctx.lineTo(d.x-1.5,d.y+d.len);ctx.stroke();
-        d.y+=d.speed;d.x-=0.5;
-        if(d.y>c.height){d.y=-30;d.x=Math.random()*c.width;}
+        ctx.strokeStyle=d.bright;
+        ctx.lineWidth=d.lw;
+        ctx.beginPath();ctx.moveTo(d.x,d.y);ctx.lineTo(d.x-d.slant,d.y+d.len);ctx.stroke();
+        d.y+=d.speed;d.x-=d.slant*0.4;
+        if(d.y>H){d.y=-30-Math.random()*40;d.x=Math.random()*(W+200)-100;}
       } else if(d.kind==='snow'){
-        ctx.fillStyle='rgba(255,255,255,.9)';
+        ctx.fillStyle='rgba(255,255,255,'+d.a+')';
         ctx.beginPath();ctx.arc(d.x,d.y,d.r,0,Math.PI*2);ctx.fill();
-        d.y+=d.speed;d.x+=Math.sin(d.y/25+t/900)*0.7;
-        if(d.y>c.height){d.y=-15;d.x=Math.random()*c.width;}
+        d.y+=d.speed;d.x+=Math.sin(d.y/d.amp+t/d.freq)*d.swing;
+        if(d.y>H+10){d.y=-10;d.x=Math.random()*W;}
       } else if(d.kind==='cloud'){
         var g=ctx.createRadialGradient(d.x,d.y,0,d.x,d.y,d.r);
-        g.addColorStop(0,'rgba(210,220,235,'+d.a+')');
-        g.addColorStop(1,'rgba(210,220,235,0)');
+        g.addColorStop(0,d.color);
+        g.addColorStop(1,'rgba(200,210,225,0)');
         ctx.fillStyle=g;
         ctx.beginPath();ctx.arc(d.x,d.y,d.r,0,Math.PI*2);ctx.fill();
         d.x+=d.v;
-        if(d.x-d.r>c.width){d.x=-d.r;d.y=Math.random()*c.height*0.7;}
+        if(d.x-d.r>W+50){d.x=-d.r-50;d.y=Math.random()*H*0.6;}
       } else if(d.kind==='sun'){
         var g2=ctx.createRadialGradient(d.x,d.y,0,d.x,d.y,d.r);
-        g2.addColorStop(0,'rgba(255,210,120,'+d.a+')');
-        g2.addColorStop(1,'rgba(255,210,120,0)');
+        g2.addColorStop(0,'rgba(255,220,140,'+d.a+')');
+        g2.addColorStop(0.5,'rgba(255,190,90,'+(d.a*0.5)+')');
+        g2.addColorStop(1,'rgba(255,190,90,0)');
         ctx.fillStyle=g2;
         ctx.beginPath();ctx.arc(d.x,d.y,d.r,0,Math.PI*2);ctx.fill();
         d.y-=d.v;
-        if(d.y<-20){d.y=c.height+20;d.x=Math.random()*c.width;}
+        if(d.y<-30){d.y=H+30;d.x=Math.random()*W;}
+      } else if(d.kind==='suncore'){
+        var g3=ctx.createRadialGradient(sunX,sunY,0,sunX,sunY,d.r);
+        g3.addColorStop(0,'rgba(255,245,200,0.95)');
+        g3.addColorStop(0.25,'rgba(255,215,120,0.7)');
+        g3.addColorStop(0.6,'rgba(255,180,80,0.25)');
+        g3.addColorStop(1,'rgba(255,180,80,0)');
+        ctx.fillStyle=g3;
+        ctx.beginPath();ctx.arc(sunX,sunY,d.r,0,Math.PI*2);ctx.fill();
       }
     });
     if(flash>0){
       ctx.fillStyle='rgba(255,255,255,'+flash+')';
-      ctx.fillRect(0,0,c.width,c.height);
-      flash-=0.06;
+      ctx.fillRect(0,0,W,H);
+      flash-=0.04;
+    }
+    if(boltSeq.length){
+      ctx.strokeStyle='rgba(255,255,255,'+Math.max(flash,0.3)+')';
+      ctx.lineWidth=2;
+      ctx.beginPath();
+      boltSeq.forEach(function(p,i){ if(i===0)ctx.moveTo(p.x,p.y); else ctx.lineTo(p.x,p.y); });
+      ctx.stroke();
     }
     if(drops.length && drops[0].kind==='rain' && t>nextBolt){
-      flash=0.7; nextBolt=t+2500+Math.random()*4000;
+      flash=0.85; nextBolt=t+1800+Math.random()*3500;
+      boltSeq=[];
+      var bx=Math.random()*W*0.7+W*0.15, by=0;
+      boltSeq.push({x:bx,y:0});
+      while(by<H*0.6){ by+=20+Math.random()*30; bx+=(Math.random()-0.5)*60; boltSeq.push({x:bx,y:by}); }
+      setTimeout(function(){boltSeq=[]},300);
     }
     requestAnimationFrame(loop);
   }
   function setFX(code){
-    drops=[]; flash=0; nextBolt=0;
+    drops=[]; flash=0; nextBolt=0; boltSeq=[];
+    sunX=c.width*0.82; sunY=c.height*0.1;
     var rain=[51,53,55,56,57,61,63,65,66,67,80,81,82];
     var storm=[95,96,99];
     var snow=[71,73,75,77,85,86];
     mh.classList.remove('wx-sun','wx-cloud','wx-rain','wx-snow','wx-storm');
     if(storm.indexOf(code)>=0){
       mh.classList.add('wx-storm');
-      for(var i=0;i<180;i++) drops.push({kind:'rain',x:Math.random()*c.width,y:Math.random()*c.height,len:20+Math.random()*22,speed:12+Math.random()*10});
+      for(var i=0;i<360;i++){
+        var near=Math.random();
+        drops.push({kind:'rain',x:Math.random()*(c.width+200)-100,y:Math.random()*c.height,
+          len:near>0.6?28+Math.random()*22:14+Math.random()*12,
+          speed:near>0.6?16+Math.random()*12:8+Math.random()*5,
+          slant:near>0.6?6+Math.random()*4:3+Math.random()*2,
+          bright:near>0.6?'rgba(210,230,255,.9)':'rgba(160,190,230,.45)',
+          lw:near>0.6?1.6:0.9});
+      }
+      for(var j=0;j<18;j++) drops.push({kind:'cloud',x:Math.random()*c.width,y:Math.random()*c.height*0.5,r:120+Math.random()*180,color:'rgba(40,40,60,.35)',v:0.4+Math.random()*0.5});
     } else if(rain.indexOf(code)>=0){
       mh.classList.add('wx-rain');
-      var n=(code>=63||code===82)?160:110;
-      for(var i=0;i<n;i++) drops.push({kind:'rain',x:Math.random()*c.width,y:Math.random()*c.height,len:16+Math.random()*18,speed:8+Math.random()*7});
+      var heavy=(code>=63||code===82);
+      var n=heavy?320:200;
+      for(var i=0;i<n;i++){
+        var near=Math.random();
+        drops.push({kind:'rain',x:Math.random()*(c.width+200)-100,y:Math.random()*c.height,
+          len:near>0.6?24+Math.random()*20:12+Math.random()*10,
+          speed:near>0.6?14+Math.random()*10:7+Math.random()*4,
+          slant:near>0.6?5+Math.random()*3:2.5+Math.random()*2,
+          bright:near>0.6?'rgba(200,225,255,.85)':'rgba(150,180,220,.4)',
+          lw:near>0.6?1.5:0.8});
+      }
+      for(var j=0;j<12;j++) drops.push({kind:'cloud',x:Math.random()*c.width,y:Math.random()*c.height*0.5,r:100+Math.random()*150,color:'rgba(80,100,130,.3)',v:0.3+Math.random()*0.4});
     } else if(snow.indexOf(code)>=0){
       mh.classList.add('wx-snow');
-      for(var i=0;i<120;i++) drops.push({kind:'snow',x:Math.random()*c.width,y:Math.random()*c.height,r:2+Math.random()*3.5,speed:1+Math.random()*1.6});
+      for(var i=0;i<260;i++){
+        var layer=Math.random();
+        drops.push({kind:'snow',x:Math.random()*c.width,y:Math.random()*c.height,
+          r:layer>0.7?3+Math.random()*3:layer>0.35?1.8+Math.random()*1.5:0.8+Math.random()*1,
+          speed:layer>0.7?1.8+Math.random()*1.5:layer>0.35?1+Math.random()*0.8:0.4+Math.random()*0.5,
+          a:layer>0.7?0.95:layer>0.35?0.7:0.4,
+          swing:layer>0.7?1.2:0.6, amp:30+Math.random()*40, freq:800+Math.random()*800});
+      }
     } else if(code===0||code===1){
       mh.classList.add('wx-sun');
-      for(var i=0;i<24;i++) drops.push({kind:'sun',x:Math.random()*c.width,y:Math.random()*c.height,r:30+Math.random()*60,a:0.05+Math.random()*0.08,v:0.15+Math.random()*0.25});
+      drops.push({kind:'suncore',r:180});
+      for(var i=0;i<80;i++){
+        drops.push({kind:'sun',x:Math.random()*c.width,y:Math.random()*c.height,
+          r:20+Math.random()*70,a:0.06+Math.random()*0.12,v:0.2+Math.random()*0.4});
+      }
     } else if(code===2||code===3||code===45||code===48){
       mh.classList.add('wx-cloud');
-      for(var i=0;i<14;i++) drops.push({kind:'cloud',x:Math.random()*c.width,y:Math.random()*c.height*0.7,r:80+Math.random()*140,a:0.08+Math.random()*0.12,v:0.2+Math.random()*0.4});
+      for(var i=0;i<26;i++){
+        var dark=Math.random()>0.5;
+        drops.push({kind:'cloud',x:Math.random()*c.width,y:Math.random()*c.height*0.7,
+          r:90+Math.random()*180,
+          color:dark?'rgba(120,130,150,.28)':'rgba(210,220,235,.18)',
+          v:0.5+Math.random()*0.8});
+      }
     }
     loop();
   }
