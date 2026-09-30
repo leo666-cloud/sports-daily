@@ -169,7 +169,7 @@ fbtns.forEach(function(b){b.onclick=function(){
             <li class='dr undated'><span class='lead'>09-29</span><a class='t' href='https://www.newbalance.com/nb-launches/' target='_blank'>New Balance 983 Made in USA 正式发售</a><span class='m mono'>09-29</span></li>
             <li class='dr undated'><span class='lead'>09-29</span><a class='t' href='https://www.iesdouyin.com/share/video/7690908837716446491' target='_blank'>JJJJound × New Balance 990v3 棕褐绒面革新色</a><span class='m mono'>09-29</span></li>
             <li class='dr undated'><span class='lead'>09-29</span><a class='t' href='https://www.iesdouyin.com/share/video/7683166272922938341' target='_blank'>HOKA Speedgoat 7 羚羊 7 / GTX 防水版上市</a><span class='m mono'>09-29</span></li>
-            <li class='dr undated'><span class='lead'>09-29</span><a class='t' href='https://www.iesdouyin.com/share/video/7690908837716446491' target='_blank'>Virgil Abloh Archive × Nike Air Force 1</a><span class='m mono'>09-29</span></li>
+            <li class='dr undated'><span class='lead'>09-29</span><a class='t' href='https://www.iesdouyin.com/share/video/7690908837716446491' target='blank'>Virgil Abloh Archive × Nike Air Force 1</a><span class='m mono'>09-29</span></li>
             <li class='dr undated'><span class='lead'>10-01</span><a class='t' href='https://www.newbalance.com/nb-launches/' target='_blank'>New Balance 991v2 Made in UK Vintage 新色</a><span class='m mono'>10-01</span></li>
             <li class='dr undated'><span class='lead'>10-01</span><a class='t' href='https://www.newbalance.com.sg/nb-launches.html' target='_blank'>NB TCS NYC Marathon SuperComp Elite v6 / Ellipse</a><span class='m mono'>10-01</span></li>
             <li class='dr undated'><span class='lead'>10-01</span><a class='t' href='https://www.salomon.com/en-gb/c/launch-calendar' target='_blank'>Salomon XT-EVO / Speedcross 6 GTX 20 周年</a><span class='m mono'>10-01</span></li>
@@ -208,7 +208,7 @@ fbtns.forEach(function(b){b.onclick=function(){
         </div>
         <div class='item'>
           <div class='ihead'><span class='src'>新华社</span><h3>亚运田径收官：混合 4×100 接力中国 40.78 夺金，陈妤颉单届三金</h3><span class='t'>09-29 23:33</span><a class='go' href='http://www.xinhuanet.com/20260929/c3d314411c4b4c09b198435972cb1e4c/c.html' target='_blank'>阅读原文<u></u></a></div>
-          <ul><li><strong>详情</strong>陈锦丰、刘国怡、施君豪、陈妤颉组成的中国队前三棒落后，最后一棒陈妤颉连超泰国队以 <strong>40.78 秒</strong> 逆转夺金，这是亚运历史首枚混合 4×100 接力金牌，也是陈妤颉本届第三金。</li></ul>
+          <ul><li><strong>详情</strong>陈锦丰、刘国怡、施君豪、陈妤颉组成的中国队前三棒落后，最后一棒陈妤连超泰国队以 <strong>40.78 秒</strong> 逆转夺金，这是亚运历史首枚混合 4×100 接力金牌，也是陈妤颉本届第三金。</li></ul>
         </div>
         <div class='item'>
           <div class='ihead'><span class='src'>光明网</span><h3>亚运女子链球：张家乐 78.27 米破尘封 12 年亚运纪录夺金，赵杰摘银</h3><span class='t'>09-30 02:55</span><a class='go' href='https://news.gmw.cn/2026-09/30/content_39028264.htm' target='_blank'>阅读原文<u></u></a></div>
@@ -235,7 +235,7 @@ fbtns.forEach(function(b){b.onclick=function(){
           <ul><li><strong>详情</strong>亚运版本和平精英 12 局积分赛落幕，泰国队 128 分夺金，中国队 114 分获银牌，巴基斯坦 100 分铜牌。海岛、沙漠地图轮换，淘汰分+排名分综合评定。</li></ul>
         </div>
         <div class='item'>
-          <div class='ihead'><span class='src'>人民网</span><h3>亚运电竞王者荣耀：中国 4-0 马来西亚卫冕，一诺成首位双金选手</h3><span class='t'>09-30 07:06</span><a class='go' href='http://m.toutiao.com/group/7691097368758682127/' target='_blank'>阅读原文<u></u></a></div>
+          <div class='ihead'><span class='src'>人民网</span><h3>亚运电竞王者荣耀：中国 4-0 马来西亚卫冕，一诺成首位双金选手</h3><span class='t'>09-30 07:06</span><a class='go' href='http://m.toutiao.com/group/7691097368758682127/' target='blank'>阅读原文<u></u></a></div>
           <ul><li><strong>详情</strong>中国队决赛四局横扫马来西亚，未失一小局成功卫冕；队长徐必成（一诺）成为亚运电竞史上首位双金得主。中国电竞代表团本届 1 金 1 银收官。</li></ul>
         </div>
         <div class='item'>
@@ -628,24 +628,22 @@ fbtns.forEach(function(b){b.onclick=function(){
     sp('w-ico',ic); sp('w-city',city); sp('w-temp',temp+'°C'); sp('w-label',lb+' · 风'+wind+'km/h');
   }
   async function getLoc(){
-    var cityCn='';
-    try{
-      var q=await fetch('https://qifu-api.baidubce.com/ip/local/geo/v1/district').then(function(r){return r.json()});
-      if(q && q.data && q.data.city){cityCn=String(q.data.city).replace(/市$/,'');}
-    }catch(e){}
-    var lat,lng;
-    try{
-      var r=await fetch('https://ipwho.is/?fields=success,latitude,longitude,city').then(function(x){return x.json()});
-      if(r && r.success!==false && r.latitude){lat=r.latitude;lng=r.longitude;if(!cityCn)cityCn=r.city||'';}
-    }catch(e){}
-    if(!lat){
+    // 1) 优先浏览器 GPS（HTTPS 下最准，用户授权一次后浏览器记住）
+    if(navigator.geolocation && (location.protocol==='https:'||location.hostname==='localhost')){
       try{
-        var r2=await fetch('https://ipapi.co/json/').then(function(x){return x.json()});
-        if(r2 && r2.latitude){lat=r2.latitude;lng=r2.longitude;if(!cityCn)cityCn=r2.city||r2.region_name||'';}
+        var pos=await new Promise(function(res,rej){
+          navigator.geolocation.getCurrentPosition(res,rej,{timeout:5000,maximumAge:600000,enableHighAccuracy:false});
+        });
+        return {lat:pos.coords.latitude,lng:pos.coords.longitude,city:''};
       }catch(e){}
     }
-    if(!lat) throw new Error('geo failed');
-    return {lat:lat,lng:lng,city:cityCn};
+    // 2) IP 定位兜底（ipwho.is）
+    try{
+      var r=await fetch('https://ipwho.is/?fields=success,latitude,longitude').then(function(x){return x.json()});
+      if(r && r.success!==false && r.latitude) return {lat:r.latitude,lng:r.longitude,city:''};
+    }catch(e){}
+    // 3) 最终 fallback：杭州
+    return {lat:30.28,lng:120.15,city:'杭州'};
   }
   var QW_HOST='pg3qqubnkm.re.qweatherapi.com';
   var QW_KEY='e83435ce53fb48448342b3c2602a3e43';
@@ -673,8 +671,9 @@ fbtns.forEach(function(b){b.onclick=function(){
     try{
       var loc=await getLoc();
       var g=await fetch('https://'+QW_HOST+'/geo/v2/city/lookup?location='+loc.lng+','+loc.lat+'&key='+QW_KEY).then(function(r){return r.json()});
-      var id=(g.location&&g.location[0]&&g.location[0].id)||'101210101';
-      if((!loc.city)&&g.location&&g.location[0]&&g.location[0].name) loc.city=g.location[0].name;
+      var g0=(g.location&&g.location[0]);
+      var id=g0&&g0.id||'101210101';
+      var cityCn=(g0&&(g0.adm2||g0.name))||loc.city||'杭州';
       var w=await fetch('https://'+QW_HOST+'/v7/weather/now?location='+id+'&key='+QW_KEY).then(function(r){return r.json()});
       if(w.code!=='200'||!w.now) throw new Error('qweather '+w.code);
       var n=w.now;
@@ -682,7 +681,7 @@ fbtns.forEach(function(b){b.onclick=function(){
       var wind=Math.round(Number(n.windSpeed));
       var text=n.text||'';
       var cat=catOfText(text);
-      renderCn(loc.city,text,temp,wind,cat);
+      renderCn(cityCn,text,temp,wind,cat);
       setFXCat(cat);
       return;
     }catch(e){}
