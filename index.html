@@ -5,17 +5,6 @@
 <meta name='viewport' content='width=device-width,initial-scale=1,viewport-fit=cover'>
 <title>体育与运动品牌每日动态</title>
 <link rel='stylesheet' href='style.css'>
-<script>document.documentElement.className+=' js';
-var fbtns=document.querySelectorAll('#sb-filt .f');
-fbtns.forEach(function(b){b.onclick=function(){
-  fbtns.forEach(function(x){x.classList.remove('active')});b.classList.add('active');
-  var f=b.getAttribute('data-f');
-  document.querySelectorAll('.sb li').forEach(function(li){
-    if(f==='all'){li.style.display='';return}
-    li.style.display=(li.getAttribute('data-g')===f)?'':'none';
-  });
-}});
-</script>
 <style>
 .masthead{position:relative;overflow:hidden;z-index:0}
 .shell{position:relative;z-index:2}
@@ -64,54 +53,51 @@ fbtns.forEach(function(b){b.onclick=function(){
     </div>
     <div class='stamp'>
       <p class='k'>最新一期</p>
-      <b class='v mono'>2026-09-30 周三 08:30</b>
+      <b class='v mono'>2026-10-01 周四 08:30</b>
     </div>
   </div>
   <div class='ticker'>
     <span class='ticker-label'>赛果</span>
     <div class='ticker-track'>
       <div class='ticker-set'>
-        <span>欧国联 西班牙 4-1 克罗地亚 亚马尔2射1传</span>
-        <span>欧国联 瑞士 3-0 苏格兰 R罗任意球</span>
+        <span>欧国联 西班牙 4-1 克罗地亚 亚马尔2射1传 40场不败</span>
         <span>欧国联 捷克 0-2 英格兰</span>
-        <span>欧国联 斯洛文尼亚 2-0 北马其顿</span>
-        <span>亚运田径混合4×100接力 中国40.78夺金 陈妤颉第三金</span>
-        <span>亚运女子链球 张家乐78.27破亚运纪录夺金</span>
-        <span>亚运女子800米 吴洪娇2:04.49夺金</span>
-        <span>亚运跳水女10米台 陈芋汐夺金 卢为摘银</span>
-        <span>亚运举重女86公斤级 吴艳夺金</span>
-        <span>亚运举重女86+公斤级 李雯雯夺金</span>
-        <span>亚运场地自行车团体竞速 中国男女双金破亚洲纪录</span>
-        <span>亚运男撑杆跳 姚捷亚军 李晨洋季军</span>
-        <span>亚运电竞和平精英 中国114分摘银 泰国128分夺金</span>
-        <span>亚运电竞王者荣耀 中国4-0马来西亚卫冕</span>
-        <span>中国代表团143金62银49铜收官</span>
+        <span>亚运男足半决赛 中国 1-2 韩国 王钰栋破门 无缘决赛</span>
+        <span>亚运跳水男10米台 练俊杰501.25夺金 中国跳水亚运百金</span>
+        <span>亚运跳水女3米板 陈艺文358.05卫冕 陈佳摘银</span>
+        <span>亚运场地自行车女子团体追逐 中国4:08.818破亚洲纪录</span>
+        <span>亚运场地自行车男子团体追逐 中国3:47.621破亚洲纪录</span>
+        <span>亚运场地自行车女子凯林赛 苑丽颖王丽娟包揽冠亚</span>
+        <span>亚运皮划艇激流回旋 胡兆山黄娟分别夺金</span>
+        <span>亚运男排小组赛 中国3-2韩国 三战全胜头名出线</span>
+        <span>亚运网球女单八强 王曦雨2-1内岛萌夏进四强</span>
+        <span>亚运速度攀岩 邓丽娟0.002秒之差憾失金 计时故障</span>
+        <span>中国代表团151金67银59铜277枚领跑</span>
       </div>
       <div class='ticker-set' aria-hidden='true'>
-        <span>欧国联 西班牙 4-1 克罗地亚 亚马尔2射1传</span>
-        <span>欧国联 瑞士 3-0 苏格兰 R罗任意球</span>
+        <span>欧国联 西班牙 4-1 克罗地亚 亚马尔2射1传 40场不败</span>
         <span>欧国联 捷克 0-2 英格兰</span>
-        <span>欧国联 斯洛文尼亚 2-0 北马其顿</span>
-        <span>亚运田径混合4×100接力 中国40.78夺金 陈妤颉第三金</span>
-        <span>亚运女子链球 张家乐78.27破亚运纪录夺金</span>
-        <span>亚运女子800米 吴洪娇2:04.49夺金</span>
-        <span>亚运跳水女10米台 陈芋汐夺金 卢为摘银</span>
-        <span>亚运举重女86公斤级 吴艳夺金</span>
-        <span>亚运举重女86+公斤级 李雯雯夺金</span>
-        <span>亚运场地自行车团体竞速 中国男女双金破亚洲纪录</span>
-        <span>亚运男撑杆跳 姚捷亚军 李晨洋季军</span>
-        <span>亚运电竞和平精英 中国114分摘银 泰国128分夺金</span>
-        <span>亚运电竞王者荣耀 中国4-0马来西亚卫冕</span>
-        <span>中国代表团143金62银49铜收官</span>
+        <span>亚运男足半决赛 中国 1-2 韩国 王钰栋破门 无缘决赛</span>
+        <span>亚运跳水男10米台 练俊杰501.25夺金 中国跳水亚运百金</span>
+        <span>亚运跳水女3米板 陈艺文358.05卫冕 陈佳摘银</span>
+        <span>亚运场地自行车女子团体追逐 中国4:08.818破亚洲纪录</span>
+        <span>亚运场地自行车男子团体追逐 中国3:47.621破亚洲纪录</span>
+        <span>亚运场地自行车女子凯林赛 苑丽颖王丽娟包揽冠亚</span>
+        <span>亚运皮划艇激流回旋 胡兆山黄娟分别夺金</span>
+        <span>亚运男排小组赛 中国3-2韩国 三战全胜头名出线</span>
+        <span>亚运网球女单八强 王曦雨2-1内岛萌夏进四强</span>
+        <span>亚运速度攀岩 邓丽娟0.002秒之差憾失金 计时故障</span>
+        <span>中国代表团151金67银59铜277枚领跑</span>
       </div>
     </div>
   </div>
 </section>
 <div class='shell'>
   <aside class='side'>
-    <p class='side-h'><span>历史期次</span><span class='mono'>2</span></p>
+    <p class='side-h'><span>历史期次</span><span class='mono'>3</span></p>
     <div class='hist'><ul class='dates'>
-      <li><button class='dbtn' type='button' aria-current='true'><span class='d'>2026-09-30</span><span class='w'>周三</span><span class='badge-new'>最新</span></button></li>
+      <li><button class='dbtn' type='button' aria-current='true'><span class='d'>2026-10-01</span><span class='w'>周四</span><span class='badge-new'>最新</span></button></li>
+      <li><button class='dbtn' type='button'><span class='d'>2026-09-30</span><span class='w'>周三</span></button></li>
       <li><button class='dbtn' type='button'><span class='d'>2026-09-29</span><span class='w'>周二</span></button></li>
     </ul></div>
     <p class='foot'>历史保留最近 7 个自然日。</p>
@@ -121,10 +107,10 @@ fbtns.forEach(function(b){b.onclick=function(){
   <main>
     <article>
       <header class='rhead'>
-        <p class='kicker'><span>最新一期</span><span class='dt'>2026-09-30 · 周三</span></p>
+        <p class='kicker'><span>最新一期</span><span class='dt'>2026-10-01 · 周四</span></p>
         <ul class='rmeta'>
-          <li><b>窗口</b>2026-09-29 09:00 ~ 2026-09-30 08:30</li>
-          <li><b>条目</b>38</li>
+          <li><b>窗口</b>2026-09-30 09:00 ~ 2026-10-01 08:30</li>
+          <li><b>条目</b>36</li>
         </ul>
       </header>
       <nav class='rail'>
@@ -139,236 +125,225 @@ fbtns.forEach(function(b){b.onclick=function(){
       </nav>
       <div class='dash'>
         <div class='board'>
-          <div class='board-h'><h3>近期赛果速读</h3><span class='hint'>近 3 日大型赛事</span><span class='cnt mono'>18</span></div>
+          <div class='board-h'><h3>近期赛果速读</h3><span class='hint'>近 3 日大型赛事</span><span class='cnt mono'>16</span></div>
           <div class='filt' id='sb-filt'><button class='f active' data-f='all'>全部</button><button class='f' data-f='ucl'>欧国联</button><button class='f' data-f='ag'>亚运·对抗</button><button class='f' data-f='medal'>亚运·奖牌</button></div>
           <ul class='sb'>
             <li class='sb-g' data-g='ucl'>欧国联 A 级</li>
             <li class='sb-m wh' data-g='ucl'><a href='https://sports.cctv.com/2026/09/30/ARTIcWT5tuQAK3iJkxoS1YOi260930.shtml' target='_blank'><span class='home'>西班牙</span><span class='sc mono'><b>4</b><i>:</i><span>1</span></span><span class='away'>克罗地亚</span><span class='st'>FT</span></a></li>
-            <li class='sb-m wh' data-g='ucl'><a href='https://m.zhibo8.com/zuqiu/2026/0930-match1949479v-jijin.htm' target='_blank'><span class='home'>苏格兰</span><span class='sc mono'><span>0</span><i>:</i><b>3</b></span><span class='away'>瑞士</span><span class='st'>FT</span></a></li>
-            <li class='sb-m' data-g='ucl'><a href='http://www.sporttery.cn/zqlszl/index.html?leagueId=127&mid=2041691' target='_blank'><span class='home'>捷克</span><span class='sc mono'><span>0</span><i>:</i><b>2</b></span><span class='away'>英格兰</span><span class='st'>FT</span></a></li>
-            <li class='sb-m' data-g='ucl'><a href='http://www.sporttery.cn/zqlszl/index.html?leagueId=127&mid=2041691' target='_blank'><span class='home'>斯洛文尼亚</span><span class='sc mono'><b>2</b><i>:</i><span>0</span></span><span class='away'>北马其顿</span><span class='st'>FT</span></a></li>
-            <li class='sb-g' data-g='ag'>杭州亚运 · 对抗项目</li>
-            <li class='sb-m wh' data-g='ag'><a href='http://m.toutiao.com/group/7690936742995689984/' target='_blank'><span class='home'>中国 4×100 混合接力</span><span class='sc mono'><b>40.78</b></span><span class='away'>泰国队 40.87</span><span class='st'>金牌</span></a></li>
-            <li class='sb-m wh' data-g='ag'><a href='http://m.toutiao.com/group/7691103787192336930/' target='_blank'><span class='home'>中国 和平精英</span><span class='sc mono'><span>114</span></span><span class='away'>泰国 128</span><span class='st'>银牌</span></a></li>
-            <li class='sb-g' data-g='medal'>杭州亚运 · 田赛/水上/举重/自行</li>
-            <li class='sb-r' data-g='medal'><a href='https://news.gmw.cn/2026-09/30/content_39028264.htm' target='_blank'><span class='gd'>金</span><span class='ev'>田径 女子链球</span><span class='rs mono'>张家乐 78.27 破亚运纪录</span></a></li>
-            <li class='sb-r' data-g='medal'><a href='http://www.xinhuanet.com/sports/20260929/79d844ad238440fdbed1476bb6800a22/c.html' target='_blank'><span class='gd'>金</span><span class='ev'>田径 女子 800 米</span><span class='rs mono'>吴洪娇 2:04.49</span></a></li>
-            <li class='sb-r' data-g='medal'><a href='https://yayun.cctv.com/2026/China/index.shtml' target='_blank'><span class='gd'>银</span><span class='ev'>田径 男子撑竿跳高</span><span class='rs mono'>姚捷 / 李晨洋 铜</span></a></li>
-            <li class='sb-r' data-g='medal'><a href='http://www.olympic.cn/zt/Aichi-Nagoya2026/zjyy/' target='_blank'><span class='gd'>金</span><span class='ev'>跳水 女子 10 米台</span><span class='rs mono'>陈芋汐 卢为摘银</span></a></li>
-            <li class='sb-r' data-g='medal'><a href='http://m.toutiao.com/group/7691097550144700938/' target='_blank'><span class='gd'>金</span><span class='ev'>举重 女子 86 公斤级</span><span class='rs mono'>吴艳</span></a></li>
-            <li class='sb-r' data-g='medal'><a href='http://m.toutiao.com/group/7691097550144700938/' target='_blank'><span class='gd'>金</span><span class='ev'>举重 女子 86+ 公斤级</span><span class='rs mono'>李雯雯</span></a></li>
-            <li class='sb-r' data-g='medal'><a href='http://m.toutiao.com/group/7691097550144700938/' target='_blank'><span class='gd'>金</span><span class='ev'>场地自行车 团体竞速 男女</span><span class='rs mono'>中国 双破亚洲纪录</span></a></li>
-            <li class='sb-r' data-g='medal'><a href='https://yayun.cctv.com/2026/medal_list/index.shtml' target='_blank'><span class='gd'>榜</span><span class='ev'>代表团奖牌榜收官</span><span class='rs mono'>中国 143 金 62 银 49 铜</span></a></li>
+            <li class='sb-m' data-g='ucl'><a href='http://news.qq.com/rain/a/20260929A0DZEO00' target='_blank'><span class='home'>捷克</span><span class='sc mono'><span>0</span><i>:</i><b>2</b></span><span class='away'>英格兰</span><span class='st'>FT</span></a></li>
+            <li class='sb-g' data-g='ag'>亚运 · 对抗项目</li>
+            <li class='sb-m wh' data-g='ag'><a href='http://m.toutiao.com/group/7691486487377445426/' target='_blank'><span class='home'>中国 U23</span><span class='sc mono'><span>1</span><i>:</i><b>2</b></span><span class='away'>韩国 U23</span><span class='st'>半决赛</span></a></li>
+            <li class='sb-m' data-g='ag'><a href='http://www.xinhuanet.com/20260930/65c75faf96624187874d8fe94a4e885c/c.html' target='_blank'><span class='home'>中国男排</span><span class='sc mono'><b>3</b><i>:</i><span>2</span></span><span class='away'>韩国男排</span><span class='st'>小组赛</span></a></li>
+            <li class='sb-m wh' data-g='ag'><a href='https://m.weibo.cn/detail/5348836237117853' target='_blank'><span class='home'>王曦雨</span><span class='sc mono'><b>2</b><i>:</i><span>1</span></span><span class='away'>内岛萌夏（日）</span><span class='st'>女单8强</span></a></li>
+            <li class='sb-g' data-g='medal'>亚运 · 奖牌与纪录</li>
+            <li class='sb-r' data-g='medal'><a href='http://www.xinhuanet.com/20260930/09921f36cc1d487e949d999c30c61f5f/c.html' target='_blank'><span class='gd'>金</span><span class='ev'>跳水 男子 10 米台</span><span class='rs mono'>练俊杰 501.25 中国亚运跳水第100金</span></a></li>
+            <li class='sb-r' data-g='medal'><a href='http://www.chinanews.com.cn/ty/2026/09-30/10706574.shtml' target='_blank'><span class='gd'>金</span><span class='ev'>跳水 女子 3 米板</span><span class='rs mono'>陈艺文 358.05 卫冕 陈佳 347.45 摘银</span></a></li>
+            <li class='sb-r' data-g='medal'><a href='http://m.toutiao.com/group/7691481884315927083/' target='_blank'><span class='gd'>金</span><span class='ev'>场地自行车 女子团体追逐</span><span class='rs mono'>中国 4:08.818 破亚洲纪录</span></a></li>
+            <li class='sb-r' data-g='medal'><a href='http://m.toutiao.com/group/7691481884315927083/' target='_blank'><span class='gd'>金</span><span class='ev'>场地自行车 男子团体追逐</span><span class='rs mono'>中国 3:47.621 破亚洲纪录</span></a></li>
+            <li class='sb-r' data-g='medal'><a href='http://m.toutiao.com/group/7691481884315927083/' target='_blank'><span class='gd'>金</span><span class='ev'>场地自行车 女子凯林赛</span><span class='rs mono'>苑丽颖 王丽娟 包揽冠亚</span></a></li>
+            <li class='sb-r' data-g='medal'><a href='http://m.toutiao.com/group/7691481884315927083/' target='_blank'><span class='gd'>金</span><span class='ev'>皮划艇激流回旋</span><span class='rs mono'>胡兆山男子单人皮艇 黄娟女子单人划艇</span></a></li>
+            <li class='sb-r' data-g='medal'><a href='https://sports.ifeng.com/c/8wqwBmew2FG' target='_blank'><span class='gd'>银</span><span class='ev'>速度攀岩 女子速度赛</span><span class='rs mono'>邓丽娟 0.002 秒之差憾负 计时系统故障</span></a></li>
+            <li class='sb-r' data-g='medal'><a href='https://yayun.cctv.com/2026/medal_list/index.shtml' target='_blank'><span class='gd'>榜</span><span class='ev'>代表团奖牌榜（截至9-30）</span><span class='rs mono'>中国 151 金 67 银 59 铜 277 枚</span></a></li>
           </ul>
         </div>
         <div class='board'>
-          <div class='board-h'><h3>新品与发售日历</h3><span class='cnt mono'>16</span></div>
+          <div class='board-h'><h3>新品与发售日历</h3><span class='cnt mono'>14</span></div>
           <ul class='rows'>
-            <li class='dr undated'><span class='lead'>09-25</span><a class='t' href='https://us.puma.com/us/en/launch-calendar' target='_blank'>PUMA MB.06 Shooting Star 拉梅洛·鲍尔签名鞋</a><span class='m mono'>09-25</span></li>
-            <li class='dr undated'><span class='lead'>09-25</span><a class='t' href='https://us.puma.com/us/en/launch-calendar' target='_blank'>PUMA × Street Fighter Suede Ryu / Chun-Li / Ken</a><span class='m mono'>09-25</span></li>
-            <li class='dr undated'><span class='lead'>09-29</span><a class='t' href='https://www.newbalance.com/nb-launches/' target='_blank'>New Balance 983 Made in USA 正式发售</a><span class='m mono'>09-29</span></li>
-            <li class='dr undated'><span class='lead'>09-29</span><a class='t' href='https://www.iesdouyin.com/share/video/7690908837716446491' target='_blank'>JJJJound × New Balance 990v3 棕褐绒面革新色</a><span class='m mono'>09-29</span></li>
-            <li class='dr undated'><span class='lead'>09-29</span><a class='t' href='https://www.iesdouyin.com/share/video/7683166272922938341' target='_blank'>HOKA Speedgoat 7 羚羊 7 / GTX 防水版上市</a><span class='m mono'>09-29</span></li>
-            <li class='dr undated'><span class='lead'>09-29</span><a class='t' href='https://www.iesdouyin.com/share/video/7690908837716446491' target='blank'>Virgil Abloh Archive × Nike Air Force 1</a><span class='m mono'>09-29</span></li>
-            <li class='dr undated'><span class='lead'>10-01</span><a class='t' href='https://www.newbalance.com/nb-launches/' target='_blank'>New Balance 991v2 Made in UK Vintage 新色</a><span class='m mono'>10-01</span></li>
-            <li class='dr undated'><span class='lead'>10-01</span><a class='t' href='https://www.newbalance.com.sg/nb-launches.html' target='_blank'>NB TCS NYC Marathon SuperComp Elite v6 / Ellipse</a><span class='m mono'>10-01</span></li>
-            <li class='dr undated'><span class='lead'>10-01</span><a class='t' href='https://www.salomon.com/en-gb/c/launch-calendar' target='_blank'>Salomon XT-EVO / Speedcross 6 GTX 20 周年</a><span class='m mono'>10-01</span></li>
-            <li class='dr undated'><span class='lead'>10-02</span><a class='t' href='https://sneakerbardetroit.com/' target='_blank'>J Balvin × Air Jordan 4 Amazonas 全球 $225</a><span class='m mono'>10-02</span></li>
-            <li class='dr undated'><span class='lead'>10-02</span><a class='t' href='https://stockx.com/releases/upcoming' target='_blank'>adidas D.O.N. Issue #8「Yin Yang」</a><span class='m mono'>10-02</span></li>
-            <li class='dr undated'><span class='lead'>10-03</span><a class='t' href='https://www.iesdouyin.com/share/video/7690908837716446491' target='_blank'>Willy Chavarria × adidas Megaride 2026 秋重塑</a><span class='m mono'>10-03</span></li>
-            <li class='dr undated'><span class='lead'>10-03</span><a class='t' href='https://sneakerbardetroit.com/' target='_blank'>Air Jordan 3「Fireside」女款 SNKRS</a><span class='m mono'>10-03</span></li>
-            <li class='dr undated'><span class='lead'>10-16</span><a class='t' href='https://www.sneakerdrop.co/new-releases' target='_blank'>Nike Air Foamposite One Phantom/Barely Volt</a><span class='m mono'>10-16</span></li>
-            <li class='dr undated'><span class='lead'>10-01</span><a class='t' href='https://thedropdate.com/releases' target='_blank'>ASICS GEL-Cumulus 16 Cocoa Powder €159</a><span class='m mono'>10-01</span></li>
-            <li class='dr undated'><span class='lead'>中国</span><a class='t' href='https://www.on-running.cn/' target='_blank'>On Cloudmonster 3 Hyper / THE ROGER Wildcard 上海网球限定</a><span class='m mono'>新品</span></li>
+            <li class='dr undated'><span class='lead'>09-29</span><a class='t' href='http://www.sh.chinanews.com/swzx/2026-09-30/149807.shtml' target='_blank'>lululemon Featherweight 900 蓬松度羽绒系列 汉密尔顿/李宇春代言</a><span class='m mono'>09-29</span></li>
+            <li class='dr undated'><span class='lead'>09-24</span><a class='t' href='https://www.nike.com.cn/a/football-lego-collection-release-info' target='_blank'>Nike Football × LEGO Air Max 95 儿童联名系列</a><span class='m mono'>09-24</span></li>
+            <li class='dr undated'><span class='lead'>09-27</span><a class='t' href='https://hypebeast.com/2026/9/new-balance-lm-rt-2010-release-info' target='_blank'>LM.RT × New Balance 2010 伊卡洛斯神话配色 ¥26,400</a><span class='m mono'>09-27</span></li>
+            <li class='dr undated'><span class='lead'>09-26</span><a class='t' href='https://hypebeast.cn/footwear/page/2?after=1752513526' target='_blank'>Whitaker Group × New Balance 2010 鸵鸟皮革配色</a><span class='m mono'>09-26</span></li>
+            <li class='dr undated'><span class='lead'>09-24</span><a class='t' href='https://kith.com/blogs/discover/kith-for-salomon-xt-evo' target='_blank'>Kith × Salomon XT-EVO 全新鞋型 &amp;Kin 秋季系列</a><span class='m mono'>09-24</span></li>
+            <li class='dr undated'><span class='lead'>10-01</span><a class='t' href='https://www.newbalance.com.hk/en/nb-launches.html' target='_blank'>New Balance 10 月 1 日多双发售：991v2 / 990v3 / Made in USA</a><span class='m mono'>10-01</span></li>
+            <li class='dr undated'><span class='lead'>10-02</span><a class='t' href='https://sneakerbardetroit.com/' target='_blank'>Air Jordan 4 Amazonas J Balvin 全球 $225</a><span class='m mono'>10-02</span></li>
+            <li class='dr undated'><span class='lead'>10-03</span><a class='t' href='https://stockx.com/releases/upcoming' target='_blank'>adidas D.O.N. Issue #8「Yin Yang」米切尔签名鞋</a><span class='m mono'>10-03</span></li>
+            <li class='dr undated'><span class='lead'>10-16</span><a class='t' href='https://www.sneakerdrop.co/new-releases' target='_blank'>Nike Air Foamposite One Phantom / Barely Volt</a><span class='m mono'>10-16</span></li>
+            <li class='dr undated'><span class='lead'>10-29</span><a class='t' href='https://blog.jdsports.it/calendario-lanci-sneakers/' target='_blank'>Nike Vomero 18 GORE-TEX Off-White / Smokey Blue</a><span class='m mono'>10-29</span></li>
+            <li class='dr undated'><span class='lead'>Q4</span><a class='t' href='https://www.on-running.cn/' target='_blank'>On Cloudmonster 3 Hyper / THE ROGER Wildcard 上海网球限定</a><span class='m mono'>新品</span></li>
+            <li class='dr undated'><span class='lead'>中国</span><a class='t' href='https://www.hoka.com.cn/' target='_blank'>HOKA Speedgoat 7 羚羊 7 / GTX 防水版</a><span class='m mono'>在售</span></li>
+            <li class='dr undated'><span class='lead'>Q4</span><a class='t' href='https://www.puma.com/' target='_blank'>PUMA × A$AP Rocky 联名系列 2026 秋冬</a><span class='m mono'>预告</span></li>
+            <li class='dr undated'><span class='lead'>11月</span><a class='t' href='https://www.vogue.com.cn/fashion/brand_news/news_1955684ae6c18f38.html' target='_blank'>lululemon Wunder Puff / ThermoZen 长款外套 11 月上市</a><span class='m mono'>11月</span></li>
           </ul>
         </div>
       </div>
       <div class='prose'>
         <h2 id='s1'>核心要点</h2>
         <blockquote>
-          <p><strong>[重磅]</strong> 欧国联：西班牙 4-1 克罗地亚，亚马尔 2 射 1 传、连场 70 秒闪击，西班牙各项赛事 <strong>40 场不败</strong>；瑞士 3-0 十人苏格兰。</p>
-          <p><strong>[重磅]</strong> 亚运第 10 比赛日田径收官：陈妤颉混合 4×100 接力最后一棒逆天改命夺个人第三金，张家乐链球 78.27 米<strong>破亚运纪录</strong>，中国代表团定格 <strong>143 金 62 银 49 铜</strong>。</p>
-          <p><strong>[重磅]</strong> 亚运电竞：和平精英中国队 114 分摘银（泰国 128 分夺金），王者荣耀项目中国 4-0 马来西亚卫冕，一诺成首位亚运电竞双金选手。</p>
-          <p><strong>[要点]</strong> lululemon 上海南京东路新丸中心沿街大店 9 月 29 日启幕；ALO Yoga 北京首店国贸围挡，Givenchy/Jil Sander/Margiela 三店打通。</p>
-          <p><strong>[要点]</strong> 李宁 2026 中报：收入 152.35 亿、归母 18.16 亿，中期息 0.3512 元、派息率 50%；lululemon 美股 9/29 再跌 3.69%，年内累跌约 46%。</p>
+          <p><strong>[重磅]</strong> 亚运 Day11：中国跳水队包揽 10 金达成亚运<strong>百金</strong>，练俊杰男子 10 米台 501.25 分夺金、陈艺文女子 3 米板卫冕；中国单日 8 金，代表团定格 <strong>151 金 67 银 59 铜</strong>。</p>
+          <p><strong>[重磅]</strong> 亚运男足半决赛中国 U23 1-2 遭韩国逆转：王钰栋 22 分钟单刀破门（40 年来亚运男足再破韩国球门），李英俊 33 分钟扳平、裴峻浩 82 分钟头球绝杀；10 月 3 日季军战对阵日本/乌兹别克斯坦败者。</p>
+          <p><strong>[重磅]</strong> 欧国联：西班牙 4-1 克罗地亚，亚马尔 2 射 1 传，各项赛事 <strong>40 场不败</strong>并列队史第三长 9 连胜；英格兰客场 2-0 捷克。</p>
+          <p><strong>[要点]</strong> lululemon 发布 2026 秋冬 Featherweight 外套系列，七届 F1 冠军汉密尔顿与品牌大使李宇春等五位代言人演绎「Quiet the Weather」全球广告。</p>
+          <p><strong>[要点]</strong> A 股体育板块 9-30 分化：中体产业、舒华体育、力盛体育盘中临时停牌，金陵体育收 15.98 元微跌 0.13%；港股 361° 收 4.505 港元、特步收 3.48 港元、李宁跌 0.32%。</p>
         </blockquote>
 
         <h2 id='s2'>一、赛事与竞技动态</h2>
         <div class='item'>
           <div class='ihead'><span class='src'>央视网体育</span><h3>欧国联：西班牙 4-1 克罗地亚，亚马尔 2 射 1 传，40 场不败</h3><span class='t'>09-30 07:37</span><a class='go' href='https://sports.cctv.com/2026/09/30/ARTIcWT5tuQAK3iJkxoS1YOi260930.shtml' target='_blank'>阅读原文<u></u></a></div>
-          <ul><li><strong>详情</strong>亚马尔开场 70 秒闪击破门并助攻普比尔头球，下半场佩德里直塞助攻亚马尔梅开二度，尼科·威廉姆斯第 89 分钟爆射锁定胜局。莫德里奇第 81 分钟替补登场获全场起立鼓掌；西班牙各项赛事连续 <strong>40 场不败</strong>，下轮对阵捷克。</li></ul>
+          <ul><li><strong>详情</strong>亚马尔开场 70 秒闪击破门并助攻普比尔头球，下半场佩德里直塞助攻亚马尔梅开二度，尼科·威廉姆斯第 89 分钟爆射锁定胜局。西班牙各项赛事连续 <strong>40 场不败</strong>，队史并列第三长 9 连胜。</li></ul>
         </div>
         <div class='item'>
-          <div class='ihead'><span class='src'>直播吧</span><h3>欧国联：瑞士 3-0 十人苏格兰，R 罗任意球圆月弯刀</h3><span class='t'>09-30 06:09</span><a class='go' href='https://m.zhibo8.com/zuqiu/2026/0930-match1949479v-jijin.htm' target='_blank'>阅读原文<u></u></a></div>
-          <ul><li><strong>详情</strong>苏格兰上半场染红少打一人，里卡多·罗德里格斯直接任意球破门，阿姆杜尼再入一球锁定胜局。瑞士取得欧国联两连胜，苏格兰两战皆负深陷降级区。</li></ul>
+          <div class='ihead'><span class='src'>腾讯新闻</span><h3>欧国联综述：英格兰客场 2-0 捷克，斯洛文尼亚 2-0 北马其顿</h3><span class='t'>09-30 06:15</span><a class='go' href='http://news.qq.com/rain/a/20260929A0DZEO00' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>A3 组第 2 轮英格兰客场 2-0 击败捷克，西班牙 4-1 克罗地亚同组领跑；下轮西班牙对阵捷克、克罗地亚迎战英格兰。</li></ul>
         </div>
         <div class='item'>
-          <div class='ihead'><span class='src'>竞彩网</span><h3>欧国联：英格兰 2-0 客胜捷克，斯洛文尼亚 2-0 北马其顿</h3><span class='t'>09-30 07:37</span><a class='go' href='http://www.sporttery.cn/zqlszl/index.html?leagueId=127&mid=2041691' target='_blank'>阅读原文<u></u></a></div>
-          <ul><li><strong>详情</strong>A3 组第 2 轮英格兰客场 2-0 击败捷克，西班牙 4-1 克罗地亚同组领跑；斯洛文尼亚 2-0 北马其顿。下轮西班牙将对阵捷克，克罗地亚迎战英格兰。</li></ul>
+          <div class='ihead'><span class='src'>南方日报</span><h3>亚运男足半决赛：中国 U23 1-2 遭韩国逆转，王钰栋破门无缘决赛</h3><span class='t'>10-01 08:16</span><a class='go' href='http://m.toutiao.com/group/7691486487377445426/' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>毛伟杰 22 分钟过顶挑传，王钰栋单刀推射破门——这是中国男足亚运赛场时隔 <strong>40 年</strong>再次攻破韩国球门；李英俊 33 分钟头球扳平，裴峻浩 82 分钟后点绝杀。10 月 3 日季军战对阵日本与乌兹别克斯坦败者。</li></ul>
         </div>
         <div class='item'>
-          <div class='ihead'><span class='src'>新华社</span><h3>亚运田径收官：混合 4×100 接力中国 40.78 夺金，陈妤颉单届三金</h3><span class='t'>09-29 23:33</span><a class='go' href='http://www.xinhuanet.com/20260929/c3d314411c4b4c09b198435972cb1e4c/c.html' target='_blank'>阅读原文<u></u></a></div>
-          <ul><li><strong>详情</strong>陈锦丰、刘国怡、施君豪、陈妤颉组成的中国队前三棒落后，最后一棒陈妤连超泰国队以 <strong>40.78 秒</strong> 逆转夺金，这是亚运历史首枚混合 4×100 接力金牌，也是陈妤颉本届第三金。</li></ul>
+          <div class='ihead'><span class='src'>新华网</span><h3>亚运跳水：练俊杰男子 10 米台 501.25 夺金，中国跳水队达成亚运百金</h3><span class='t'>09-30 20:50</span><a class='go' href='http://www.xinhuanet.com/20260930/09921f36cc1d487e949d999c30c61f5f/c.html' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>练俊杰以 501.25 分险胜日本选手夺金，15 岁小将赵仁杰 427.50 分摘铜；这是中国跳水队亚运历史第 <strong>100 金</strong>，自 1974 年首次参赛以来从未让亚运金牌旁落，本届包揽全部 10 金。</li></ul>
         </div>
         <div class='item'>
-          <div class='ihead'><span class='src'>光明网</span><h3>亚运女子链球：张家乐 78.27 米破尘封 12 年亚运纪录夺金，赵杰摘银</h3><span class='t'>09-30 02:55</span><a class='go' href='https://news.gmw.cn/2026-09/30/content_39028264.htm' target='_blank'>阅读原文<u></u></a></div>
-          <ul><li><strong>详情</strong>19 岁亚洲纪录保持者张家乐最后一投 78.27 米，打破张文秀 2014 年创造的 77.33 米亚运纪录；队友赵杰摘银。巴黎奥运季军最后一投未能超过张家乐。</li></ul>
+          <div class='ihead'><span class='src'>中新网</span><h3>亚运跳水女子 3 米板：陈艺文 358.05 卫冕，陈佳 347.45 摘银</h3><span class='t'>09-30 22:56</span><a class='go' href='http://www.chinanews.com.cn/ty/2026/09-30/10706574.shtml' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>奥运冠军陈艺文以 358.05 分成功卫冕，队友陈佳 347.45 分摘银，日本选手三上纱也可获铜牌；中国队完成亚运跳水第 14 次全包揽。</li></ul>
         </div>
         <div class='item'>
-          <div class='ihead'><span class='src'>新华网</span><h3>亚运女子 800 米：吴洪娇 2:04.49 夺金，男子 800 米日本破亚运纪录</h3><span class='t'>09-29 19:58</span><a class='go' href='http://www.xinhuanet.com/sports/20260929/79d844ad238440fdbed1476bb6800a22/c.html' target='_blank'>阅读原文<u></u></a></div>
-          <ul><li><strong>详情</strong>吴洪娇女子 800 米 2 分 04 秒 49 夺冠；男子 800 米日本落合晃 1:44.48 破亚运纪录夺金，中国选手奚枭横 1:45.46 第四并刷新全国纪录。</li></ul>
+          <div class='ihead'><span class='src'>海外网</span><h3>亚运场地自行车：男女团体追逐双双破亚洲纪录夺金，女子凯林赛包揽冠亚</h3><span class='t'>10-01 07:58</span><a class='go' href='http://m.toutiao.com/group/7691481884315927083/' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>女子团体追逐 4 分 08 秒 818、男子团体追逐 3 分 47 秒 621 双双刷新亚洲纪录；女子凯林赛苑丽颖、王丽娟包揽冠亚军；皮划艇激流回旋胡兆山、黄娟分获男/女单人金。</li></ul>
         </div>
         <div class='item'>
-          <div class='ihead'><span class='src'>中国奥委会</span><h3>亚运跳水女子 10 米台：陈芋汐、卢为包揽冠亚军</h3><span class='t'>09-29 18:07</span><a class='go' href='http://www.olympic.cn/zt/Aichi-Nagoya2026/zjyy/' target='_blank'>阅读原文<u></u></a></div>
-          <ul><li><strong>详情</strong>陈芋汐女子 10 米跳台夺冠，卢为摘银，中国跳水队在该项目实现亚运连续垄断。同日刘焕华获举重男子 110 公斤级铜牌。</li></ul>
+          <div class='ihead'><span class='src'>新华网</span><h3>亚运男排：中国 3-2 险胜韩国，三战全胜头名晋级八强</h3><span class='t'>09-30 00:01</span><a class='go' href='http://www.xinhuanet.com/20260930/65c75faf96624187874d8fe94a4e885c/c.html' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>中国男排 25-23、23-25、25-21、22-25、15-12 五局大战险胜韩国，小组赛三战全胜（先后击败中国台北、菲律宾、韩国）以头名身份晋级八强。</li></ul>
         </div>
         <div class='item'>
-          <div class='ihead'><span class='src'>人民网</span><h3>亚运举重收官：吴艳、李雯雯同日夺金，中国队 5 金 2 银 3 铜</h3><span class='t'>09-30 07:06</span><a class='go' href='http://m.toutiao.com/group/7691097550144700938/' target='_blank'>阅读原文<u></u></a></div>
-          <ul><li><strong>详情</strong>吴艳女子 86 公斤级、李雯雯女子 86+ 公斤级同日摘金，刘焕华男子 110 公斤级铜牌；中国举重队 10 名参赛选手全部登台，共收 <strong>5 金 2 银 3 铜</strong>。</li></ul>
+          <div class='ihead'><span class='src'>微博@中国体育</span><h3>亚运网球：王曦雨 2-1 内岛萌夏晋级女单四强，张帅同进四强</h3><span class='t'>09-30 23:06</span><a class='go' href='https://m.weibo.cn/detail/5348836237117853' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>王曦雨 6-4、3-6、6-1 淘汰日本选手内岛萌夏，首次参加亚运即进女单四强；张帅同进四强，中国金花包揽四强半壁江山，半决赛王曦雨对阵菲律宾新星伊埃拉。</li></ul>
         </div>
         <div class='item'>
-          <div class='ihead'><span class='src'>人民网</span><h3>亚运场地自行车：男女团体竞速中国双金，连破赛会与亚洲纪录</h3><span class='t'>09-30 07:06</span><a class='go' href='http://m.toutiao.com/group/7691097550144700938/' target='_blank'>阅读原文<u></u></a></div>
-          <ul><li><strong>详情</strong>场地自行车收官日，中国女子、男子团体竞速赛双双夺金，并相继刷新赛会纪录和亚洲纪录。田径项目中国队以 <strong>17 金</strong> 收官。</li></ul>
+          <div class='ihead'><span class='src'>凤凰网体育</span><h3>亚运速度攀岩：邓丽娟 0.002 秒之差憾失金，计时系统再出故障</h3><span class='t'>10-01 00:48</span><a class='go' href='https://sports.ifeng.com/c/8wqwBmew2FG' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>速度攀岩首个金牌日，女子比赛因计时系统故障中断 20 分钟，恢复后成绩显示屏再次故障；中国世界冠军邓丽娟以 <strong>0.002 秒</strong>之差憾负印尼选手德莎克摘银。</li></ul>
         </div>
         <div class='item'>
-          <div class='ihead'><span class='src'>潮新闻</span><h3>亚运电竞和平精英：中国队 114 分摘银，泰国 128 分夺金</h3><span class='t'>09-30 07:33</span><a class='go' href='http://m.toutiao.com/group/7691103787192336930/' target='_blank'>阅读原文<u></u></a></div>
-          <ul><li><strong>详情</strong>亚运版本和平精英 12 局积分赛落幕，泰国队 128 分夺金，中国队 114 分获银牌，巴基斯坦 100 分铜牌。海岛、沙漠地图轮换，淘汰分+排名分综合评定。</li></ul>
+          <div class='ihead'><span class='src'>新华网</span><h3>亚运组织风波：名古屋市长公开致歉，当晚电竞比赛中途断网</h3><span class='t'>10-01 01:50</span><a class='go' href='http://www.xinhuanet.com/20261001/147c62170aab4e4798894a3d1f718e45/c.html' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>名古屋市市长广濑全天公开致歉后，当晚电竞比赛中途断网、速度攀岩计时系统故障接连发生；电竞赛场诞生首位女子冠军选手。运动员层面中国跳水队达成百金、中国男足虽败犹荣。</li></ul>
         </div>
         <div class='item'>
-          <div class='ihead'><span class='src'>人民网</span><h3>亚运电竞王者荣耀：中国 4-0 马来西亚卫冕，一诺成首位双金选手</h3><span class='t'>09-30 07:06</span><a class='go' href='http://m.toutiao.com/group/7691097368758682127/' target='blank'>阅读原文<u></u></a></div>
-          <ul><li><strong>详情</strong>中国队决赛四局横扫马来西亚，未失一小局成功卫冕；队长徐必成（一诺）成为亚运电竞史上首位双金得主。中国电竞代表团本届 1 金 1 银收官。</li></ul>
-        </div>
-        <div class='item'>
-          <div class='ihead'><span class='src'>央视网</span><h3>亚运收官日：中国代表团定格 143 金，9 月 30 日男足冲决赛、跳水冲百金</h3><span class='t'>09-30 07:29</span><a class='go' href='https://yayun.cctv.com/2026/China/index.shtml' target='_blank'>阅读原文<u></u></a></div>
-          <ul><li><strong>详情</strong>截至 9 月 30 日晨，中国代表团以 <strong>143 金 62 银 49 铜共 254 枚</strong> 断层领跑，日本 45 金次席。9 月 30 日看点：男足冲击决赛席位，跳水项目冲击中国代表团亚运历史第 100 金。</li></ul>
+          <div class='ihead'><span class='src'>央视网亚运</span><h3>中国代表团 151 金 67 银 59 铜领跑，日本 50 金次席</h3><span class='t'>10-01 03:44</span><a class='go' href='https://yayun.cctv.com/2026/medal_list/index.shtml' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>截至 9 月 30 日晚，中国代表团以 <strong>151 金 67 银 59 铜共 277 枚</strong>断层领跑，日本 50 金 77 银 73 铜共 200 枚次席，韩国 24 金 30 银 49 铜第三。</li></ul>
         </div>
 
         <h2 id='s3'>二、品牌营销与代言动态</h2>
         <div class='item'>
-          <div class='ihead'><span class='src'>Hypebeast</span><h3>JJJJound × New Balance 990v3 棕褐绒面革新配色发布</h3><span class='t'>09-29 18:54</span><a class='go' href='https://www.iesdouyin.com/share/video/7690908837716446491' target='_blank'>阅读原文<u></u></a></div>
-          <ul><li><strong>详情</strong>JJJJound 与 New Balance 联名 990v3 推出全新棕褐色绒面革配色，延续极简单色美学；同期 Virgil Abloh Archive × Nike Air Force 1、Willy Chavarria × adidas Megaride 均列入本周重点发售。</li></ul>
+          <div class='ihead'><span class='src'>中新社上海</span><h3>lululemon 发布 2026 秋冬外套系列，汉密尔顿与李宇春等五位大使演绎</h3><span class='t'>09-30 16:35</span><a class='go' href='http://www.sh.chinanews.com/swzx/2026-09-30/149807.shtml' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>品牌邀请七届 F1 世界冠军刘易斯·汉密尔顿、歌手李宇春等五位大使演绎 Featherweight™ 等全新外套系列全球广告「Quiet the Weather」，鼓励无论天气如何仍走出去感受运动。</li></ul>
         </div>
         <div class='item'>
-          <div class='ihead'><span class='src'>PUMA</span><h3>PUMA × Street Fighter 联名 Suede 三配色上市：隆/春丽/肯</h3><span class='t'>09-25</span><a class='go' href='https://us.puma.com/us/en/launch-calendar' target='_blank'>阅读原文<u></u></a></div>
-          <ul><li><strong>详情</strong>PUMA 与卡普空《街头霸王》联名推出 Suede Ryu、Suede Chun-Li、Suede Ken 三款配色，9 月 25 日上线；同期 MB.06 Shooting Star 拉梅洛·鲍尔签名鞋发售。</li></ul>
+          <div class='ihead'><span class='src'>WWD</span><h3>lululemon 秋季外套广告：Chris Lee 与 Lewis Hamilton 同框，绑定中国市场</h3><span class='t'>09-28 21:11</span><a class='go' href='https://wwd.com/fashion-news/activewear/chris-lee-lewis-hamilton-lululemon-outerwear-campaign-1239282023/' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>广告主题「Quiet the Weather」聚焦运动、个人进步与户外时间，除李宇春、汉密尔顿外还包括网球选手 Ayan Broomfield、跑者 Marc Tortell、混合体能选手 Shota Yamaguchi；品牌意在借中国大使强化大中华区增长叙事。</li></ul>
         </div>
         <div class='item'>
-          <div class='ihead'><span class='src'>New Balance</span><h3>New Balance 983 Made in USA 正式发售，10 月 1 日扩至 991v2</h3><span class='t'>09-29</span><a class='go' href='https://www.newbalance.com/nb-launches/' target='_blank'>阅读原文<u></u></a></div>
-          <ul><li><strong>详情</strong>983 作为 990 系列衍生鞋型 9 月 29 日正式上架 Made in USA 线；10 月 1 日 Made in UK 991v2 Vintage 与 983 同步扩色，TCS 纽约马拉松 SuperComp Elite v6 / Ellipse 竞速跑鞋系列同周上市。</li></ul>
+          <div class='ihead'><span class='src'>VOGUE</span><h3>lululemon Featherweight 900 蓬松度鹅绒羽绒系列 11 月上市</h3><span class='t'>09-29</span><a class='go' href='https://www.vogue.com.cn/fashion/brand_news/news_1955684ae6c18f38.html' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>Featherweight 羽绒系列采用 900 蓬松度鹅绒填充，菱格绗缝设计可整件收纳进小包；同期 Wunder Puff、ThermoZen 长款外套与 Insulated 立领外套构成 2026 秋冬外套矩阵。</li></ul>
         </div>
         <div class='item'>
-          <div class='ihead'><span class='src'>HOKA</span><h3>HOKA Speedgoat 7 羚羊 7 上市，标准版与 GTX 防水版双线</h3><span class='t'>09-29</span><a class='go' href='https://www.iesdouyin.com/share/video/7683166272922938341' target='_blank'>阅读原文<u></u></a></div>
-          <ul><li><strong>详情</strong>Speedgoat 系列迭代至第 7 代，硬弹度提升、上脚更扎实，主打长距离越野与全地形；分标准版与 Gore-Tex 防水版，国内万象城门店已上架。</li></ul>
+          <div class='ihead'><span class='src'>Nike 中国</span><h3>Nike Football × LEGO 联名儿童系列：Air Max 95 Big Bubble + 积木套装</h3><span class='t'>09-24</span><a class='go' href='https://www.nike.com.cn/a/football-lego-collection-release-info' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>Nike 足球与 LEGO 集团合作推出 Jr Mercurial、Jr Magista 儿童足球鞋及 Air Max 95 Big Bubble 童款，附独立 LEGO 积木套装；系列以动物印花与童趣图案主打儿童足球文化。</li></ul>
         </div>
         <div class='item'>
-          <div class='ihead'><span class='src'>微博</span><h3>lululemon 上海新世界新丸中心店 9 月 29 日启幕，南京东路沿街大店</h3><span class='t'>09-29 16:11</span><a class='go' href='https://m.weibo.cn/detail/5348517754184414' target='_blank'>阅读原文<u></u></a></div>
-          <ul><li><strong>详情</strong>门店坐落南京东路、毗邻外滩，是 lululemon 首家落地国内核心步行街的沿街门店；上下两层，外立面由近两千片定制材料构成，采用品牌全新全球设计语言并融入海派文化。</li></ul>
+          <div class='ihead'><span class='src'>Hypebeast</span><h3>LM.RT × New Balance 2010「伊卡洛斯神话」联名 ¥26,400 发售</h3><span class='t'>09-27</span><a class='go' href='https://hypebeast.com/2026/9/new-balance-lm-rt-2010-release-info' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>Liam Maher 主理的 LM.RT 以伊卡洛斯神话为灵感重塑 New Balance 2010，日本市场含税定价 ¥26,400，已在 LM.RT 渠道独家发售。</li></ul>
         </div>
         <div class='item'>
-          <div class='ihead'><span class='src'>36氪</span><h3>ALO Yoga 加速中国：7 城 8 店计划，北京首店国贸围挡</h3><span class='t'>09-18</span><a class='go' href='https://36kr.com/p/3988767829277705' target='_blank'>阅读原文<u></u></a></div>
-          <ul><li><strong>详情</strong>ALO 2026–2027 年将在上海、北京、香港、澳门、深圳、杭州、成都七城开设八家线下精品店；北京首店选址国贸商城 B1，由 Givenchy、Jil Sander、Maison Margiela 三家闭店铺位打通合并。</li></ul>
+          <div class='ihead'><span class='src'>Kith</span><h3>Kith × Salomon XT-EVO 全新鞋型随 &amp;Kin 秋季系列发布</h3><span class='t'>09-24</span><a class='go' href='https://kith.com/blogs/discover/kith-for-salomon-xt-evo' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>Kith 与 Salomon 推出全新 XT-EVO 鞋型，赛车风鞋面搭配液态橡胶与透气网布，两双联名配色均在鞋垫与后跟标注双方联名标识。</li></ul>
         </div>
         <div class='item'>
-          <div class='ihead'><span class='src'>PUMA</span><h3>PUMA 任命前 Nike 足球业务 GM 执掌全球足球合作</h3><span class='t'>09-21</span><a class='go' href='https://about.puma.com/de/taxonomy/term/177' target='_blank'>阅读原文<u></u></a></div>
-          <ul><li><strong>详情</strong>新任高管此前在 Nike 任 Global Football Clubs, Federations, Leagues and Partnerships 总经理，长期负责足球领域长期合作；2026 年起 PUMA 与 McLaren Racing 达成多年车队装备合作。</li></ul>
+          <div class='ihead'><span class='src'>Hypebeast 中文</span><h3>Whitaker Group × New Balance 2010 鸵鸟皮革配色曝光</h3><span class='t'>09-26</span><a class='go' href='https://hypebeast.cn/footwear/page/2?after=1752513526' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>The Whitaker Group 以鸵鸟皮革重塑 New Balance 2010，纹理拼接搭配低调紫色点缀，为这双中性色跑鞋注入精致质感；10 月发售。</li></ul>
         </div>
 
         <h2 id='s4'>三、运动品牌与渠道、舆论动态</h2>
         <div class='item'>
-          <div class='ihead'><span class='src'>企查查</span><h3>lululemon 在华加密布局：广州白鹅潭、深圳湾万象城二期新店立项</h3><span class='t'>09-30</span><a class='go' href='https://www.qcc.com/creport/60cc12b05d13bcf5d7d2da02dfb4534f.html' target='_blank'>阅读原文<u></u></a></div>
-          <ul><li><strong>详情</strong>9 月 20 日新增广州白鹅潭建设项目，9 月 19 日新增深圳湾万象城二期店项目，9 月 16 日泰州第一分公司落地；截至 8 月 2 日中国大陆门店 174 家，两月净增 2 家。</li></ul>
+          <div class='ihead'><span class='src'>e公司/证券时报</span><h3>体育概念延续强势：中体产业 3 天 2 板，金陵体育、共创草坪跟涨</h3><span class='t'>09-30 17:26</span><a class='go' href='https://egs.stcn.com/quotation/stock-info/sh605299.html' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>9 月 30 日体育板块延续强势，中体产业 3 天 2 板，金陵体育、共创草坪、舒华体育、粤传媒、力盛体育跟涨；英派斯等公司回应「十五五」体育强国政策持续落地将释放行业需求。</li></ul>
         </div>
         <div class='item'>
-          <div class='ihead'><span class='src'>抖音</span><h3>比斯特奥莱国庆折扣：lululemon 三件 85 折、五件 75 折</h3><span class='t'>09-28</span><a class='go' href='https://www.iesdouyin.com/share/video/7690365863647524209' target='_blank'>阅读原文<u></u></a></div>
-          <ul><li><strong>详情</strong>上海比斯特国庆运动品牌折扣观察：始祖鸟货量充足但折扣力度一般；Patagonia C1 与 T 恤折扣明显但尺码有限；On、Vuori、lululemon 拼单折上折，lululemon speed up 系列 450 元起。</li></ul>
+          <div class='ihead'><span class='src'>新浪财经</span><h3>舒华体育 9-30 盘中临时停牌，复牌收 12.20 元跌 0.81%</h3><span class='t'>09-30 15:34</span><a class='go' href='https://finance.sina.com.cn/realstock/company/sh605299/nc.shtml' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>舒华体育（605299.SH）9 月 30 日盘中临停，复牌收 12.20 元跌 0.81%，成交 4.81 万手；此前一交易日曾因体育概念涨停。公司 9-29 公告 10-16 召开半年度业绩说明会。</li></ul>
         </div>
         <div class='item'>
-          <div class='ihead'><span class='src'>证券时报</span><h3>A 股体育概念 9 月 29 日活跃：金陵体育涨超 9%，中体产业、力盛体育跟涨</h3><span class='t'>09-29 15:40</span><a class='go' href='https://stcn.com/quotes/index/sz300651.html' target='_blank'>阅读原文<u></u></a></div>
-          <ul><li><strong>详情</strong>体育板块整体走高，金陵体育涨超 9%，中体产业、力盛体育、舒华体育跟涨；催化剂为 2026 世界杯临近、亚运收官带动板块情绪，9 月 30 日盘中金陵体育一度涨超 13%。</li></ul>
+          <div class='ihead'><span class='src'>新浪财经</span><h3>中体产业 9-30 盘中临停后收 6.93 元跌 0.72%</h3><span class='t'>09-30 15:23</span><a class='go' href='http://vip.stock.finance.sina.com.cn/corp/view/vCB_AllNewsStock.php?symbol=sh600158' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>中体产业（600158.SH）9 月 30 日盘中临停，复牌收 6.93 元跌 0.72%，成交 15.03 万手、振幅 1.86%；此前三个交易日两度涨停。</li></ul>
         </div>
         <div class='item'>
-          <div class='ihead'><span class='src'>新浪财经</span><h3>lululemon 上海新店启幕 vs ALO 七城扩张：高端瑜伽服赛道正面交锋</h3><span class='t'>09-29</span><a class='go' href='https://finance.sina.com.cn/roll/2026-09-17/doc-iniscksc3593581.shtml' target='_blank'>阅读原文<u></u></a></div>
-          <ul><li><strong>详情</strong>lululemon 9 月 29 日开出南京东路沿街大店，ALO 同期五城围挡；lululemon 2026 财年 Q2 全球净利同比下滑 11.2%，天猫 5–7 月 GMV 同比接近腰斩，中国区进入「守擂」阶段。</li></ul>
+          <div class='ihead'><span class='src'>证券时报</span><h3>金陵体育 9-30 收 15.98 元微跌 0.13%，换手 2.44%</h3><span class='t'>09-30 21:13</span><a class='go' href='https://www.stcn.com/quotes/index/sz300651.html' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>金陵体育（300651.SZ）9 月 30 日开盘 16.09、最高 16.25、最低 15.84，收 15.98 元跌 0.13%；公司为体育器材龙头，受益世界杯场馆建设与本土赛事需求。</li></ul>
+        </div>
+        <div class='item'>
+          <div class='ihead'><span class='src'>北京日报</span><h3>亚运组织混乱登上舆论焦点：市长道歉、电竞断网、攀岩计时故障</h3><span class='t'>10-01 07:28</span><a class='go' href='http://m.toutiao.com/group/7691474276267967003/' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>爱知·名古屋亚运组织工作连续出纰漏：市长公开致歉后当晚电竞断网、速度攀岩计时故障致邓丽娟 0.002 秒之差失金；运动员层面中国跳水百金、电竞首位女子冠军诞生仍成正面叙事。</li></ul>
         </div>
 
         <h2 id='s5'>四、资本、业绩与市场变化</h2>
         <div class='item'>
-          <div class='ihead'><span class='src'>华西证券</span><h3>李宁 2026 中报点评：Q3 终端仍承压，分红率 50%、年化股息率 5.6%</h3><span class='t'>09-30 07:57</span><a class='go' href='http://m.toutiao.com/group/7691110478265532991/' target='_blank'>阅读原文<u></u></a></div>
-          <ul><li><strong>详情</strong>剔除其他收入、联营合营收益、无形资产减值、设备减值后归母净利 16.7 亿元同比 +1.1%；中期息每股 0.3512 元、派息率 50%，年化股息率约 5.6%。7 月 14 日公司采纳新股份激励计划。</li></ul>
+          <div class='ihead'><span class='src'>格隆汇</span><h3>花旗：首选安踏目标价上调至 116 港元，李宁维持持有 16 港元、特步升至 6.3</h3><span class='t'>09-30 20:36</span><a class='go' href='https://m.gelonghui.com/live?type=HKStock&liveId=2019480' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>花旗将安踏 2025–2027 年销售额预测上调 2%、净利润上调 1%，目标价由 114 升至 <strong>116 港元</strong>、维持跑赢大市；李宁维持持有评级目标价 16 港元；特步目标价由 5.9 升至 <strong>6.3 港元</strong>。</li></ul>
         </div>
         <div class='item'>
-          <div class='ihead'><span class='src'>同花顺</span><h3>李宁 2026H1：收入 152.35 亿、归母净利 18.16 亿，经营现金流 9.54 亿</h3><span class='t'>09-29</span><a class='go' href='https://stock.finance.sina.com.cn/hkstock/quotes/02331.html' target='_blank'>阅读原文<u></u></a></div>
-          <ul><li><strong>详情</strong>2026 上半年收入 152.35 亿元、毛利 77.51 亿、归母净利 18.16 亿，EPS 0.704 元；经营现金流净额 9.54 亿，投资活动净流出 35.13 亿。</li></ul>
+          <div class='ihead'><span class='src'>同花顺</span><h3>361° 9-30 收 4.505 港元跌 0.55%，市值 97.65 亿</h3><span class='t'>09-30</span><a class='go' href='https://ir.361sport.com/html/index.php?lang=sc' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>361 度（1361.HK）9 月 30 日开 4.565、最低 4.465、收 4.505 港元跌 0.55%，成交 1165 万港元、市盈率 6.15 倍、总市值 97.65 亿港元；H1 收入 61.6 亿、中期息 22.2 港仙。</li></ul>
         </div>
         <div class='item'>
-          <div class='ihead'><span class='src'>新浪财经</span><h3>lululemon 9 月 29 日再跌 3.69%，市值 107 亿美元，年内累跌约 46%</h3><span class='t'>09-30 04:00</span><a class='go' href='https://stock.finance.sina.com.cn/usstock/quotes/lulu.html' target='_blank'>阅读原文<u></u></a></div>
-          <ul><li><strong>详情</strong>LULU 9 月 29 日收 96.87 美元跌 3.69%，TTM 营收 110.9 亿、净利 14.2 亿同比 -20.6%、EPS 12.22 同比 -17%；市值较峰值缩水 46.4%，9 月单月跌 16.75%。</li></ul>
+          <div class='ihead'><span class='src'>特步国际 IR</span><h3>特步 9-30 收 3.48 港元平收，成交 307 万股</h3><span class='t'>09-30 16:09</span><a class='go' href='https://www.xtep.com.hk/tc/global/home.php' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>特步国际（1368.HK）9 月 30 日报 3.48 港元平收，成交 306.9 万股；H1 收入 67.95 亿、专业运动分部 +11.4%、毛利率 46.4%。</li></ul>
         </div>
         <div class='item'>
-          <div class='ihead'><span class='src'>BriMindInvest</span><h3>Nike 9 月 29 日报 36.39 美元，本月累跌 8.11%，10 月 1 日派息</h3><span class='t'>09-29</span><a class='go' href='https://brimindinvest.com/compare/nke-vs-lulu' target='_blank'>阅读原文<u></u></a></div>
-          <ul><li><strong>详情</strong>NKE 9 月 29 日报 36.39 美元，本月 -8.11%；除息日 9 月 1 日、派息日 10 月 1 日，下次财报 10 月 1 日。NKE 与 LULU 9 月双双触及多年低位。</li></ul>
+          <div class='ihead'><span class='src'>证券之星</span><h3>李宁 9-30 跌 0.32%，主力资金净流入 7324 万港元；新增 3 件 12315 投诉</h3><span class='t'>09-30</span><a class='go' href='https://hk.stockstar.com/hshare/02331' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>李宁（2331.HK）9 月 30 日收跌 0.32%，主力资金净流入 7324.74 万港元；同日新增 3 件 12315 投诉公示，涉及无故拖延、无理拒绝履行三包义务等。</li></ul>
         </div>
         <div class='item'>
-          <div class='ihead'><span class='src'>上海证券报</span><h3>安踏体育 2026 中期息每股 1.51 港元同比 +10.22%，派息 36.37 亿元</h3><span class='t'>08-26</span><a class='go' href='http://www.cnstock.com/commonDetail/774847' target='_blank'>阅读原文<u></u></a></div>
-          <ul><li><strong>详情</strong>安踏上半年收入 435.1 亿元同比 +12.9%，归母净利 94.87 亿同比 +34.93%；中期息每股 1.51 港元，派息总额约 36.37 亿元；业绩公布当日股价一度涨超 10%，市值逾 2200 亿港元。</li></ul>
+          <div class='ihead'><span class='src'>NYSE</span><h3>Deckers（DECK）9-30 收 78.14 美元涨 0.59%，成交 419 万股</h3><span class='t'>09-30 19:00 ET</span><a class='go' href='https://www.nyse.com/quote/XNYS:DECK' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>Deckers Outdoor（DECK.NYSE）9 月 30 日报 78.14 美元涨 0.46 美元（+0.59%），日内低点 77.20、成交 419.46 万股；HOKA 母公司 Q1 FY27 收入 10.2 亿美元。</li></ul>
         </div>
         <div class='item'>
-          <div class='ihead'><span class='src'>HKEXnews</span><h3>361 度 2026 中期：收入 61.6 亿同比 +8%，中期息 22.2 港仙</h3><span class='t'>08-28</span><a class='go' href='https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0828/2026082800411.pdf' target='_blank'>阅读原文<u></u></a></div>
-          <ul><li><strong>详情</strong>361° 上半年收入 61.6 亿元同比 +8.0%，归母净利 9.26 亿同比 +8.0%；中期股息每股 22.2 港仙。9 月 29 日收 4.53 港元。</li></ul>
-        </div>
-        <div class='item'>
-          <div class='ihead'><span class='src'>HKEXnews</span><h3>特步国际 2026 中期：收入 67.95 亿，专业运动分部 +11.4%</h3><span class='t'>08-25</span><a class='go' href='https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0825/2026082500236_c.pdf' target='_blank'>阅读原文<u></u></a></div>
-          <ul><li><strong>详情</strong>特步主品牌收入 59.2 亿同比 -2.2%，专业运动分部（索康尼/迈乐等）收入 8.75 亿同比 +11.4%；集团毛利率提升 1.4pct 至 46.4%。9 月 29 日收 3.48 港元。</li></ul>
-        </div>
-        <div class='item'>
-          <div class='ihead'><span class='src'>SEC</span><h3>Deckers（HOKA 母公司）FY27 Q1 收入 10.2 亿美元</h3><span class='t'>07-23</span><a class='go' href='https://www.sec.gov/Archives/edgar/data/910521/000091052126000015/deckex991pressrelease-6302.htm' target='_blank'>阅读原文<u></u></a></div>
-          <ul><li><strong>详情</strong>Deckers Brands FY27 Q1 收入增至 10.2 亿美元，HOKA 仍是核心增长引擎；市场关注 DTC 渠道回暖与 UGG 季节性切换节奏。</li></ul>
+          <div class='ihead'><span class='src'>MarketBeat</span><h3>lululemon Q2 FY26 EPS $2.92 大超预期 $1.79，但营收 $24.2 亿仍miss</h3><span class='t'>09-30 21:55</span><a class='go' href='https://www.marketbeat.com/stocks/NASDAQ/LULU/earnings/' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>LULU 9 月 3 日发布的 Q2 FY26 EPS $2.92 大超一致预期 $1.79 达 $1.13，但营收 $24.2 亿同比 -4.3% 略低于预期 $24.6 亿；全球可比销售 -9%（固定汇率 -10%）。</li></ul>
         </div>
 
         <h2 id='s6'>五、体育行业公告与市场影响</h2>
         <div class='item'>
-          <div class='ihead'><span class='src'>舒华体育 605299.SH · 业绩说明会</span><h3>9 月 29 日公告：10 月 16 日召开 2026 半年度业绩说明会</h3><span class='t'>09-29</span><a class='go' href='http://www.sse.com.cn/disclosure/listedinfo/announcement/?productId=605299' target='_blank'>阅读原文<u></u></a></div>
+          <div class='ihead'><span class='src'>舒华体育 605299.SH · 业绩说明会</span><h3>9-29 公告：10-16 召开 2026 半年度业绩说明会</h3><span class='t'>09-29</span><a class='go' href='http://www.sse.com.cn/disclosure/listedinfo/announcement/?productId=605299' target='_blank'>阅读原文<u></u></a></div>
           <ul>
             <li><strong>公告要点</strong>舒华体育（605299.SH）9 月 29 日在上交所披露《关于召开 2026 年半年度业绩说明会的公告》，定于 10 月 16 日线上沟通家用健身器材业务、渠道库存与投资者关切。</li>
-            <li><strong>市场影响</strong>舒华体育是 A 股家用健身器材纯正标的，直接受政府「以旧换新」补贴与居家运动消费复苏驱动；9 月 29 日体育板块活跃、舒华体育盘中跟涨，此次说明会是 Q3 业绩披露前最重要的预期管理窗口。</li>
+            <li><strong>市场影响</strong>舒华体育是 A 股家用健身器材纯正标的，直接受政府「以旧换新」补贴与居家运动消费复苏驱动；9-30 盘中临停后收 12.20 元跌 0.81%，说明会是 Q3 业绩披露前最重要的预期管理窗口。</li>
             <li><strong>业绩看点</strong>舒华体育收入=国内家用终端出货量 × ASP + 出口 ODM 订单；重点跟踪国内渠道库存周转、毛利率对钢价与汇率敏感度、补贴对家用器材客单价拉动。</li>
             <li><strong>后续关注</strong>10 月 16 日说明会内需复苏节奏、出口订单同比、以旧换新补贴弹性，以及 Q3 收入指引方向。</li>
           </ul>
         </div>
         <div class='item'>
-          <div class='ihead'><span class='src'>李宁 2331.HK · 中期派息与股权激励</span><h3>2026 中期息每股 0.3512 元派息率 50%，7 月 14 日采纳新股份激励计划</h3><span class='t'>09-30 07:57</span><a class='go' href='http://m.toutiao.com/group/7691110478265532991/' target='_blank'>阅读原文<u></u></a></div>
+          <div class='ihead'><span class='src'>中体产业 600158.SH · 板块异动与临停</span><h3>9-30 盘中临停后收 6.93 元跌 0.72%，此前 3 天 2 板</h3><span class='t'>09-30 15:23</span><a class='go' href='http://vip.stock.finance.sina.com.cn/corp/view/vCB_AllNewsStock.php?symbol=sh600158' target='_blank'>阅读原文<u></u></a></div>
           <ul>
-            <li><strong>公告要点</strong>李宁（2331.HK）2026H1 每股派中期息 0.3512 元人民币，派息率 50.0%，年化股息率约 5.6%；7 月 14 日采纳新股份激励计划，可管理股份数目上限按公告执行。</li>
-            <li><strong>市场影响</strong>华西证券点评 Q3 终端仍承压，但 50% 高派息率彰显现金流韧性；剔除减值后归母净利 16.7 亿同比 +1.1%，市场对李宁估值从成长切换到红利逻辑。</li>
-            <li><strong>业绩看点</strong>李宁收入=主品牌流水 × 直营/批发占比 + FILA/李宁 YOUNG；重点跟踪 Q3 同店流水、渠道库存周转、毛利率对原材料成本敏感度，以及新股份激励行权考核。</li>
-            <li><strong>后续关注</strong>Q3 营运数据（10 月中下旬披露）、双十一订货会、股权激励首次授予价格与考核条件。</li>
-          </ul>
-        </div>
-        <div class='item'>
-          <div class='ihead'><span class='src'>力盛体育 002858.SZ · 政策回应</span><h3>9 月 29 日回应体育产业规划：拓展赛事品类、布局数字体育与全民健身</h3><span class='t'>09-29</span><a class='go' href='https://www.egsea.com/quotation/stock-info/sh605299.html' target='_blank'>阅读原文<u></u></a></div>
-          <ul>
-            <li><strong>公告要点</strong>力盛体育（002858.SZ）董事、副总经理、董秘马笑在接受证券时报采访时表示，公司将积极把握体育产业规划机会，拓展更多赛事品类，重点布局数字体育、全民健身与大众体育赛事。</li>
-            <li><strong>市场影响</strong>力盛体育作为 A 股稀缺赛车赛事运营标的（F1 中国站运营商），9 月 29 日随体育板块跟涨；政策催化下小盘体育主题估值弹性较大，但需警惕概念炒作后回撤。</li>
-            <li><strong>业绩看点</strong>力盛体育收入=F1 中国站赛事运营 + 赛车学校/卡丁车场门票 + 广告赞助 + 数字体育；重点跟踪 F1 中国站票房与赞助招商、数字体育新业务收入占比。</li>
-            <li><strong>后续关注</strong>2027 年 F1 中国站续约公告、新赛事品类落地签约、Q3 数字体育业务收入披露。</li>
-          </ul>
-        </div>
-        <div class='item'>
-          <div class='ihead'><span class='src'>中体产业 600158.SH · 板块异动</span><h3>9 月 29 日盘中临时停牌后复牌，体育板块情绪带动三日两板</h3><span class='t'>09-29 15:34</span><a class='go' href='http://vip.stock.finance.sina.com.cn/corp/go.php/vCB_AllNewsStock/symbol/sh600158.phtml' target='_blank'>阅读原文<u></u></a></div>
-          <ul>
-            <li><strong>公告要点</strong>中体产业（600158.SH）9 月 29 日收 7.37 元涨 1.10%，盘中曾临时停牌，成交 1.00 亿元、换手率 1.50%，总市值 66.97 亿；此前三个交易日两度涨停。</li>
-            <li><strong>市场影响</strong>作为央企背景体育场馆运营平台，中体产业本轮上涨由亚运收官 + 世界杯临近 + 体育产业政策预期共同驱动；短期情绪占主导，需关注后续是否有正式公告催化。</li>
+            <li><strong>公告要点</strong>中体产业（600158.SH）9 月 30 日收 6.93 元跌 0.72%，盘中临时停牌，成交 15.03 万手、振幅 1.86%、今开 6.99；此前三个交易日两度涨停。</li>
+            <li><strong>市场影响</strong>作为央企背景体育场馆运营平台，中体产业本轮上涨由亚运收官 + 世界杯临近 + 体育产业政策预期共同驱动；短期情绪占主导，临停显示交易所已关注异常波动，需警惕概念炒作后回撤。</li>
             <li><strong>业绩看点</strong>中体产业收入=场馆运营服务 + 赛事 IP 运营 + 体育工程；重点跟踪被冻结股权/账户解冻后经营性现金流改善、场馆运营板块毛利率随项目回款修复。</li>
             <li><strong>后续关注</strong>是否发布股票交易异常波动公告、中报业绩说明会、场馆运营新签合同。</li>
           </ul>
         </div>
         <div class='item'>
-          <div class='ihead'><span class='src'>Puma SE PUM.DE · 高管任命</span><h3>任命前 Nike 足球业务 GM 执掌全球足球合作，2026 起与 McLaren 多年合作</h3><span class='t'>09-21</span><a class='go' href='https://about.puma.com/de/taxonomy/term/177' target='_blank'>阅读原文<u></u></a></div>
+          <div class='ihead'><span class='src'>金陵体育 300651.SZ · 行情与龙虎榜</span><h3>9-30 收 15.98 元微跌 0.13%，体育器材龙头随板块分化</h3><span class='t'>09-30 21:13</span><a class='go' href='https://www.stcn.com/quotes/index/sz300651.html' target='_blank'>阅读原文<u></u></a></div>
           <ul>
-            <li><strong>公告要点</strong>Puma SE（PUM.DE）9 月 21 日公告新任全球足球合作负责人，此前在 Nike 任 Global Football Clubs, Federations, Leagues and Partnerships 总经理；2026 年起 Puma 与 McLaren Racing 达成多年车队装备合作。</li>
-            <li><strong>市场影响</strong>Puma 从 Nike 挖角足球业务高管，意在补强世界杯周期足球赞助版图；安踏 123 亿元收购 Puma 29% 股份交易推进中，足球营销提效是后续中德协同抓手。</li>
-            <li><strong>业绩看点</strong>Puma 收入=鞋类 + 服装 + 配饰分地区；重点跟踪足球品类收入占比、北美 DTC 渠道复苏、毛利率随库存清理后的恢复节奏。</li>
-            <li><strong>后续关注</strong>新官上任后首个世界杯赞助签约、安踏收购 Puma 股份的中欧监管审批节奏、Q3 财报。</li>
+            <li><strong>公告要点</strong>金陵体育（300651.SZ）9 月 30 日开 16.09、最高 16.25、最低 15.84、收 15.98 元跌 0.13%，换手 2.44%；主力资金当日净买入（证券时报数据）。</li>
+            <li><strong>市场影响</strong>金陵体育为体育器材龙头，受益世界杯场馆建设及本土赛事需求增长；板块情绪由前期涨停潮转为分化，9-30 资金获利了结但未破位。</li>
+            <li><strong>业绩看点</strong>金陵体育收入=体育器材销售 + 场馆设施工程 + 赛事服务；重点跟踪世界杯/亚运场馆订单交付节奏、毛利率对钢材成本敏感度。</li>
+            <li><strong>后续关注</strong>三季报业绩预告、新签订单公告、龙虎榜席位变化。</li>
+          </ul>
+        </div>
+        <div class='item'>
+          <div class='ihead'><span class='src'>李宁 2331.HK · 消费者投诉公示</span><h3>9-30 新增 3 件 12315 投诉公示，涉及三包义务履行</h3><span class='t'>09-30</span><a class='go' href='https://hk.stockstar.com/hshare/02331' target='_blank'>阅读原文<u></u></a></div>
+          <ul>
+            <li><strong>公告要点</strong>李宁（2331.HK）9 月 30 日新增 3 件 12315 投诉公示，涉及无故拖延、无理拒绝履行三包义务等问题；同日股价跌 0.32%，主力资金净流入 7324 万港元。</li>
+            <li><strong>市场影响</strong>中报刚公布 50% 高派息，品牌端却出现三包投诉集中公示，短期对品牌口碑形成边际压力；但单笔投诉金额小、量级有限，尚未到影响基本面的程度。</li>
+            <li><strong>业绩看点</strong>李宁收入=主品牌流水 × 直营/批发占比 + FILA/李宁 YOUNG；重点跟踪 Q3 同店流水、渠道库存周转、消费者投诉处理时效对品牌 NPS 的影响。</li>
+            <li><strong>后续关注</strong>Q3 营运数据（10 月中下旬披露）、双十一订货会、投诉处理进展。</li>
+          </ul>
+        </div>
+        <div class='item'>
+          <div class='ihead'><span class='src'>Deckers Outdoor DECK.NYSE · 季度收盘</span><h3>9-30 收 78.14 美元涨 0.59%，HOKA 母公司季度平稳</h3><span class='t'>09-30 19:00 ET</span><a class='go' href='https://www.nyse.com/quote/XNYS:DECK' target='_blank'>阅读原文<u></u></a></div>
+          <ul>
+            <li><strong>公告要点</strong>Deckers Outdoor（DECK.NYSE）9 月 30 日报 78.14 美元涨 0.46 美元（+0.59%），日内区间 77.20–78.50，成交 419.46 万股；前一日 9-29 收 77.51 美元跌 1.09%。</li>
+            <li><strong>市场影响</strong>Q1 FY27 收入 10.2 亿美元，HOKA 仍是核心增长引擎；股价从年初高位回落，市场关注 DTC 渠道回暖与 UGG 季节性切换节奏。</li>
+            <li><strong>业绩看点</strong>Deckers 收入=HOKA（跑鞋/徒步）+ UGG（季节性鞋服）+ Other；重点跟踪 HOKA DTC 同店、UGG 旺季库存、北美渠道折扣力度。</li>
+            <li><strong>后续关注</strong>Q2 FY27 财报（约 10 月底）、HOKA Speedgoat 7 中国上市后首月销售数据。</li>
           </ul>
         </div>
       </div>
@@ -387,21 +362,9 @@ var s=null;try{s=localStorage.getItem('sd-theme')}catch(e){}
 function ap(v){document.documentElement.setAttribute('data-theme',v);var ic=document.getElementById('theme-ico');if(ic)ic.textContent=v==='dark'?'☀':'☾'}
 if(s){ap(s)}else{
   ap(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
-  (async function(){
-    try{
-      var loc=await fetch('https://ipapi.co/json/').then(function(r){return r.json()});
-      var lat=loc.latitude,lng=loc.longitude,tz=loc.timezone||'Asia/Shanghai';
-      if(!lat||!lng) return;
-      var sun=await fetch('https://api.sunrisesunset.io/json?lat='+lat+'&lng='+lng+'&date=today&timezone='+encodeURIComponent(tz)).then(function(r){return r.json()});
-      var sr=new Date(sun.results.sunrise), ss=new Date(sun.results.sunset), now=new Date();
-      var auto=(now>=sr&&now<=ss)?'light':'dark';
-      if(!localStorage.getItem('sd-theme')) ap(auto);
-    }catch(e){}
-  })();
 }
 document.getElementById('theme').onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';ap(n);try{localStorage.setItem('sd-theme',n)}catch(e){}};
 document.querySelectorAll('.chip').forEach(function(c){c.onclick=function(){var el=document.getElementById(c.dataset.sec);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}});
-
 var fbtns=document.querySelectorAll('#sb-filt .f');
 fbtns.forEach(function(b){b.onclick=function(){
   fbtns.forEach(function(x){x.classList.remove('active')});b.classList.add('active');
@@ -412,7 +375,6 @@ fbtns.forEach(function(b){b.onclick=function(){
   });
 }});
 </script>
-
 <img id='prev' alt='' style='position:fixed;width:260px;pointer-events:none;z-index:99;display:none;border-radius:12px;box-shadow:0 12px 32px rgba(0,0,0,.25);background:#fff;border:1px solid rgba(0,0,0,.08);object-fit:cover'/>
 <script>
 (function(){
@@ -457,8 +419,7 @@ fbtns.forEach(function(b){b.onclick=function(){
     var W=c.width, H=c.height;
     drops.forEach(function(d){
       if(d.kind==='rain'){
-        ctx.strokeStyle=d.bright;
-        ctx.lineWidth=d.lw;
+        ctx.strokeStyle=d.bright; ctx.lineWidth=d.lw;
         ctx.beginPath();ctx.moveTo(d.x,d.y);ctx.lineTo(d.x-d.slant,d.y+d.len);ctx.stroke();
         d.y+=d.speed;d.x-=d.slant*0.4;
         if(d.y>H){d.y=-30-Math.random()*40;d.x=Math.random()*(W+200)-100;}
@@ -474,8 +435,7 @@ fbtns.forEach(function(b){b.onclick=function(){
         if(d.y>H+10||d.x>W+20){d.y=Math.random()*H;d.x=-20-Math.random()*40;}
       } else if(d.kind==='cloud'){
         var g=ctx.createRadialGradient(d.x,d.y,0,d.x,d.y,d.r);
-        g.addColorStop(0,d.color);
-        g.addColorStop(1,'rgba(200,210,225,0)');
+        g.addColorStop(0,d.color); g.addColorStop(1,'rgba(200,210,225,0)');
         ctx.fillStyle=g;
         ctx.beginPath();ctx.arc(d.x,d.y,d.r,0,Math.PI*2);ctx.fill();
         d.x+=d.v;
@@ -499,17 +459,10 @@ fbtns.forEach(function(b){b.onclick=function(){
         ctx.beginPath();ctx.arc(sunX,sunY,d.r,0,Math.PI*2);ctx.fill();
       }
     });
-    if(flash>0){
-      ctx.fillStyle='rgba(255,255,255,'+flash+')';
-      ctx.fillRect(0,0,W,H);
-      flash-=0.04;
-    }
+    if(flash>0){ctx.fillStyle='rgba(255,255,255,'+flash+')';ctx.fillRect(0,0,W,H);flash-=0.04;}
     if(boltSeq.length){
-      ctx.strokeStyle='rgba(255,255,255,'+Math.max(flash,0.3)+')';
-      ctx.lineWidth=2;
-      ctx.beginPath();
-      boltSeq.forEach(function(p,i){ if(i===0)ctx.moveTo(p.x,p.y); else ctx.lineTo(p.x,p.y); });
-      ctx.stroke();
+      ctx.strokeStyle='rgba(255,255,255,'+Math.max(flash,0.3)+')'; ctx.lineWidth=2;
+      ctx.beginPath(); boltSeq.forEach(function(p,i){ if(i===0)ctx.moveTo(p.x,p.y); else ctx.lineTo(p.x,p.y); }); ctx.stroke();
     }
     if(drops.length && drops[0].kind==='rain' && t>nextBolt){
       flash=0.85; nextBolt=t+1800+Math.random()*3500;
@@ -530,105 +483,56 @@ fbtns.forEach(function(b){b.onclick=function(){
     wxClear();
     if(storm.indexOf(code)>=0){
       wxOn('wx-storm');
-      for(var i=0;i<360;i++){
-        var near=Math.random();
+      for(var i=0;i<360;i++){var near=Math.random();
         drops.push({kind:'rain',x:Math.random()*(c.width+200)-100,y:Math.random()*c.height,
           len:near>0.6?28+Math.random()*22:14+Math.random()*12,
           speed:near>0.6?16+Math.random()*12:8+Math.random()*5,
           slant:near>0.6?6+Math.random()*4:3+Math.random()*2,
           bright:near>0.6?'rgba(210,230,255,.9)':'rgba(160,190,230,.45)',
-          lw:near>0.6?1.6:0.9});
-      }
+          lw:near>0.6?1.6:0.9});}
       for(var j=0;j<18;j++) drops.push({kind:'cloud',x:Math.random()*c.width,y:Math.random()*c.height*0.5,r:120+Math.random()*180,color:'rgba(40,40,60,.35)',v:0.4+Math.random()*0.5});
     } else if(rain.indexOf(code)>=0){
       wxOn('wx-rain');
-      var heavy=(code>=63||code===82);
-      var n=heavy?320:200;
-      for(var i=0;i<n;i++){
-        var near=Math.random();
+      var heavy=(code>=63||code===82); var n=heavy?320:200;
+      for(var i=0;i<n;i++){var near=Math.random();
         drops.push({kind:'rain',x:Math.random()*(c.width+200)-100,y:Math.random()*c.height,
           len:near>0.6?24+Math.random()*20:12+Math.random()*10,
           speed:near>0.6?14+Math.random()*10:7+Math.random()*4,
           slant:near>0.6?5+Math.random()*3:2.5+Math.random()*2,
           bright:near>0.6?'rgba(200,225,255,.85)':'rgba(150,180,220,.4)',
-          lw:near>0.6?1.5:0.8});
-      }
+          lw:near>0.6?1.5:0.8});}
       for(var j=0;j<12;j++) drops.push({kind:'cloud',x:Math.random()*c.width,y:Math.random()*c.height*0.5,r:100+Math.random()*150,color:'rgba(80,100,130,.3)',v:0.3+Math.random()*0.4});
     } else if(snow.indexOf(code)>=0){
       wxOn('wx-snow');
-      for(var i=0;i<260;i++){
-        var layer=Math.random();
+      for(var i=0;i<260;i++){var layer=Math.random();
         drops.push({kind:'snow',x:Math.random()*c.width,y:Math.random()*c.height,
           r:layer>0.7?3+Math.random()*3:layer>0.35?1.8+Math.random()*1.5:0.8+Math.random()*1,
           speed:layer>0.7?1.8+Math.random()*1.5:layer>0.35?1+Math.random()*0.8:0.4+Math.random()*0.5,
           a:layer>0.7?0.95:layer>0.35?0.7:0.4,
-          swing:layer>0.7?1.2:0.6, amp:30+Math.random()*40, freq:800+Math.random()*800});
-      }
+          swing:layer>0.7?1.2:0.6, amp:30+Math.random()*40, freq:800+Math.random()*800});}
     } else if(code===0||code===1){
-      wxOn('wx-sun');
-      drops.push({kind:'suncore',r:180});
-      for(var i=0;i<80;i++){
-        drops.push({kind:'sun',x:Math.random()*c.width,y:Math.random()*c.height,
-          r:20+Math.random()*70,a:0.06+Math.random()*0.12,v:0.2+Math.random()*0.4});
-      }
+      wxOn('wx-sun'); drops.push({kind:'suncore',r:180});
+      for(var i=0;i<80;i++){drops.push({kind:'sun',x:Math.random()*c.width,y:Math.random()*c.height,r:20+Math.random()*70,a:0.06+Math.random()*0.12,v:0.2+Math.random()*0.4});}
     } else if(code===2||code===3){
       wxOn('wx-cloud');
-      for(var i=0;i<26;i++){
-        var dark=Math.random()>0.5;
-        drops.push({kind:'cloud',x:Math.random()*c.width,y:Math.random()*c.height*0.7,
-          r:90+Math.random()*180,
-          color:dark?'rgba(120,130,150,.28)':'rgba(210,220,235,.18)',
-          v:0.5+Math.random()*0.8});
-      }
+      for(var i=0;i<26;i++){var dark=Math.random()>0.5;
+        drops.push({kind:'cloud',x:Math.random()*c.width,y:Math.random()*c.height*0.7,r:90+Math.random()*180,
+          color:dark?'rgba(120,130,150,.28)':'rgba(210,220,235,.18)',v:0.5+Math.random()*0.8});}
     } else if(code===45||code===48){
       wxOn('wx-fog');
-      for(var i=0;i<40;i++){
-        drops.push({kind:'cloud',x:Math.random()*c.width,y:Math.random()*c.height,
-          r:180+Math.random()*260,
-          color:'rgba(190,198,206,'+(0.10+Math.random()*0.10)+')',
-          v:0.15+Math.random()*0.25});
-      }
-      for(var k=0;k<10;k++){
-        drops.push({kind:'cloud',x:Math.random()*c.width,y:c.height*(0.3+Math.random()*0.7),
-          r:120+Math.random()*140,
-          color:'rgba(210,218,226,'+(0.08+Math.random()*0.08)+')',
-          v:0.1+Math.random()*0.15});
-      }
+      for(var i=0;i<40;i++){drops.push({kind:'cloud',x:Math.random()*c.width,y:Math.random()*c.height,r:180+Math.random()*260,color:'rgba(190,198,206,'+(0.10+Math.random()*0.10)+')',v:0.15+Math.random()*0.25});}
+      for(var k=0;k<10;k++){drops.push({kind:'cloud',x:Math.random()*c.width,y:c.height*(0.3+Math.random()*0.7),r:120+Math.random()*140,color:'rgba(210,218,226,'+(0.08+Math.random()*0.08)+')',v:0.1+Math.random()*0.15});}
     } else if(code===46){
       wxOn('wx-haze');
-      for(var i=0;i<50;i++){
-        drops.push({kind:'cloud',x:Math.random()*c.width,y:Math.random()*c.height,
-          r:150+Math.random()*220,
-          color:'rgba(150,140,120,'+(0.12+Math.random()*0.12)+')',
-          v:0.08+Math.random()*0.18});
-      }
+      for(var i=0;i<50;i++){drops.push({kind:'cloud',x:Math.random()*c.width,y:Math.random()*c.height,r:150+Math.random()*220,color:'rgba(150,140,120,'+(0.12+Math.random()*0.12)+')',v:0.08+Math.random()*0.18});}
     } else if(code===47){
       wxOn('wx-dust');
-      for(var i=0;i<30;i++){
-        drops.push({kind:'cloud',x:Math.random()*c.width,y:Math.random()*c.height,
-          r:140+Math.random()*200,
-          color:'rgba(190,160,100,'+(0.10+Math.random()*0.12)+')',
-          v:0.25+Math.random()*0.35});
-      }
-      for(var j=0;j<90;j++){
-        drops.push({kind:'dust',x:Math.random()*c.width,y:Math.random()*c.height,
-          r:0.8+Math.random()*1.8,
-          speed:0.3+Math.random()*0.6,
-          wind:1.2+Math.random()*1.8,
-          color:'rgba(210,180,120,'+(0.25+Math.random()*0.35)+')'});
-      }
+      for(var i=0;i<30;i++){drops.push({kind:'cloud',x:Math.random()*c.width,y:Math.random()*c.height,r:140+Math.random()*200,color:'rgba(190,160,100,'+(0.10+Math.random()*0.12)+')',v:0.25+Math.random()*0.35});}
+      for(var j=0;j<90;j++){drops.push({kind:'dust',x:Math.random()*c.width,y:Math.random()*c.height,r:0.8+Math.random()*1.8,speed:0.3+Math.random()*0.6,wind:1.2+Math.random()*1.8,color:'rgba(210,180,120,'+(0.25+Math.random()*0.35)+')'});}
     }
     loop();
   }
-  function renderCity(city,code,temp,wind){
-    wb.innerHTML='';
-    var m={0:['☀️','晴'],1:['🌤️','大致晴'],2:['⛅','多云'],3:['☁️','阴'],45:['🌫️','雾'],48:['🌫️','雾凇'],51:['🌦️','毛毛雨'],53:['🌦️','毛毛雨'],55:['🌧️','浓毛毛雨'],56:['🌧️','冻毛毛雨'],57:['🌧️','冻毛毛雨'],61:['🌦️','小雨'],63:['🌧️','中雨'],65:['🌧️','大雨'],66:['🌧️','冻雨'],67:['🌧️','冻雨'],71:['🌨️','小雪'],73:['🌨️','中雪'],75:['❄️','大雪'],77:['❄️','雪粒'],80:['🌦️','小阵雨'],81:['🌧️','阵雨'],82:['⛈️','强阵雨'],85:['🌨️','阵雪'],86:['❄️','强阵雪'],95:['⛈️','雷暴'],96:['⛈️','雷暴冰雹'],99:['⛈️','强雷暴']};
-    var ic=m[code]?m[code][0]:'🌡️', lb=m[code]?m[code][1]:'';
-    function sp(cls,txt){var e=document.createElement('span');e.className=cls;e.textContent=txt;wb.appendChild(e)}
-    sp('w-ico',ic); sp('w-city',city); sp('w-temp',temp+'°C'); sp('w-label',lb+' · 风'+wind+'km/h');
-  }
   async function getLoc(){
-    // 1) 优先浏览器 GPS（HTTPS 下最准，用户授权一次后浏览器记住）
     if(navigator.geolocation && (location.protocol==='https:'||location.hostname==='localhost')){
       try{
         var pos=await new Promise(function(res,rej){
@@ -637,12 +541,10 @@ fbtns.forEach(function(b){b.onclick=function(){
         return {lat:pos.coords.latitude,lng:pos.coords.longitude,city:''};
       }catch(e){}
     }
-    // 2) IP 定位兜底（ipwho.is）
     try{
       var r=await fetch('https://ipwho.is/?fields=success,latitude,longitude').then(function(x){return x.json()});
       if(r && r.success!==false && r.latitude) return {lat:r.latitude,lng:r.longitude,city:''};
     }catch(e){}
-    // 3) 最终 fallback：杭州
     return {lat:30.28,lng:120.15,city:'杭州'};
   }
   var QW_HOST='pg3qqubnkm.re.qweatherapi.com';
@@ -691,11 +593,9 @@ fbtns.forEach(function(b){b.onclick=function(){
       var code=w2.current.weather_code;
       var temp=Math.round(w2.current.temperature_2m);
       var wind=Math.round(w2.current.wind_speed_10m);
-      renderCity(loc2.city,code,temp,wind);
+      renderCn(loc2.city||'杭州',code===0?'晴':code===3?'阴':code===63?'中雨':'多云',temp,wind,'cloud');
       setFX(code);
-    }catch(e2){
-      wb.textContent='天气暂不可用';
-    }
+    }catch(e2){ wb.textContent='天气暂不可用'; }
   })();
 })();
 </script>
