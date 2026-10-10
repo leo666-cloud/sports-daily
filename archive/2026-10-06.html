@@ -3,68 +3,270 @@
 <head>
 <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width,initial-scale=1,viewport-fit=cover'>
-<title>体育与运动品牌动态 · 2026-10-06</title>
+<title>体育与运动品牌每日动态 · 2026-10-06（历史快照）</title>
 <link rel='stylesheet' href='../style.css'>
-<style>
-body{background:#F6F5F1;color:#16181D;font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;margin:0;padding:0;line-height:1.7}
-.arch-mast{background:linear-gradient(135deg,#1a2a22,#0f1114);color:#F2F3F5;padding:40px 32px 28px}
-.arch-mast h1{margin:0 0 6px;font-size:28px}
-.arch-mast .sub{opacity:.7;font-size:13px}
-.arch-body{max-width:860px;margin:0 auto;padding:28px 24px 60px}
-.arch-ticker{background:#0f1114;color:#F2F3F5;padding:10px 0;overflow:hidden;white-space:nowrap;font-size:13px}
-.arch-ticker span{margin:0 18px;opacity:.85}
-.arch-back{display:inline-block;margin-bottom:20px;padding:8px 16px;background:#1F6F4A;color:#fff;border-radius:999px;text-decoration:none;font-size:13px}
-.arch-list{list-style:none;padding:0;margin:0}
-.arch-list li{padding:12px 0;border-bottom:1px solid #e8e6e0;font-size:14px}
-.arch-list li:before{content:'·';color:#1F6F4A;font-weight:bold;margin-right:8px}
-.arch-note{margin-top:30px;padding:16px;background:#fff8e6;border-left:3px solid #E0A32E;font-size:13px;border-radius:4px}
-</style>
 </head>
 <body>
-<header class='arch-mast'>
-  <h1>体育与运动品牌动态</h1>
-  <p class='sub'>2026-10-06 周二 · 历史期次归档 · 完整详情已随每日更新覆盖</p>
-</header>
-<div class='arch-ticker'>
-          <span>欧国联A1 法国4-1逆转比利时 替补连入4球 奥利塞梅开二度</span>
-          <span>欧国联A1 意大利3-1土耳其 斯卡马卡 卡拉菲奥里 皮奥破门</span>
-          <span>欧国联B 罗马尼亚0-1瑞典 约克雷斯制胜</span>
-          <span>游泳世界杯巴库站 余依婷200米混合泳夺金 破亚洲纪录</span>
-          <span>德杯 瑞士轮第2日 VIT 2-0 GAM NAVI 2-0 FLY JDG 2-0 SR</span>
+<div class='progress'><i id='prog'></i></div>
+<section class='masthead'>
+  <canvas id='wx'></canvas>
+  <div id='weather' aria-live='polite'></div>
+  <div class='mast-inner'>
+    <div>
+      <p class='eyebrow'><span class='livedot'></span>Sports &amp; Athletics · Daily Brief <span class='dim'>/ 每日 08:30 自动更新</span></p>
+      <h1>体育与运动品牌动态</h1>
+      <p class='lede'>赛事赛果 · 品牌营销与新品 · 运动品牌市场与渠道 · 资本业绩 · 行业舆论</p>
+    </div>
+    <div class='stamp'>
+      <p class='k'>最新一期</p>
+      <b class='v mono'>2026-10-06 周二 08:30</b>
+    </div>
+  </div>
+  <div class='ticker'>
+    <span class='ticker-label'>赛果</span>
+    <div class='ticker-track'>
+      <div class='ticker-set'>
+        <span>欧国联A1 法国4-1逆转比利时 替补连入4球 奥利塞梅开二度</span>
+        <span>欧国联A1 意大利3-1土耳其 斯卡马卡 卡拉菲奥里 皮奥破门</span>
+        <span>欧国联B 罗马尼亚0-1瑞典 约克雷斯制胜</span>
+        <span>游泳世界杯巴库站 余依婷200米混合泳夺金 破亚洲纪录</span>
+        <span>德杯 瑞士轮第2日 VIT 2-0 GAM NAVI 2-0 FLY JDG 2-0 SR</span>
+        <span>KPL年总 北京JDG 3-0 杭州LGD.NBW 重庆狼队3-1上海EDG.M</span>
+        <span>亚运综述 中国游泳30金 张展硕单届7金平亚运纪录</span>
+        <span>LULU 10-05 收$93.14 -1.4% 再创52周新低$91.28</span>
+        <span>PUMA × Street Fighter Suede 三款 10-09发售</span>
+        <span>On Cloud X Tempo Pro 国内上架 ¥1690</span>
+      </div>
+      <div class='ticker-set' aria-hidden='true'>
+        <span>欧国联A1 法国4-1逆转比利时 替补连入4球 奥利塞梅开二度</span>
+        <span>欧国联A1 意大利3-1土耳其 斯卡马卡 卡拉菲奥里 皮奥破门</span>
+        <span>欧国联B 罗马尼亚0-1瑞典 约克雷斯制胜</span>
+        <span>游泳世界杯巴库站 余依婷200米混合泳夺金 破亚洲纪录</span>
+        <span>德杯 瑞士轮第2日 VIT 2-0 GAM NAVI 2-0 FLY JDG 2-0 SR</span>
+        <span>KPL年总 北京JDG 3-0 杭州LGD.NBW 重庆狼队3-1上海EDG.M</span>
+        <span>亚运综述 中国游泳30金 张展硕单届7金平亚运纪录</span>
+        <span>LULU 10-05 收$93.14 -1.4% 再创52周新低$91.28</span>
+        <span>PUMA × Street Fighter Suede 三款 10-09发售</span>
+        <span>On Cloud X Tempo Pro 国内上架 ¥1690</span>
+      </div>
+    </div>
+  </div>
+</section>
+<div class='shell'>
+  <aside class='side'>
+    <p class='side-h'><span>历史期次</span><span class='mono'>4</span></p>
+    <div class='hist'><ul class='dates'>
+      <li><button class='dbtn' type='button' aria-current='true'><span class='d'>2026-10-06</span><span class='w'>周二</span><span class='badge-new'>最新</span></button></li>
+      <li><button class='dbtn' type='button'><span class='d'>2026-10-05</span><span class='w'>周一</span></button></li>
+      <li><button class='dbtn' type='button'><span class='d'>2026-10-04</span><span class='w'>周日</span></button></li>
+      <li><button class='dbtn' type='button'><span class='d'>2026-10-03</span><span class='w'>周六</span></button></li>
+    </ul></div>
+    <p class='foot'>历史保留最近 7 个自然日。</p>
+    <button class='totop' id='theme' title='切换亮暗'><span id='theme-ico'>☾</span><span>外观</span></button>
+    <button class='totop' id='totop' title='回到顶部'><span>↑</span><span>回到顶部</span></button>
+  </aside>
+  <main>
+    <article>
+      <header class='rhead'>
+        <p class='kicker'><span>最新一期</span><span class='dt'>2026-10-06 · 周二</span></p>
+        <ul class='rmeta'>
+          <li><b>窗口</b>2026-10-05 09:00 ~ 2026-10-06 08:30</li>
+          <li><b>条目</b>24</li>
+        </ul>
+      </header>
+      <nav class='rail'>
+        <div class='rail-in'>
+          <button class='chip' data-sec='s1'><u>01</u>核心要点</button>
+          <button class='chip' data-sec='s2'><u>02</u>赛事与竞技</button>
+          <button class='chip' data-sec='s3'><u>03</u>品牌营销</button>
+          <button class='chip' data-sec='s4'><u>04</u>渠道与舆论</button>
+          <button class='chip' data-sec='s5'><u>05</u>资本与业绩</button>
+          <button class='chip' data-sec='s6'><u>06</u>公告与市场</button>
+        </div>
+      </nav>
+      <div class='dash'>
+        <div class='board'>
+          <div class='board-h'><h3>近期赛果速读</h3><span class='hint'>近 3 日大型赛事</span><span class='cnt mono'>14</span></div>
+          <div class='filt' id='sb-filt'><button class='f active' data-f='all'>全部</button><button class='f' data-f='ucl'>欧国联</button><button class='f' data-f='swim'>游泳/田径</button><button class='f' data-f='eg'>电竞</button></div>
+          <ul class='sb'>
+            <li class='sb-g' data-g='ucl'>欧国联 A1 第4轮</li>
+            <li class='sb-m wh' data-g='ucl'><a href='https://m.thepaper.cn/newsDetail_forward_34204167' target='_blank'><span class='home'>法国</span><span class='sc mono'><b>4</b><i>:</i><span>1</span></span><span class='away'>比利时</span><span class='st'>替补连入4球 奥利塞88'/91'梅开二度</span></a></li>
+            <li class='sb-m' data-g='ucl'><a href='https://m.dongqiudi.com/article/6441438.html' target='_blank'><span class='home'>意大利</span><span class='sc mono'><b>3</b><i>:</i><span>1</span></span><span class='away'>土耳其</span><span class='st'>斯卡马卡26' 卡拉菲奥里替补破门</span></a></li>
+            <li class='sb-g' data-g='ucl'>欧国联 B 级 第4轮</li>
+            <li class='sb-m' data-g='ucl'><a href='https://m.tuttomercatoweb.com/calcio-estero/nations-league-risultati-francia-ribalta-belgio-gyokeres-trascina-svezia-2280359' target='_blank'><span class='home'>罗马尼亚</span><span class='sc mono'><span>0</span><i>:</i><b>1</b></span><span class='away'>瑞典</span><span class='st'>约克雷斯制胜</span></a></li>
+            <li class='sb-m wh' data-g='ucl'><a href='https://m.qiumiwu.com/news/' target='_blank'><span class='home'>北爱尔兰</span><span class='sc mono'><span>0</span><i>:</i><span>0</span></span><span class='away'>格鲁吉亚</span><span class='st'>互交白卷</span></a></li>
+            <li class='sb-g' data-g='swim'>游泳世界杯 · 巴库站</li>
+            <li class='sb-r' data-g='swim'><a href='https://surtoolimpico.com.br/artigo/etapa-da-copa-do-mundo-de-natacao-em-baku-se-encerra-com-novos-astros-surgindo' target='_blank'><span class='gd'>金</span><span class='ev'>女子200米个人混合泳</span><span class='rs mono'>中国余依婷夺金 破亚洲纪录 升至历史第六</span></a></li>
+            <li class='sb-r' data-g='swim'><a href='http://m.toutiao.com/group/7692915210738336291/' target='_blank'><span class='gd'>综述</span><span class='ev'>亚运中国游泳</span><span class='rs mono'>30金创亚运最佳 张展硕单届7金追平历史纪录</span></a></li>
+            <li class='sb-g' data-g='eg'>电竞 · 10-05</li>
+            <li class='sb-m' data-g='eg'><a href='https://news.zhibo8.com/game/2026-10-05/6ac31f13a51e3native.htm' target='_blank'><span class='home'>VIT</span><span class='sc mono'><b>2</b><i>:</i><span>0</span></span><span class='away'>GAM</span><span class='st'>德杯瑞士轮 翻盘取胜</span></a></li>
+            <li class='sb-m wh' data-g='eg'><a href='http://m.toutiao.com/group/7693172378788807183/' target='_blank'><span class='home'>NAVI</span><span class='sc mono'><b>2</b><i>:</i><span>0</span></span><span class='away'>FLY</span><span class='st'>德杯瑞士轮</span></a></li>
+            <li class='sb-m' data-g='eg'><a href='http://m.toutiao.com/group/7693172378788807183/' target='_blank'><span class='home'>JDG</span><span class='sc mono'><b>2</b><i>:</i><span>0</span></span><span class='away'>SR</span><span class='st'>德杯瑞士轮 进入1-1组</span></a></li>
+            <li class='sb-m wh' data-g='eg'><a href='https://www.iesdouyin.com/share/video/7693149505835350651' target='_blank'><span class='home'>北京JDG</span><span class='sc mono'><b>3</b><i>:</i><span>0</span></span><span class='away'>杭州LGD.NBW</span><span class='st'>KPL年总擂台赛</span></a></li>
+            <li class='sb-m' data-g='eg'><a href='https://www.iesdouyin.com/share/video/7693199313380217594' target='_blank'><span class='home'>重庆狼队</span><span class='sc mono'><b>3</b><i>:</i><span>1</span></span><span class='away'>上海EDG.M</span><span class='st'>KPL年总擂台赛</span></a></li>
+          </ul>
+        </div>
+        <div class='board'>
+          <div class='board-h'><h3>新品与发售日历</h3><span class='cnt mono'>12</span></div>
+          <ul class='rows'>
+            <li class='dr undated'><span class='lead'>10-06</span><a class='t' href='https://www.on-running.cn/' target='_blank'>On Cloud X Tempo Pro 女子综合训练鞋 ¥1,690</a><span class='m mono'>上架</span></li>
+            <li class='dr undated'><span class='lead'>10-09</span><a class='t' href='https://us.puma.com/us/en/launch-calendar' target='_blank'>PUMA × Street Fighter Suede Ken/Ryu/Chun-Li 三款</a><span class='m mono'>10-09</span></li>
+            <li class='dr undated'><span class='lead'>10-08</span><a class='t' href='https://sneakernews.com/2026/10/04/sneaker-releases-october-4-october-10-2026/' target='_blank'>PUMA Speedcat Rose（BLACKPINK Rosé 二次联名）</a><span class='m mono'>10-08</span></li>
+            <li class='dr undated'><span class='lead'>10-08</span><a class='t' href='https://sneakernews.com/2026/10/04/sneaker-releases-october-4-october-10-2026/' target='_blank'>Brain Dead × adidas Samba Bowling 保龄球鞋型</a><span class='m mono'>10-08</span></li>
+            <li class='dr undated'><span class='lead'>10-08</span><a class='t' href='https://sneakernews.com/2026/10/04/sneaker-releases-october-4-october-10-2026/' target='_blank'>Vans Old Skool Pearlized White 珍珠白</a><span class='m mono'>10-08</span></li>
+            <li class='dr undated'><span class='lead'>10-05</span><a class='t' href='https://www.sneaktorious.com/nike-kobe-10-protro-low-5-am-flight-iq5339-400-release-info' target='_blank'>Nike Kobe 10 Protro Low 5AM Flight $200</a><span class='m mono'>已发售</span></li>
+            <li class='dr undated'><span class='lead'>10-09</span><a class='t' href='https://us.puma.com/us/en/launch-calendar?page=3' target='_blank'>PUMA × Salehe Bembury Hali 1 Pace</a><span class='m mono'>10-09</span></li>
+            <li class='dr undated'><span class='lead'>10-16</span><a class='t' href='https://sneakerbardetroit.com/' target='_blank'>Nike Air Foamposite One Phantom / Barely Volt</a><span class='m mono'>10-16</span></li>
+            <li class='dr undated'><span class='lead'>10-29</span><a class='t' href='https://blog.jdsports.it/calendario-lanci-sneakers/' target='_blank'>Nike Vomero 18 GORE-TEX Off-White / Smokey Blue</a><span class='m mono'>10-29</span></li>
+            <li class='dr undated'><span class='lead'>10月</span><a class='t' href='https://www.iesdouyin.com/share/video/7665169901199412534' target='_blank'>adidas Hyperboost Run 轻量版跑鞋 38mm Lightstrike Pro</a><span class='m mono'>10月</span></li>
+            <li class='dr undated'><span class='lead'>Q4</span><a class='t' href='https://www.on-running.cn/' target='_blank'>On Cloudmonster 3 Hyper / THE ROGER Wildcard 上海网球限定</a><span class='m mono'>新品</span></li>
+            <li class='dr undated'><span class='lead'>持续</span><a class='t' href='https://www.soleretriever.com/news/articles/fp-movement-salomon-pack-release-date-october-2026' target='_blank'>FP Movement × Salomon XT-6 / XT-Whisper $185 / $145</a><span class='m mono'>在售</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class='prose'>
+        <h2 id='s1'>核心要点</h2>
+        <blockquote>
+          <p><strong>[重磅]</strong> 欧国联 A1 第 4 轮：法国主场 <strong>4-1</strong> 逆转比利时，替补杜埃 77' 扳平、谢尔基 81' 反超、奥利塞 88'/91' 梅开二度；意大利 <strong>3-1</strong> 土耳其，四连败。法国 10 分领跑，意大利 7 分第二。</p>
+          <p><strong>[重磅]</strong> 游泳世界杯巴库站收官：中国选手余依婷女子 200 米个人混合泳夺金，<strong>打破亚洲纪录</strong>，成为该项目历史第六快女选手。</p>
+          <p><strong>[要点]</strong> lululemon（LULU.OQ）10-05 收 <strong>$93.14 -1.4%</strong>，盘中再刷 52 周新低 $91.28，年内累计跌幅扩大；Pomerantz 证券欺诈调查持续发酵。</p>
+          <p><strong>[要点]</strong> 德玛西亚杯国际邀请赛瑞士轮第 2 日：VIT、NAVI、JDG 均 2-0 取胜进入 1-1 组；KPL 年总北京 JDG <strong>3-0</strong> 杭州 LGD.NBW，重庆狼队 <strong>3-1</strong> 上海 EDG.M。</p>
+          <p><strong>[要点]</strong> On 昂跑国内上架 Cloud X Tempo Pro 综合训练鞋 <strong>¥1,690</strong>；PUMA × Street Fighter Suede 三款 10-09 发售；adidas Hyperboost Run 10 月登陆。</p>
+        </blockquote>
+        <h2 id='s2'>一、赛事与竞技动态</h2>
+        <div class='item'>
+          <div class='ihead'><span class='src'>澎湃新闻</span><h3>欧国联 A1：法国 4-1 逆转比利时，替补连入 4 球，奥利塞梅开二度</h3><span class='t'>10-06 08:23</span><a class='go' href='https://m.thepaper.cn/newsDetail_forward_34204167' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>北京时间 10-06 凌晨法兰西体育场：卢克巴基奥 35' 单刀破门；下半场杜埃 77' 转身低射扳平、谢尔基 81' 反超、奥利塞 88' 远角、91' 接杜埃助攻低射梅开二度。杜埃 1 射 2 传。法国 4 轮 10 分领跑 A1。</li></ul>
+        </div>
+        <div class='item'>
+          <div class='ihead'><span class='src'>懂球帝</span><h3>欧国联 A1：意大利 3-1 土耳其，斯卡马卡建功，卡拉菲奥里、皮奥破门</h3><span class='t'>10-06 04:35</span><a class='go' href='https://m.dongqiudi.com/article/6441438.html' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>斯卡马卡 26' 接迪洛伦佐传中首开纪录；西姆西尔 61' 抢点扳平；下半场卡拉菲奥里替补建功、皮奥锁定胜局。土耳其遭遇 4 连败，意大利 7 分位列次席。</li></ul>
+        </div>
+        <div class='item'>
+          <div class='ihead'><span class='src'>TuttoMercatoWeb</span><h3>欧国联 B：罗马尼亚 0-1 瑞典，约克雷斯制胜；北爱尔兰 0-0 格鲁吉亚</h3><span class='t'>10-05 22:44</span><a class='go' href='https://m.tuttomercatoweb.com/calcio-estero/nations-league-risultati-francia-ribalta-belgio-gyokeres-trascina-svezia-2280359' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>约克雷斯攻入全场唯一进球，瑞典客场 1-0 罗马尼亚；B 组另一场北爱尔兰与格鲁吉亚互交白卷。</li></ul>
+        </div>
+        <div class='item'>
+          <div class='ihead'><span class='src'>Surto Olímpico</span><h3>游泳世界杯巴库站收官：余依婷 200 米个人混合泳夺金破亚洲纪录</h3><span class='t'>10-05 12:52</span><a class='go' href='https://surtoolimpico.com.br/artigo/etapa-da-copa-do-mundo-de-natacao-em-baku-se-encerra-com-novos-astros-surgindo' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>中国选手余依婷在女子 200 米个人混合泳决赛中夺冠，将日本大桥悠依保持的亚洲纪录提高超 1 秒，成为该项目历史第六快的女选手。</li></ul>
+        </div>
+        <div class='item'>
+          <div class='ihead'><span class='src'>光明网</span><h3>亚运中国游泳队 30 金创参赛最佳；张展硕单届 7 金追平亚运纪录</h3><span class='t'>10-05 04:40</span><a class='go' href='http://m.toutiao.com/group/7692915210738336291/' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>中国队 815 名运动员在 29 个大项、38 个分项夺金，共破 8 项世界纪录；19 岁张展硕独得 7 金追平亚运个人单届夺金纪录；游泳队首次包揽 7 个接力项目金牌。</li></ul>
+        </div>
+        <div class='item'>
+          <div class='ihead'><span class='src'>直播吧 / 懂球帝</span><h3>德玛西亚杯瑞士轮第 2 日：VIT、NAVI、JDG 均 2-0 取胜</h3><span class='t'>10-05 21:18</span><a class='go' href='http://m.toutiao.com/group/7693172378788807183/' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>10-05 三场 2-0：LEC 赛区 VIT 翻盘击败 GAM；NAVI 2-0 FLY；LPL JDG 2-0 北美 SR。VIT/NAVI/JDG 进入 1-1 组，GAM/FLY/SR 落入 0-2 组面临淘汰。</li></ul>
+        </div>
+        <div class='item'>
+          <div class='ihead'><span class='src'>KPL 官方 / 抖音</span><h3>KPL 年总擂台赛：北京 JDG 3-0 杭州 LGD.NBW；重庆狼队 3-1 上海 EDG.M</h3><span class='t'>10-05 19:49 / 23:20</span><a class='go' href='https://www.iesdouyin.com/share/video/7693149505835350651' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>北京 JDG 3-0 横扫杭州 LGD.NBW 拿到年总首胜；重庆狼队 3-1 击败上海 EDG.M。擂台赛阶段继续。</li></ul>
+        </div>
+
+        <h2 id='s3'>二、品牌营销与代言动态</h2>
+        <div class='item'>
+          <div class='ihead'><span class='src'>On 昂跑官网</span><h3>On 昂跑上架 Cloud X Tempo Pro 女子综合训练鞋，国内售价 ¥1,690</h3><span class='t'>10-05</span><a class='go' href='https://www.on-running.cn/' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>Zendaya 联名共创系列同步上线；新品包括 Train Flex-T Crop 短款训练 T 恤 ¥590、Studio Racerback Bra 运动内衣 ¥590。</li></ul>
+        </div>
+        <div class='item'>
+          <div class='ihead'><span class='src'>PUMA 官网</span><h3>PUMA × Street Fighter Suede Ken / Ryu / Chun-Li 三款 10-09 全球发售</h3><span class='t'>10-05</span><a class='go' href='https://us.puma.com/us/en/launch-calendar' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>经典格斗游戏联名以 Suede 鞋型为载体，对应 Ken/Ryu/Chun-Li 三角色配色；同期 PUMA × Salehe Bembury Hali 1 Pace 也在 10-09 上架。</li></ul>
+        </div>
+        <div class='item'>
+          <div class='ihead'><span class='src'>Sneaker News</span><h3>10-08 发售日：PUMA Speedcat Rose、Brain Dead × adidas Samba Bowling</h3><span class='t'>10-04 / 本周</span><a class='go' href='https://sneakernews.com/2026/10/04/sneaker-releases-october-4-october-10-2026/' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>Vans Old Skool Pearlized White 打头；PUMA Speedcat Rose 是 BLACKPINK Rosé 第二次 Big Cat 联名；Brain Dead 与 adidas 合作保龄球鞋型 Samba Bowling。</li></ul>
+        </div>
+        <div class='item'>
+          <div class='ihead'><span class='src'>抖音 / adidas</span><h3>adidas Hyperboost Run 轻量版跑鞋 10 月登陆 Running Warehouse</h3><span class='t'>10-05 实测预热</span><a class='go' href='https://www.iesdouyin.com/share/video/7665169901199412534' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>Hyperboost Edge 的轻量版，中底厚度约 38mm；泡棉由 Lightstrike Pro 改造为 Hyperboost Pro，主打能量回馈与速度感。</li></ul>
+        </div>
+        <div class='item'>
+          <div class='ihead'><span class='src'>Sneaktorious</span><h3>Nike Kobe 10 Protro Low 5AM Flight 10-05 全球发售 $200</h3><span class='t'>10-05</span><a class='go' href='https://www.sneaktorious.com/nike-kobe-10-protro-low-5-am-flight-iq5339-400-release-info' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>SKU IQ5339-400，Blue Lagoon/Black；2015 元年配色 Protro 复刻，通过 SNKRS、Nike.com 及指定零售商发售。</li></ul>
+        </div>
+
+        <h2 id='s4'>三、运动品牌与渠道、舆论动态</h2>
+        <div class='item'>
+          <div class='ihead'><span class='src'>南方都市报 / 今日头条</span><h3>Nike 水深火热：取消大中华独立大区，市值 5 年蒸发近 1.5 万亿元</h3><span class='t'>10-05 18:58</span><a class='go' href='http://m.toutiao.com/group/7693136497008099886/' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>因核心指标未达预期，Nike 预计 2027 财年整体营收同比下滑高个位数，EPS 指引仅 <strong>$1.15–$1.35</strong>（分析师原预期 $1.68）；财报当日股价一度跌 8.5%。截至 10-02 收盘 $33.87，过去一年累计跌约 50%。</li></ul>
+        </div>
+        <div class='item'>
+          <div class='ihead'><span class='src'>新浪财经</span><h3>Nike 5 年跌超 80%：专家释疑为何失宠，大中华区连跌 9 个季度</h3><span class='t'>10-05 10:41</span><a class='go' href='https://biz.finance.sina.com.cn/usstock/usstock_news.php?symbol=NKE&wm=2282' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>Nike 9-21 已被标普道琼斯从 S&P 100 指数剔除（历史首次），由 Palo Alto Networks、Dell、Arista、Sandisk 四家科技公司替代；公司仍保留在 S&P 500。</li></ul>
+        </div>
+        <div class='item'>
+          <div class='ihead'><span class='src'>Wealth Awesome</span><h3>LULU 10-05 再跌 1.4% 至 $93.14，盘中触 52 周新低 $91.28</h3><span class='t'>10-05 14:31 UTC</span><a class='go' href='https://wealthawesome.com/why-lululemon-stock-is-sliding-today-10052026' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>lululemon 面临 IEEPA 关税成本、markdown 上升、中国区销售下滑与 Pomerantz 证券调查多重压力；市值较高点累计回撤约 <strong>59%</strong>。下次财报 12-10。</li></ul>
+        </div>
+
+        <h2 id='s5'>四、资本、业绩与市场变化</h2>
+        <div class='item'>
+          <div class='ihead'><span class='src'>Morningstar</span><h3>lululemon Q2 FY26：净营收 $24 亿同比 -4%，同店 -9%；EPS $2.92</h3><span class='t'>09-03 披露 / 10-05 复核</span><a class='go' href='https://www.morningstar.com/stocks/xwbo/lulu/earnings' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>Q2 截至 8-2：净营收 $2.4B（-4% YoY，固定汇率 -5%）；GAAP 摊薄 EPS $2.92（去年 $3.10）；同店 -9%（固定汇率 -10%）；美洲同店 -12%，中国大陆同店 -2%（固定汇率 -8%）。</li></ul>
+        </div>
+        <div class='item'>
+          <div class='ihead'><span class='src'>特步国际 IR</span><h3>特步国际 2026 中期：收入 67.95 亿 +0.6%，净利 8.18 亿 +10.5%</h3><span class='t'>10-05 官网更新</span><a class='go' href='https://www.xtep.com.hk/en/global/home.php' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>2026H1 收入 <strong>RMB 67.95 亿</strong>同比 +0.6%；经营溢利 11.61 亿 +11.0%；净利润 8.18 亿 +10.5%；派息比率 53.8%。专业运动板块（索康尼、迈乐）收入 8.75 亿 +11.4%。</li></ul>
+        </div>
+        <div class='item'>
+          <div class='ihead'><span class='src'>361° IR</span><h3>361 度 2026 中期：收入 61.60 亿，权益持有人应占溢利 9.26 亿 +8.0%</h3><span class='t'>10-05 IR 更新</span><a class='go' href='https://ir.361sport.com/html/index.php?lang=sc' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>2026H1 营业额 <strong>RMB 61.598 亿</strong>；权益持有人应占溢利 <strong>9.259 亿</strong>同比 +8.0%；中期股息每股 22.2 港仙。</li></ul>
+        </div>
+        <div class='item'>
+          <div class='ihead'><span class='src'>Stock Analysis / Butterfly Market</span><h3>LULU 盘后微跌 0.17%，52 周区间 $91.28–$225.98；当前位置距低点仅 1.4%</h3><span class='t'>10-05 18:58 ET</span><a class='go' href='https://stockanalysis.com/stocks/lulu/statistics/' target='_blank'>阅读原文<u></u></a></div>
+          <ul><li><strong>详情</strong>LULU 10-05 收 $93.14，-1.4%；盘后再跌 $0.16 至 $92.98。52 周区间已近低点，估值处于历史低位。</li></ul>
+        </div>
+
+        <h2 id='s6'>五、体育行业公告与市场影响</h2>
+        <div class='item'>
+          <div class='ihead'><span class='src'>Nike Inc. NKE.NYSE · 财年指引大幅下修 / 指数剔除</span><h3>Nike 2027 财年指引营收高个位数下滑，EPS 仅 $1.15–$1.35；9-21 已被剔出 S&P 100</h3><span class='t'>10-05 综合 / 09-04 标普公告</span><a class='go' href='https://www.nasdaq.com/press-release/bloom-energy-illumina-and-everpure-set-join-sp-500-others-join-sp-100-sp-midcap-400' target='_blank'>阅读原文<u></u></a></div>
+          <ul>
+            <li><strong>公告要点</strong>Nike Inc.（NKE.NYSE）Q1 FY27 后给出 FY27 整体营收同比下滑高个位数、EPS $1.15–$1.35 的指引（分析师此前平均预期营收下滑约 2%、EPS $1.68）。S&P Dow Jones 9-4 公告：Nike 已于 9-21 美股开盘前被剔出 S&P 100，由 Dell Technologies、Palo Alto Networks、Arista Networks、Sandisk 替换，仍保留在 S&P 500。</li>
+            <li><strong>市场影响</strong>剔除 S&P 100 触发跟踪该指数基金的机械卖出；市值较 2021 年高点累计蒸发近 <strong>$2100 亿</strong>（约人民币 1.5 万亿）。LULU、ONON 同期几乎平盘，板块未现系统性抛售，更多为 Nike 个体基本面问题。</li>
+            <li><strong>业绩看点</strong>Nike 收入 = 品类 × 渠道（DTC/批发）× 区域；跟踪 Q2 FY27（12 月）大中华区同店降幅、DTC 占比、库存周转、印度园区投产。</li>
+            <li><strong>后续关注</strong>双 11 中国预售流水、12 月 Q2 FY27 财报、滔搏（HK 9618）Q3 运营更新。</li>
+          </ul>
+        </div>
+        <div class='item'>
+          <div class='ihead'><span class='src'>lululemon LULU.NASDAQ · 季报复核 / 调查发酵</span><h3>LULU Q2 FY26 净营收 $24 亿 -4%、同店 -9%；10-05 再刷 52 周新低</h3><span class='t'>09-03 披露 / 10-05 市场</span><a class='go' href='https://corporate.lululemon.com/newsroom/press-releases/2026/09-03-2026-210528733' target='_blank'>阅读原文<u></u></a></div>
+          <ul>
+            <li><strong>公告要点</strong>lululemon athletica inc.（LULU.NASDAQ）Q2 FY26（截至 8-2）GAAP 净营收 $2.4B 同比 -4%（固定汇率 -5%），同店 -9%（固定汇率 -10%），GAAP 摊薄 EPS $2.92（去年 $3.10）；美洲同店 -12%，中国大陆同店 -2%（固定汇率 -8%）。Pomerantz 10-04 再发投资者调查 alert。</li>
+            <li><strong>市场影响</strong>LULU 10-05 收 $93.14 -1.4%、盘中触 52 周新低 $91.28；市值较高点回撤约 59%。证券集体诉讼叠加消费者集体诉讼与德州 PFAS 调查，公司治理与声誉风险溢价上升。</li>
+            <li><strong>业绩看点</strong>lululemon 收入 = 北美同店 × 国际扩张 × 男装/配件占比；跟踪 Q3（12-10 财报）国际同店、markdown 占比、库存周转、中国区新店进度。</li>
+            <li><strong>后续关注</strong>12-10 Q3 FY26 财报、集体诉讼首次庭前会议、德州 AG PFAS 调查进展。</li>
+          </ul>
+        </div>
+        <div class='item'>
+          <div class='ihead'><span class='src'>特步国际 01368.HK · 2026 中期业绩</span><h3>特步国际 2026H1：收入 67.95 亿 +0.6%，净利 8.18 亿 +10.5%，派息 53.8%</h3><span class='t'>10-05 IR 更新</span><a class='go' href='https://www.xtep.com.hk/en/global/home.php' target='_blank'>阅读原文<u></u></a></div>
+          <ul>
+            <li><strong>公告要点</strong>特步国际控股有限公司（01368.HK）2026 中期：收入 <strong>RMB 6,795 百万</strong>+0.6%；经营溢利 1,161 百万 +11.0%；净利润 818 百万 +10.5%；派息比率 53.8%。专业运动板块（索康尼、迈乐）收入 8.75 亿 +11.4%，经营收入同比 +15.5%。</li>
+            <li><strong>市场影响</strong>主品牌大众运动 59.20 亿 -2.2%，专业运动成主要增长引擎；海外业务受跨境电商与东南亚门店驱动翻倍增长。国产品牌半年报整体分化，安踏 435 亿领跑、李宁 152 亿 +2.8%、特步 68 亿持平、361° 62 亿微增。</li>
+            <li><strong>业绩看点</strong>特步收入 = 主品牌店效 × 索康尼/迈乐高端化 × 海外占比；跟踪 H2 电商大促店效、索康尼 DTC 占比、毛利率变化。</li>
+            <li><strong>后续关注</strong>双 11 销售流水、索康尼 2027 春季新品订货会、海外东南亚门店扩张进度。</li>
+          </ul>
+        </div>
+        <div class='item'>
+          <div class='ihead'><span class='src'>361 度 01361.HK · 2026 中期业绩</span><h3>361 度 2026H1：收入 61.60 亿，权益持有人应占溢利 9.26 亿 +8.0%</h3><span class='t'>10-05 IR 更新</span><a class='go' href='https://ir.361sport.com/html/index.php?lang=sc' target='_blank'>阅读原文<u></u></a></div>
+          <ul>
+            <li><strong>公告要点</strong>三六一度国际有限公司（01361.HK）2026 中期（截至 6-30）：营业额 <strong>RMB 6,159.8 百万</strong>；权益持有人应占溢利 <strong>925.9 百万</strong>同比 +8.0%；中期股息每股 22.2 港仙。</li>
+            <li><strong>市场影响</strong>361° 是国产运动品牌中少数维持利润双位数增长的标的，主品牌+儿童业务双轮驱动；与特步、李宁同处国产运动品牌分化期。</li>
+            <li><strong>业绩看点</strong>361° 收入 = 主品牌零售流水 × 儿童占比 × 库存周转；跟踪 H2 库存水位、DTC 占比、跑步/篮球专业线 GMV。</li>
+            <li><strong>后续关注</strong>双 11 预售数据、儿童业务半年报电话会、2027 Q1 订货会。</li>
+          </ul>
+        </div>
+        <div class='item'>
+          <div class='ihead'><span class='src'>舒华体育 605299.SH · 业绩说明会预约</span><h3>舒华体育：10-16 召开 2026 年半年度业绩说明会</h3><span class='t'>09-29 公告 / 10-06 临近</span><a class='go' href='http://m.epaper.zqrb.cn/html/2026-09/29/content_1277191.htm' target='_blank'>阅读原文<u></u></a></div>
+          <ul>
+            <li><strong>公告要点</strong>舒华体育股份有限公司（605299.SH）公告 2026-036：会议时间 <strong>2026-10-16 11:00–12:00</strong>，上证路演中心网络互动；投资者可于 10-09 至 10-15 16:00 预约提问。</li>
+            <li><strong>市场影响</strong>A 股体育健身器材板块跟随亚运闭幕情绪回落；舒华作为 A 股少数以家用健身器材为主业的标的，业绩说明会是观察国内健内销需求与外贸库存节奏的窗口。</li>
+            <li><strong>业绩看点</strong>舒华收入 = 家用健身器材销量 × 渠道结构（线上/经销/海外）× 毛利率；跟踪 H1 毛利率、DTC 占比、政府/学校集采订单。</li>
+            <li><strong>后续关注</strong>10-16 业绩说明会问答、Q3 原材料成本、双 11 大促家用器材流水。</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+  </main>
 </div>
-<main class='arch-body'>
-  <a class='arch-back' href='../'>← 返回最新一期</a>
-  <h2 style='font-size:20px;margin:0 0 16px'>2026-10-06 周二 条目索引</h2>
-  <ul class='arch-list'>
-        <li>近期赛果速读</li>
-        <li>新品与发售日历</li>
-        <li>欧国联 A1：法国 4-1 逆转比利时，替补连入 4 球，奥利塞梅开二度</li>
-        <li>欧国联 A1：意大利 3-1 土耳其，斯卡马卡建功，卡拉菲奥里、皮奥破门</li>
-        <li>欧国联 B：罗马尼亚 0-1 瑞典，约克雷斯制胜；北爱尔兰 0-0 格鲁吉亚</li>
-        <li>游泳世界杯巴库站收官：余依婷 200 米个人混合泳夺金破亚洲纪录</li>
-        <li>亚运中国游泳队 30 金创参赛最佳；张展硕单届 7 金追平亚运纪录</li>
-        <li>德玛西亚杯瑞士轮第 2 日：VIT、NAVI、JDG 均 2-0 取胜</li>
-        <li>KPL 年总擂台赛：北京 JDG 3-0 杭州 LGD.NBW；重庆狼队 3-1 上海 EDG.M</li>
-        <li>On 昂跑上架 Cloud X Tempo Pro 女子综合训练鞋，国内售价 ¥1,690</li>
-        <li>PUMA × Street Fighter Suede Ken / Ryu / Chun-Li 三款 10-09 全球发售</li>
-        <li>10-08 发售日：PUMA Speedcat Rose、Brain Dead × adidas Samba Bowling</li>
-        <li>adidas Hyperboost Run 轻量版跑鞋 10 月登陆 Running Warehouse</li>
-        <li>Nike Kobe 10 Protro Low 5AM Flight 10-05 全球发售 $200</li>
-        <li>Nike 水深火热：取消大中华独立大区，市值 5 年蒸发近 1.5 万亿元</li>
-        <li>Nike 5 年跌超 80%：专家释疑为何失宠，大中华区连跌 9 个季度</li>
-        <li>LULU 10-05 再跌 1.4% 至 $93.14，盘中触 52 周新低 $91.28</li>
-        <li>lululemon Q2 FY26：净营收 $24 亿同比 -4%，同店 -9%；EPS $2.92</li>
-        <li>特步国际 2026 中期：收入 67.95 亿 +0.6%，净利 8.18 亿 +10.5%</li>
-        <li>361 度 2026 中期：收入 61.60 亿，权益持有人应占溢利 9.26 亿 +8.0%</li>
-        <li>LULU 盘后微跌 0.17%，52 周区间 $91.28–$225.98；当前位置距低点仅 1.4%</li>
-        <li>Nike 2027 财年指引营收高个位数下滑，EPS 仅 $1.15–$1.35；9-21 已被剔出 S&P 100</li>
-        <li>LULU Q2 FY26 净营收 $24 亿 -4%、同店 -9%；10-05 再刷 52 周新低</li>
-        <li>特步国际 2026H1：收入 67.95 亿 +0.6%，净利 8.18 亿 +10.5%，派息 53.8%</li>
-        <li>361 度 2026H1：收入 61.60 亿，权益持有人应占溢利 9.26 亿 +8.0%</li>
-        <li>舒华体育：10-16 召开 2026 年半年度业绩说明会</li>
-  </ul>
-  <div class='arch-note'>本期为历史快照归档。完整赛果看板、新品日历、公告解读与原文链接请以最新一期为准；如需恢复当日完整页面，可通过 GitHub 仓库 git history 查看 commit。</div>
-</main>
-<script src='../history.js'></script>
+<p class='colophon'>每日 08:30 自动更新 · 历史保留最近 7 天</p>
 </body>
 </html>
