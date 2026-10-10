@@ -38,6 +38,14 @@
 .side.wx-sun .totop,.side.wx-cloud .totop,.side.wx-rain .totop,.side.wx-snow .totop,.side.wx-storm .totop,.side.wx-fog .totop,.side.wx-haze .totop,.side.wx-dust .totop{border-color:rgba(255,255,255,.55);color:#fff}
 .side.wx-sun .dbtn,.side.wx-cloud .dbtn,.side.wx-rain .dbtn,.side.wx-snow .dbtn,.side.wx-storm .dbtn,.side.wx-fog .dbtn,.side.wx-haze .dbtn,.side.wx-dust .dbtn{color:#16181D;background:rgba(246,245,241,.92);border-radius:12px}
 .side.wx-sun .dbtn .w,.side.wx-cloud .dbtn .w,.side.wx-rain .dbtn .w,.side.wx-snow .dbtn .w,.side.wx-storm .dbtn .w,.side.wx-fog .dbtn .w,.side.wx-haze .dbtn .w,.side.wx-dust .dbtn .w{color:#5a626e}
+.stock-card{border:1px solid rgba(128,128,128,.18);border-radius:12px;padding:12px 14px;margin:10px 0;background:rgba(128,128,128,.06)}
+.stock-card .stk-h{font-size:11px;opacity:.6;margin:0 0 6px;display:flex;justify-content:space-between;letter-spacing:.04em}
+.stock-card .stk-price{font:700 22px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;margin:0;color:inherit}
+.stock-card .stk-price .stk-unit{font-size:11px;font-weight:500;opacity:.5;margin-left:4px}
+.stock-card .stk-chg{font:600 13px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;margin:4px 0 0}
+.stock-card .stk-chg.up{color:#2FB87A}
+.stock-card .stk-chg.down{color:#E0A32E}
+.stock-card .stk-time{font-size:10px;opacity:.45;margin:6px 0 0}
 </style>
 </head>
 <body>
@@ -75,6 +83,12 @@
       <li><button class='dbtn' type='button'><span class='d'>2026-10-06</span><span class='w'>周二</span></button></li>
     </ul></div>
     <p class='foot'>历史保留最近 7 个自然日。</p>
+    <div class='stock-card' id='stk-lining'>
+      <p class='stk-h'><span>李宁 LI NING</span><span class='mono'>2331.HK</span></p>
+      <p class='stk-price'><span id='stk-price'>--</span><span class='stk-unit'>HKD</span></p>
+      <p class='stk-chg' id='stk-chg'>--</p>
+      <p class='stk-time mono' id='stk-time'>行情加载中…</p>
+    </div>
     <button class='totop' id='theme' title='切换亮暗'><span id='theme-ico'>☾</span><span>外观</span></button>
     <button class='totop' id='totop' title='回到顶部'><span>↑</span><span>回到顶部</span></button>
   </aside>
@@ -521,6 +535,36 @@ fbtns.forEach(function(b){b.onclick=function(){
       setFX(code);
     }catch(e2){ wb.textContent='天气暂不可用'; }
   })();
+})();
+</script>
+<script>
+(function(){
+  function loadStk(){
+    var s=document.createElement('script');
+    s.src='https://qt.gtimg.cn/q=hk02331&r='+Date.now();
+    s.onload=function(){
+      try{
+        var raw=window.v_hk02331;
+        if(!raw) return;
+        var a=raw.split('~');
+        var price=parseFloat(a[3]);
+        var chg=parseFloat(a[31]);
+        var pct=parseFloat(a[32]);
+        var high=a[33], low=a[34];
+        var time=a[30];
+        var up=chg>=0;
+        document.getElementById('stk-price').textContent=price.toFixed(3);
+        var chgEl=document.getElementById('stk-chg');
+        chgEl.textContent=(up?'+':'')+chg.toFixed(3)+'  ('+(up?'+':'')+pct.toFixed(2)+'%)';
+        chgEl.className='stk-chg '+(up?'up':'down');
+        document.getElementById('stk-time').textContent=time+' · 高'+high+' 低'+low;
+      }catch(e){}
+      s.remove();
+    };
+    document.head.appendChild(s);
+  }
+  loadStk();
+  setInterval(loadStk,60000);
 })();
 </script>
 <script src='history.js'></script>
