@@ -55,6 +55,17 @@ html[data-theme=dark] .stock-card .stk-chg.down{color:#E0A32E}
 html[data-theme=dark] .stock-card .stk-time{color:rgba(242,243,245,.6)}
 .prose blockquote p{display:block !important;padding:18px 20px 18px 24px !important}
 .prose blockquote p::before{content:none !important}
+.sb-m a{grid-template-columns:84px 64px 84px minmax(0,1fr) !important;gap:10px !important;padding:10px 4px !important}
+.sb-m .home{text-align:right !important;font-weight:600 !important;font-size:13.5px;letter-spacing:0}
+.sb-m .away{text-align:left !important;font-weight:500 !important;font-size:13.5px}
+.sb-m .sc{min-width:64px !important;width:64px !important;padding:3px 2px !important;font-size:12.5px}
+.sb-m .st{font-size:10.5px !important;justify-self:end;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+@media (max-width:640px){.sb-m a{grid-template-columns:58px 54px 1fr !important;gap:6px !important}.sb-m .st{display:none}}
+.rows li{position:relative}
+.rows li .thumb{display:none;position:fixed;right:28px;top:96px;width:240px;border-radius:14px;padding:10px;background:#F6F5F1;border:1px solid rgba(22,24,29,.10);box-shadow:0 24px 60px rgba(0,0,0,.28);z-index:9999;pointer-events:none}
+.rows li .thumb img{width:100%;display:block;border-radius:8px}
+.rows li:hover .thumb{display:block}
+html[data-theme=dark] .rows li .thumb{background:#16181D;border-color:rgba(255,255,255,.12)}
 </style>
 </head>
 <body>
@@ -147,11 +158,11 @@ html[data-theme=dark] .stock-card .stk-time{color:rgba(242,243,245,.6)}
         <div class='board'>
           <div class='board-h'><h3>新品与发售日历</h3><span class='cnt mono'>12</span></div>
           <ul class='rows'>
-            <li class='dr undated'><span class='lead'>10-10</span><a class='t' href='https://sneakernews.com/2026/09/30/air-jordan-release-dates-october-2026/' target='_blank'>Air Jordan 1 High OG Royal 黑蓝白 $185 全家码段</a><span class='m mono'>今日</span></li>
-            <li class='dr undated'><span class='lead'>10-10</span><a class='t' href='https://thedropdate.com/releases' target='_blank'>Nike Kobe 10 Protro Blue Lagoon $164.99</a><span class='m mono'>今日</span></li>
+            <li class='dr undated'><span class='lead'>10-10</span><a class='t' href='https://sneakernews.com/2026/09/30/air-jordan-release-dates-october-2026/' target='_blank'>Air Jordan 1 High OG Royal 黑蓝白 $185 全家码段</a><span class='m mono'>今日</span><img class='thumb' src='https://aka.doubaocdn.com/s/erFkawvZJF' alt='AJ1 Royal'></li>
+            <li class='dr undated'><span class='lead'>10-10</span><a class='t' href='https://thedropdate.com/releases' target='_blank'>Nike Kobe 10 Protro Blue Lagoon $164.99</a><span class='m mono'>今日</span><img class='thumb' src='https://aka.doubaocdn.com/s/uXBUrTfBe3' alt='Kobe 10 Blue Lagoon'></li>
             <li class='dr undated'><span class='lead'>10-10</span><a class='t' href='https://thedropdate.com/releases' target='_blank'>Nike Air Force 1 QS Super Hairy Team Red £140</a><span class='m mono'>今日</span></li>
-            <li class='dr undated'><span class='lead'>10-10</span><a class='t' href='https://m.weibo.cn/detail/5352382445128719' target='_blank'>安踏欧文凯旋 ALL IN 今日10点登场 NBA中国赛2026</a><span class='m mono'>今日</span></li>
-            <li class='dr undated'><span class='lead'>10-09</span><a class='t' href='https://us.puma.com/us/en/launch-calendar' target='_blank'>PUMA x Street Fighter Suede Ken/Ryu/Chun-Li 已上架</a><span class='m mono'>已上</span></li>
+            <li class='dr undated'><span class='lead'>10-10</span><a class='t' href='https://m.weibo.cn/detail/5352382445128719' target='_blank'>安踏欧文凯旋 ALL IN 今日10点登场 NBA中国赛2026</a><span class='m mono'>今日</span><img class='thumb' src='https://aka.doubaocdn.com/s/thPb6P6MYu' alt='安踏欧文3 红桃'></li>
+            <li class='dr undated'><span class='lead'>10-09</span><a class='t' href='https://us.puma.com/us/en/launch-calendar' target='_blank'>PUMA x Street Fighter Suede Ken/Ryu/Chun-Li 已上架</a><span class='m mono'>已上</span><img class='thumb' src='https://aka.doubaocdn.com/s/EGpUJmefLu' alt='PUMA x Street Fighter'></li>
             <li class='dr undated'><span class='lead'>10-09</span><a class='t' href='https://hypebeast.cn/drops/' target='_blank'>Nike LeBron 24 Greater China 中国限定</a><span class='m mono'>已上</span></li>
             <li class='dr undated'><span class='lead'>10-15</span><a class='t' href='https://corporate.lululemon.com/newsroom' target='_blank'>lululemon x GANNI 联名 Flashdance 灵感</a><span class='m mono'>10-15</span></li>
             <li class='dr undated'><span class='lead'>10月</span><a class='t' href='https://www.iesdouyin.com/share/video/7694634112967003455' target='_blank'>NIGO x j-hope x Nike Air Force 1 友情联名亮相</a><span class='m mono'>10月</span></li>
