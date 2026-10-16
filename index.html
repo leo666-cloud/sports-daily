@@ -126,7 +126,7 @@ html[data-theme=dark] .rows li .thumb{background:#16181D;border-color:rgba(255,2
       <div class='dash'>
                 <div class='board'>
           <div class='board-h'><h3>近期赛果速读</h3><span class='hint'>近 3 日大型赛事</span><span class='cnt mono'>39</span></div>
-          <div class='filt' id='sb-filt'><button class='f active' data-f='all'>全部</button><button class='f' data-f='nba'>NBA</button><button class='f' data-f='ucl'>足球</button><button class='f' data-f='tennis'>网球</button><button class='f' data-f='bwf'>羽乒</button><button class='f' data-f='bike'>自行车</button><button class='f' data-f='esports'>电竞</button><button class='f' data-f='golf'>高尔夫</button><button class='f' data-f='motor'>F1</button></div>
+          <div class='filt' id='sb-filt'></div>
           <ul class='sb'>
             <li class='sb-g' data-g='ucl'>欧冠联赛阶段第2轮 10-14</li>
             <li class='sb-m wh' data-g='ucl'><a href='https://sports.cctv.com/2026/10/14/ARTISrG9fqtzcj0Rqu4QQI97261014.shtml' target='_blank'><span class='home'>阿森纳</span><span class='sc mono'><b>3</b><i>:</i><span>0</span></span><span class='away'>里尔</span><span class='st'>廷贝尔/埃泽/萨卡7分钟3球 欧冠14连胜</span></a></li>
@@ -421,23 +421,9 @@ try{var loc2=await getLoc();var w2=await fetch('https://api.open-meteo.com/v1/fo
 <script src='history.js'></script>
 <script>
 (function(){
-  var btns=document.querySelectorAll('#sb-filt .f');
-  btns.forEach(function(b){
-    b.addEventListener('click',function(){
-      btns.forEach(function(x){x.classList.remove('active')});
-      b.classList.add('active');
-      var f=b.getAttribute('data-f');
-      document.querySelectorAll('.sb li').forEach(function(row){
-        if(f==='all'){row.style.display='';return;}
-        if(row.classList.contains('sb-g')){
-          row.style.display=(row.getAttribute('data-g')===f)?'':'none';
-        }else{
-          row.style.display=(row.getAttribute('data-g')===f)?'':'none';
-        }
-      });
-    });
-  });
-})();
+  var filt=document.getElementById('sb-filt');
+  if(!filt)return;
+  var labels={all:'全部',nba:'NBA',ucl:'足球',tennis:'网球',bwf:'羽乒',bike:'自行车',cycling:'自行车',esports:'电竞',golf:'高尔夫',motor:'F1',f1:'F1',og:'综合',nfl:'NFL',cba:'CBA',ipl:'板球',rugby:'橄榄球'};\n  var order=['all','nba','ucl','tennis','bwf','bike','cycling','esports','golf','motor','f1','nfl','cba','og'];\n  var groups={};\n  document.querySelectorAll('.sb li[data-g]').forEach(function(li){\n    var g=li.getAttribute('data-g');\n    if(g)groups[g]=1;\n  });\n  var keys=Object.keys(groups);\n  keys.sort(function(a,b){\n    var ia=order.indexOf(a);var ib=order.indexOf(b);\n    if(ia<0)ia=99;if(ib<0)ib=99;\n    return ia-ib;\n  });\n  keys.unshift('all');\n  function apply(f){\n    document.querySelectorAll('.sb li[data-g]').forEach(function(row){\n      row.style.display=(f==='all'||row.getAttribute('data-g')===f)?'':'none';\n    });\n  }\n  keys.forEach(function(g,i){\n    var b=document.createElement('button');\n    b.type='button';\n    b.className='f'+(i===0?' active':'');\n    b.setAttribute('data-f',g);\n    b.textContent=labels[g]||g;\n    b.addEventListener('click',function(){\n      filt.querySelectorAll('.f').forEach(function(x){x.classList.remove('active')});\n      b.classList.add('active');\n      apply(g);\n    });\n    filt.appendChild(b);\n  });\n  apply('all');\n})();
 </script>
 </body>
 </html>
