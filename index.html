@@ -25,19 +25,6 @@
 .masthead.wx-dust{background:radial-gradient(ellipse 140% 110% at 50% 0%, rgba(190,160,100,.55), transparent 70%),linear-gradient(180deg,#5a4a2e 0%,#6b5a38 55%,#332a1a 100%)!important}
 @media (max-width:760px){#weather{top:auto;bottom:14px;right:14px}}
 .side.wx-sun,.side.wx-cloud,.side.wx-rain,.side.wx-snow,.side.wx-storm,.side.wx-fog,.side.wx-haze,.side.wx-dust{border-radius:16px;padding:14px;margin:-6px -10px;box-shadow:0 8px 28px rgba(0,0,0,.18);background-attachment:fixed;background-position:top center}
-.side.wx-sun{background:radial-gradient(ellipse 60% 90% at 82% -10%,rgba(255,200,90,.85),rgba(255,150,50,.35) 40%,rgba(20,40,30,0) 70%),radial-gradient(ellipse 100% 100% at 20% 110%,rgba(60,90,70,.4),transparent 60%),linear-gradient(180deg,#2a1f10 0%,#4a3820 45%,#1a2a22 100%)}
-.side.wx-cloud{background:radial-gradient(ellipse 120% 100% at 50% -10%,rgba(200,210,225,.4),transparent 55%),linear-gradient(180deg,#3a404c 0%,#525a68 50%,#20242c 100%)}
-.side.wx-rain{background:radial-gradient(ellipse 120% 90% at 50% -10%,rgba(90,140,200,.45),transparent 60%),linear-gradient(180deg,#0a1828 0%,#1a3050 55%,#081018 100%)}
-.side.wx-snow{background:radial-gradient(ellipse 120% 90% at 50% -10%,rgba(230,240,255,.4),transparent 60%),linear-gradient(180deg,#253045 0%,#4a5a7a 55%,#182030 100%)}
-.side.wx-storm{background:radial-gradient(ellipse 120% 90% at 50% -10%,rgba(140,130,220,.5),transparent 60%),linear-gradient(180deg,#080818 0%,#1e1e3a 55%,#060610 100%)}
-.side.wx-fog{background:radial-gradient(ellipse 140% 110% at 50% 0%,rgba(180,188,196,.6),transparent 70%),linear-gradient(180deg,#3a4048 0%,#4a5058 55%,#2a2e34 100%)}
-.side.wx-haze{background:radial-gradient(ellipse 140% 110% at 50% 0%,rgba(160,150,130,.55),transparent 70%),linear-gradient(180deg,#4a453c 0%,#5a5448 55%,#2e2a24 100%)}
-.side.wx-dust{background:radial-gradient(ellipse 140% 110% at 50% 0%,rgba(190,160,100,.55),transparent 70%),linear-gradient(180deg,#5a4a2e 0%,#6b5a38 55%,#332a1a 100%)}
-.side.wx-sun .side-h,.side.wx-cloud .side-h,.side.wx-rain .side-h,.side.wx-snow .side-h,.side.wx-storm .side-h,.side.wx-fog .side-h,.side.wx-haze .side-h,.side.wx-dust .side-h{color:rgba(255,255,255,.65)}
-.side.wx-sun .foot,.side.wx-cloud .foot,.side.wx-rain .foot,.side.wx-snow .foot,.side.wx-storm .foot,.side.wx-fog .foot,.side.wx-haze .foot,.side.wx-dust .foot{color:rgba(255,255,255,.55)}
-.side.wx-sun .totop,.side.wx-cloud .totop,.side.wx-rain .totop,.side.wx-snow .totop,.side.wx-storm .totop,.side.wx-fog .totop,.side.wx-haze .totop,.side.wx-dust .totop{border-color:rgba(255,255,255,.55);color:#fff}
-.side.wx-sun .dbtn,.side.wx-cloud .dbtn,.side.wx-rain .dbtn,.side.wx-snow .dbtn,.side.wx-storm .dbtn,.side.wx-fog .dbtn,.side.wx-haze .dbtn,.side.wx-dust .dbtn{color:#16181D;background:rgba(246,245,241,.92);border-radius:12px}
-.side.wx-sun .dbtn .w,.side.wx-cloud .dbtn .w,.side.wx-rain .dbtn .w,.side.wx-snow .dbtn .w,.side.wx-storm .dbtn .w,.side.wx-fog .dbtn .w,.side.wx-haze .dbtn .w,.side.wx-dust .dbtn .w{color:#5a626e}
 .stock-card{border:1px solid rgba(22,24,29,.14);border-radius:14px;padding:14px 16px;margin:12px 0;background:rgba(246,245,241,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 6px 18px rgba(0,0,0,.10)}
 .stock-card .stk-h{font-size:11px;color:#5a626e;margin:0 0 8px;display:flex;justify-content:space-between;letter-spacing:.06em;font-weight:600}
 .stock-card .stk-price{font:800 26px/1.1 ui-monospace,SFMono-Regular,Menlo,monospace;margin:0;color:#16181D;letter-spacing:-.01em}
@@ -66,6 +53,9 @@ html[data-theme=dark] .stock-card .stk-time{color:rgba(242,243,245,.6)}
 .rows li .thumb img{width:100%;display:block;border-radius:8px}
 .rows li:hover .thumb{display:block}
 html[data-theme=dark] .rows li .thumb{background:#16181D;border-color:rgba(255,255,255,.12)}
+.ticker{position:relative;z-index:2}
+#weather{z-index:4}
+.sb-m{transition:opacity .15s}
 </style>
 </head>
 <body>
@@ -136,7 +126,7 @@ html[data-theme=dark] .rows li .thumb{background:#16181D;border-color:rgba(255,2
       <div class='dash'>
                 <div class='board'>
           <div class='board-h'><h3>近期赛果速读</h3><span class='hint'>近 3 日大型赛事</span><span class='cnt mono'>39</span></div>
-          <div class='filt' id='sb-filt'><button class='f active' data-f='all'>全部</button><button class='f' data-f='nba'>NBA</button><button class='f' data-f='ucl'>足球</button><button class='f' data-f='og'>综合</button></div>
+          <div class='filt' id='sb-filt'><button class='f active' data-f='all'>全部</button><button class='f' data-f='nba'>NBA</button><button class='f' data-f='ucl'>足球</button><button class='f' data-f='tennis'>网球</button><button class='f' data-f='bwf'>羽乒</button><button class='f' data-f='bike'>自行车</button><button class='f' data-f='esports'>电竞</button><button class='f' data-f='golf'>高尔夫</button><button class='f' data-f='motor'>F1</button></div>
           <ul class='sb'>
             <li class='sb-g' data-g='ucl'>欧冠联赛阶段第2轮 10-14</li>
             <li class='sb-m wh' data-g='ucl'><a href='https://sports.cctv.com/2026/10/14/ARTISrG9fqtzcj0Rqu4QQI97261014.shtml' target='_blank'><span class='home'>阿森纳</span><span class='sc mono'><b>3</b><i>:</i><span>0</span></span><span class='away'>里尔</span><span class='st'>廷贝尔/埃泽/萨卡7分钟3球 欧冠14连胜</span></a></li>
@@ -167,30 +157,30 @@ html[data-theme=dark] .rows li .thumb{background:#16181D;border-color:rgba(255,2
             <li class='sb-m' data-g='nba'><a href='https://cdn-uat.nba.com/news/starting-5-october-15-2026' target='_blank'><span class='home'>底特律活塞</span><span class='sc mono'><b>128</b><i>:</i><span>106</span></span><span class='away'>明尼苏达森林狼</span><span class='st'>Duren季前首秀9中8砍24分</span></a></li>
             <li class='sb-m wh' data-g='nba'><a href='https://www.talkbasket.net/224822-giannis-antetokounmpo-nears-triple-double-in-heat-win-over-nets' target='_blank'><span class='home'>迈阿密热火</span><span class='sc mono'><b>144</b><i>:</i><span>128</span></span><span class='away'>布鲁克林篮网</span><span class='st'>字母哥准三双</span></a></li>
             <li class='sb-m' data-g='nba'><a href='https://nba.nowscore.com/cn/Preseason.aspx?SclassID=1&matchSeason=2026-2027' target='_blank'><span class='home'>波士顿凯尔特人</span><span class='sc mono'><b>114</b><i>:</i><span>93</span></span><span class='away'>夏洛特黄蜂</span><span class='st'>塔图姆率队取胜</span></a></li>
-            <li class='sb-g' data-g='og'>上海大师赛 男单八强 10-15</li>
-            <li class='sb-m wh' data-g='og'><a href='https://www.atptour.com/en/news/zverev-de-minaur-shanghai-2026-qf' target='_blank'><span class='home'>兹维列夫[1]</span><span class='sc mono'><b>6-4</b><i>:</i><span>6-4</span></span><span class='away'>德米纳尔[9]</span><span class='st'>时隔7年返四强 1小时17分</span></a></li>
-            <li class='sb-m' data-g='og'><a href='http://m.toutiao.com/group/7696991620402627123/' target='_blank'><span class='home'>福基纳[25]</span><span class='sc mono'><b>4-1</b><i>:</i><span>RET</span></span><span class='away'>热亚</span><span class='st'>热亚腰伤退赛 福基纳22分钟进四强</span></a></li>
-            <li class='sb-g' data-g='og'>F1 日本大奖赛 10-12</li>
-            <li class='sb-m wh' data-g='og'><a href='https://www.japan.gp/es/informe-de-carrera-2026' target='_blank'><span class='home'>Antonelli (梅赛德斯)</span><span class='sc mono'><b>冠军</b><i>:</i><span>+13.7</span></span><span class='away'>Piastri (迈凯伦)</span><span class='st'>Antonelli两连胜 Leclerc第三</span></a></li>
-            <li class='sb-g' data-g='og'>环广西世巡赛 10-14/15（自行车）</li>
-            <li class='sb-m wh' data-g='og'><a href='http://gx.news.cn/20261015/c2a934cfb22c4537ad55c59c12fd76ea/c.html' target='_blank'><span class='home'>第二赛段 崇左-靖西 179.5km</span><span class='sc mono'><b>Biesterbos</b><i>:</i><span>马尼耶</span></span><span class='away'>皮克尼克车队首胜</span><span class='st'>比斯特博斯微弱优势夺冠 累计爬升1818m</span></a></li>
-            <li class='sb-m' data-g='og'><a href='http://ent.people.com.cn/n1/2026/1016/c1012-40815774.html' target='_blank'><span class='home'>第三赛段 靖西-巴马 211.9km</span><span class='sc mono'><b>弗雷廷</b><i>:</i><span>Biesterbos</span></span><span class='away'>科菲迪斯车队</span><span class='st'>王瑞东首夺爬坡圆点衫 中国车手历史突破</span></a></li>
-            <li class='sb-g' data-g='og'>上海大师赛 1/8决赛 10-14</li>
-            <li class='sb-m wh' data-g='og'><a href='http://www.sh.xinhuanet.com/20261015/1558457d43214d5da5ecc0fdfbc2ad16/c.html' target='_blank'><span class='home'>梅德韦杰夫[5]</span><span class='sc mono'><b>6-4</b><i>:</i><span>7-5</span></span><span class='away'>西西帕斯</span><span class='st'>第16场梅西大战 连续三年进八强</span></a></li>
-            <li class='sb-g' data-g='og'>丹麦羽毛球公开赛 10-15（超级750）</li>
-            <li class='sb-m wh' data-g='og'><a href='https://bwfworldtour.bwfbadminton.com/news-single/2026/10/15/denmark-open-he-ren-finally-crack-rivals/' target='_blank'><span class='home'>何济霆/任翔宇</span><span class='sc mono'><b>2-1</b><i>:</i><span>(12-21 21-15 21-19)</span></span><span class='away'>兰基雷迪/谢提(印度)</span><span class='st'>三战对手首胜 晋级男双八强</span></a></li>
-            <li class='sb-m' data-g='og'><a href='http://www.sport.gov.cn/n20001280/n20067662/n20067613/c30113652/content.html' target='_blank'><span class='home'>梁伟铿/王昶</span><span class='sc mono'><b>晋级</b><i>:</i><span>八强</span></span><span class='away'>国羽男双独苗</span><span class='st'>四对组合仅一对晋级 国羽混双占四席</span></a></li>
-            <li class='sb-m wh' data-g='og'><a href='https://m.sohu.com/a/1088438247_121667011/' target='_blank'><span class='home'>王祉怡[2]</span><span class='sc mono'><b>2-0</b><i>:</i><span>韩千禧</span></span><span class='away'>国羽女单德比</span><span class='st'>八强将战5号种子瓦尔达尼</span></a></li>
-            <li class='sb-g' data-g='og'>英雄联盟 S16 入围赛 10-16</li>
-            <li class='sb-m wh' data-g='og'><a href='http://m.toutiao.com/group/7697079010290909732/' target='_blank'><span class='home'>KC (LEC)</span><span class='sc mono'><b>3</b><i>:</i><span>2</span></span><span class='away'>C9 (LCS)</span><span class='st'>欧美大战 鏖战五局晋级</span></a></li>
-            <li class='sb-m' data-g='og'><a href='http://m.toutiao.com/group/7697079010290909732/' target='_blank'><span class='home'>MVK</span><span class='sc mono'><b>3</b><i>:</i><span>0</span></span><span class='away'>FUR (巴西)</span><span class='st'>SofM带队横扫巴西黑豹</span></a></li>
-            <li class='sb-g' data-g='og'>WTT 中国大满贯 10-11（近期大赛）</li>
-            <li class='sb-m wh' data-g='og'><a href='http://www.news.cn/sports/20261012/c2a36d22394941f2a8f859ad6f0d0c54/c.html' target='_blank'><span class='home'>王曼昱</span><span class='sc mono'><b>4-0</b><i>:</i><span>佐藤瞳(日)</span></span><span class='away'>女单卫冕冠军</span><span class='st'>11-2/11-8/11-3/11-9 将反超孙颖莎登顶</span></a></li>
-            <li class='sb-m' data-g='og'><a href='https://www.chinadaily.com.cn/a/202610/11/WS6acb8c47e4b06d4aa05622dc.html' target='_blank'><span class='home'>松岛辉空(日)</span><span class='sc mono'><b>4-3</b><i>:</i><span>林昀儒(台)</span></span><span class='away'>男单冠军</span><span class='st'>世界第一险胜 国乒男单无缘冠军</span></a></li>
-            <li class='sb-g' data-g='og'>中网 WTA 10-11（近期大赛）</li>
-            <li class='sb-m wh' data-g='og'><a href='https://36kr.com/p/4025029777708930' target='_blank'><span class='home'>郑钦文(外卡)</span><span class='sc mono'><b>2-0</b><i>:</i><span>(7-5 6-4)</span></span><span class='away'>安德列娃[4]</span><span class='st'>中网20年首位本土女单冠军 WTA1000首冠</span></a></li>
-            <li class='sb-g' data-g='og'>别克 LPGA 锦标赛 10-15（高尔夫）</li>
-            <li class='sb-m wh' data-g='og'><a href='http://ent.people.com.cn/n1/2026/1016/c1012-40815774.html' target='_blank'><span class='home'>殷若宁</span><span class='sc mono'><b>-4</b><i>:</i><span>首轮T3</span></span><span class='away'>上海佘山开杆</span><span class='st'>名古屋亚运女团冠军成员 并列第三</span></a></li>
+            <li class='sb-g' data-g='tennis'>上海大师赛 男单八强 10-15</li>
+            <li class='sb-m wh' data-g='tennis'><a href='https://www.atptour.com/en/news/zverev-de-minaur-shanghai-2026-qf' target='_blank'><span class='home'>兹维列夫[1]</span><span class='sc mono'><b>6-4</b><i>:</i><span>6-4</span></span><span class='away'>德米纳尔[9]</span><span class='st'>时隔7年返四强 1小时17分</span></a></li>
+            <li class='sb-m' data-g='tennis'><a href='http://m.toutiao.com/group/7696991620402627123/' target='_blank'><span class='home'>福基纳[25]</span><span class='sc mono'><b>4-1</b><i>:</i><span>RET</span></span><span class='away'>热亚</span><span class='st'>热亚腰伤退赛 福基纳22分钟进四强</span></a></li>
+            <li class='sb-g' data-g='motor'>F1 日本大奖赛 10-12</li>
+            <li class='sb-m wh' data-g='motor'><a href='https://www.japan.gp/es/informe-de-carrera-2026' target='_blank'><span class='home'>Antonelli (梅赛德斯)</span><span class='sc mono'><b>冠军</b><i>:</i><span>+13.7</span></span><span class='away'>Piastri (迈凯伦)</span><span class='st'>Antonelli两连胜 Leclerc第三</span></a></li>
+            <li class='sb-g' data-g='bike'>环广西世巡赛 10-14/15（自行车）</li>
+            <li class='sb-m wh' data-g='bike'><a href='http://gx.news.cn/20261015/c2a934cfb22c4537ad55c59c12fd76ea/c.html' target='_blank'><span class='home'>第二赛段 崇左-靖西 179.5km</span><span class='sc mono'><b>Biesterbos</b><i>:</i><span>马尼耶</span></span><span class='away'>皮克尼克车队首胜</span><span class='st'>比斯特博斯微弱优势夺冠 累计爬升1818m</span></a></li>
+            <li class='sb-m' data-g='bike'><a href='http://ent.people.com.cn/n1/2026/1016/c1012-40815774.html' target='_blank'><span class='home'>第三赛段 靖西-巴马 211.9km</span><span class='sc mono'><b>弗雷廷</b><i>:</i><span>Biesterbos</span></span><span class='away'>科菲迪斯车队</span><span class='st'>王瑞东首夺爬坡圆点衫 中国车手历史突破</span></a></li>
+            <li class='sb-g' data-g='tennis'>上海大师赛 1/8决赛 10-14</li>
+            <li class='sb-m wh' data-g='tennis'><a href='http://www.sh.xinhuanet.com/20261015/1558457d43214d5da5ecc0fdfbc2ad16/c.html' target='_blank'><span class='home'>梅德韦杰夫[5]</span><span class='sc mono'><b>6-4</b><i>:</i><span>7-5</span></span><span class='away'>西西帕斯</span><span class='st'>第16场梅西大战 连续三年进八强</span></a></li>
+            <li class='sb-g' data-g='bwf'>丹麦羽毛球公开赛 10-15（超级750）</li>
+            <li class='sb-m wh' data-g='bwf'><a href='https://bwfworldtour.bwfbadminton.com/news-single/2026/10/15/denmark-open-he-ren-finally-crack-rivals/' target='_blank'><span class='home'>何济霆/任翔宇</span><span class='sc mono'><b>2-1</b><i>:</i><span>(12-21 21-15 21-19)</span></span><span class='away'>兰基雷迪/谢提(印度)</span><span class='st'>三战对手首胜 晋级男双八强</span></a></li>
+            <li class='sb-m' data-g='bwf'><a href='http://www.sport.gov.cn/n20001280/n20067662/n20067613/c30113652/content.html' target='_blank'><span class='home'>梁伟铿/王昶</span><span class='sc mono'><b>晋级</b><i>:</i><span>八强</span></span><span class='away'>国羽男双独苗</span><span class='st'>四对组合仅一对晋级 国羽混双占四席</span></a></li>
+            <li class='sb-m wh' data-g='bwf'><a href='https://m.sohu.com/a/1088438247_121667011/' target='_blank'><span class='home'>王祉怡[2]</span><span class='sc mono'><b>2-0</b><i>:</i><span>韩千禧</span></span><span class='away'>国羽女单德比</span><span class='st'>八强将战5号种子瓦尔达尼</span></a></li>
+            <li class='sb-g' data-g='esports'>英雄联盟 S16 入围赛 10-16</li>
+            <li class='sb-m wh' data-g='esports'><a href='http://m.toutiao.com/group/7697079010290909732/' target='_blank'><span class='home'>KC (LEC)</span><span class='sc mono'><b>3</b><i>:</i><span>2</span></span><span class='away'>C9 (LCS)</span><span class='st'>欧美大战 鏖战五局晋级</span></a></li>
+            <li class='sb-m' data-g='esports'><a href='http://m.toutiao.com/group/7697079010290909732/' target='_blank'><span class='home'>MVK</span><span class='sc mono'><b>3</b><i>:</i><span>0</span></span><span class='away'>FUR (巴西)</span><span class='st'>SofM带队横扫巴西黑豹</span></a></li>
+            <li class='sb-g' data-g='bwf'>WTT 中国大满贯 10-11（近期大赛）</li>
+            <li class='sb-m wh' data-g='bwf'><a href='http://www.news.cn/sports/20261012/c2a36d22394941f2a8f859ad6f0d0c54/c.html' target='_blank'><span class='home'>王曼昱</span><span class='sc mono'><b>4-0</b><i>:</i><span>佐藤瞳(日)</span></span><span class='away'>女单卫冕冠军</span><span class='st'>11-2/11-8/11-3/11-9 将反超孙颖莎登顶</span></a></li>
+            <li class='sb-m' data-g='bwf'><a href='https://www.chinadaily.com.cn/a/202610/11/WS6acb8c47e4b06d4aa05622dc.html' target='_blank'><span class='home'>松岛辉空(日)</span><span class='sc mono'><b>4-3</b><i>:</i><span>林昀儒(台)</span></span><span class='away'>男单冠军</span><span class='st'>世界第一险胜 国乒男单无缘冠军</span></a></li>
+            <li class='sb-g' data-g='tennis'>中网 WTA 10-11（近期大赛）</li>
+            <li class='sb-m wh' data-g='tennis'><a href='https://36kr.com/p/4025029777708930' target='_blank'><span class='home'>郑钦文(外卡)</span><span class='sc mono'><b>2-0</b><i>:</i><span>(7-5 6-4)</span></span><span class='away'>安德列娃[4]</span><span class='st'>中网20年首位本土女单冠军 WTA1000首冠</span></a></li>
+            <li class='sb-g' data-g='golf'>别克 LPGA 锦标赛 10-15（高尔夫）</li>
+            <li class='sb-m wh' data-g='golf'><a href='http://ent.people.com.cn/n1/2026/1016/c1012-40815774.html' target='_blank'><span class='home'>殷若宁</span><span class='sc mono'><b>-4</b><i>:</i><span>首轮T3</span></span><span class='away'>上海佘山开杆</span><span class='st'>名古屋亚运女团冠军成员 并列第三</span></a></li>
           </ul>
         </div>
                 <div class='board'>
@@ -218,9 +208,6 @@ html[data-theme=dark] .rows li .thumb{background:#16181D;border-color:rgba(255,2
           <p><strong>[要点]</strong> 港股运动板块 10-15 收涨：安踏 <strong>75.45 港元 +1.21%</strong>（成交 9.11 亿），李宁 12.78 +0.63%，特步 3.58 -0.42%，361° 4.625 +0.22%。</p>
           <p><strong>[要点]</strong> Nike 官方签约拜仁/法国边锋奥利塞，毒锋（Phantom VSN）系列将全面回归；始祖鸟推出 Sperro SV 高性能多运动硬壳夹克。</p>
         </blockquote>
-
-        
-        
         <h2 id='s2'>一、赛事与竞技动态</h2>
         <div class='item'>
           <div class='ihead'><span class='src'>澎湃新闻 / 直播吧</span><h3>欧联杯：尤文 2-1 塞尔塔，穆阿尼 92 分钟头球绝杀</h3><span class='t'>10-16</span><a class='go' href='http://m.toutiao.com/group/7697054192225042944/' target='_blank'>阅读原文<u></u></a></div>
@@ -266,7 +253,6 @@ html[data-theme=dark] .rows li .thumb{background:#16181D;border-color:rgba(255,2
           <div class='ihead'><span class='src'>懂球帝</span><h3>中冠决赛阶段：武汉联镇 3-1 大连聚惺晟恒，周宇双响</h3><span class='t'>10-15</span><a class='go' href='https://m.dongqiudi.com/article/6492730.html' target='_blank'>阅读原文<u></u></a></div>
           <ul><li><strong>详情</strong>中国足协会员协会冠军联赛决赛阶段排位赛首回合，大连聚惺晟恒达尼亚尔先拔头筹；武汉联镇周宇梅开二度、郑誉江破门，3-1 客胜。</li></ul>
         </div>
-
         <h2 id='s3'>二、品牌营销与代言动态</h2>
         <div class='item'>
           <div class='ihead'><span class='src'>Footy Headlines / 懂球帝</span><h3>Nike 官宣签约拜仁/法国边锋奥利塞，毒锋系列将全面回归</h3><span class='t'>10-16</span><a class='go' href='http://m.toutiao.com/group/7697029626727629348/' target='_blank'>阅读原文<u></u></a></div>
@@ -300,7 +286,6 @@ html[data-theme=dark] .rows li .thumb{background:#16181D;border-color:rgba(255,2
           <div class='ihead'><span class='src'>adidas Newsroom</span><h3>adidas 发布冬季高尔夫服装与 CODECHAOS 27 高尔夫鞋</h3><span class='t'>10-15</span><a class='go' href='https://news.adidas.com/golf' target='_blank'>阅读原文<u></u></a></div>
           <ul><li><strong>详情</strong>adidas 推出帮助高尔夫球手在秋冬季保暖的冷天气服装；同步发布 CODECHAOS 27 无钉高尔夫鞋，提升舒适度与抓地力，并与 Metalwood 推出首个高尔夫胶囊系列。</li></ul>
         </div>
-
         <h2 id='s4'>三、运动品牌与渠道、舆论动态</h2>
         <div class='item'>
           <div class='ihead'><span class='src'>界面新闻</span><h3>Nike 用更本土化设计拉拢中国消费者，上海时装周发布流形系列</h3><span class='t'>10-15</span><a class='go' href='http://m.toutiao.com/group/7696819985380934154/' target='_blank'>阅读原文<u></u></a></div>
@@ -326,7 +311,6 @@ html[data-theme=dark] .rows li .thumb{background:#16181D;border-color:rgba(255,2
           <div class='ihead'><span class='src'>21 世纪经济报道</span><h3>服装品牌「萌宠」营销火热，李宁、报喜鸟、红豆股份入局</h3><span class='t'>10-14</span><a class='go' href='https://biz.finance.sina.com.cn/usstock/usstock_news.php?pageIndex=4&symbol=LNNGY' target='_blank'>阅读原文<u></u></a></div>
           <ul><li><strong>详情</strong>运动服饰品牌掀起「萌宠」营销热潮，李宁等国货品牌相继推出宠物友好系列与联名，切入 Z 世代情感消费场景。</li></ul>
         </div>
-
         <h2 id='s5'>四、资本、业绩与市场变化</h2>
         <div class='item'>
           <div class='ihead'><span class='src'>证券之星 / 同花顺</span><h3>安踏体育（02020.HK）10-15 收 75.45 港元 +1.21%，成交 9.11 亿</h3><span class='t'>10-15 收盘</span><a class='go' href='https://hk.stockstar.com/RB2026101500032076.shtml' target='_blank'>阅读原文<u></u></a></div>
@@ -352,7 +336,6 @@ html[data-theme=dark] .rows li .thumb{background:#16181D;border-color:rgba(255,2
           <div class='ihead'><span class='src'>东方财富 / 凤凰网</span><h3>美股三大指数 10-15 收涨：道指 +1.08%，耐克赛富时领涨</h3><span class='t'>10-15</span><a class='go' href='https://finance.ifeng.com/c/8xGJglD4Fea' target='_blank'>阅读原文<u></u></a></div>
           <ul><li><strong>详情</strong>道指涨 1.08% 报 52177.69 点，标普 500 涨 0.33% 报 7744.06 点，纳指涨 0.08% 报 26713.03 点；科技以外板块拉动大盘收涨，耐克涨超 5%、赛富时涨逾 4%。</li></ul>
         </div>
-
 <h2 id='s6'>五、体育行业公告与市场影响</h2>
         <div class='item'>
           <div class='ihead'><span class='src'>金陵体育 300651.SZ · 人事变动</span><h3>金陵体育：孙军申请辞去公司财务总监职务，第八届董事会第七次会议召开</h3><span class='t'>10-15</span><a class='go' href='https://pdf.dfcfw.com/pdf/H2_AN202610151830508037_1.pdf' target='_blank'>阅读原文<u></u></a></div>
@@ -392,7 +375,7 @@ document.querySelectorAll('.chip').forEach(function(c){c.onclick=function(){var 
 </script>
 <script>
 (function(){
-var wb=document.getElementById('weather');if(!wb)return;wb.textContent='定位中…';
+var wb=document.getElementById('weather');if(!wb)return;wb.innerHTML='<span class=\'w-ico\'>📍</span><span class=\'w-city\'>杭州</span><span class=\'w-temp\'>--</span><span class=\'w-label\'>°C 加载中</span>';
 var c=document.getElementById('wx');var mh=document.querySelector('.masthead');var side=document.querySelector('.side');
 var ALL_WX=['wx-sun','wx-cloud','wx-rain','wx-snow','wx-storm','wx-fog','wx-haze','wx-dust'];
 function wxOn(cls){mh.classList.add(cls);if(side)side.classList.add(cls)}
@@ -436,5 +419,25 @@ try{var loc2=await getLoc();var w2=await fetch('https://api.open-meteo.com/v1/fo
 (function(){function loadStk(){var s=document.createElement('script');s.src='https://qt.gtimg.cn/q=hk02331&r='+Date.now();s.onload=function(){try{var raw=window.v_hk02331;if(!raw)return;var a=raw.split('~');var price=parseFloat(a[3]);var chg=parseFloat(a[31]);var pct=parseFloat(a[32]);var high=a[33],low=a[34];var time=a[30];var up=chg>=0;document.getElementById('stk-price').textContent=price.toFixed(3);var chgEl=document.getElementById('stk-chg');chgEl.textContent=(up?'+':'')+chg.toFixed(3)+'  ('+(up?'+':'')+pct.toFixed(2)+'%)';chgEl.className='stk-chg '+(up?'up':'down');document.getElementById('stk-time').textContent=time+' · 高'+high+' 低'+low}catch(e){}s.remove()};document.head.appendChild(s)}loadStk();setInterval(loadStk,60000)})();
 </script>
 <script src='history.js'></script>
+<script>
+(function(){
+  var btns=document.querySelectorAll('#sb-filt .f');
+  btns.forEach(function(b){
+    b.addEventListener('click',function(){
+      btns.forEach(function(x){x.classList.remove('active')});
+      b.classList.add('active');
+      var f=b.getAttribute('data-f');
+      document.querySelectorAll('.sb li').forEach(function(row){
+        if(f==='all'){row.style.display='';return;}
+        if(row.classList.contains('sb-g')){
+          row.style.display=(row.getAttribute('data-g')===f)?'':'none';
+        }else{
+          row.style.display=(row.getAttribute('data-g')===f)?'':'none';
+        }
+      });
+    });
+  });
+})();
+</script>
 </body>
 </html>
