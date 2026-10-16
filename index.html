@@ -375,44 +375,48 @@ document.querySelectorAll('.chip').forEach(function(c){c.onclick=function(){var 
 </script>
 <script>
 (function(){
-var wb=document.getElementById('weather');if(!wb)return;wb.innerHTML='<span class=\'w-ico\'>📍</span><span class=\'w-city\'>杭州</span><span class=\'w-temp\'>--</span><span class=\'w-label\'>°C 加载中</span>';
-var c=document.getElementById('wx');var mh=document.querySelector('.masthead');var side=document.querySelector('.side');
+var w=document.getElementById('weather');if(!w)return;
+w.innerHTML='<span class=\'w-ico\'>📍</span><span class=\'w-city\'>杭州</span><span class=\'w-temp\'>--</span><span class=\'w-label\'>加载中</span>';
+var c=document.getElementById('wx');
+var mh=document.querySelector('.masthead');
 var ALL_WX=['wx-sun','wx-cloud','wx-rain','wx-snow','wx-storm','wx-fog','wx-haze','wx-dust'];
-function wxOn(cls){mh.classList.add(cls);if(side)side.classList.add(cls)}
-function wxClear(){mh.classList.remove.apply(mh.classList,ALL_WX);if(side)side.classList.remove.apply(side.classList,ALL_WX)}
+function wxOn(cls){mh.classList.add(cls)}
+function wxClear(){mh.classList.remove.apply(mh.classList,ALL_WX)}
 function resize(){if(!c)return;c.width=window.innerWidth;c.height=window.innerHeight}
 resize();addEventListener('resize',resize);
-var drops=[],flash=0,nextBolt=0,boltSeq=[];
+var drops=[],flash=0;
 function loop(){if(!c)return;var ctx=c.getContext('2d');ctx.clearRect(0,0,c.width,c.height);var t=Date.now();var W=c.width,H=c.height;
 drops.forEach(function(d){if(d.kind==='rain'){ctx.strokeStyle=d.bright;ctx.lineWidth=d.lw;ctx.beginPath();ctx.moveTo(d.x,d.y);ctx.lineTo(d.x-d.slant,d.y+d.len);ctx.stroke();d.y+=d.speed;d.x-=d.slant*0.4;if(d.y>H){d.y=-30-Math.random()*40;d.x=Math.random()*(W+200)-100}}
-else if(d.kind==='snow'){ctx.fillStyle=d.color||('rgba(255,255,255,'+d.a+')');ctx.beginPath();ctx.arc(d.x,d.y,d.r,0,Math.PI*2);ctx.fill();d.y+=d.speed;d.x+=Math.sin(d.y/d.amp+t/d.freq)*d.swing;if(d.y>H+10){d.y=-10;d.x=Math.random()*W}}
-else if(d.kind==='dust'){ctx.fillStyle=d.color;ctx.beginPath();ctx.arc(d.x,d.y,d.r,0,Math.PI*2);ctx.fill();d.y+=d.speed;d.x+=d.wind;if(d.y>H+10||d.x>W+20){d.y=Math.random()*H;d.x=-20-Math.random()*40}}
+else if(d.kind==='snow'){ctx.fillStyle=d.color||'rgba(255,255,255,'+d.a+')';ctx.beginPath();ctx.arc(d.x,d.y,d.r,0,Math.PI*2);ctx.fill();d.y+=d.speed;d.x+=Math.sin(d.y/d.amp+t/d.freq)*d.swing;if(d.y>H+10){d.y=-10;d.x=Math.random()*W}}
 else if(d.kind==='cloud'){var g=ctx.createRadialGradient(d.x,d.y,0,d.x,d.y,d.r);g.addColorStop(0,d.color);g.addColorStop(1,'rgba(200,210,225,0)');ctx.fillStyle=g;ctx.beginPath();ctx.arc(d.x,d.y,d.r,0,Math.PI*2);ctx.fill();d.x+=d.v;if(d.x-d.r>W+50){d.x=-d.r-50;d.y=Math.random()*H*0.6}}
-else if(d.kind==='sun'){var g2=ctx.createRadialGradient(d.x,d.y,0,d.x,d.y,d.r);g2.addColorStop(0,'rgba(255,220,140,'+d.a+')');g2.addColorStop(0.5,'rgba(255,190,90,'+(d.a*0.5)+')');g2.addColorStop(1,'rgba(255,190,90,0)');ctx.fillStyle=g2;ctx.beginPath();ctx.arc(d.x,d.y,d.r,0,Math.PI*2);ctx.fill();d.y-=d.v;if(d.y<-30){d.y=H+30;d.x=Math.random()*W}}
-else if(d.kind==='suncore'){var g3=ctx.createRadialGradient(W*0.82,H*0.1,0,W*0.82,H*0.1,d.r);g3.addColorStop(0,'rgba(255,245,200,0.95)');g3.addColorStop(0.25,'rgba(255,215,120,0.7)');g3.addColorStop(0.6,'rgba(255,180,80,0.25)');g3.addColorStop(1,'rgba(255,180,80,0)');ctx.fillStyle=g3;ctx.beginPath();ctx.arc(W*0.82,H*0.1,d.r,0,Math.PI*2);ctx.fill()}});
+else if(d.kind==='sun'){var g2=ctx.createRadialGradient(d.x,d.y,0,d.x,d.y,d.r);g2.addColorStop(0,'rgba(255,220,140,'+d.a+')');g2.addColorStop(1,'rgba(255,190,90,0)');ctx.fillStyle=g2;ctx.beginPath();ctx.arc(d.x,d.y,d.r,0,Math.PI*2);ctx.fill();d.y-=d.v;if(d.y<-30){d.y=H+30;d.x=Math.random()*W}}
+else if(d.kind==='suncore'){var g3=ctx.createRadialGradient(W*0.82,H*0.1,0,W*0.82,H*0.1,d.r);g3.addColorStop(0,'rgba(255,245,200,0.95)');g3.addColorStop(0.5,'rgba(255,215,120,0.7)');g3.addColorStop(1,'rgba(255,180,80,0)');ctx.fillStyle=g3;ctx.beginPath();ctx.arc(W*0.82,H*0.1,d.r,0,Math.PI*2);ctx.fill()}});
 if(flash>0){ctx.fillStyle='rgba(255,255,255,'+flash+')';ctx.fillRect(0,0,W,H);flash-=0.04}
-if(boltSeq.length){ctx.strokeStyle='rgba(255,255,255,'+Math.max(flash,0.3)+')';ctx.lineWidth=2;ctx.beginPath();boltSeq.forEach(function(p,i){if(i===0)ctx.moveTo(p.x,p.y);else ctx.lineTo(p.x,p.y)});ctx.stroke()}
 requestAnimationFrame(loop)}
-function setFX(code){drops=[];flash=0;nextBolt=0;boltSeq=[];wxClear();
-if(code===95||code===96||code===99){wxOn('wx-storm');for(var i=0;i<360;i++){var near=Math.random();drops.push({kind:'rain',x:Math.random()*(c.width+200)-100,y:Math.random()*c.height,len:near>0.6?28+Math.random()*22:14+Math.random()*12,speed:near>0.6?16+Math.random()*12:8+Math.random()*5,slant:near>0.6?6+Math.random()*4:3+Math.random()*2,bright:near>0.6?'rgba(210,230,255,.9)':'rgba(160,190,230,.45)',lw:near>0.6?1.6:0.9})}}
-else if([51,53,55,56,57,61,63,65,66,67,80,81,82].indexOf(code)>=0){wxOn('wx-rain');var heavy=(code>=63||code===82);var n=heavy?320:200;for(var i=0;i<n;i++){var near=Math.random();drops.push({kind:'rain',x:Math.random()*(c.width+200)-100,y:Math.random()*c.height,len:near>0.6?24+Math.random()*20:12+Math.random()*10,speed:near>0.6?14+Math.random()*10:7+Math.random()*4,slant:near>0.6?5+Math.random()*3:2.5+Math.random()*2,bright:near>0.6?'rgba(200,225,255,.85)':'rgba(150,180,220,.4)',lw:near>0.6?1.5:0.8})}}
-else if([71,73,75,77,85,86].indexOf(code)>=0){wxOn('wx-snow');for(var i=0;i<260;i++){var layer=Math.random();drops.push({kind:'snow',x:Math.random()*c.width,y:Math.random()*c.height,r:layer>0.7?3+Math.random()*3:layer>0.35?1.8+Math.random()*1.5:0.8+Math.random()*1,speed:layer>0.7?1.8+Math.random()*1.5:layer>0.35?1+Math.random()*0.8:0.4+Math.random()*0.5,a:layer>0.7?0.95:layer>0.35?0.7:0.4,swing:layer>0.7?1.2:0.6,amp:30+Math.random()*40,freq:800+Math.random()*800})}}
-else if(code===0||code===1){wxOn('wx-sun');drops.push({kind:'suncore',r:280});for(var i=0;i<120;i++){drops.push({kind:'sun',x:Math.random()*c.width,y:Math.random()*c.height,r:24+Math.random()*90,a:0.10+Math.random()*0.18,v:0.2+Math.random()*0.5})}}
-else if(code===2||code===3){wxOn('wx-cloud');for(var i=0;i<26;i++){var dark=Math.random()>0.5;drops.push({kind:'cloud',x:Math.random()*c.width,y:Math.random()*c.height*0.7,r:90+Math.random()*180,color:dark?'rgba(120,130,150,.28)':'rgba(210,220,235,.18)',v:0.5+Math.random()*0.8})}}
-else if(code===45||code===48){wxOn('wx-fog');for(var i=0;i<40;i++){drops.push({kind:'cloud',x:Math.random()*c.width,y:Math.random()*c.height,r:180+Math.random()*260,color:'rgba(190,198,206,'+(0.10+Math.random()*0.10)+')',v:0.15+Math.random()*0.25})}}
-else if(code===46){wxOn('wx-haze');for(var i=0;i<50;i++){drops.push({kind:'cloud',x:Math.random()*c.width,y:Math.random()*c.height,r:150+Math.random()*220,color:'rgba(160,150,130,'+(0.12+Math.random()*0.12)+')',v:0.08+Math.random()*0.18})}}
-else if(code===47){wxOn('wx-dust');for(var i=0;i<30;i++){drops.push({kind:'cloud',x:Math.random()*c.width,y:Math.random()*c.height,r:140+Math.random()*200,color:'rgba(190,160,100,'+(0.10+Math.random()*0.12)+')',v:0.25+Math.random()*0.35})};for(var j=0;j<90;j++){drops.push({kind:'dust',x:Math.random()*c.width,y:Math.random()*c.height,r:0.8+Math.random()*1.8,speed:0.3+Math.random()*0.6,wind:1.2+Math.random()*1.8,color:'rgba(210,180,120,'+(0.25+Math.random()*0.35)+')'})}}
+function setFX(code){drops=[];flash=0;wxClear();
+if(code>=95){wxOn('wx-storm');for(var i=0;i<360;i++){drops.push({kind:'rain',x:Math.random()*2000-100,y:Math.random()*800,len:20,speed:18,slant:6,bright:'rgba(210,230,255,.9)',lw:1.5})}}
+else if([51,53,55,56,57,61,63,65,66,67,80,81,82].indexOf(code)>=0){wxOn('wx-rain');for(var i=0;i<220;i++){drops.push({kind:'rain',x:Math.random()*2000-100,y:Math.random()*800,len:16,speed:12,slant:4,bright:'rgba(200,225,255,.8)',lw:1.2})}}
+else if([71,73,75,77,85,86].indexOf(code)>=0){wxOn('wx-snow');for(var i=0;i<200;i++){var l=Math.random();drops.push({kind:'snow',x:Math.random()*2000,y:Math.random()*800,r:l>0.7?3:1.5,speed:1.2,a:0.8,swing:1,amp:40,freq:1200})}}
+else if(code===0||code===1){wxOn('wx-sun');drops.push({kind:'suncore',r:280});for(var i=0;i<100;i++){drops.push({kind:'sun',x:Math.random()*2000,y:Math.random()*800,r:50,a:0.15,v:0.3})}}
+else if(code===2||code===3){wxOn('wx-cloud');for(var i=0;i<20;i++){drops.push({kind:'cloud',x:Math.random()*2000,y:Math.random()*400,r:120,color:'rgba(180,190,210,.2)',v:0.6})}}
 loop()}
-async function getLoc(){if(navigator.geolocation&&(location.protocol==='https:'||location.hostname==='localhost')){try{var pos=await new Promise(function(res,rej){navigator.geolocation.getCurrentPosition(res,rej,{timeout:5000,maximumAge:600000,enableHighAccuracy:false})});return{lat:pos.coords.latitude,lng:pos.longitude,city:''}}catch(e){}}
-try{var r=await fetch('https://ipwho.is/?fields=success,latitude,longitude').then(function(x){return x.json()});if(r&&r.success!==false&&r.latitude)return{lat:r.latitude,lng:r.longitude,city:''}}catch(e){}
-return{lat:30.28,lng:120.15,city:'杭州'}}
-var QW_HOST='pg3qqubnkm.re.qweatherapi.com';var QW_KEY='e83435ce53fb48448342b3c2602a3e43';
-function catOfText(t){if(t.indexOf('雷')>=0)return 'storm';if(t.indexOf('雪')>=0||t.indexOf('霰')>=0||t.indexOf('冰粒')>=0)return 'snow';if(t.indexOf('雨')>=0)return 'rain';if(t.indexOf('雾')>=0)return 'fog';if(t.indexOf('霾')>=0)return 'haze';if(t.indexOf('尘')>=0||t.indexOf('沙')>=0)return 'dust';if(t.indexOf('晴')>=0)return 'sun';return 'cloud'}
-function emojiFor(c){return{sun:'☀️',cloud:'⛅',fog:'🌫️',haze:'😷',dust:'🏜️',rain:'🌧️',snow:'🌨️',storm:'⛈️'}[c]||'🌡️'}
-function renderCn(city,text,temp,wind,cat){wb.innerHTML='';function sp(cls,txt){var e=document.createElement('span');e.className=cls;t.textContent=txt;wb.appendChild(e)}sp('w-ico',emojiFor(cat));sp('w-city',city);sp('w-temp',temp+'°C');sp('w-label',text+' · 风'+wind+'km/h')}
-function setFXCat(cat){var codeMap={sun:0,cloud:3,fog:45,haze:46,dust:47,rain:63,snow:71,storm:95};var c=codeMap[cat];setFX(c===undefined?3:c)}
-(async function(){try{var loc=await getLoc();var g=await fetch('https://'+QW_HOST+'/geo/v2/city/lookup?location='+loc.lng+','+loc.lat+'&key='+QW_KEY).then(function(r){return r.json()});var g0=(g.location&&g.location[0]);var id=g0&&g0.id||'101210101';var cityCn=(g0&&(g0.adm2||g0.name))||loc.city||'杭州';var w=await fetch('https://'+QW_HOST+'/v7/weather/now?location='+id+'&key='+QW_KEY).then(function(r){return r.json()});if(w.code!=='200'||!w.now)throw new Error('qweather');var n=w.now;var temp=Math.round(Number(n.temp));var wind=Math.round(Number(n.windSpeed));var text=n.text||'';var cat=catOfText(text);renderCn(cityCn,text,temp,wind,cat);setFXCat(cat);return}catch(e){}
-try{var loc2=await getLoc();var w2=await fetch('https://api.open-meteo.com/v1/forecast?latitude='+loc2.lat+'&longitude='+loc2.lng+'&current=temperature_2m,weather_code,wind_speed_10m&timezone=auto').then(function(r){return r.json()});var code=w2.current.weather_code;var temp=Math.round(w2.current.temperature_2m);var wind=Math.round(w2.current.wind_speed_10m);renderCn(loc2.city||'杭州',code===0?'晴':code===3?'阴':code===63?'中雨':'多云',temp,wind,'cloud');setFX(code)}catch(e2){wb.textContent='天气暂不可用'}})();
+function setWX(city,text,temp,wind,code){
+  w.innerHTML='<span class=\'w-ico\'>'+(code===0?'☀️':code===3?'⛅':code===63?'🌧️':code>=95?'⛈️':'⛅')+'</span><span class=\'w-city\'>'+city+'</span><span class=\'w-temp\'>'+temp+'°C</span><span class=\'w-label\'>'+text+' · 风'+wind+'km/h</span>';
+  setFX(code);
+}
+(async function(){
+  try{
+    var r=await fetch('https://api.open-meteo.com/v1/forecast?latitude=30.28&longitude=120.15&current=temperature_2m,weather_code,wind_speed_10m&timezone=auto').then(function(r){return r.json()});
+    var n=r.current;
+    var code=n.weather_code;
+    var temp=Math.round(n.temperature_2m);
+    var wind=Math.round(n.wind_speed_10m);
+    var txt=code===0?'晴':code===1?'多云':code===2?'阴':code===3?'阴':code>=45?'雾':code>=51?'小雨':code>=63?'中雨':code>=80?'阵雨':code>=95?'雷暴':'多云';
+    setWX('杭州',txt,temp,wind,code);
+  }catch(e){
+    w.innerHTML='<span class=\'w-ico\'>🌡️</span><span class=\'w-city\'>杭州</span><span class=\'w-temp\'>--</span><span class=\'w-label\'>天气暂不可用</span>';
+  }
+})();
 })();
 </script>
 <script>
