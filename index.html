@@ -7,7 +7,7 @@
 <link rel='stylesheet' href='style.css'>
 <style>
 .masthead{position:relative;overflow:hidden;z-index:0}
-.shell{position:relative;z-index:2;background:var(--sys-bg)}
+.shell{position:relative;z-index:2}
 #wx{position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:1}
 .mast-inner{position:relative;z-index:2}
 #weather{position:absolute;top:22px;right:32px;z-index:3;display:flex;align-items:center;gap:10px;padding:8px 14px;border:1px solid rgba(255,255,255,.14);border-radius:999px;background:rgba(255,255,255,.06);backdrop-filter:blur(8px);color:#F2F3F5;font:500 13px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.02em}
@@ -22,7 +22,8 @@
 .masthead.wx-storm{background:radial-gradient(ellipse 120% 90% at 50% -10%, rgba(140,130,220,.5), transparent 60%),linear-gradient(180deg,#080818 0%,#1e1e3a 55%,#060610 100%)!important}
 .masthead.wx-fog{background:radial-gradient(ellipse 140% 110% at 50% 0%, rgba(180,188,196,.6), transparent 70%),linear-gradient(180deg,#3a4048 0%,#4a5058 55%,#2a2e34 100%)!important}
 .masthead.wx-haze{background:radial-gradient(ellipse 140% 110% at 50% 0%, rgba(160,150,130,.55), transparent 70%),linear-gradient(180deg,#4a453c 0%,#5a5448 55%,#2e2a24 100%)!important}
-.masthead.wx-dust{background:radial-gradient(ellipse 140% 110% at 50% 0%, rgba(190,160,100,.55), transparent 70%),linear-gradient(180deg,#5a4a2e 0%,#6b5a38 55%,#332a1a 100%)!important}@media (max-width:760px){#weather{top:auto;bottom:14px;right:14px}}
+.masthead.wx-dust{background:radial-gradient(ellipse 140% 110% at 50% 0%, rgba(190,160,100,.55), transparent 70%),linear-gradient(180deg,#5a4a2e 0%,#6b5a38 55%,#332a1a 100%)!important}body.wx-rain{background:#0a1828}body.wx-storm{background:#080818}body.wx-snow{background:#253045}body.wx-fog{background:#3a4048}body.wx-cloud{background:#3a404c}body.wx-sun{background:#2a1f10}body.wx-haze{background:#4a453c}body.wx-dust{background:#5a4a2e}
+@media (max-width:760px){#weather{top:auto;bottom:14px;right:14px}}
 .side.wx-sun,.side.wx-cloud,.side.wx-rain,.side.wx-snow,.side.wx-storm,.side.wx-fog,.side.wx-haze,.side.wx-dust{border-radius:16px;padding:14px;margin:-6px -10px;box-shadow:0 8px 28px rgba(0,0,0,.18);background-attachment:fixed;background-position:top center}
 .stock-card{border:1px solid rgba(22,24,29,.14);border-radius:14px;padding:14px 16px;margin:12px 0;background:rgba(246,245,241,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 6px 18px rgba(0,0,0,.10)}
 .stock-card .stk-h{font-size:11px;color:#5a626e;margin:0 0 8px;display:flex;justify-content:space-between;letter-spacing:.06em;font-weight:600}
