@@ -19,7 +19,7 @@ function fix(){
   var d=f.contentDocument;
   if(!d)return;
   var st=d.createElement('style');
-  st.textContent='body.wx-rain,body.wx-storm,body.wx-snow,body.wx-fog,body.wx-cloud,body.wx-sun,body.wx-haze,body.wx-dust{background:var(--sys-bg)!important}.shell{background:var(--sys-bg)!important;position:relative;z-index:2}.side{background:var(--sys-bg)!important}.prose{background:transparent}';
+  st.textContent='body.wx-rain,body.wx-storm,body.wx-snow,body.wx-fog,body.wx-cloud,body.wx-sun,body.wx-haze,body.wx-dust{background:var(--sys-bg)!important}.shell{background:transparent!important}#wx{opacity:1;filter:brightness(1.3)}';
   d.head.appendChild(st);
 }
 f.addEventListener('load',fix);
