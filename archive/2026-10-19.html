@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+<head><base href='..//'>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1,viewport-fit=cover'>
+<title>2026-10-19 归档 · 体育与运动品牌动态</title>
+<link rel='stylesheet' href='style.css'>
+<style>
+.masthead{position:relative;overflow:hidden;z-index:0}
+.shell{position:relative;z-index:2}
+#wx{position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:1}
+.mast-inner{position:relative;z-index:2}
+#weather{position:absolute;top:22px;right:32px;z-index:3;display:flex;align-items:center;gap:10px;padding:8px 14px;border:1px solid rgba(255,255,255,.14);border-radius:999px;background:rgba(255,255,255,.06);backdrop-filter:blur(8px);color:#F2F3F5;font:500 13px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.02em}
+#weather .w-ico{font-size:18px;line-height:1}
+#weather .w-city{color:#F2F3F5}
+#weather .w-temp{font-weight:700;font-size:15px}
+#weather .w-label{color:#F2F3F5}
+.masthead.wx-sun{background:radial-gradient(ellipse 60% 90% at 82% -10%, rgba(255,200,90,.85), rgba(255,150,50,.35) 40%, rgba(20,40,30,0) 70%),radial-gradient(ellipse 100% 100% at 20% 110%, rgba(60,90,70,.4), transparent 60%),linear-gradient(180deg,#2a1f10 0%,#4a3820 45%,#1a2a22 100%)!important}
+.masthead.wx-cloud{background:radial-gradient(ellipse 120% 100% at 50% -10%, rgba(200,210,225,.4), transparent 55%),linear-gradient(180deg,#3a404c 0%,#525a68 50%,#20242c 100%)!important}
+.masthead.wx-rain{background:radial-gradient(ellipse 120% 90% at 50% -10%, rgba(90,140,200,.45), transparent 60%),linear-gradient(180deg,#0a1828 0%,#1a3050 55%,#081018 100%)!important}
+.masthead.wx-snow{background:radial-gradient(ellipse 120% 90% at 50% -10%, rgba(230,240,255,.4), transparent 60%),linear-gradient(180deg,#253045 0%,#4a5a7a 55%,#182030 100%)!important}
+.masthead.wx-storm{background:radial-gradient(ellipse 120% 90% at 50% -10%, rgba(140,130,220,.5), transparent 60%),linear-gradient(180deg,#080818 0%,#1e1e3a 55%,#060610 100%)!important}
+.masthead.wx-fog{background:radial-gradient(ellipse 140% 110% at 50% 0%, rgba(180,188,196,.6), transparent 70%),linear-gradient(180deg,#3a4048 0%,#4a5058 55%,#2a2e34 100%)!important}
+.masthead.wx-haze{background:radial-gradient(ellipse 140% 110% at 50% 0%, rgba(160,150,130,.55), transparent 70%),linear-gradient(180deg,#4a453c 0%,#5a5448 55%,#2e2a24 100%)!important}
+.masthead.wx-dust{background:radial-gradient(ellipse 140% 110% at 50% 0%, rgba(190,160,100,.55), transparent 70%),linear-gradient(180deg,#5a4a2e 0%,#6b5a38 55%,#332a1a 100%)!important}
+body.wx-rain,body.wx-storm,body.wx-snow,body.wx-fog,body.wx-cloud,body.wx-sun,body.wx-haze,body.wx-dust{background:var(--sys-bg,#F6F5F1)!important}
+.shell{background:transparent!important}
+#wx{opacity:1;filter:brightness(1.9)}
+.masthead{position:relative;z-index:2}
+</style>
+</head>
+<body>
+<div class='progress'><i id='prog'></i></div>
+<section class='masthead'>
+  <canvas id='wx'></canvas>
+  <div id='weather' aria-live='polite'></div>
+  <div class='mast-inner'>
+    <div>
+      <p class='eyebrow'><span class='livedot'></span>Sports &amp; Athletics · Daily Brief <span class='dim'>/ 每日 08:30 自动更新</span></p>
+      <h1>体育与运动品牌动态</h1>
+      <p class='lede'>赛事赛果 · 品牌营销与新品 · 运动品牌市场与渠道 · 资本业绩 · 行业公告</p>
+    </div>
+    <div class='stamp'>
+      <p class='k'>最新一期</p>
+      <b class='v mono'>2026-10-19 周一 08:30</b>
+    </div>
+  </div>
+  <div class='ticker'>
+    <span class='ticker-label'>赛果</span>
+    <div class='ticker-track'><div class='ticker-set'><span>上海大师赛决赛 弗基纳1-6/7-6(5)/6-4逆转霍达尔 首夺大师赛冠军</span><span>别克LPGA 殷若宁68杆277杆-11逆转 第7座LPGA奖杯</span><span>环广西S6 维达弄拉皇后赛段登顶 逆转总冠军红衫</span><span>丹麦赛混双 蒋振邦/魏雅欣2-1冯彦哲/黄东萍 背靠背夺冠</span><span>CBA 北京84-82吉林 布朗0.4秒三分绝杀</span><span>CBA 同曦96-95广东 郭昊文23分徐杰失绝杀</span><span>CBA 上海102-68深圳 卫冕冠军开门红</span><span>中超 海港3-0成都蓉城 蓉城第五冠军点泡汤</span><span>中超 申花3-1武汉三镇 武汉基本降级</span><span>英超 阿森纳1-0森林升第二 曼联5轮不胜</span><span>西甲 皇马4-1塞维利亚 姆巴佩双响</span><span>郑钦文右肩伤退出香港站 2026赛季提前结束</span><span>F1奥斯汀 sprint 拉塞尔夺冠 维斯塔潘第3</span><span>上海大师赛冠军奖金115.1万美元 1000积分</span></div><div class='ticker-set' aria-hidden='true'><span>上海大师赛决赛 弗基纳1-6/7-6(5)/6-4逆转霍达尔 首夺大师赛冠军</span><span>别克LPGA 殷若宁68杆277杆-11逆转 第7座LPGA奖杯</span><span>环广西S6 维达弄拉皇后赛段登顶 逆转总冠军红衫</span><span>丹麦赛混双 蒋振邦/魏雅欣2-1冯彦哲/黄东萍 背靠背夺冠</span><span>CBA 北京84-82吉林 布朗0.4秒三分绝杀</span><span>CBA 同曦96-95广东 郭昊文23分徐杰失绝杀</span><span>CBA 上海102-68深圳 卫冕冠军开门红</span><span>中超 海港3-0成都蓉城 蓉城第五冠军点泡汤</span><span>中超 申花3-1武汉三镇 武汉基本降级</span><span>英超 阿森纳1-0森林升第二 曼联5轮不胜</span><span>西甲 皇马4-1塞维利亚 姆巴佩双响</span><span>郑钦文右肩伤退出香港站 2026赛季提前结束</span><span>F1奥斯汀 sprint 拉塞尔夺冠 维斯塔潘第3</span><span>上海大师赛冠军奖金115.1万美元 1000积分</span></div></div>
+    </div>
+  </div>
+</section>
+<div class='shell'>
+  <aside class='side'>
+    <p class='side-h'><span>历史期次</span><span class='mono'>5</span></p>
+    <div class='hist'><ul class='dates'>
+      <li><button class='dbtn' type='button' aria-current='true'><span class='d'>2026-10-18</span><span class='w'>周日</span><span class='badge-new'>最新</span></button></li><li><button class='dbtn' type='button'><span class='d'>2026-10-16</span><span class='w'>周五</span></button></li><li><button class='dbtn' type='button'><span class='d'>2026-10-15</span><span class='w'>周四</span></button></li><li><button class='dbtn' type='button'><span class='d'>2026-10-14</span><span class='w'>周三</span></button></li><li><button class='dbtn' type='button'><span class='d'>2026-10-13</span><span class='w'>周二</span></button></li><li><button class='dbtn' type='button'><span class='d'>2026-10-12</span><span class='w'>周一</span></button></li><li><button class='dbtn' type='button'><span class='d'>2026-10-11</span><span class='w'>周日</span></button></li>
+      </ul></div>
+    <p class='foot'>历史保留最近 7 个自然日。</p>
+    <div class='stock-card' id='stk-lining'>
+      <p class='stk-h'><span>李宁 LI NING</span><span class='mono'>2331.HK</span></p>
+      <p class='stk-price'><span id='stk-price'>--</span><span class='stk-unit'>HKD</span></p>
+      <p class='stk-chg' id='stk-chg'>--</p>
+      <p class='stk-time mono' id='stk-time'>行情加载中…</p>
+    </div>
+    <button class='totop' id='theme' title='切换亮暗'><span id='theme-ico'>☾</span><span>外观</span></button>
+    <button class='totop' id='totop' title='回到顶部'><span>↑</span><span>回到顶部</span></button>
+  </aside>
+  <main>
+    <article>
+      <header class='rhead'>
+        <p class='kicker'><span>最新一期</span><span class='dt'>2026-10-19 · 周一</span></p>
+        <ul class='rmeta'>
+          <li><b>窗口</b>2026-10-18 09:00 ~ 2026-10-19 08:30</li>
+          <li><b>条目</b>29</li>
+        </ul>
+      </header>
+      <nav class='rail'>
+        <div class='rail-in'>
+          <button class='chip' data-sec='s1'><u>01</u>核心要点</button>
+          <button class='chip' data-sec='s2'><u>02</u>赛事竞技</button>
+          <button class='chip' data-sec='s3'><u>03</u>品牌营销</button>
+          <button class='chip' data-sec='s4'><u>04</u>渠道舆论</button>
+          <button class='chip' data-sec='s5'><u>05</u>资本业绩</button>
+          <button class='chip' data-sec='s6'><u>06</u>公告与市场</button>
+        </div>
+      </nav>
+      <div class='dash'>
+  <div class='board'>
+    <div class='board-h'><h3>近期赛果速读</h3><span class='hint'>近 3 日大型赛事</span><span class='cnt mono'>16</span></div>
+    <div class='filt' id='sb-filt'></div>
+    <ul class='sb'>
+      <li class='sb-g' data-g='tennis'>上海大师赛 男单决赛 10-18</li>
+      <li class='sb-m m' data-g='tennis'><a href='https://en.rolexshanghaimasters.com/en/media/news/jodar-davidovich-fokina-shanghai-2026-final' target='_blank'><span class='home'>弗基纳[25]</span><span class='sc mono'>1-6/7-6(5)/6-4</span><span class='away'>霍达尔[12]</span></a><span class='note'>首夺ATP1000大师赛 冠军115.1万美元+1000分</span></li>
+      <li class='sb-g' data-g='golf'>别克LPGA 决赛轮 10-18</li>
+      <li class='sb-m m' data-g='golf'><a href='https://www.lpga.com/tournaments/buick-lpga-shanghai/results' target='_blank'><span class='home'>殷若宁</span><span class='sc mono'>68杆/-11</span><span class='away'>277杆总</span></a><span class='note'>1杆优势逆转 第7座LPGA 48万美元冠军奖金</span></li>
+      <li class='sb-g' data-g='bike'>环广西世巡赛 第六赛段(收官) 10-18</li>
+      <li class='sb-m m' data-g='bike'><a href='http://sports.sina.com.cn/others/roadbike/2026-10-18/doc-inivsnma0898890.shtml' target='_blank'><span class='home'>维达(乐透)</span><span class='sc mono'>赛段冠军+总冠军</span><span class='away'>22:22:45</span></a><span class='note'>20岁比利时小将弄拉皇后赛段登顶 皮德科克赛段第二</span></li>
+      <li class='sb-g' data-g='bwf'>丹麦羽毛球超级750 混双决赛 10-18</li>
+      <li class='sb-m m' data-g='bwf'><a href='https://m.weibo.cn/detail/5355446848194213' target='_blank'><span class='home'>蒋振邦/魏雅欣</span><span class='sc mono'>21-18/8-21/21-16</span><span class='away'>冯彦哲/黄东萍</span></a><span class='note'>国羽包揽冠亚军 凤凰组合背靠背夺冠</span></li>
+      <li class='sb-g' data-g='cba'>CBA 2026-27 常规赛首轮 10-18</li>
+      <li class='sb-m m' data-g='cba'><a href='https://m.dongqiudi.com/article/6511567.html' target='_blank'><span class='home'>北京北汽</span><span class='sc mono'>84-82</span><span class='away'>吉林长白山</span></a><span class='note'>布朗0.4秒三分绝杀 31分 周琦21+17</span></li>
+      <li class='sb-m m' data-g='cba'><a href='https://m.dongqiudi.com/article/6511647.html' target='_blank'><span class='home'>南京同曦</span><span class='sc mono'>96-95</span><span class='away'>广东东阳光</span></a><span class='note'>郭昊文23分 徐杰最后一攻超时不进</span></li>
+      <li class='sb-m m' data-g='cba'><a href='http://www.chinaview.cn/20261018/4c3e1a80520d4612b7522a1d3178ce99/c.html' target='_blank'><span class='home'>上海久事</span><span class='sc mono'>102-68</span><span class='away'>深圳马可波罗</span></a><span class='note'>卫冕冠军揭幕战 四川97-?天津止颓</span></li>
+      <li class='sb-g' data-g='football'>中超第28轮 10-18</li>
+      <li class='sb-m m' data-g='football'><a href='http://news.qq.com/rain/a/20261019A02OCV00' target='_blank'><span class='home'>上海海港</span><span class='sc mono'>3-0</span><span class='away'>成都蓉城</span></a><span class='note'>乌龙+莱昂纳多+武磊 蓉城第五个冠军点泡汤</span></li>
+      <li class='sb-m m' data-g='football'><a href='http://m.toutiao.com/group/7698101171545784874/' target='_blank'><span class='home'>上海申花</span><span class='sc mono'>3-1</span><span class='away'>武汉三镇</span></a><span class='note'>阿苏埃/拉唐/韩嘉文建功 武汉基本降级</span></li>
+      <li class='sb-g' data-g='epl'>英超第7轮 / 西甲第9轮 10-18</li>
+      <li class='sb-m m' data-g='epl'><a href='http://m.toutiao.com/group/7698160338843255311/' target='_blank'><span class='home'>诺丁汉森林</span><span class='sc mono'>0-1</span><span class='away'>阿森纳</span></a><span class='note'>马杜埃凯制胜 阿森纳升第二 曼联5轮不胜</span></li>
+      <li class='sb-m m' data-g='laliga'><a href='http://m.toutiao.com/group/7698160338843255311/' target='_blank'><span class='home'>皇家马德里</span><span class='sc mono'>4-1</span><span class='away'>塞维利亚</span></a><span class='note'>姆巴佩双响 巴伦西亚0-0毕尔巴鄂</span></li>
+      <li class='sb-g' data-g='f1'>F1 美国奥斯汀站 Sprint 10-18</li>
+      <li class='sb-m m' data-g='f1'><a href='https://www.mundodeportivo.com/resultados/motor/f1/39/gran-premio-de-los-estados-unidos/9263/sprint' target='_blank'><span class='home'>拉塞尔(梅赛德斯)</span><span class='sc mono'>sprint冠军</span><span class='away'>19圈</span></a><span class='note'>维斯塔潘P3 汉密尔顿P4 正赛10-19凌晨</span></li>
+    </ul>
+  </div>
+  <div class='board'>
+    <div class='board-h'><h3>新品与发售日历</h3><span class='cnt mono'>7</span></div>
+    <ul class='pm'>
+      <li><span class='d'>10-18</span><span class='t'>上海大师赛男单决赛 弗基纳 vs 霍达尔</span><span class='r'>10-18</span></li>
+      <li><span class='d'>10-18</span><span class='t'>环广西世巡赛收官站 南宁绕圈赛段</span><span class='r'>10-18</span></li>
+      <li><span class='d'>10-18</span><span class='t'>别克LPGA锦标赛决赛轮 殷若宁争冠</span><span class='r'>10-18</span></li>
+      <li><span class='d'>10-19</span><span class='t'>丹麦羽毛球公开赛决赛日 混双国羽内战</span><span class='r'>10-19</span></li>
+      <li><span class='d'>10-20</span><span class='t'>Salomon x Goodbai XT-RIDGE 联名发售</span><span class='r'>10-20</span></li>
+      <li><span class='d'>10-23</span><span class='t'>Salomon XT-WHISPER GORE-TEX 上市</span><span class='r'>10-23</span></li>
+      <li><span class='d'>10-26</span><span class='t'>lululemon 新 C-suite 产品体系生效</span><span class='r'>10-26</span></li>
+    </ul>
+  </div>
+</div>
+
+        <div class='prose'><h2 id='s1'>核心要点</h2><blockquote>
+<p><strong>[重磅]</strong> 上海大师赛男单决赛 10-18：25 号种子弗基纳先丢一盘 <strong>1-6</strong> 后以 <strong>7-6(5)、6-4</strong> 逆转 12 号西班牙小将霍达尔，生涯首夺 ATP1000 大师赛冠军，本赛季三冠全部入账；冠军奖金 <strong>115.1 万美元</strong>、1000 积分。</p>
+<p><strong>[重磅]</strong> 别克 LPGA 决赛轮：上海本土选手殷若宁决赛轮 <strong>68 杆</strong>，四轮 277 杆、<strong>-11 杆</strong>、1 杆优势逆转，继 2024 年后第二次主场捧杯，收获职业生涯第 <strong>7</strong> 座 LPGA 冠军与 <strong>48 万美元</strong> 冠军支票。</p>
+<p><strong>[要点]</strong> 环广西世巡赛收官 S6（宜州-忻城-上林-马山弄拉）：乐透-英特马诗 <strong>20 岁</strong> 比利时小将维达皇后赛段终点前爆发登顶，同时逆转总成绩红衫，以 <strong>22:22:45</strong> 成为赛事史上第七位总冠军。</p>
+<p><strong>[要点]</strong> 郑钦文因右肩伤官宣退出 WTA250 香港站，<strong>2026 赛季提前结束</strong>；全年 <strong>25 胜 15 负</strong>，斩获中网冠军、美网八强，已赴巴塞罗那冬训备战 2027 澳网。</p>
+<p><strong>[要点]</strong> 丹麦超级750 混双决赛：蒋振邦/魏雅欣 <strong>21-18/8-21/21-16</strong> 逆转世界第一冯彦哲/黄东萍，国羽包揽冠亚军，凤凰组合背靠背夺冠。</p>
+</blockquote>
+<h2 id='s2'>一、赛事与竞技动态</h2>
+<div class='item'><p class='meta'><span class='src'>新华社 / ATP Tour</span><time>10-18 22:44</time></p><h3>上海大师赛：弗基纳 1-6/7-6(5)/6-4 逆转霍达尔，首夺大师赛冠军</h3><p>旗忠网球中心夜场决赛，西班牙德比打满 2 小时 28 分。弗基纳首盘被打 1-6，次盘抢七 7-5 扳平，决胜盘 6-4 锁定胜局。这是他生涯首个大师赛 1000 冠军，也是本赛季巡回赛第三冠。</p><p class='more'><a href='https://en.rolexshanghaimasters.com/en/media/news/jodar-davidovich-fokina-shanghai-2026-final' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>虎扑 / 文汇</span><time>10-18 20:29</time></p><h3>中国赛季最大赢家：弗基纳成都+上海连夺两冠，10 连胜 1250 积分</h3><p>25 号种子自成都公开赛起连胜 10 场，本周上海再拿 1000 分，成为本赛季亚洲春季硬地赛季最大亮点；霍达尔作为 20 岁小将亚军入账 61.2 万美元与 650 分。</p><p class='more'><a href='https://bbs.hupu.com/643056231.html' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>澎湃新闻 / LPGA 官网</span><time>10-18 20:45</time></p><h3>别克 LPGA：殷若宁 68 杆逆转，主场第二冠、生涯第 7 座 LPGA 奖杯</h3><p>佘山国际高尔夫俱乐部，殷若宁决赛轮交 68 杆，四轮 277 杆、低于标准杆 11 杆，1 杆优势逆转崔慧珍夺冠。总奖金 320 万美元，冠军独得 48 万美元；这是她本赛季第二座 LPGA 冠军。</p><p class='more'><a href='https://m.thepaper.cn/newsDetail_forward_34278322' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>新华社南宁 / 新浪体育</span><time>10-18 23:12</time></p><h3>环广西 S6：维达弄拉皇后赛段夺冠，同时逆转总冠军红衫</h3><p>第六赛段宜州-忻城-上林-马山弄拉，20 岁比利时人亚诺·维达终点前百余米摇车爆发，甩开皮德科克率先撞线；总成绩 22 小时 22 分 45 秒反超马尼耶，成为环广西史上第七位总冠军。</p><p class='more'><a href='http://sports.sina.com.cn/others/roadbike/2026-10-18/doc-inivsnma0898890.shtml' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>BWF / 新华社</span><time>10-18 19:04</time></p><h3>丹麦赛混双：蒋振邦/魏雅欣 2-1 冯彦哲/黄东萍，国羽包揽冠亚军</h3><p>决赛历时 54 分钟，凤凰组合先丢一局 8-21 后以 21-18、21-16 逆转世界第一冯彦哲/黄东萍，背靠背夺冠。国羽本站其余三项（女单/男双/女单）均已出局。</p><p class='more'><a href='https://m.weibo.cn/detail/5355446848194213' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>中新社长春 / 懂球帝</span><time>10-18 21:37</time></p><h3>CBA 首轮：北京北汽 84-82 吉林，布朗 0.4 秒三分绝杀</h3><p>客场作战的北京末节逆转，外援布朗终场前 0.4 秒命中三分，全场 31 分；周琦 21 分 17 篮板。吉林姜伟泽 29 分 6 板 6 助，新帅李昂无缘执教 CBA 正赛首胜。</p><p class='more'><a href='https://m.dongqiudi.com/article/6511567.html' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>懂球帝</span><time>10-18 21:49</time></p><h3>CBA 首轮：同曦 96-95 险胜广东，郭昊文 23 分徐杰超时失绝杀</h3><p>南京同曦上半场 42-51 落后，第三节反超；最后 2 分钟领先 8 分被广东反扑，博日奇罚球未中，徐杰最后一攻超时不进，同曦赛季开门红。</p><p class='more'><a href='https://m.dongqiudi.com/article/6511647.html' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>新华社北京</span><time>10-18 23:07</time></p><h3>CBA 首轮综述：卫冕冠军上海 102-68 大胜深圳，四川止颓</h3><p>2026-27 赛季 CBA 常规赛首轮收官，上海久事揭幕战 34 分大胜深圳马可波罗；四川蓝鲸 97 比力克天津先行者，终结队史长连败。</p><p class='more'><a href='http://www.chinaview.cn/20261018/4c3e1a80520d4612b7522a1d3178ce99/c.html' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>新华体育 / 腾讯</span><time>10-18 23:29</time></p><h3>中超第28轮：海港 3-0 蓉城，成都第五个冠军点泡汤</h3><p>上海浦东足球场，第 57 分钟王东升乌龙、第 83 分钟莱昂纳多挑射、补时武磊空门锁定 3-0。蓉城在联赛还剩两轮时领先优势缩至 6 分，大连英博保留逆转可能。</p><p class='more'><a href='http://news.qq.com/rain/a/20261019A02OCV00' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>上观新闻</span><time>10-19 04:40</time></p><h3>中超第28轮：申花 3-1 武汉三镇，升班马基本锁定降级</h3><p>阿苏埃开场 2 分钟凌空破门，拉唐、小将韩嘉文建功；申花客胜后距榜首差距缩小，昔日中超冠军武汉三镇降级几成定局。</p><p class='more'><a href='http://m.toutiao.com/group/7698101171545784874/' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>澎湃 / 英超官网</span><time>10-19 07:54</time></p><h3>英超第7轮：阿森纳 1-0 诺丁汉森林升第二，曼联 5 轮不胜</h3><p>马杜埃凯打入全场唯一进球，阿森纳积 18 分暂列第二；曼联客场被利兹联逼平，连续 5 轮英超不胜。其他赛果：曼城 2-0 埃弗顿、布莱顿 2-1 纽卡。</p><p class='more'><a href='http://m.163.com/dy/article/L9JD536E05299JMD.html' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>澎湃新闻</span><time>10-19 07:54</time></p><h3>西甲第9轮：皇马 4-1 塞维利亚，姆巴佩双响</h3><p>伯纳乌，姆巴佩梅开二度，皇马主场大胜塞维利亚；巴伦西亚 0-0 闷平毕尔巴鄂竞技。</p><p class='more'><a href='http://m.toutiao.com/group/7698160338843255311/' target='_blank'>阅读原文</a></p></div>
+
+<h2 id='s3'>二、品牌营销与代言动态</h2>
+<div class='item'><p class='meta'><span class='src'>ATP Tour / Rolex Shanghai Masters</span><time>10-17</time></p><h3>2026 上海大师赛总奖金 941.6 万美元创新高，冠军独得 115.1 万</h3><p>男单冠军 1,151,380 美元 + 1000 积分；亚军 612,340 美元 + 650 分。赛事连续第二年提升奖金池，旗忠网球中心观众上座率创历史。</p><p class='more'><a href='https://en.rolexshanghaimasters.com/en/media/news/shanghai-2026-prize-money' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>特步国际官网</span><time>10 月</time></p><h3>特步发布「世界级双旗舰」跑鞋矩阵，引领中国跑鞋进入全场景时代</h3><p>特步在厦门举行新品发布会，推出竞速与缓震双线旗舰，覆盖马拉松竞速、长距离慢跑与日常训练场景，巩固其在国产跑鞋专业赛道的头部位置。</p><p class='more'><a href='https://www.xtep.com.hk/sc/global/home.php' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>LPGA / 别克品牌</span><time>10-18</time></p><h3>别克 LPGA 佘山收官：320 万美元总奖金，殷若宁主场两度捧杯</h3><p>赛事 10 月 15-18 日在佘山国际高尔夫俱乐部举行，总奖金 320 万美元，冠军 48 万；姜孝林持外卡卫冕最终未能夺冠。别克连续多年冠名赞助女子美巡中国站。</p><p class='more'><a href='https://www.lpga.com/tournaments/buick-lpga-shanghai/results' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>Rolex Shanghai Masters</span><time>10-18</time></p><h3>上海大师赛首现西班牙德比决赛，全球收视创新高</h3><p>弗基纳与霍达尔两位西班牙选手会师决赛，为赛事历史上首次出现同国选手争冠；赛事方透露今年电视转播覆盖 190+ 国家和地区。</p><p class='more'><a href='https://en.rolexshanghaimasters.com/en/media/news/jodar-davidovich-fokina-shanghai-2026-final' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>Nike 媒体中心</span><time>10-15</time></p><h3>Nike LeBron 24 登场：更轻、更犀利、更灵敏</h3><p>耐克媒体中心发布 LeBron 24 官方产品新闻，主打轻量化与场地响应；大中华区限定配色「紫禁之诏」10-17 限量 200 套已售罄。</p><p class='more'><a href='https://www.nikeinc.com.cn/html/news.html' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>新浪财经</span><time>10-16</time></p><h3>李宁 10-15 回购 145 万股，耗资 1839.5 万港元</h3><p>李宁以每股 12.61-12.80 港元回购 145 万股普通股，总额约 1839.51 万港元；管理层持续回购彰显对长期价值的信心。</p><p class='more'><a href='https://finance.sina.com.cn/stock/bxjj/2026-10-16/doc-inivksmv8319977.shtml' target='_blank'>阅读原文</a></p></div>
+
+<h2 id='s4'>三、运动品牌与渠道 / 舆论动态</h2>
+<div class='item'><p class='meta'><span class='src'>新浪财经 / 花旗</span><time>10-16</time></p><h3>花旗：安踏整合 PUMA 中国业务持正面看法，多品牌矩阵协同可期</h3><p>在安踏以 15.1 亿欧元完成收购 PUMA 29.06% 股权后，花旗研报认为安踏可借助国内 DTC 渠道与供应链能力提升 PUMA 在华表现，对多品牌协同效应给予正面评价。</p><p class='more'><a href='https://finance.sina.com.cn/stock/bxjj/2026-10-16/doc-inivksmv8319977.shtml' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>lululemon IR / EconoTimes</span><time>Q2 FY2026</time></p><h3>lululemon Q2 收入 24 亿美元同比 -4%，可比销售 -9% 下调全年展望</h3><p>第二财季净收入 24.16 亿美元（去年同期 25.25 亿），北美收入 -8%、国际 +4%；可比销售整体 -9%（北美 -12%），公司下调 2026 全年收入指引。爱建证券 10-15 首次覆盖给予「增持」。</p><p class='more'><a href='https://corporate.lululemon.com/newsroom/press-releases/2026/09-03-2026-210528733' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>华尔街见闻</span><time>10-17</time></p><h3>HOKA FY2026 收入 25.87 亿美元 +15.9%，Q4 单季 6.71 亿创新高</h3><p>Deckers 旗下 HOKA 仍是集团最重要增长引擎：全年收入 25.87 亿美元、同比 +15.9%；第四财季 6.71 亿、同比 +14.5%，创品牌单季历史新高；DTC 渠道重新跑通。</p><p class='more'><a href='https://www.mundodeportivo.com/' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>证券时报</span><time>10-18</time></p><h3>A 股体育概念集体调整：金陵体育跌超 11%，舒华、中体、共创草坪跌停</h3><p>10-18 收盘，体育概念股大幅回调：金陵体育跌逾 11%，舒华体育、中体产业、共创草坪、粤传媒跌停；板块此前自 9 月体育强国发布会以来累计涨幅较大，属获利回吐。</p><p class='more'><a href='https://www.stcn.com/quotes/index/sh605299.html' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>中国足球职业联赛联合会</span><time>10-19</time></p><h3>中超 2026 赛季总上座 618.5 万人次，已超 2025 全年创历史</h3><p>中足联披露：第 26 轮战罢（少赛 3 场），2026 赛季中超总上座达 6,184,660 人次，超越 2025 全年总上座，再创历史新高。</p><p class='more'><a href='https://www.cfl-china.cn/zh/newsannouncements/mediacolumnslist.html' target='_blank'>阅读原文</a></p></div>
+
+<h2 id='s5'>四、资本、业绩与市场变化</h2>
+<div class='item'><p class='meta'><span class='src'>BSIC / 公开市场</span><time>10-11</time></p><h3>lululemon 股价较 2023 年末高点累计跌约 80%</h3><p>BSIC 数据：lululemon 股价自 2025 年末至 2026 年 10 月已下跌 55.8%；较 2023 年末历史高点累计回撤约 80%。Q2 财报后单日一度跌近 20%，创八年新低。</p><p class='more'><a href='https://bsic.it/athleisure-update-nike-removed-from-sp-100-on-joins-football/' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>新浪财经</span><time>10-16</time></p><h3>李宁 10-15 回购 145 万股，耗资 1839.5 万港元</h3><p>李宁在港股市场以 12.61-12.80 港元/股回购 145 万股，总额约 1839.51 万港元；叠加瑞银上调目标价至 20.5 港元，公司在释放管理层信心。</p><p class='more'><a href='https://finance.sina.com.cn/stock/bxjj/2026-10-16/doc-inivksmv8319977.shtml' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>证券之星</span><time>10-19 03:55</time></p><h3>力盛体育：向 12 名激励对象授予 540 万份股票期权，行权价 11.47 元</h3><p>公司 10-14 董事会审议通过，授权日 10-15，向 12 名核心骨干授予 540 万份 A 股股票期权，行权价格 11.47 元/份，分两期行权。</p><p class='more'><a href='http://m.toutiao.com/group/7698098732478317106/' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>e 公司</span><time>10-19 07:58</time></p><h3>舒华体育 10-18 收 12.25 元跌 5.62%，体育板块整体回调</h3><p>10-18 收盘舒华体育 12.25 元、跌 0.73 元（-5.62%），开盘 13.19 元即为全天最高；板块在前期体育强国政策催化后进入获利回吐阶段。</p><p class='more'><a href='https://www.egsea.com/quotation/stock-info/sh605299.html' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>凤凰体育 / 直播吧</span><time>10-19 07:45</time></p><h3>郑钦文因右肩伤提前结束 2026 赛季，全年 25 胜 15 负</h3><p>继退出武网、大阪、东京站后，郑钦文 10-18 官宣退出 WTA250 香港站；全年斩获中网冠军、美网八强，三次击败世界前十，目前已赴巴塞罗那冬训。</p><p class='more'><a href='https://sports.ifeng.com/c/8xJy3t7ycVV' target='_blank'>阅读原文</a></p></div>
+<h2 id='s6'>五、体育行业公告与市场影响</h2><p class='note-line'>周末 A 股 / 港股休市，本期新增 1 份重要期权激励公告；其余窗口内无新增体育行业上市公司重大公告。</p>
+<div class='item'><p class='meta'><span class='src'>巨潮资讯 · 力盛体育 002858.SZ · 股权激励</span><time>10-14 董事会 / 10-15 授权日</time></p><h3>力盛体育：向 12 名激励对象授予 540 万份股票期权，行权价 11.47 元</h3><ul>
+<li><strong>公告要点</strong>：公司董事会审议通过《关于向激励对象授予股票期权的议案》，向 12 名核心骨干授予 540.00 万份 A 股股票期权，行权价格 11.47 元/份，授权日 2026-10-15；期权来源为定向发行或二级市场回购 A 股，分两期行权（各 50%）。</li>
+<li><strong>市场影响</strong>：授予价 11.47 元较 10-18 收盘价存在安全边际，释放管理层对赛事运营主业复苏的信心；对体育板块情绪偏中性正面（公司披露口径），但不构成对二级市场股价的直接催化。</li>
+<li><strong>业绩看点</strong>：收入函数 = 赛车 / 自驾营业务人次 × 客单价；后续跟踪赛事运营场次恢复节奏、毛利率、DTC 自驾营地占比，以及 2027-2028 行权考核对应的营收 / 净利润门槛。</li>
+<li><strong>后续关注信号</strong>：11 月三季报披露、首期期权归属条件考核、回购股份（10-09 已实施完成）与本次激励的衔接。</li>
+</ul><p class='more'><a href='http://m.toutiao.com/group/7698098732478317106/' target='_blank'>阅读原文</a></p></div>
+</div>
+
+</article>
+</main>
+</div>
+<p class='colophon'>每日 08:30 自动更新 · 历史保留最近 7 天</p>
+<script>
+var p=document.getElementById('prog');
+function paint(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;if(p)p.style.transform='scaleX('+(m>0?h.scrollTop/m:0)+')'}
+addEventListener('scroll',paint,{passive:true});paint();
+var t=document.querySelector('.ticker-track');
+if(t){var w=t.scrollWidth/2;if(w>0)t.style.setProperty('--marquee',Math.round(Math.min(Math.max(w/85,26),90))+'s')}
+document.getElementById('totop').onclick=function(){scrollTo({top:0,behavior:'smooth'})};
+var s=null;try{s=localStorage.getItem('sd-theme')}catch(e){}
+function ap(v){document.documentElement.setAttribute('data-theme',v);var ic=document.getElementById('theme-ico');if(ic)ic.textContent=v==='dark'?'☀':'☾'}
+if(s){ap(s)}else{ap(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}
+document.getElementById('theme').onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';ap(n);try{localStorage.setItem('sd-theme',n)}catch(e){}};
+document.querySelectorAll('.chip').forEach(function(c){c.onclick=function(){var el=document.getElementById(c.dataset.sec);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}});
+</script>
+<script>
+(function(){
+var w=document.getElementById('weather');if(!w)return;
+var c=document.getElementById('wx');
+var mh=document.querySelector('.masthead');
+var ALL_WX=['wx-sun','wx-cloud','wx-rain','wx-snow','wx-storm','wx-fog','wx-haze','wx-dust'];
+function wxOn(cls){mh.classList.add(cls);document.body.classList.add(cls)}
+function wxClear(){mh.classList.remove.apply(mh.classList,ALL_WX);document.body.classList.remove.apply(document.body.classList,ALL_WX)}
+function resize(){if(!c)return;c.width=window.innerWidth;c.height=window.innerHeight}
+resize();addEventListener('resize',resize);
+var drops=[],flash=0;
+function loop(){if(!c)return;var ctx=c.getContext('2d');ctx.clearRect(0,0,c.width,c.height);var t=Date.now();var W=c.width,H=c.height;
+drops.forEach(function(d){if(d.kind==='rain'){ctx.strokeStyle=d.bright;ctx.lineWidth=d.lw;ctx.beginPath();ctx.moveTo(d.x,d.y);ctx.lineTo(d.x-d.slant,d.y+d.len);ctx.stroke();d.y+=d.speed;d.x-=d.slant*0.4;if(d.y>H){d.y=-30-Math.random()*40;d.x=Math.random()*(W+200)-100}}
+else if(d.kind==='snow'){ctx.fillStyle=d.color||'rgba(255,255,255,'+d.a+')';ctx.beginPath();ctx.arc(d.x,d.y,d.r,0,Math.PI*2);ctx.fill();d.y+=d.speed;d.x+=Math.sin(d.y/d.amp+t/d.freq)*d.swing;if(d.y>H+10){d.y=-10;d.x=Math.random()*W}}
+else if(d.kind==='cloud'){var g=ctx.createRadialGradient(d.x,d.y,0,d.x,d.y,d.r);g.addColorStop(0,d.color);g.addColorStop(1,'rgba(200,210,225,0)');fillStyle=g;ctx.beginPath();ctx.arc(d.x,d.y,d.r,0,Math.PI*2);ctx.fill();d.x+=d.v;if(d.x-d.r>W+50){d.x=-d.r-50;d.y=Math.random()*H*0.6}}
+else if(d.kind==='sun'){var g2=ctx.createRadialGradient(d.x,d.y,0,d.x,d.y,d.r);g2.addColorStop(0,'rgba(255,220,140,'+d.a+')');g2.addColorStop(1,'rgba(255,190,90,0)');fillStyle=g2;ctx.beginPath();ctx.arc(d.x,d.y,d.r,0,Math.PI*2);ctx.fill();d.y-=d.v;if(d.y<-30){d.y=H+30;d.x=Math.random()*W}}
+else if(d.kind==='suncore'){var g3=ctx.createRadialGradient(W*0.82,H*0.1,0,W*0.82,H*0.1,d.r);g3.addColorStop(0,'rgba(255,245,200,0.95)');g3.addColorStop(0.5,'rgba(255,215,120,0.7)');g3.addColorStop(1,'rgba(255,180,80,0)');fillStyle=g3;ctx.beginPath();ctx.arc(W*0.82,H*0.1,d.r,0,Math.PI*2);ctx.fill()}});
+if(flash>0){ctx.fillStyle='rgba(255,255,255,'+flash+')';ctx.fillRect(0,0,W,H);flash-=0.04}
+requestAnimationFrame(loop)}
+function setFX(code){drops=[];flash=0;wxClear();
+if(code>=95){wxOn('wx-storm');for(var i=0;i<360;i++){drops.push({kind:'rain',x:Math.random()*2000-100,y:Math.random()*800,len:20,speed:18,slant:6,bright:'rgba(210,230,255,.9)',lw:1.5})}}
+else if([51,53,55,56,57,61,63,65,66,67,80,81,82].indexOf(code)>=0){wxOn('wx-rain');for(var i=0;i<220;i++){drops.push({kind:'rain',x:Math.random()*2000-100,y:Math.random()*800,len:16,speed:12,slant:4,bright:'rgba(200,225,255,.8)',lw:1.2})}}
+else if([71,73,75,77,85,86].indexOf(code)>=0){wxOn('wx-snow');for(var i=0;i<200;i++){var l=Math.random();drops.push({kind:'snow',x:Math.random()*2000,y:Math.random()*800,r:l>0.7?3:1.5,speed:1.2,a:0.8,swing:1,amp:40,freq:1200})}}
+else if(code===0||code===1){wxOn('wx-sun');drops.push({kind:'suncore',r:280});for(var i=0;i<100;i++){drops.push({kind:'sun',x:Math.random()*2000,y:Math.random()*800,r:50,a:0.15,v:0.3})}}
+else if(code===45||code===48){wxOn('wx-fog');for(var i=0;i<14;i++){drops.push({kind:'cloud',x:Math.random()*2000,y:Math.random()*600,r:180+Math.random()*150,color:'rgba(180,188,196,.18)',v:0.4})}}else if(code===2||code===3){wxOn('wx-cloud');for(var i=0;i<20;i++){drops.push({kind:'cloud',x:Math.random()*2000,y:Math.random()*400,r:120,color:'rgba(180,190,210,.2)',v:0.6})}}
+loop()}
+function setWX(city,text,temp,wind,code){
+  var ico=code===0?'☀️':code===3?'⛅':code>=95?'⛈️':'⛅';
+  var html='<span class=w-ico>'+ico+'</span>'
+    +'<span class=w-city>'+city+'</span>'
+    +'<span class=w-temp>'+temp+'°C</span>'
+    +'<span class=w-label>'+text+' · 风'+wind+'km/h</span>';
+  w.innerHTML=html;
+  setFX(code);
+}
+(async function(){
+  try{
+    var r=await fetch('https://api.open-meteo.com/v1/forecast?latitude=30.28&longitude=120.15&current=temperature_2m,weather_code,wind_speed_10m&timezone=auto').then(function(r){return r.json()});
+    var n=r.current;
+    var code=n.weather_code;
+    var temp=Math.round(n.temperature_2m);
+    var wind=Math.round(n.wind_speed_10m);
+    var txt;if(code===0)txt='晴';else if(code===1)txt='多云';else if(code===2||code===3)txt='阴';else if(code===45||code===48)txt='雾';else if(code>=51&&code<=57)txt='毛毛雨';else if(code>=61&&code<=67)txt='雨';else if(code>=80&&code<=82)txt='阵雨';else if(code>=71&&code<=77)txt='雪';else if(code>=85&&code<=86)txt='雨夹雪';else if(code>=95)txt='雷暴';else txt='多云';
+    setWX('杭州',txt,temp,wind,code);
+  }catch(e){
+    w.innerHTML='<span class=w-ico>🌡️</span><span class=w-city>杭州</span><span class=w-temp>--</span><span class=w-label>天气暂不可用</span>';
+  }
+})();
+})();
+</script>
+<script>
+(function(){function loadStk(){var s=document.createElement('script');s.src='https://qt.gtimg.cn/q=hk02331&r='+Date.now();s.onload=function(){try{var raw=window.v_hk02331;if(!raw)return;var a=raw.split('~');var price=parseFloat(a[3]);var chg=parseFloat(a[31]);var pct=parseFloat(a[32]);var high=a[33],low=a[34];var time=a[30];var up=chg>=0;document.getElementById('stk-price').textContent=price.toFixed(3);var chgEl=document.getElementById('stk-chg');chgEl.textContent=(up?'+':'')+chg.toFixed(3)+'  ('+(up?'+':'')+pct.toFixed(2)+'%)';chgEl.className='stk-chg '+(up?'up':'down');document.getElementById('stk-time').textContent=time+' · 高'+high+' 低'+low}catch(e){}s.remove()};document.head.appendChild(s)}loadStk();setInterval(loadStk,60000)})();
+</script>
+<script src='history.js'></script>
+<script>(function(){var filt=document.getElementById('sb-filt');if(!filt)return;var labels={all:'全部',nba:'NBA',ucl:'足球',tennis:'网球',bwf:'羽乒',bike:'自行车',cycling:'自行车',esports:'电竞',golf:'高尔夫',motor:'F1',f1:'F1',og:'综合',nfl:'NFL',cba:'CBA',ipl:'板球',rugby:'橄榄球'};var order=['all','nba','ucl','tennis','bwf','bike','cycling','esports','golf','motor','f1','nfl','cba','og'];var groups={};document.querySelectorAll('.sb li[data-g]').forEach(function(li){var g=li.getAttribute('data-g');if(g)groups[g]=1});var keys=Object.keys(groups);keys.sort(function(a,b){var ia=order.indexOf(a);var ib=order.indexOf(b);if(ia<0)ia=99;if(ib<0)ib=99;return ia-ib});keys.unshift('all');function apply(f){document.querySelectorAll('.sb li[data-g]').forEach(function(row){row.style.display=(f==='all'||row.getAttribute('data-g')===f)?'':'none'})}keys.forEach(function(g,i){var b=document.createElement('button');b.type='button';b.className='f'+(i===0?' active':'');b.setAttribute('data-f',g);b.textContent=labels[g]||g;b.addEventListener('click',function(){filt.querySelectorAll('.f').forEach(function(x){x.classList.remove('active')});b.classList.add('active');apply(g)});filt.appendChild(b)});apply('all')})();</script>
+<script>
+(function(){
+function build(){
+  var cls=document.body.className;
+  var rain=/wx-rain|wx-storm/.test(cls),snow=/wx-snow/.test(cls),fog=/wx-fog|wx-haze/.test(cls);
+  var old=document.getElementById('fx2');if(old)old.remove();
+  if(!rain&&!snow&&!fog)return;
+  var cv=document.createElement('canvas');cv.id='fx2';
+  cv.style.cssText='position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:1';
+  document.body.appendChild(cv);
+  var c=cv.getContext('2d'),W,H;
+  function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight}rs();addEventListener('resize',rs);
+  var P=[],N=rain?300:snow?240:44;
+  for(var i=0;i<N;i++){P.push({x:Math.random()*W,y:Math.random()*H,v:rain?4.2:snow?1.0:0.4,r:rain?1.9:snow?2.8:80+Math.random()*130,a:rain?0.7:snow?0.7:0.22})}
+  function loop(){c.clearRect(0,0,W,H);P.forEach(function(p){
+    if(rain){c.strokeStyle='rgba(105,155,215,.7)';c.lineWidth=p.r;c.beginPath();c.moveTo(p.x,p.y);c.lineTo(p.x-5,p.y+22);c.stroke();p.y+=p.v;p.x-=1.4;if(p.y>H){p.y=-20;p.x=Math.random()*W}}
+    else if(snow){c.fillStyle='rgba(255,255,255,'+p.a+')';c.beginPath();c.arc(p.x,p.y,p.r*0.045,0,7);c.fill();p.y+=p.v;p.x+=Math.sin(p.y/28)*0.6;if(p.y>H){p.y=-10;p.x=Math.random()*W}}
+    else{var g=c.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r);g.addColorStop(0,'rgba(170,178,190,.22)');g.addColorStop(1,'rgba(170,178,190,0)');fillStyle=g;c.beginPath();c.arc(p.x,p.y,p.r,0,7);c.fill();p.x+=p.v;if(p.x-p.r>W+40){p.x=-p.r-40}}
+  });requestAnimationFrame(loop)}
+  loop();
+}
+build();
+new MutationObserver(function(){build()}).observe(document.body,{attributes:true,attributeFilter:['class']});
+})();
+</script>
+</body>
+</html>
