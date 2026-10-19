@@ -27,6 +27,25 @@ body.wx-rain,body.wx-storm,body.wx-snow,body.wx-fog,body.wx-cloud,body.wx-sun,bo
 .shell{background:transparent!important}
 #wx{opacity:1;filter:brightness(1.9)}
 .masthead{position:relative;z-index:2}
+/* 新品与发售日历 */
+.pm{list-style:none;margin:0;padding:0;max-height:300px;overflow-y:auto;scrollbar-width:thin}
+.pm::-webkit-scrollbar{width:6px}
+.pm::-webkit-scrollbar-thumb{background:var(--sys-fill-3);border-radius:3px}
+.pm li{display:grid;grid-template-columns:58px minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 4px;border-top:1px solid var(--sys-sep);font-size:13.5px;min-height:44px}
+.pm li:first-child{border-top:0}
+.pm .d{font-family:var(--font-mono);font-size:11.5px;font-weight:700;color:var(--sport-action);background:var(--sys-fill-1);border-radius:var(--r-micro);padding:4px 7px;text-align:center;white-space:nowrap;font-variant-numeric:tabular-nums}
+.pm .t{color:var(--sys-label);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pm .r{font-family:var(--font-mono);font-size:11px;color:var(--sys-label-3);white-space:nowrap;font-variant-numeric:tabular-nums}
+/* 李宁股票卡 */
+.stock-card{background:var(--sys-bg-2);border:1px solid var(--sys-sep);border-radius:var(--r-card);padding:14px 16px;display:grid;gap:5px}
+.stk-h{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:13px;font-weight:600;color:var(--sys-label)}
+.stk-h .mono{font-size:11px;color:var(--sys-label-3)}
+.stk-price{display:flex;align-items:baseline;gap:6px;font-family:var(--font-mono);font-variant-numeric:tabular-nums;font-size:26px;font-weight:700;color:var(--sys-label);line-height:1.1}
+.stk-unit{font-size:12px;font-weight:500;color:var(--sys-label-3)}
+.stk-chg{font-family:var(--font-mono);font-variant-numeric:tabular-nums;font-size:14px;font-weight:700}
+.stk-chg.up{color:var(--sport-action)}
+.stk-chg.down{color:var(--sport-volt)}
+.stk-time{font-family:var(--font-mono);font-size:11px;color:var(--sys-label-3);font-variant-numeric:tabular-nums}
 </style>
 </head>
 <body>
@@ -102,13 +121,13 @@ body.wx-rain,body.wx-storm,body.wx-snow,body.wx-fog,body.wx-cloud,body.wx-sun,bo
       <li class='sb-g' data-g='cba'>CBA 2026-27 常规赛首轮 10-18</li>
       <li class='sb-m m' data-g='cba'><a href='https://m.dongqiudi.com/article/6511567.html' target='_blank'><span class='home'>北京北汽</span><span class='sc mono'>84-82</span><span class='away'>吉林长白山</span></a><span class='note'>布朗0.4秒三分绝杀 31分 周琦21+17</span></li>
       <li class='sb-m m' data-g='cba'><a href='https://m.dongqiudi.com/article/6511647.html' target='_blank'><span class='home'>南京同曦</span><span class='sc mono'>96-95</span><span class='away'>广东东阳光</span></a><span class='note'>郭昊文23分 徐杰最后一攻超时不进</span></li>
-      <li class='sb-m m' data-g='cba'><a href='http://www.chinaview.cn/20261018/4c3e1a80520d4612b7522a1d3178ce99/c.html' target='_blank'><span class='home'>上海久事</span><span class='sc mono'>102-68</span><span class='away'>深圳马可波罗</span></a><span class='note'>卫冕冠军揭幕战 四川97-?天津止颓</span></li>
-      <li class='sb-g' data-g='football'>中超第28轮 10-18</li>
-      <li class='sb-m m' data-g='football'><a href='http://news.qq.com/rain/a/20261019A02OCV00' target='_blank'><span class='home'>上海海港</span><span class='sc mono'>3-0</span><span class='away'>成都蓉城</span></a><span class='note'>乌龙+莱昂纳多+武磊 蓉城第五个冠军点泡汤</span></li>
-      <li class='sb-m m' data-g='football'><a href='http://m.toutiao.com/group/7698101171545784874/' target='_blank'><span class='home'>上海申花</span><span class='sc mono'>3-1</span><span class='away'>武汉三镇</span></a><span class='note'>阿苏埃/拉唐/韩嘉文建功 武汉基本降级</span></li>
-      <li class='sb-g' data-g='epl'>英超第7轮 / 西甲第9轮 10-18</li>
-      <li class='sb-m m' data-g='epl'><a href='http://m.toutiao.com/group/7698160338843255311/' target='_blank'><span class='home'>诺丁汉森林</span><span class='sc mono'>0-1</span><span class='away'>阿森纳</span></a><span class='note'>马杜埃凯制胜 阿森纳升第二 曼联5轮不胜</span></li>
-      <li class='sb-m m' data-g='laliga'><a href='http://m.toutiao.com/group/7698160338843255311/' target='_blank'><span class='home'>皇家马德里</span><span class='sc mono'>4-1</span><span class='away'>塞维利亚</span></a><span class='note'>姆巴佩双响 巴伦西亚0-0毕尔巴鄂</span></li>
+      <li class='sb-m m' data-g='cba'><a href='http://www.chinaview.cn/20261018/4c3e1a80520d4612b7522a1d3178ce99/c.html' target='_blank'><span class='home'>上海久事</span><span class='sc mono'>102-68</span><span class='away'>深圳马可波罗</span></a><span class='note'>卫冕冠军揭幕战大胜 四川蓝鲸终结长连败</span></li>
+      <li class='sb-g' data-g='ucl'>中超第28轮 10-18</li>
+      <li class='sb-m m' data-g='ucl'><a href='http://news.qq.com/rain/a/20261019A02OCV00' target='_blank'><span class='home'>上海海港</span><span class='sc mono'>3-0</span><span class='away'>成都蓉城</span></a><span class='note'>乌龙+莱昂纳多+武磊 蓉城第五个冠军点泡汤</span></li>
+      <li class='sb-m m' data-g='ucl'><a href='http://m.toutiao.com/group/7698101171545784874/' target='_blank'><span class='home'>上海申花</span><span class='sc mono'>3-1</span><span class='away'>武汉三镇</span></a><span class='note'>阿苏埃/拉唐/韩嘉文建功 武汉基本降级</span></li>
+      <li class='sb-g' data-g='ucl'>英超第7轮 / 西甲第9轮 10-18</li>
+      <li class='sb-m m' data-g='ucl'><a href='http://m.toutiao.com/group/7698160338843255311/' target='_blank'><span class='home'>诺丁汉森林</span><span class='sc mono'>0-1</span><span class='away'>阿森纳</span></a><span class='note'>马杜埃凯制胜 阿森纳升第二 曼联5轮不胜</span></li>
+      <li class='sb-m m' data-g='ucl'><a href='http://m.toutiao.com/group/7698160338843255311/' target='_blank'><span class='home'>皇家马德里</span><span class='sc mono'>4-1</span><span class='away'>塞维利亚</span></a><span class='note'>姆巴佩双响 巴伦西亚0-0毕尔巴鄂</span></li>
       <li class='sb-g' data-g='f1'>F1 美国奥斯汀站 Sprint 10-18</li>
       <li class='sb-m m' data-g='f1'><a href='https://www.mundodeportivo.com/resultados/motor/f1/39/gran-premio-de-los-estados-unidos/9263/sprint' target='_blank'><span class='home'>拉塞尔(梅赛德斯)</span><span class='sc mono'>sprint冠军</span><span class='away'>19圈</span></a><span class='note'>维斯塔潘P3 汉密尔顿P4 正赛10-19凌晨</span></li>
     </ul>
