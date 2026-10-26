@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang='zh-CN'>
-<head><base href='../'>
+<head>
+<base href='../'>
 <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width,initial-scale=1,viewport-fit=cover'>
 <title>2026-10-26 归档 · 体育与运动品牌动态</title>
@@ -127,7 +128,7 @@ body.wx-rain,body.wx-storm,body.wx-snow,body.wx-fog,body.wx-cloud,body.wx-sun,bo
 <div class='item'><p class='meta'><span class='src'>网易体育</span><time>10-26</time></p><h3>意甲：国米2-1佛罗伦萨，米兰2-0乌迪内斯</h3><p>国际米兰主场2-1小胜佛罗伦萨。AC米兰客场2-0乌迪内斯，莫德里奇助攻普利西奇单刀破门，哈钦森补射建功，拉莫斯击中横梁，奇克伤退。</p><p class='more'><a href='http://m.163.com/dy/article/LA5DFUQV05299JMD.html' target='_blank'>阅读原文</a></p></div>
 <div class='item'><p class='meta'><span class='src'>网易体育/LaLiga</span><time>10-26</time></p><h3>德甲：拜仁3-1弗赖堡；西甲皇家社会2-1莱万特</h3><p>德甲第8轮拜仁客场3-1击败弗赖堡。西甲第11轮皇家社会2-1莱万特。</p><p class='more'><a href='http://m.163.com/dy/article/LA5DFUQV05299JMD.html' target='_blank'>阅读原文</a></p></div>
 <div class='item'><p class='meta'><span class='src'>新华社/虎扑</span><time>10-25</time></p><h3>CBA第4轮：辽宁98-87新疆，北控103-70深圳</h3><p>辽宁本钢主场98-87胜新疆，库珀手感滚烫连进关键球，辛普森为新疆砍33分4助。北控客场103-70大胜深圳，里勒21中14砍30分5板5助。山西101-79胜江苏取三连胜。</p><p class='more'><a href='https://bbs.hupu.com/643291043.html' target='_blank'>阅读原文</a></p></div>
-<div class='item'><p class='meta'><span class='src'>网易早报</span><time>10-26</time></p><h3>今日预告：19:35 CBA上海-广东、宁波-吉林</h3><p>10月26日19:35 CBA常规赛第5轮，上海对阵广东、宁波对阵吉林。中超第30轮末轮定于11月8日，蓉城客战泰山打平即夺冠。</p><p class='more'><a href='http://m.163.com/dy/article/LA5DFUQV05299JMD.html' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>网易早报</span><time>10-26</time></p><h3>今日预告：19:35 CBA上海-广东、宁波-吉林</h3><p>10月26日19:35 CBA常规赛第5轮，上海对阵广东、宁波对阵吉林。中超第30轮末轮定于11月8日结束本赛季。</p><p class='more'><a href='http://m.163.com/dy/article/LA5DFUQV05299JMD.html' target='_blank'>阅读原文</a></p></div>
 <h2 id='s3'>二、品牌营销与代言动态</h2>
 <div class='item'><p class='meta'><span class='src'>YOHO/On官网</span><time>10-25</time></p><h3>LOEWE x On昂跑2026秋冬联名：Cloudsolo Hiker徒步鞋+成衣系列</h3><p>罗意威与瑞士运动品牌On昂跑推出2026秋冬鞋履及成衣联名系列，以艺术探索为灵感。首发Cloudsolo Hiker徒步风休闲鞋与Cloudtilt Cosmic轻量跑鞋。</p><p class='more'><a href='https://www.sina.cn/media/1729505414' target='_blank'>阅读原文</a></p></div>
 <div class='item'><p class='meta'><span class='src'>YOHO/Salomon</span><time>10-25</time></p><h3>Salomon x Feid：拉丁格莱美得主联名ACS NEXXT</h3><p>Salomon与拉丁格莱美奖得主Feid再次合作，推出名为ACS NEXXT的全新联名鞋款。Salomon X-ALP EXPEDITION亦将于10月27日发售，定价$250。</p><p class='more'><a href='https://www.salomon.com/en-us/c/launch-calendar/upcoming' target='_blank'>阅读原文</a></p></div>
@@ -173,7 +174,7 @@ var c=document.getElementById('wx');
 var mh=document.querySelector('.masthead');
 var ALL_WX=['wx-sun','wx-cloud','wx-rain','wx-snow','wx-storm','wx-fog','wx-haze','wx-dust'];
 function wxOn(cls){mh.classList.add(cls);document.body.classList.add(cls)}
-function wxClear(){mh.classList.remove.apply(mh.classList,ALL_WX);document.body.classList.remove.apply(document.body,ALL_WX)}
+function wxClear(){ALL_WX.forEach(function(cl){mh.classList.remove(cl);document.body.classList.remove(cl)})}
 function resize(){if(!c)return;c.width=window.innerWidth;c.height=window.innerHeight}
 resize();addEventListener('resize',resize);
 var drops=[],flash=0;
@@ -202,17 +203,31 @@ w.innerHTML=html;
 setFX(code);
 }
 (async function(){
-try{
-var r=await fetch('https://api.open-meteo.com/v1/forecast?latitude=30.28&longitude=120.15&current=temperature_2m,weather_code,wind_speed_10m&timezone=auto').then(function(r){return r.json()});
-var n=r.current;
-var code=n.weather_code;
-var temp=Math.round(n.temperature_2m);
-var wind=Math.round(n.wind_speed_10m);
+function om(){
+var ctl=new AbortController();
+var t=setTimeout(function(){ctl.abort()},8000);
+return fetch('https://api.open-meteo.com/v1/forecast?latitude=30.28&longitude=120.15&current=temperature_2m,weather_code,wind_speed_10m&timezone=auto&_cb='+Date.now(),{signal:ctl.signal})
+.then(function(r){clearTimeout(t);if(!r.ok)throw new Error('OM '+r.status);return r.json()});
+}
+function qw(){
+return fetch('https://pg3qqubnkm.re.qweatherapi.com/v7/weather/now?location=101210101&key=e83435ce53fb48448342b3c2602a3e43&_='+Date.now())
+.then(function(r){if(!r.ok)throw new Error('QW '+r.status);return r.json()})
+.then(function(j){
+if(j.code!=='200')throw new Error('QW code '+j.code);
+var t=j.now.text,code=2;
+if(/晴/.test(t))code=0;else if(/多云/.test(t))code=2;else if(/阴/.test(t))code=3;else if(/雾/.test(t))code=45;
+else if(/雷/.test(t))code=95;else if(/雪/.test(t))code=71;else if(/雨/.test(t))code=61;
+return {current:{temperature_2m:Number(j.now.temp),weather_code:code,wind_speed_10m:Number(j.now.windSpeed)}};
+});
+}
+function apply(j){
+var n=j.current,code=n.weather_code,temp=Math.round(n.temperature_2m),wind=Math.round(n.wind_speed_10m);
 var txt;if(code===0)txt='晴';else if(code===1)txt='多云';else if(code===2||code===3)txt='阴';else if(code===45||code===48)txt='雾';else if(code>=51&&code<=57)txt='毛毛雨';else if(code>=61&&code<=67)txt='雨';else if(code>=80&&code<=82)txt='阵雨';else if(code>=71&&code<=77)txt='雪';else if(code>=85&&code<=86)txt='雨夹雪';else if(code>=95)txt='雷暴';else txt='多云';
 setWX('杭州',txt,temp,wind,code);
-}catch(e){
-w.innerHTML='<span class=w-ico>🌡️</span><span class=w-city>杭州</span><span class=w-temp>--</span><span class=w-label>天气暂不可用</span>';
 }
+om().catch(function(){return new Promise(function(res){setTimeout(function(){res(om())},400)})}).catch(qw).then(apply).catch(function(e){console.error('weather',e);
+w.innerHTML='<span class=w-ico>🌡️</span><span class=w-city>杭州</span><span class=w-temp>--</span><span class=w-label>天气暂不可用</span>';
+});
 })();
 })();
 </script>
