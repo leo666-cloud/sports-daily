@@ -173,7 +173,7 @@ var c=document.getElementById('wx');
 var mh=document.querySelector('.masthead');
 var ALL_WX=['wx-sun','wx-cloud','wx-rain','wx-snow','wx-storm','wx-fog','wx-haze','wx-dust'];
 function wxOn(cls){mh.classList.add(cls);document.body.classList.add(cls)}
-function wxClear(){mh.classList.remove.apply(mh.classList,ALL_WX);document.body.classList.remove.apply(document.body,ALL_WX)}
+function wxClear(){ALL_WX.forEach(function(cl){mh.classList.remove(cl);document.body.classList.remove(cl)})}
 function resize(){if(!c)return;c.width=window.innerWidth;c.height=window.innerHeight}
 resize();addEventListener('resize',resize);
 var drops=[],flash=0;
@@ -224,7 +224,7 @@ var n=j.current,code=n.weather_code,temp=Math.round(n.temperature_2m),wind=Math.
 var txt;if(code===0)txt='晴';else if(code===1)txt='多云';else if(code===2||code===3)txt='阴';else if(code===45||code===48)txt='雾';else if(code>=51&&code<=57)txt='毛毛雨';else if(code>=61&&code<=67)txt='雨';else if(code>=80&&code<=82)txt='阵雨';else if(code>=71&&code<=77)txt='雪';else if(code>=85&&code<=86)txt='雨夹雪';else if(code>=95)txt='雷暴';else txt='多云';
 setWX('杭州',txt,temp,wind,code);
 }
-om().catch(function(){return new Promise(function(res){setTimeout(res,400)})}).then(om).catch(qw).then(apply).catch(function(e){
+om().catch(function(){return new Promise(function(res){setTimeout(function(){res(om())},400)})}).catch(qw).then(apply).catch(function(e){console.error('weather',e);
 w.innerHTML='<span class=w-ico>🌡️</span><span class=w-city>杭州</span><span class=w-temp>--</span><span class=w-label>天气暂不可用</span>';
 });
 })();
