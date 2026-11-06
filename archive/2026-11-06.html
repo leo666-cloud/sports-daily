@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+<head>
+<base href='../'>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1,viewport-fit=cover'>
+<title>2026-11-06 归档 · 体育与运动品牌动态</title>
+<link rel='stylesheet' href='style.css'>
+<style>
+.masthead{position:relative;overflow:hidden;z-index:0}
+.shell{position:relative;z-index:2}
+#wx{position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:1}
+.mast-inner{position:relative;z-index:2}
+#weather{position:absolute;top:22px;right:32px;z-index:3;display:flex;align-items:center;gap:10px;padding:8px 14px;border:1px solid rgba(255,255,255,.14);border-radius:999px;background:rgba(255,255,255,.06);backdrop-filter:blur(8px);color:#F2F3F5;font:500 13px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.02em}
+#weather .w-ico{font-size:18px;line-height:1}
+#weather .w-city{color:#F2F3F5}
+#weather .w-temp{font-weight:700;font-size:15px}
+#weather .w-label{color:#F2F3F5}
+.masthead.wx-sun{background:radial-gradient(ellipse 60% 90% at 82% -10%, rgba(255,200,90,.85), rgba(255,150,50,.35) 40%, rgba(20,40,30,0) 70%),radial-gradient(ellipse 100% 100% at 20% 110%, rgba(60,90,70,.4), transparent 60%),linear-gradient(180deg,#2a1f10 0%,#4a3820 45%,#1a2a22 100%)!important}
+.masthead.wx-cloud{background:radial-gradient(ellipse 120% 100% at 50% -10%, rgba(200,210,225,.4), transparent 55%),linear-gradient(180deg,#3a404c 0%,#525a68 50%,#20242c 100%)!important}
+.masthead.wx-rain{background:radial-gradient(ellipse 120% 90% at 50% -10%, rgba(90,140,200,.45), transparent 60%),linear-gradient(180deg,#0a1828 0%,#1a3050 55%,#081018 100%)!important}
+.masthead.wx-snow{background:radial-gradient(ellipse 120% 90% at 50% -10%, rgba(230,240,255,.4), transparent 60%),linear-gradient(180deg,#253045 0%,#4a5a7a 55%,#182030 100%)!important}
+.masthead.wx-storm{background:radial-gradient(ellipse 120% 110% at 50% -10%, rgba(140,130,220,.5), transparent 60%),linear-gradient(180deg,#080818 0%,#1e1e3a 55%,#060610 100%)!important}
+.masthead.wx-fog{background:radial-gradient(ellipse 140% 110% at 50% 0%, rgba(180,188,196,.6), transparent 70%),linear-gradient(180deg,#3a4048 0%,#4a5058 55%,#2a2e34 100%)!important}
+.masthead.wx-haze{background:radial-gradient(ellipse 140% 110% at 50% 0%, rgba(160,150,130,.55), transparent 70%),linear-gradient(180deg,#4a453c 0%,#5a5448 55%,#2e2a24 100%)!important}
+.masthead.wx-dust{background:radial-gradient(ellipse 140% 110% at 50% 0%, rgba(190,160,100,.55), transparent 70%),linear-gradient(180deg,#5a4a2e 0%,#6b5a38 55%,#332a1a 100%)!important}
+body.wx-rain,body.wx-storm,body.wx-snow,body.wx-fog,body.wx-cloud,body.wx-sun,body.wx-haze,body.wx-dust{background:var(--sys-bg,#F6F5F1)!important}
+.shell{background:transparent!important}
+#wx{opacity:1;filter:brightness(1.9)}
+.masthead{position:relative;z-index:2}
+.pm{list-style:none;margin:0;padding:0;max-height:300px;overflow-y:auto;scrollbar-width:thin}
+.pm::-webkit-scrollbar{width:6px}
+.pm::-webkit-scrollbar-thumb{background:var(--sys-fill-3);border-radius:3px}
+.pm li{display:grid;grid-template-columns:58px minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 4px;border-top:1px solid var(--sys-sep);font-size:13.5px;min-height:44px}
+.pm li:first-child{border-top:0}
+.pm .d{font-family:var(--font-mono);font-size:11.5px;font-weight:700;color:var(--sport-action);background:var(--sys-fill-1);border-radius:var(--r-micro);padding:4px 7px;text-align:center;white-space:nowrap;font-variant-numeric:tabular-nums}
+.pm .t{color:var(--sys-label);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pm .r{font-family:var(--font-mono);font-size:11px;color:var(--sys-label-3);white-space:nowrap;font-variant-numeric:tabular-nums}
+.stock-card{background:var(--sys-bg-2);border:1px solid var(--sys-sep);border-radius:var(--r-card);padding:14px 16px;display:grid;gap:5px}
+.stk-h{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:13px;font-weight:600;color:var(--sys-label)}
+.stk-h .mono{font-size:11px;color:var(--sys-label-3)}
+.stk-price{display:flex;align-items:baseline;gap:6px;font-family:var(--font-mono);font-variant-numeric:tabular-nums;font-size:26px;font-weight:700;color:var(--sys-label);line-height:1.1}
+.stk-unit{font-size:12px;font-weight:500;color:var(--sys-label-3)}
+.stk-chg{font-family:var(--font-mono);font-variant-numeric:tabular-nums;font-size:14px;font-weight:700}
+.stk-chg.up{color:var(--sport-action)}
+.stk-chg.down{color:var(--sport-volt)}
+.stk-time{font-family:var(--font-mono);font-size:11px;color:var(--sys-label-3);font-variant-numeric:tabular-nums}
+.mat-list{display:grid;gap:0}
+.mat-row{display:grid;grid-template-columns:2.6em 1fr auto;gap:8px;align-items:center;padding:4px 0;border-top:1px solid var(--sys-sep);font-size:12.5px;line-height:1.4}
+.mat-row:first-child{border-top:0}
+.mat-sym{font-family:var(--font-mono);font-weight:700;color:var(--sys-label-2);font-size:10.5px}
+.mat-name{color:var(--sys-label-2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat-price{font-family:var(--font-mono);font-variant-numeric:tabular-nums;font-weight:600;color:var(--sys-label);font-size:12.5px;text-align:right}
+.mat-chg{font-family:var(--font-mono);font-variant-numeric:tabular-nums;font-size:11px;font-weight:700;text-align:right;min-width:42px}
+.mat-chg.up{color:var(--sport-action)}
+.mat-chg.down{color:var(--sport-volt)}
+.mat-loading{font-size:11px;color:var(--sys-label-3);padding:6px 0;text-align:center;margin:0}
+.prose blockquote p{display:flex;gap:var(--s4);align-items:flex-start}
+.qtag{flex:0 0 auto;font-weight:700;white-space:nowrap;line-height:1.58;color:var(--sport-action)}
+.qbody{flex:1 1 auto;min-width:0}
+.rpt-card{position:relative;display:flex;align-items:center;gap:12px;padding:16px 16px 16px 14px;border:1px solid var(--sys-sep);border-radius:var(--r-card);background:var(--sys-bg-2);color:var(--sys-label);text-decoration:none;overflow:hidden;transition:transform var(--dur-2) var(--ease-out),box-shadow var(--dur-2) var(--ease-out)}.rpt-card:hover{transform:translateY(-2px);box-shadow:var(--lift);text-decoration:none}.rpt-card::before{content:'';position:absolute;right:-16px;top:-20px;width:128px;height:128px;background:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22128%22 height=%22128%22 viewBox=%220 0 128 128%22><circle cx=%22100%22 cy=%2224%22 r=%2215%22 fill=%22%231F6F4A%22 fill-opacity=%220.10%22/><path d=%22M0 96 L32 62 L58 82 L88 46 L128 74 L128 128 L0 128 Z%22 fill=%22%231F6F4A%22 fill-opacity=%220.12%22/></svg>') no-repeat;background-size:cover;pointer-events:none}[data-theme='dark'] .rpt-card::before{filter:brightness(1.7)}.rpt-ico{flex:0 0 42px;width:42px;height:42px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:var(--sport-action);color:#fff}.rpt-ico svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.rpt-tx{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:3px}.rpt-tx b{font-size:17px;font-weight:600;letter-spacing:-.2px;color:var(--sys-label);line-height:1.2}.rpt-tx i{font-style:normal;font-size:11.5px;color:var(--sys-label-3);letter-spacing:-.1px;line-height:1.35;white-space:normal;overflow-wrap:anywhere}.rpt-go{flex:0 0 auto;color:var(--sport-action);font-size:18px;font-weight:700;line-height:1;transition:transform var(--dur-1) var(--ease-out)}.rpt-card:hover .rpt-go{transform:translateX(3px)}
+</style>
+</head>
+<body>
+<div class='progress'><i id='prog'></i></div>
+<section class='masthead'>
+  <canvas id='wx'></canvas>
+  <div id='weather' aria-live='polite'></div>
+  <div class='mast-inner'>
+    <div>
+      <p class='eyebrow'><span class='livedot'></span>Sports &amp; Athletics · Daily Brief <span class='dim'>/ 每日 08:30 自动更新</span></p>
+      <h1>体育与运动品牌动态</h1>
+      <p class='lede'>赛事赛果 · 品牌营销与新品 · 运动品牌市场与渠道 · 资本业绩 · 行业公告</p>
+    </div>
+    <div class='stamp'>
+      <p class='k'>最新一期</p>
+      <b class='v mono'>2026-11-06 周五 08:30</b>
+    </div>
+  </div>
+    <div class='ticker'>
+    <span class='ticker-label'>赛果</span>
+    <div class='ticker-track'><div class='ticker-set'><span>射击世锦赛女子10米气手枪 姜冉馨242.4环夺金 姚千寻摘银</span><span>射击世锦赛男子10米气手枪 胡凯243.9环夺金 中国一日两金两张奥运门票</span><span>WTT法兰克福 王楚钦0-3温瑞博爆冷止步16强</span><span>NBA 东契奇40+9+7连续6场35+ 湖人116-103国王4连胜</span><span>NBA 凯尔特人109-102雄鹿 乔治25怀特24</span><span>斯诺克国锦赛四强出炉 常冰玉范争一占两席</span><span>蹦床世锦赛南京第2日 王梓赛资格赛第2进半决赛</span><span>李宁特别股息每股2.32元 总额约60亿 静态股息率18.4%</span><span>港股体育用品普涨 李宁+2.01% 安踏+2.05%</span><span>NikeSKIMS Waffle Racer 11/10发售 $130</span></div><div class='ticker-set' aria-hidden='true'><span>射击世锦赛女子10米气手枪 姜冉馨242.4环夺金 姚千寻摘银</span><span>射击世锦赛男子10米气手枪 胡凯243.9环夺金 中国一日两金两张奥运门票</span><span>WTT法兰克福 王楚钦0-3温瑞博爆冷止步16强</span><span>NBA 东契奇40+9+7连续6场35+ 湖人116-103国王4连胜</span><span>NBA 凯尔特人109-102雄鹿 乔治25怀特24</span><span>斯诺克国锦赛四强出炉 常冰玉范争一占两席</span><span>蹦床世锦赛南京第2日 王梓赛资格赛第2进半决赛</span><span>李宁特别股息每股2.32元 总额约60亿 静态股息率18.4%</span><span>港股体育用品普涨 李宁+2.01% 安踏+2.05%</span><span>NikeSKIMS Waffle Racer 11/10发售 $130</span></div></div></div></div></section>
+<div class='shell'>
+  <aside class='side'>
+    <p class='side-h'><span>历史期次</span><span class='mono'>6</span></p>
+    <div class='hist'><ul class='dates'><li><button class='dbtn' type='button' aria-current='true'><span class='d'>2026-11-06</span><span class='w'>周五</span><span class='badge-new'>最新</span></button></li><li><button class='dbtn' type='button'><span class='d'>2026-11-05</span><span class='w'>周四</span></button></li><li><button class='dbtn' type='button'><span class='d'>2026-11-04</span><span class='w'>周三</span></button></li><li><button class='dbtn' type='button'><span class='d'>2026-11-03</span><span class='w'>周二</span></button></li><li><button class='dbtn' type='button'><span class='d'>2026-11-02</span><span class='w'>周一</span></button></li><li><button class='dbtn' type='button'><span class='d'>2026-10-30</span><span class='w'>周五</span></button></li><li><button class='dbtn' type='button'><span class='d'>2026-10-29</span><span class='w'>周四</span></button></li></ul></div>
+    <p class='foot'>历史保留最近 7 个自然日。</p>
+    <a class='rpt-card' href='https://leo666-cloud.github.io/fitness-yoga-report/#overview' target='_blank' rel='noopener'><span class='rpt-ico'><svg viewBox='0 0 24 24'><path d='M4 5h16v14H4z'/><path d='M8 9h8M8 13h8M8 17h5'/></svg></span><span class='rpt-tx'><b>研究报告</b></span><span class='rpt-go'>→</span></a>
+    <div class='stock-card' id='stk-lining'>
+      <p class='stk-h'><span>李宁 LI NING</span><span class='mono'>2331.HK</span></p>
+      <p class='stk-price'><span id='stk-price'>--</span><span class='stk-unit'>HKD</span></p>
+      <p class='stk-chg' id='stk-chg'>--</p>
+      <p class='stk-time mono' id='stk-time'>行情加载中…</p>
+    </div>
+    <div class='stock-card' id='mat-cost'>
+      <p class='stk-h'><span>工业原材料成本</span><span class='mono'>期货主力</span></p>
+      <div class='mat-list' id='mat-list'><div class='mat-row'><span class='mat-sym'>PP</span><span class='mat-name'>聚丙烯</span><span class='mat-price'>10480</span><span class='mat-chg up'>+0.45%</span></div><div class='mat-row'><span class='mat-sym'>TA</span><span class='mat-name'>PTA</span><span class='mat-price'>6598</span><span class='mat-chg down'>-0.33%</span></div><div class='mat-row'><span class='mat-sym'>PE</span><span class='mat-name'>聚乙烯</span><span class='mat-price'>9555</span><span class='mat-chg up'>+0.64%</span></div><div class='mat-row'><span class='mat-sym'>VC</span><span class='mat-name'>PVC</span><span class='mat-price'>5242</span><span class='mat-chg down'>-1.00%</span></div><div class='mat-row'><span class='mat-sym'>EB</span><span class='mat-name'>苯乙烯</span><span class='mat-price'>10409</span><span class='mat-chg up'>+1.52%</span></div><div class='mat-row'><span class='mat-sym'>RU</span><span class='mat-name'>天然橡胶</span><span class='mat-price'>19295</span><span class='mat-chg up'>+0.60%</span></div><div class='mat-row'><span class='mat-sym'>RB</span><span class='mat-name'>螺纹钢</span><span class='mat-price'>3028</span><span class='mat-chg down'>-0.36%</span></div><p class='mat-loading' style='padding-top:8px'>11-02盘中 · 期货主力</p></div></div><button class='totop' id='theme' title='切换亮暗'><span id='theme-ico'>☾</span><span>外观</span></button>
+    <button class='totop' id='totop' onclick='window.scrollTo(0,0)' title='回到顶部'><span>↑</span><span>回到顶部</span></button>
+  </aside>
+  <main>
+    <article>
+      <header class='rhead'>
+        <p class='kicker'><span>最新一期</span><span class='dt'>2026-11-06 · 周五</span></p>
+        <ul class='rmeta'>
+          <li><b>窗口</b>2026-11-05 08:30 ~ 2026-11-06 08:30</li>
+          <li><b>条目</b>28</li>
+        </ul>
+      </header>
+      <nav class='rail'>
+        <div class='rail-in'>
+          <button class='chip' data-sec='s1'><u>01</u>核心要点</button>
+          <button class='chip' data-sec='s2'><u>02</u>赛事竞技</button>
+          <button class='chip' data-sec='s3'><u>03</u>品牌营销</button>
+          <button class='chip' data-sec='s4'><u>04</u>渠道舆论</button>
+          <button class='chip' data-sec='s5'><u>05</u>资本业绩</button>
+          <button class='chip' data-sec='s6'><u>06</u>公告与市场</button>
+        </div>
+      </nav>
+      <div class='dash'>
+  <div class='board'><div class='board-h'><h3>近期赛果速读</h3><span class='cnt mono'>11</span></div><div class='filt' id='sb-filt'></div><ul class='sb'><li class='sb-g' data-g='og'>射击世锦赛 11-05</li><li class='sb-m m' data-g='og'><a href='http://m.toutiao.com/group/7704833548989088299/' target='_blank'><span class='home'>姜冉馨(中)</span><span class='sc mono'>242.4环</span><span class='away'>女子10米气手枪</span></a><span class='note'>0.3环险胜姚千寻夺金 中国包揽金银+团体金 再拿1张奥运门票</span></li><li class='sb-m m' data-g='og'><a href='http://m.toutiao.com/group/7704833548989088299/' target='_blank'><span class='home'>胡凯(中)</span><span class='sc mono'>243.9环</span><span class='away'>男子10米气手枪</span></a><span class='note'>夺金 中国一日两金再获1张奥运门票</span></li><li class='sb-g' data-g='bwf'>WTT法兰克福 11-05</li><li class='sb-m m' data-g='bwf'><a href='http://m.toutiao.com/group/7704848278063514112/' target='_blank'><span class='home'>王楚钦(中)</span><span class='sc mono'>0-3</span><span class='away'>温瑞博(中)</span></a><span class='note'>爆冷止步16强 温瑞博仅丢14分晋级</span></li><li class='sb-g' data-g='snk'>斯诺克国锦赛 11-05</li><li class='sb-m m' data-g='snk'><a href='http://www.xinhuanet.com/20261105/2abad5f5472d42b881a74d9c76765b1a/c.html' target='_blank'><span class='home'>四强</span><span class='sc mono'>名单</span><span class='away'>南京</span></a><span class='note'>常冰玉/范争一/凯伦·威尔逊/希金斯 中国占两席</span></li><li class='sb-g' data-g='nba'>NBA常规赛 11-05</li><li class='sb-m m' data-g='nba'><a href='https://m.dongqiudi.com/lanqiu/54556348' target='_blank'><span class='home'>萨克拉门托国王</span><span class='sc mono'>103-116</span><span class='away'>洛杉矶湖人</span></a><span class='note'>东契奇40+9+7连续6场35+ 里夫斯21分 湖人4连胜</span></li><li class='sb-m m' data-g='nba'><a href='https://m.dongqiudi.com/article/6609396.html' target='_blank'><span class='home'>波士顿凯尔特人</span><span class='sc mono'>109-102</span><span class='away'>密尔沃基雄鹿</span></a><span class='note'>乔治25+5助 怀特24+4+7 希罗空砍25</span></li><li class='sb-m m' data-g='nba'><a href='https://m.dongqiudi.com/lanqiu/saicheng/2026-11-05' target='_blank'><span class='home'>俄克拉荷马雷霆</span><span class='sc mono'>124-116</span><span class='away'>克利夫兰骑士</span></a><span class='note'>雷霆客胜骑士 西部竞争激烈</span></li><li class='sb-g' data-g='og'>蹦床世锦赛南京 11-05</li><li class='sb-m m' data-g='og'><a href='http://www.sport.gov.cn/n20001280/n20067662/n20067613/c30153852/content.html' target='_blank'><span class='home'>王梓赛(中)</span><span class='sc mono'>资格赛第2</span><span class='away'>男子网上个人</span></a><span class='note'>中国8人全部晋级 32岁贾芳芳复出进半决赛</span></li></ul></div>
+  <div class='board'><div class='board-h'><h3>新品与发售日历</h3><span class='cnt mono'>6</span></div><ul class='pm'><li><span class='d'>11-06</span><a class='t' href='https://www.marketbeat.com/stocks/NYS/UA/earnings/' target='_blank' rel='noopener' title='Under Armour Q2 FY27 业绩盘前发布'>Under Armour Q2 FY27 业绩盘前发布</a><span class='r'>11-06</span></li><li><span class='d'>11-07</span><a class='t' href='https://www.adidas.com/originals' target='_blank' rel='noopener' title='adidas Originals x BAPE Golden Era发售'>adidas Originals x BAPE Golden Era发售</a><span class='r'>11-07</span></li><li><span class='d'>11-07</span><a class='t' href='https://www.ask.com.cn/' target='_blank' rel='noopener' title='ASK青春系列代言人张子墨直播 米兰限定秀场款'>ASK青春系列代言人张子墨直播 米兰限定</a><span class='r'>11-07</span></li><li><span class='d'>11-08</span><a class='t' href='https://sports.sina.com.cn/csl/' target='_blank' rel='noopener' title='中超末轮 成都蓉城vs山东泰山 冠军战 15:30'>中超末轮 成都vs山东 冠军战 15:30</a><span class='r'>11-08</span></li><li><span class='d'>11-10</span><a class='t' href='https://hypebeast.com/2026/11/nike-kim-kardashian-skims-nikeskims-waffle-racer-collection-release-info' target='_blank' rel='noopener' title='NikeSKIMS Waffle Racer + Retro Sport Collection 发售 $130'>NikeSKIMS Waffle Racer 发售 $130</a><span class='r'>11-10</span></li><li><span class='d'>11-13</span><a class='t' href='https://www.wwdjapan.com/articles/2542599' target='_blank' rel='noopener' title='ASICS x Heralbonny 神山美智子艺术联名发售'>ASICS x Heralbonny 艺术联名发售</a><span class='r'>11-13</span></li></ul></div>
+</div>
+
+<div class='prose'><blockquote><p><span class='qtag'>[重磅]</span><span class='qbody'>李宁(2331.HK)11/5盘后公告：董事会批准宣派<strong>特别股息每股人民币2.32元</strong>（约合港币2.71元），按总股本约25.8亿股测算总额约<strong>60亿元</strong>。以11/5收盘价14.72港元计算，静态股息率高达<strong>18.41%</strong>。除权除息日11/18、派息日12/1。这是李宁2020年以来首次大额特别股息，市场将其解读为管理层对现金流与股价的强力信心信号。</span></p><p><span class='qtag'>[重磅]</span><span class='qbody'>射击世锦赛多哈11/5单日<strong>4金2银</strong>：<strong>姜冉馨</strong>女子10米气手枪决赛242.4环、0.3环险胜队友姚千寻夺金，中国队包揽金银+团体金；<strong>胡凯</strong>男子10米气手枪243.9环夺金。单日为中国再获2张洛杉矶奥运门票。</span></p><p><span class='qtag'>[要点]</span><span class='qbody'>WTT法兰克福冠军赛1/8决赛爆出大冷：世界第一<strong>王楚钦0-3</strong>不敌队友温瑞博，仅让对手拿14分却遭横扫，止步16强。温瑞博赛后称「抱着拼他的心态，头哥水平比我好太多」。</span></p><p><span class='qtag'>[要点]</span><span class='qbody'>NBA：<strong>东契奇40+9+7</strong>连续6场35+，湖人客场116-103国王取4连胜（里夫斯21分）；凯尔特人109-102雄鹿，乔治25+5助怀特24+4+7；雷霆124-116客胜骑士。</span></p></blockquote><h2 id='s2'>一、赛事与竞技动态</h2><div class='item'><p class='meta'><span class='src'>新华社/北青网</span><time>11-05</time></p><h3>射击世锦赛女子10米气手枪：姜冉馨242.4环夺金，姚千寻摘银</h3><p>女子10米气手枪决赛，姜冉馨倒数第四枪打出7.6环落后，最后三枪连续反超，以242.4环、0.3环优势击败卫冕冠军姚千寻夺金。姚千寻、姜冉馨、沈奕瑶还为中国队夺得团体金牌。该项目为中国拿到1张洛杉矶奥运门票。</p><p class='more'><a href='http://m.toutiao.com/group/7704833375290278443/' target='_blank'>阅读原文</a></p></div><div class='item'><p class='meta'><span class='src'>新华社/北青网</span><time>11-05</time></p><h3>射击世锦赛男子10米气手枪：胡凯243.9环夺金</h3><p>男子10米气手枪决赛，胡凯以243.9环夺金，帮助中国队再拿1张洛杉矶奥运门票。加上女子项目，中国射击队11/5单日收获2金+2张奥运门票。</p><p class='more'><a href='http://m.toutiao.com/group/7704833548989088299/' target='_blank'>阅读原文</a></p></div><div class='item'><p class='meta'><span class='src'>新华社/湖南日报</span><time>11-05</time></p><h3>WTT法兰克福冠军赛：王楚钦0-3温瑞博爆冷止步16强</h3><p>WTT法兰克福冠军赛男单1/8决赛，世界第一王楚钦0-3不敌队友温瑞博。温瑞博三局仅丢14分。赛后温瑞博表示「抱着拼头哥的心态，自己没压力」。王楚钦连续两站冠军赛提前出局。</p><p class='more'><a href='http://m.toutiao.com/group/7704848278063514112/' target='_blank'>阅读原文</a></p></div><div class='item'><p class='meta'><span class='src'>新华社/京报网</span><time>11-05</time></p><h3>斯诺克国锦赛四强出炉：常冰玉/范争一/凯伦·威尔逊/希金斯</h3><p>2026斯诺克国锦赛1/4决赛全部结束，四强名单：中国小将常冰玉（6-3赵心童）、范争一、凯伦·威尔逊（6-4丁俊晖）、约翰·希金斯（击败傅家俊）。半决赛常冰玉对希金斯，范争一对凯伦·威尔逊。中国军团八强占5席最终存活2席。</p><p class='more'><a href='http://www.xinhuanet.com/20261105/2abad5f5472d42b881a74d9c76765b1a/c.html' target='_blank'>阅读原文</a></p></div><div class='item'><p class='meta'><span class='src'>ESPN/懂球帝</span><time>11-05</time></p><h3>NBA：东契奇40+9+7连续6场35+，湖人116-103国王4连胜</h3><p>湖人客场116-103击败国王，东契奇23中11、三分13中6、13罚12中砍40分9篮板7助攻，连续第6场至少35分，里夫斯21分3篮板4助攻。这是东契奇作为湖人球员的第100场常规赛。湖人9战7胜。</p><p class='more'><a href='https://africa.espn.com/nba/game/_/gameId/401909934' target='_blank'>阅读原文</a></p></div><div class='item'><p class='meta'><span class='src'>懂球帝</span><time>11-05</time></p><h3>NBA：凯尔特人109-102雄鹿，乔治25怀特24</h3><p>凯尔特人半场62-41领先，最终109-102击败雄鹿。保罗·乔治25分3板5助，德里克·怀特24分4板7助；雄鹿希罗25分5板3助，哈克斯18分。</p><p class='more'><a href='https://m.dongqiudi.com/article/6609396.html' target='_blank'>阅读原文</a></p></div><div class='item'><p class='meta'><span class='src'>懂球帝</span><time>11-05</time></p><h3>NBA：雷霆124-116客胜骑士；鹈鹕120-113爵士</h3><p>雷霆124-116击败骑士，继续西部坚挺；鹈鹕120-113胜爵士。美记Sam Quinn评论：「东强西弱论调两周内反转，西部前六除掘金外全部超预期。」</p><p class='more'><a href='https://m.dongqiudi.com/lanqiu/saicheng/2026-11-05' target='_blank'>阅读原文</a></p></div><div class='item'><p class='meta'><span class='src'>国家体育总局/FIG</span><time>11-05</time></p><h3>蹦床世锦赛南京第2日：王梓赛资格赛第2，中国8人全晋级</h3><p>第39届蹦床世锦赛南京第二个比赛日，男子网上个人资格赛首轮，王梓赛第2、严浪宇、李宇名跟进，中国队8名选手全部在晋级线内，晋级周六半决赛。32岁五届世界冠军贾芳芳退役四年后复出，晋级半决赛。</p><p class='more'><a href='http://www.sport.gov.cn/n20001280/n20067662/n20067613/c30153852/content.html' target='_blank'>阅读原文</a></p></div><div class='item'><p class='meta'><span class='src'>齐鲁晚报/新浪</span><time>11-05</time></p><h3>中超末轮11/8 15:30：成都蓉城打平即夺冠，山东泰山三放票秒空</h3><p>11/8 15:30中超收官战，山东泰山主场迎战成都蓉城。蓉城打平即夺冠；若输球且大连英博赢球则冠军易主。泰山代理主帅唐田：「主场赢球是底线，不是礼物。」外援泽卡伤愈复出可出战，黄政宇解禁。三次放票全部秒空。</p><p class='more'><a href='http://m.toutiao.com/group/7704724582648824355/' target='_blank'>阅读原文</a></p></div><h2 id='s3'>二、品牌营销与代言动态</h2><div class='item'><p class='meta'><span class='src'>Nike Newsroom/Hypebeast</span><time>11-05</time></p><h3>NikeSKIMS Waffle Racer + Retro Sport Collection 11/10发售，$130</h3><p>Nike与Kim Kardashian旗下SKIMS联名线NikeSKIMS推出Waffle Racer鞋款，三色：Baroque Brown、Light Bone/Varsity Red、Thunder Blue，SKU IW3882-400/200/002，定价$130，11月10日Nike/SKIMS渠道发售。配套Retro Sport服饰系列同步上架。</p><p class='more'><a href='https://hypebeast.com/2026/11/nike-kim-kardashian-skims-nikeskims-waffle-racer-collection-iw3882-400-iw3882-200-iw3882-002-release-info' target='_blank'>阅读原文</a></p></div><div class='item'><p class='meta'><span class='src'>中新社上海</span><time>11-05</time></p><h3>lululemon进博会展台：汪顺发起「一起向上」引体赛</h3><p>第九届进博会，lululemon连续第三年参展，以「made to feel感受为先」为主题，携品牌大使、游泳世界冠军汪顺揭幕，现场发起「一起向上」引体挑战赛。展台集中展示瑜伽/跑步/训练/网球/高尔夫六大品类与触感科学面料创新。</p><p class='more'><a href='http://www.sh.chinanews.com/swzx/2026-11-05/150828.shtml' target='_blank'>阅读原文</a></p></div><div class='item'><p class='meta'><span class='src'>每体/直播吧</span><time>11-06</time></p><h3>亚马尔巴塞罗那街头随机送Beats Studio Pro 2，新机提前泄露</h3><p>亚马尔现身巴塞罗那街头，随机向球迷赠送白色Beats Studio Pro 2耳机。该型号尚未大规模上市，仍在FCC认证阶段，被定位高端产品。Beats借亚马尔全球影响力「自然泄露」这款新品。</p><p class='more'><a href='https://m.zhibo8.com/news/web/zuqiu/2026-11-06/6aed1c2edfa87native.htm' target='_blank'>阅读原文</a></p></div><div class='item'><p class='meta'><span class='src'>WWDJAPAN</span><time>11-05</time></p><h3>ASICS x Heralbonny首次联名：神山美智子艺术印花鞋款11/13发售</h3><p>ASICS SportStyle与日本艺术组合Heralbonny首次合作，将艺术家神山美智子的作品以全包覆印花形式上脚鞋款，11月13日发售。这是ASICS近年持续加码日本本土艺术家联名策略的延续。</p><p class='more'><a href='https://www.wwdjapan.com/articles/2542599' target='_blank'>阅读原文</a></p></div><div class='item'><p class='meta'><span class='src'>HYPE COMPANY</span><time>11-05</time></p><h3>Nike Air Force 1 Low Premium「What the LA」11/5发售</h3><p>2019年「What the LA」配色回归，同款号CT1117-100。湖人紫金+道奇蓝拼接，一鞋篮球纹理一鞋棒球缝线，鞋垫印洛杉矶球场地标。11月5日正式上架。</p><p class='more'><a href='https://hypecompany.com/articles/the-drop-report-sneaker-releases-oct-31-nov-7-2026' target='_blank'>阅读原文</a></p></div><div class='item'><p class='meta'><span class='src'>微博/autohao</span><time>11-06</time></p><h3>Nike LeBron 24 Christmas圣诞版曝光，12/4发售带拉链鞋套</h3><p>Nike LeBron 24 Christmas圣诞版曝光，加入拉链鞋套设计，发售日期2026年12月4日。LeBron 24「Stars」配色已于11/17全球发售。</p><p class='more'><a href='https://m.weibo.cn/detail/5362156054515049' target='_blank'>阅读原文</a></p></div><h2 id='s4'>三、运动品牌与渠道/舆论动态</h2><div class='item'><p class='meta'><span class='src'>AInvest/诉讼文书</span><time>11-05</time></p><h3>lululemon同店销售-10%遭证券欺诈集体诉讼</h3><p>11月3日提交的证券集体诉讼指控lululemon管理层夸大转型计划。公司自己披露Q1 2026同店销售同比-10%，leggings与女装上衣-20%，股价当日跌17.4%。2026财年指引已下调5%。</p><p class='more'><a href='https://www.ainvest.com/news/lululemon-lawsuits-number-company-printed-store-sales-10-2611/' target='_blank'>阅读原文</a></p></div><div class='item'><p class='meta'><span class='src'>Stock Observer/Truist</span><time>11-05</time></p><h3>Nike被Truist下调至sell，NKE跌2.2%</h3><p>Truist Financial将Nike(NYSE:NKE)评级从hold下调至sell，NKE当日下跌2.2%。Wolfe Research此前10/21已给出underperform。Nike中国连续9季度下滑，分析师对DTC改革效果存疑。</p><p class='more'><a href='https://www.thestockobserver.com/2026/11/05/nike-nysenke-stock-falls-2-2-following-analyst-downgrade.html' target='_blank'>阅读原文</a></p></div><div class='item'><p class='meta'><span class='src'>直播吧</span><time>11-06</time></p><h3>美记：NBA「东强西弱」两周内反转，西部群雄远超预期</h3><p>The Athletic记者Sam Quinn撰文：西部前六表现基本符合预期，除掘金外均超预期。独行侠、勇士、开拓者、灰熊频送惊喜，鹈鹕也让人刮目相看。开局两周「东强西弱」论调已反转。</p><p class='more'><a href='https://m.zhibo8.com/news/web/nba/2026-11-06/6aed1bb9d61b2native.htm' target='_blank'>阅读原文</a></p></div><div class='item'><p class='meta'><span class='src'>齐鲁晚报</span><time>11-06</time></p><h3>中超鲁蓉战三放票秒空：济南奥体门票热度爆表</h3><p>11/5上午中超鲁蓉之战第三阶段官方放票，三次放票全部秒空。山东泰山外援泽卡恢复合练可出战，黄政宇解禁，郑铮伤缺。泰山有望派出5外援首发。</p><p class='more'><a href='http://m.toutiao.com/group/7704724582648824355/' target='_blank'>阅读原文</a></p></div><h2 id='s5'>四、资本、业绩与市场变化</h2><div class='item'><p class='meta'><span class='src'>Wind/同花顺</span><time>11-05</time></p><h3>李宁11/5收14.72港元+2.01%，成交3.02亿，PE 10.96</h3><p>李宁(2331.HK)11/5开14.80、高14.92、低14.64、收14.72港元涨2.01%，成交2049.84万股/3.02亿港元，总市值380.48亿，PE(TTM)10.96。盘后公告特别股息每股2.32元人民币。</p><p class='more'><a href='https://finance.sina.com.cn/realstock/company/02331/nc.shtml' target='_blank'>阅读原文</a></p></div><div class='item'><p class='meta'><span class='src'>证券之星</span><time>11-05</time></p><h3>安踏体育11/5收涨2.05%，港股体育用品普涨</h3><p>安踏体育(2020.HK)11/5收涨2.05%。李宁+2.01%、特步3.68港元+1.66%。市场对李宁特别股息反应正面，板块整体走强。</p><p class='more'><a href='https://hk.stockstar.com/list/4257.shtml' target='_blank'>阅读原文</a></p></div><div class='item'><p class='meta'><span class='src'>证券之星</span><time>11-06</time></p><h3>特步国际11/5收3.68港元+1.66%，南向资金减持61万股</h3><p>特步国际(1368.HK)11/5收3.68港元涨0.06港元（+1.66%），成交657.2万股。但南向资金当日减持61.18万股，内资短线获利了结。</p><p class='more'><a href='http://news.stockstar.com/info/dstock_01368.shtml' target='_blank'>阅读原文</a></p></div><div class='item'><p class='meta'><span class='src'>MarketBeat</span><time>11-06</time></p><h3>Under Armour今晚盘前发Q2 FY27，共识营收$1.23B</h3><p>UA将于11/6盘前发布2027财年Q2业绩，电话会8:30AM ET。市场共识EPS -$0.01、营收$1.23B。公司全年指引收入降4-5%。11/5盘前UA/UAA已涨8.74%博弈预期。</p><p class='more'><a href='https://www.marketbeat.com/stocks/NYSE/UA/earnings/' target='_blank'>阅读原文</a></p></div><h2 id='s6'>五、体育行业公告与市场影响</h2>
+<div class='item annc'><p class='meta'><span class='src'>李宁 2331.HK · 特别股息</span><time>2026-11-05</time></p><h3>李宁宣派特别股息每股人民币2.32元（约HKD 2.71），总额约60亿元</h3><ul class='rows'><li><b>公告要点</b><span>李宁有限公司(2331.HK/82331)11/5公告：董事会批准宣派特别股息每股已发行或可换股证券转换后普通股2.32元人民币，按今日人民币兑港元中间价折合约2.71港元，不预扣税。除权除息日2026-11-18，派息日2026-12-01。按总股本约25.8亿股测算总额约60亿元。以11/5收盘价14.72港元计静态股息率18.41%。</span></li><li><b>市场影响</b><span>李宁2025年全年派息率50%、每股56.95分人民币；本次特别股息每股2.32元≈此前全年股息的4倍，力度罕见。市场将其解读为：①管理层对现金流（中期报表运营资金健康）与股价估值（PE TTM 10.96历史低位）的强力信心信号；②向大股东（李氏家族及非凡中国）返还现金的安排。11/5股价+2.01%已部分price-in，但18.41%静态股息率对深度价值投资者有显著吸引力。证伪信号：除净11/18后若股价不能自然填权，说明市场将特别股息视为「一次性收益」而非「常态分红」。区分：60亿总额与18.41%股息率为基于当前股本与股价的测算，公司公告原文仅披露每股金额与时间表。</span></li><li><b>业绩看点</b><span>收入函数 = 李宁主品牌流水（DTC+批发）× 折扣率 + YOUNG童装 + 海外。后续跟踪：①特别股息资金来源（是否动用现金储备/借款）；②2026全年收入指引（高单位数增长）兑现度；③DTC占比与渠道库存；④H1主品牌流水同比+2.8%能否延续至H2。</span></li><li><b>后续关注信号</b><span>下一个节点：2026-11-18除权除息、2026-12-01派息到账；2026全年业绩（2027年3月）。</span></li></ul><p class='more'><a href='https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1105/2026110500920.pdf' target='_blank'>阅读原文</a></p></div><div class='item annc'><p class='meta'><span class='src'>Under Armour UA · Q2业绩前瞻</span><time>2026-11-06</time></p><h3>Under Armour今晚盘前发Q2 FY27，共识EPS -$0.01营收$1.23B</h3><ul class='rows'><li><b>公告要点</b><span>UA将于11/6盘前发布2027财年Q2业绩，电话会8:30AM ET。市场共识EPS -$0.01、营收$1.23B。公司全年指引：收入降4-5%（北美/亚太高个位数下滑，EMEA高个位数增长），毛利率降190-210bp（美国关税为主），调整后经营利润$90-105M。</span></li><li><b>市场影响</b><span>UA 11/5暴涨8.74%至$5.78（UAA），财报前博弈激烈。对比Nike中国连续9季下滑、adidas刚上调指引，UA是运动巨头中基本面最弱之一。若Q2营收超预期或指引改善，延续反弹；若继续下调全年指引，可能再探底。8.74%单日大涨已部分反映乐观预期，财报后波动会很大。</span></li><li><b>业绩看点</b><span>收入函数 = 北美DTC + 北美批发 + EMEA + 亚太。后续跟踪：①北美收入降幅是否收窄；②关税对毛利率实际影响bp；③DTC占比与库存；④调整后EPS是否在$0.03-0.05区间。</span></li><li><b>后续关注信号</b><span>下一个节点：11/6盘前财报+8:30AM ET电话会；Q3 FY27业绩（2027年2月）。</span></li></ul><p class='more'><a href='https://www.marketbeat.com/stocks/NYSE/UA/earnings/' target='_blank'>阅读原文</a></p></div></article>
+</main>
+</div>
+<p class='colophon'>每日 08:30 自动更新 · 历史保留最近 7 天</p>
+<script>
+var p=document.getElementById('prog');
+function paint(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;if(p)p.style.transform='scaleX('+(m>0?h.scrollTop/m:0)')'}
+addEventListener('scroll',paint,{passive:true});paint();
+var t=document.querySelector('.ticker-track');
+if(t){var w=t.scrollWidth/2;if(w>0)t.style.setProperty('--marquee',Math.round(Math.min(Math.max(w/85,26),90))+'s')}
+try{document.getElementById('totop').onclick=function(){scrollTo({top:0,behavior:'smooth'})}}catch(e){}
+var s=null;try{s=localStorage.getItem('sd-theme')}catch(e){}
+function ap(v){document.documentElement.setAttribute('data-theme',v);var ic=document.getElementById('theme-ico');ic.textContent=v==='dark'?'☀':'☾'}
+if(s){ap(s)}else{ap(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}
+document.getElementById('theme').onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';ap(n);try{localStorage.setItem('sd-theme',n)}catch(e){}};
+document.querySelectorAll('.chip').forEach(function(c){c.onclick=function(){var el=document.getElementById(c.dataset.sec);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}});
+</script>
+<script>
+(function(){
+var w=document.getElementById('weather');if(!w)return;
+var c=document.getElementById('wx');
+var mh=document.querySelector('.masthead');
+var ALL_WX=['wx-sun','wx-cloud','wx-rain','wx-snow','wx-storm','wx-fog','wx-haze','wx-dust'];
+function wxOn(cls){mh.classList.add(cls);document.body.classList.add(cls)}
+function wxClear(){ALL_WX.forEach(function(cl){mh.classList.remove(cl);document.body.classList.remove(cls)})}
+function resize(){if(!c)return;c.width=window.innerWidth;c.height=window.innerHeight}
+resize();addEventListener('resize',resize);
+var drops=[],flash=0;
+function loop(){if(!c)return;var ctx=c.getContext('2d');ctx.clearRect(0,0,c.width,c.height);var t=Date.now();var W=c.width,H=c.height;
+drops.forEach(function(d){if(d.kind==='rain'){ctx.strokeStyle=d.bright;ctx.lineWidth=d.lw;ctx.beginPath();ctx.moveTo(d.x,d.y);ctx.lineTo(d.x-d.slant,d.y+d.len);ctx.stroke();d.y+=d.speed;d.x-=d.slant*0.4;if(d.y>H){d.y=-30-Math.random()*40;d.x=Math.random()*(W+200)-100}}
+else if(d.kind==='snow'){ctx.fillStyle=d.color||'rgba(255,255,255,'+d.a+')';ctx.beginPath();ctx.arc(d.x,d.y,d.r,0,Math.PI*2);ctx.fill();d.y+=d.speed;d.x+=Math.sin(d.y/d.amp+t/d.freq)*d.swing;if(d.y>H+10){d.y=-10;d.x=Math.random()*W}}
+else if(d.kind==='cloud'){var g=ctx.createRadialGradient(d.x,d.y,0,d.x,d.y,d.r);g.addColorStop(0,d.color);g.addColorStop(1,'rgba(200,210,225,0)');ctx.fillStyle=g;ctx.beginPath();ctx.arc(d.x,d.y,d.r,0,Math.PI*2);ctx.fill();d.x+=d.v;if(d.x-d.r>W+50){d.x=-d.r-50;d.y=Math.random()*H*0.6}}
+else if(d.kind==='sun'){ctx.fillStyle='rgba(255,210,130,'+(d.a||0.15)+')';ctx.beginPath();ctx.arc(d.x,d.y,d.r,0,Math.PI*2);ctx.fill();d.y-=d.v;if(d.y<-30){d.y=H+30;d.x=Math.random()*W}}
+else if(d.kind==='suncore'){ctx.fillStyle='rgba(255,225,160,0.45)';ctx.beginPath();ctx.arc(W*0.82,H*0.1,d.r,0,Math.PI*2);ctx.fill()}});
+if(flash>0){ctx.fillStyle='rgba(255,255,255,'+flash+')';ctx.fillRect(0,0,W,H);flash-=0.04}
+requestAnimationFrame(loop)}
+function setFX(code){drops=[];flash=0;wxClear();
+if(code>=95){wxOn('wx-storm');for(var i=0;i<360;i++){drops.push({kind:'rain',x:Math.random()*2000-100,y:Math.random()*800,len:20,speed:18,slant:6,bright:'rgba(210,230,255,.9)',lw:1.5})}}
+else if([51,53,55,56,57,61,63,65,66,67,80,81,82].indexOf(code)>=0){wxOn('wx-rain');for(var i=0;i<220;i++){drops.push({kind:'rain',x:Math.random()*2000-100,y:Math.random()*800,len:16,speed:12,slant:4,bright:'rgba(200,225,255,.8)',lw:1.2})}}
+else if([71,73,75,77,85,86].indexOf(code)>=0){wxOn('wx-snow');for(var i=0;i<200;i++){var l=Math.random();drops.push({kind:'snow',x:Math.random()*2000,y:Math.random()*2000,y:Math.random()*800,r:l>0.7?3:1.5,speed:1.2,a:0.8,swing:1,amp:40,freq:1200})}}
+else if(code===0||code===1){wxOn('wx-sun');drops.push({kind:'suncore',r:280});for(var i=0;i<100;i++){drops.push({kind:'sun',x:Math.random()*2000,y:Math.random()*800,r:50,a:0.15,v:0.3})}}
+else if(code===45||code===48){wxOn('wx-fog');for(var i=0;i<14;i++){drops.push({kind:'cloud',x:Math.random()*2000,y:Math.random()*600,r:180+Math.random()*150,color:'rgba(180,188,196,.18)',v:0.4})}}else if(code===2||code===3){wxOn('wx-cloud');for(var i=0;i<20;i++){drops.push({kind:'cloud',x:Math.random()*2000,y:Math.random()*400,r:120,color:'rgba(180,190,210,.2)',v:0.6})}}
+loop()}
+function setWX(city,text,temp,wind,code){
+var ico=code===0?'☀️':code===3?'⛅':code>=95?'⛈️':'⛅';
+var html='<span class=w-ico>'+ico+'</span>'
++'<span class=w-city>'+city+'</span>'
++'<span class=w-temp>'+temp+'°C</span>'
++'<span class=w-label>'+text+' · 风'+wind+'km/h</span>';
+w.innerHTML=html;
+setFX(code);
+}
+(async function(){
+function om(){
+var ctl=new AbortController();
+var t=setTimeout(function(){ctl.abort()},8000);
+return fetch('https://api.open-meteo.com/v1/forecast?latitude=30.28&longitude=120.15&current=temperature_2m,weather_code,wind_speed_10m&timezone=auto&_cb='+Date.now(),{signal:ctl.signal})
+.then(function(r){clearTimeout(t);if(!r.ok)throw new Error('OM '+r.status);return r.json()});
+}
+function qw(){
+return fetch('https://pg3qqubnkm.re.qweatherapi.com/v7/weather/now?location=101210101&key=e83435ce53fb48448342b3c2602a3e43&_='+Date.now())
+.then(function(r){if(!r.ok)throw new Error('QW '+r.status);return r.json()})
+.then(function(j){
+if(j.code!=='200')throw new Error('QW code '+j.code);
+var t=j.now.text,code=2;
+if(/晴/.test(t))code=0;else if(/多云/.test(t))code=2;else if(/阴/.test(t))code=3;else if(/雾/.test(t))code=45;
+else if(/雷/.test(t))code=95;else if(/雪/.test(t))code=71;else if(/雨/.test(t))code=61;
+return {current:{temperature_2m:Number(j.now.temp),weather_code:code,wind_speed_10m:Number(j.now.windSpeed)}};
+});
+}
+function apply(j){
+var n=j.current,code=n.weather_code,temp=Math.round(n.temperature_2m),wind=Math.round(n.wind_speed_10m);
+var txt;if(code===0)txt='晴';else if(code===1)txt='多云';else if(code===2||code===3)txt='阴';else if(code===45||code===48)txt='雾';else if(code>=51&&code<=57)txt='毛毛雨';else if(code>=61&&code<=67)txt='雨';else if(code>=80&&code<=82)txt='阵雨';else if(code>=71&&code<=77)txt='雪';else if(code>=85&&code<=86)txt='雨夹雪';else if(code>=95)txt='雷暴';else txt='多云';
+setWX('杭州',txt,temp,wind,code);
+}
+om().catch(function(){return new Promise(function(res){setTimeout(function(){res(om())},400)})}).catch(qw).then(apply).catch(function(e){console.error('weather',e);
+w.innerHTML='<span class=w-ico>🌡️</span><span class=w-city>杭州</span><span class=w-temp>--</span><span class=w-label>天气暂不可用</span>';
+});
+})();
+})();
+</script>
+<script>
+(function(){function loadStk(){var s=document.createElement('script');s.src='https://qt.gtimg.cn/q=hk02331&r='+Date.now();s.onload=function(){try{var raw=window.v_hk02331;if(!raw)return;var a=raw.split('~');var price=parseFloat(a[3]);var chg=parseFloat(a[31]);var pct=parseFloat(a[32]);var high=a[33],low=a[34];var time=a[30];var up=chg>=0;document.getElementById('stk-price').textContent=price.toFixed(3);var chgEl=document.getElementById('stk-chg');chgEl.textContent=(up?'+':'')+chg.toFixed(3)+'  ('+(up?'+':'')+pct.toFixed(2)+'%)';chgEl.className='stk-chg '+(up?'up':'down');document.getElementById('stk-time').textContent=time+' · 高'+high+' 低'+low}catch(e){}s.remove()};document.head.appendChild(s)}loadStk();setInterval(loadStk,60000)})();
+/* materials static */
+</script>
+<script src='history.js'></script>
+<script>(function(){var filt=document.getElementById('sb-filt');if(!filt)return;var labels={all:'全部',nba:'NBA',ucl:'足球',uel:'欧联',tennis:'网球',bwf:'羽乒',bike:'自行车',cycling:'自行车',esports:'电竞',golf:'高尔夫',motor:'F1',f1:'F1',og:'综合',nfl:'NFL',cba:'CBA',ipl:'板球',rugby:'橄榄球'};var order=['all','nba','ucl','uel','tennis','bwf','bike','cycling','esports','golf','motor','f1','nfl','cba','og'];var groups={};document.querySelectorAll('.sb li[data-g]').forEach(function(li){var g=li.getAttribute('data-g');if(g)groups[g]=1});var keys=Object.keys(groups);keys.sort(function(a,b){var ia=order.indexOf(a);var ib=order.indexOf(b);if(ia<0)ia=99;if(ib<0)ib=99;return ia-ib});keys.unshift('all');function apply(f){document.querySelectorAll('.sb li[data-g]').forEach(function(row){row.style.display=(f==='all'||row.getAttribute('data-g')===f)?'':'none'})}keys.forEach(function(g,i){var b=document.createElement('button');b.type='button';b.className='f'+(i===0?' active':'');b.setAttribute('data-f',g);b.textContent=labels[g]||'其他';b.addEventListener('click',function(){filt.querySelectorAll('.f').forEach(function(x){x.classList.remove('active')});b.classList.add('active');apply(g)});filt.appendChild(b)});apply('all')})();</script>
+<script>
+(function(){
+function build(){
+var cls=document.body.className;
+var rain=/wx-rain|wx-storm/.test(cls),snow=/wx-snow/.test(cls),fog=/wx-fog|wx-haze/.test(cls);
+var old=document.getElementById('fx2');if(old)old.remove();
+if(!rain&&!snow&&!fog)return;
+var cv=document.createElement('canvas');cv.id='fx2';
+cv.style.cssText='position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:1';
+document.body.appendChild(cv);
+var c=cv.getContext('2d'),W,H;
+function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight}rs();addEventListener('resize',rs);
+var P=[],N=rain?300:snow?240:44;
+for(var i=0;i<N;i++){P.push({x:Math.random()*W,y:Math.random()*H,v:rain?4.2:snow?1.0:0.4,r:rain?1.9:snow?2.8:80+Math.random()*H,a:rain?0.7:snow?0.7:0.22})}
+function loop(){c.clearRect(0,0,W,H);P.forEach(function(p){
+if(p.y>H){p.y=-20;p.x=Math.random()*W}
+});requestAnimationFrame(loop)}
+loop();
+}
+build();
+new MutationObserver(function(){build()}).observe(document.body,{attributes:true,attributeFilter:['class']});
+})();
+</script>
+</body>
+</html>
