@@ -95,7 +95,7 @@ body.wx-rain,body.wx-storm,body.wx-snow,body.wx-fog,body.wx-cloud,body.wx-sun,bo
     </div>
     <div class='stock-card' id='mat-cost'>
       <p class='stk-h'><span>工业原材料成本</span><span class='mono'>期货主力</span></p>
-      <div class='mat-list' id='mat-list'><div class='mat-row'><span class='mat-sym'>PP</span><span class='mat-name'>聚丙烯</span><span class='mat-price'>10480</span><span class='mat-chg up'>+0.45%</span></div><div class='mat-row'><span class='mat-sym'>TA</span><span class='mat-name'>PTA</span><span class='mat-price'>6598</span><span class='mat-chg down'>-0.33%</span></div><div class='mat-row'><span class='mat-sym'>PE</span><span class='mat-name'>聚乙烯</span><span class='mat-price'>9555</span><span class='mat-chg up'>+0.64%</span></div><div class='mat-row'><span class='mat-sym'>VC</span><span class='mat-name'>PVC</span><span class='mat-price'>5242</span><span class='mat-chg down'>-1.00%</span></div><div class='mat-row'><span class='mat-sym'>EB</span><span class='mat-name'>苯乙烯</span><span class='mat-price'>10409</span><span class='mat-chg up'>+1.52%</span></div><div class='mat-row'><span class='mat-sym'>RU</span><span class='mat-name'>天然橡胶</span><span class='mat-price'>19295</span><span class='mat-chg up'>+0.60%</span></div><div class='mat-row'><span class='mat-sym'>RB</span><span class='mat-name'>螺纹钢</span><span class='mat-price'>3028</span><span class='mat-chg down'>-0.36%</span></div><p class='mat-loading' style='padding-top:8px'>11-02盘中 · 期货主力</p></div></div><button class='totop' id='theme' title='切换亮暗'><span id='theme-ico'>☾</span><span>外观</span></button>
+      <div class='mat-list' id='mat-list'><p class='mat-loading'>行情加载中…</p></div></div><button class='totop' id='theme' title='切换亮暗'><span id='theme-ico'>☾</span><span>外观</span></button>
     <button class='totop' id='totop' onclick='window.scrollTo(0,0)' title='回到顶部'><span>↑</span><span>回到顶部</span></button>
   </aside>
   <main>
@@ -243,7 +243,55 @@ w.innerHTML='<span class=w-ico>🌡️</span><span class=w-city>杭州</span><sp
 </script>
 <script>
 (function(){function loadStk(){var s=document.createElement('script');s.src='https://qt.gtimg.cn/q=hk02331&r='+Date.now();s.onload=function(){try{var raw=window.v_hk02331;if(!raw)return;var a=raw.split('~');var price=parseFloat(a[3]);var chg=parseFloat(a[31]);var pct=parseFloat(a[32]);var high=a[33],low=a[34];var time=a[30];var up=chg>=0;document.getElementById('stk-price').textContent=price.toFixed(3);var chgEl=document.getElementById('stk-chg');chgEl.textContent=(up?'+':'')+chg.toFixed(3)+'  ('+(up?'+':'')+pct.toFixed(2)+'%)';chgEl.className='stk-chg '+(up?'up':'down');document.getElementById('stk-time').textContent=time+' · 高'+high+' 低'+low}catch(e){}s.remove()};document.head.appendChild(s)}loadStk();setInterval(loadStk,60000)})();
-/* materials static */
+/* materials dynamic */
+(function(){
+  var MAT_ITEMS=[
+    {sym:'PP',name:'聚丙烯',var:'hq_str_nf_PP0'},
+    {sym:'TA',name:'PTA',var:'hq_str_nf_TA0'},
+    {sym:'PE',name:'聚乙烯',var:'hq_str_nf_L0'},
+    {sym:'VC',name:'PVC',var:'hq_str_nf_V0'},
+    {sym:'EB',name:'苯乙烯',var:'hq_str_nf_EB0'},
+    {sym:'RU',name:'天然橡胶',var:'hq_str_nf_RU0'},
+    {sym:'RB',name:'螺纹钢',var:'hq_str_nf_RB0'}
+  ];
+  function loadMat(){
+    var s=document.createElement('script');
+    s.src='https://hq.sinajs.cn/list=nf_PP0,nf_TA0,nf_L0,nf_V0,nf_EB0,nf_RU0,nf_RB0&_t='+Date.now();
+    s.onload=function(){
+      try{
+        var list=document.getElementById('mat-list');
+        if(!list)return;
+        var html='',today='';
+        MAT_ITEMS.forEach(function(it){
+          var raw=window[it.var];
+          if(!raw)return;
+          var a=raw.split(',');
+          var price=parseFloat(a[8]);
+          var prev=parseFloat(a[10]);
+          if(!price||!prev||price<=0)return;
+          var pct=(price-prev)/prev*100;
+          var up=pct>=0;
+          today=a[17]||'';
+          html+="<div class='mat-row'><span class='mat-sym'>"+it.sym+"</span><span class='mat-name'>"+it.name+"</span><span class='mat-price'>"+Math.round(price)+"</span><span class='mat-chg '+(up?'up':'down')+">'"+(up?'+':'')+pct.toFixed(2)+'%</span></div>';
+        });
+        if(today){
+          var mm=today.slice(5,7),dd=today.slice(8,10);
+          html+="<p class='mat-loading' style='padding-top:8px'>"+mm+'-'+dd+"盘中 · 期货连续</p>";
+        }
+        list.innerHTML=html||"<p class='mat-loading'>行情暂不可用</p>";
+      }catch(e){console.error('mat',e)}
+      s.remove();
+    };
+    s.onerror=function(){
+      var list=document.getElementById('mat-list');
+      if(list)list.innerHTML="<p class='mat-loading'>行情暂不可用</p>";
+      s.remove();
+    };
+    document.head.appendChild(s);
+  }
+  loadMat();
+  setInterval(loadMat,60000);
+})();
 </script>
 <script src='history.js'></script>
 <script>(function(){var filt=document.getElementById('sb-filt');if(!filt)return;var labels={all:'全部',nba:'NBA',cb:'CBA',cba:'CBA',fb:'足球',ucl:'足球',ten:'网球',tennis:'网球',golf:'高尔夫',uel:'欧联',bwf:'羽乒',bike:'自行车',cycling:'自行车',esports:'电竞',motor:'F1',f1:'F1',og:'综合',nfl:'NFL',ipl:'板球',rugby:'橄榄球'};var order=['all','nba','cb','fb','ten','og','ucl','uel','tennis','golf','bwf','bike','cycling','esports','motor','f1','nfl','cba','ipl','rugby'];var groups={};document.querySelectorAll('.sb li[data-g]').forEach(function(li){var g=li.getAttribute('data-g');if(g)groups[g]=1});var keys=Object.keys(groups);keys.sort(function(a,b){var ia=order.indexOf(a);var ib=order.indexOf(b);if(ib<0)ib=99;return ia-ib});keys.unshift('all');function apply(f){document.querySelectorAll('.sb li[data-g]').forEach(function(row){row.style.display=(f==='all'||row.getAttribute('data-g')===f)?'':'none'})}keys.forEach(function(g,i){var b=document.createElement('button');b.type='button';b.className='f'+(i===0?' active':'');b.setAttribute('data-f',g);b.textContent=labels[g]||'其他';b.addEventListener('click',function(){filt.querySelectorAll('.f').forEach(function(x){x.classList.remove('active')});b.classList.add('active');apply(g)});filt.appendChild(b)});apply('all')})();</script>
