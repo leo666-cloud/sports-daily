@@ -249,7 +249,9 @@ for(var i=0;i<N;i++){P.push({x:Math.random()*W,y:Math.random()*H,v:rain?4.2:snow
 function loop(){c.clearRect(0,0,W,H);P.forEach(function(p){
 if(p.y>H){p.y=-20;p.x=Math.random()*W}
 });requestAnimationFrame(loop)}
-loop();
+var last=0;
+function step(ts){if(ts-last>16){loop();last=ts}requestAnimationFrame(step)}
+requestAnimationFrame(step);
 }
 build();
 new MutationObserver(function(){build()}).observe(document.body,{attributes:true,attributeFilter:['class']});

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# 体育日报 HTML 结构闸门：解析真实 DOM 校验层级，防止塌栏/结构损坏页面被推上线。
+# 体育日报 HTML 结构闸门：解析真实 DOM 校验层级，防止塔栏/结构损坏页面被推上线。
 # 用法：python3 tools/gate.py index.html archive/YYYY-MM-DD.html
 # 退出码 0 = 全部通过；1 = 有文件不达标，禁止 push。
 import sys
@@ -39,21 +39,23 @@ def check(path):
     raw, doc = load(path)
     body = find(doc, tag='body')[0]
     err = []
+    items = find(body, klass='item')
 
     # 1 顶层不得出现裸 main/article/prose/dash（容器提前闭合的症状）
     for el in kids(body):
         if el.tag in ('main', 'article') or 'prose' in cls(el) or 'dash' in cls(el):
-            err.append('顶层出现裸 %s.%s（.shell 提前闭合，网格失效）' % (el.tag, '.'.join(cls(el))))
+            err.append('顶层出现裸 %s .%s（.shell 提前闭合，网格失效）'
+                       % (el.tag, '.'.join(cls(el)) or '-'))
 
     shell = find(body, klass='shell')
     if len(shell) != 1:
         err.append('.shell 数量=%d，应为1' % len(shell))
-        return err, raw
+        return err, raw, len(items)
     sk = kids(shell[0])
     main = next((c for c in sk if c.tag == 'main'), None)
     aside = next((c for c in sk if c.tag == 'aside'), None)
     if main is None:
-        err.append('.shell 直接子节点无 <main>（侧栏抢占了正文列）')
+        err.append('.shell 直接子节点无 <main>（侧栗占领了正文列）')
     if aside is None:
         err.append('.shell 直接子节点无 <aside>')
 
@@ -90,16 +92,15 @@ def check(path):
                 have.add('mat-cost')
         for need in ('rpt-card', 'stk-lining', 'mat-cost'):
             if need not in have:
-                err.append('aside 内缺 %s（侧栏组件被阔出 aside）' % need)
+                err.append('aside 内缺 %s（侧栗组件被阔出 aside）' % need)
 
-    items = find(body, klass='item')
     if len(items) < 20:
         err.append('.item=%d，应>=20' % len(items))
     for k in ('qbody', 'sb', 'pm'):
         if not find(body, klass=k):
             err.append('缺 .%s' % k)
 
-    text = ''.join(el for el in body.itertext())
+    text = ''.join(body.itertext())
     if '公告要点' in text:
         for k in ('市场影响', '业绩看点', '后续关注'):
             if k not in text:
@@ -114,25 +115,27 @@ def check(path):
         if len(linked) != len(lis):
             err.append('日历 li=%d，带链接 title 的=%d' % (len(lis), len(linked)))
 
-    if 'gtimg.cn' in raw or 'hq.sinajs.cn' in raw:
-        err.append('含浏览器端跨域行情源')
+    if 'gtiimg' in raw:
+        err.append('含 gtiimg 残留')
+    if 'hq.sinajs.cn' in raw:
+        err.append('含 hq.sinajs.cn 跨域行情源')
     if '行情加载中' in raw:
         err.append('含「行情加载中…」占位')
     if chr(34) in raw:
         err.append('含 ASCII 双引号 %d 个' % raw.count(chr(34)))
 
-    return err, raw
+    return err, raw, len(items)
 
 
 if __name__ == '__main__':
     bad = 0
     for f in sys.argv[1:]:
-        err, raw = check(f)
+        err, raw, n = check(f)
         if err:
             bad += 1
             print('FAIL %s' % f)
             for e in err:
                 print('  - %s' % e)
         else:
-            print('PASS %s  %d chars  item=%d' % (f, len(raw), len(find_items(raw))))
+            print('PASS %s  %d chars  item=%d' % (f, len(raw), n))
     sys.exit(1 if bad else 0)
