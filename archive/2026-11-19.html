@@ -325,19 +325,6 @@ new MutationObserver(function(){build()}).observe(document.body,{attributes:true
 </script>
 <script>
 (function(){
-  var pros=document.querySelector('.prose');
-  if(!pros){return;}
-  var bar=document.createElement('div');
-  bar.className='readbar';
-  var lbl=document.createElement('span');
-  lbl.textContent='速读模式：长段落默认折叠，点「展开」看全文';
-  bar.appendChild(lbl);
-  var all=document.createElement('button');
-  all.type='button';
-  all.textContent='全部展开';
-  bar.appendChild(all);
-  pros.insertBefore(bar,pros.firstChild);
-
   var items=[].slice.call(document.querySelectorAll('.item'));
   var pairs=[];
   items.forEach(function(it){
@@ -359,6 +346,8 @@ new MutationObserver(function(){build()}).observe(document.body,{attributes:true
     if(!nodes.length){return;}
     it.insertBefore(wrap,nodes[0]);
     nodes.forEach(function(n){wrap.appendChild(n);});
+    var over=wrap.scrollHeight-wrap.clientHeight;
+    if(over<48){wrap.classList.remove('clamp');return;}
     var btn=document.createElement('button');
     btn.type='button';
     btn.className='i-toggle';
@@ -374,6 +363,19 @@ new MutationObserver(function(){build()}).observe(document.body,{attributes:true
     pairs.push({w:wrap,b:btn});
   });
 
+  if(pairs.length<3){return;}
+  var pros=document.querySelector('.prose');
+  if(!pros){return;}
+  var bar=document.createElement('div');
+  bar.className='readbar';
+  var lbl=document.createElement('span');
+  lbl.textContent='长段落已折叠，可逐条展开';
+  bar.appendChild(lbl);
+  var all=document.createElement('button');
+  all.type='button';
+  all.textContent='全部展开';
+  bar.appendChild(all);
+  pros.insertBefore(bar,pros.firstChild);
   var expanded=false;
   all.addEventListener('click',function(){
     expanded=!expanded;
@@ -384,22 +386,6 @@ new MutationObserver(function(){build()}).observe(document.body,{attributes:true
     });
     all.textContent=expanded?'全部收起':'全部展开';
   });
-
-  var mc=document.getElementById('mat-cost');
-  if(mc){
-    var ml=mc.querySelector('.mat-list');
-    if(ml){
-      var mb=document.createElement('button');
-      mb.type='button';
-      mb.className='mat-toggle';
-      mb.textContent='展开 7 个品种';
-      mc.insertBefore(mb,ml);
-      mb.addEventListener('click',function(){
-        var on=mc.classList.toggle('open');
-        mb.textContent=on?'收起品种':'展开 7 个品种';
-      });
-    }
-  }
 })();
 </script>
 </body>
