@@ -107,6 +107,10 @@ body.wx-rain,body.wx-storm,body.wx-snow,body.wx-fog,body.wx-cloud,body.wx-sun,bo
 .dash{align-items:start}
 .sb-m a{min-height:36px;padding:6px 4px}
 .sb-m .note{padding:0 4px 5px}
+.sb{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:20px;align-content:start}
+.sb-g{grid-column:1/-1;padding:8px 2px 5px}
+.sb-m .note{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media (max-width:900px){.sb{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
 <body>
