@@ -1,0 +1,28 @@
+name: publish-20261119g
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-20261119g.yml'
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch pages
+        run: |
+          curl -sSL 'https://aka.doubaocdn.com/s/EhUwubaUrI' -o index.html
+          curl -sSL 'https://aka.doubaocdn.com/s/6TfnGjTDKf' -o archive/2026-11-19.html
+          wc -c index.html archive/2026-11-19.html
+      - name: Gate
+        run: |
+          pip install -q html5lib
+          python3 tools/gate.py index.html archive/2026-11-19.html
+      - name: Commit
+        run: |
+          git config user.name 'sports-daily-bot'
+          git config user.email 'bot@users.noreply.github.com'
+          git add index.html archive/2026-11-19.html
+          git commit -m '2026-11-19 compact scoreboard'
+          git push
