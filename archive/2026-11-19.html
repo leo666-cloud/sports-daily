@@ -112,6 +112,10 @@ body.wx-rain,body.wx-storm,body.wx-snow,body.wx-fog,body.wx-cloud,body.wx-sun,bo
 .sb-g{grid-column:1/-1;padding:8px 2px 5px}
 .sb-m .note{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 @media (max-width:900px){.sb{grid-template-columns:minmax(0,1fr)}}
+.sb{max-height:320px;overflow-y:auto;overscroll-behavior:contain;padding-right:6px;scrollbar-width:thin}
+.sb::-webkit-scrollbar{width:6px}
+.sb::-webkit-scrollbar-thumb{background:var(--sys-fill-3);border-radius:3px}
+.sb::-webkit-scrollbar-track{background:transparent}
 </style>
 </head>
 <body>
