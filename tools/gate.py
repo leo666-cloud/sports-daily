@@ -50,7 +50,32 @@ def check(path):
     shell = find(body, klass='shell')
     if len(shell) != 1:
         err.append('.shell 数量=%d，应为1' % len(shell))
-        return err, raw, len(items)
+    
+    # 10 章节 chip 与锚点必须一一对应（今日曾因锚点缺失导致跳转失效）
+    chips = find(body, klass='chip')
+    secs = [c.get('data-sec') for c in chips]
+    want = ['s%d' % i for i in range(1, 7)]
+    if len(chips) != 6 or sorted(x for x in secs if x) != want:
+        err.append('.chip 数量=%d，data-sec=%s，应为 s1~s6 各一' % (len(chips), secs))
+    h2ids = [el.get('id') for el in find(body, tag='h2') if el.get('id')]
+    for sid in want:
+        n = h2ids.count(sid)
+        if n != 1:
+            err.append('h2 id=%s 出现 %d 次，应为1（章节跳转目标缺失）' % (sid, n))
+
+    # 11 主脚本关键片段必须存在（缺 + 会造成整段 SyntaxError，chip/主题/进度条全失效）
+    must = [
+        "addEventListener('scroll',paint,{passive:true})",
+        "p.style.transform='scaleX('+(m>0?h.scrollTop/m:0)+')'",
+        "querySelectorAll('.chip').forEach",
+        "if(over<48){wrap.classList.remove('clamp');return;}",
+        "scroll-margin-top:76px",
+    ]
+    for frag in must:
+        if frag not in raw:
+            err.append('脚本/CSS 关键片段缺失：%s' % frag)
+
+    return err, raw, len(items)
     sk = kids(shell[0])
     main = next((c for c in sk if c.tag == 'main'), None)
     aside = next((c for c in sk if c.tag == 'aside'), None)
