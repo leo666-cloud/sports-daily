@@ -58,6 +58,52 @@ body.wx-rain,body.wx-storm,body.wx-snow,body.wx-fog,body.wx-cloud,body.wx-sun,bo
 .qtag{flex:0 0 auto;font-weight:700;white-space:nowrap;line-height:1.58;color:var(--sport-action)}
 .qbody{flex:1 1 auto;min-width:0}
 .rpt-card{position:relative;display:flex;align-items:center;gap:12px;padding:16px 16px 16px 14px;border:1px solid var(--sys-sep);border-radius:var(--r-card);background:var(--sys-bg-2);color:var(--sys-label);text-decoration:none;overflow:hidden;transition:transform var(--dur-2) var(--ease-out),box-shadow var(--dur-2) var(--ease-out)}.rpt-card:hover{transform:translateY(-2px);box-shadow:var(--lift);text-decoration:none}.rpt-card::before{content:'';position:absolute;right:-16px;top:-20px;width:128px;height:128px;background:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22128%22 height=%22128%22 viewBox=%220 0 128 128%22><circle cx=%22100%22 cy=%2224%22 r=%2215%22 fill=%22%231F6F4A%22 fill-opacity=%220.10%22/><path d=%22M0 96 L32 62 L58 82 L88 46 L128 74 L128 128 L0 128 Z%22 fill=%22%231F6F4A%22 fill-opacity=%220.12%22/></svg>') no-repeat;background-size:cover;pointer-events:none}[data-theme='dark'] .rpt-card::before{filter:brightness(1.7)}.rpt-ico{flex:0 0 42px;width:42px;height:42px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:var(--sport-action);color:#fff}.rpt-ico svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.rpt-tx{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:3px}.rpt-tx b{font-size:17px;font-weight:600;letter-spacing:-.2px;color:var(--sys-label);line-height:1.2}.rpt-tx i{font-style:normal;font-size:11.5px;color:var(--sys-label-3);letter-spacing:-.1px;line-height:1.35;white-space:normal;overflow-wrap:anywhere}.rpt-go{flex:0 0 auto;color:var(--sport-action);font-size:18px;font-weight:700;line-height:1;transition:transform var(--dur-1) var(--ease-out)}.rpt-card:hover .rpt-go{transform:translateX(3px)}
+/* v2 布局：侧栏压缩为信息条，整页统一滚动；正文速读分层 */
+.shell{max-width:1120px;grid-template-columns:188px minmax(0,1fr);gap:32px}
+.side{position:sticky;top:12px;max-height:none;overflow:visible;gap:10px;padding-right:0}
+.side-h{display:none}
+.hist{background:transparent;padding:0}
+.dates{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;padding:0}
+.dates li{min-width:0}
+.dbtn{min-height:28px;padding:3px 4px;border-radius:8px;font-size:11px;gap:4px;width:100%;justify-content:center;letter-spacing:-.2px}
+.dbtn .w,.dbtn .badge-new{display:none}
+.dbtn[aria-current='true']{background:var(--sport-action);color:#fff;opacity:1}
+.dbtn[aria-current='true']::before{display:none}
+.foot{display:none}
+.rpt-card{padding:10px;gap:8px}
+.rpt-ico{width:32px;height:32px;flex:0 0 32px;border-radius:9px}
+.rpt-ico svg{width:17px;height:17px}
+.rpt-tx b{font-size:14px}
+.rpt-go{font-size:14px}
+.stock-card{padding:10px 12px;gap:2px;border-radius:12px}
+.stk-h{font-size:12px}
+.stk-price{font-size:20px}
+.stk-unit{font-size:10px}
+.stk-chg{font-size:12px}
+.stk-time{font-size:9.5px;line-height:1.45}
+#mat-cost .mat-list{display:none;margin-top:4px}
+#mat-cost.open .mat-list{display:grid}
+.mat-row{padding:3px 0;font-size:11.5px}
+.mat-toggle{margin-top:6px;font-size:11px;color:var(--sport-action);text-align:left;padding:2px 0}
+.prose{max-width:820px;margin:0 auto}
+.prose p{font-size:16.5px;line-height:1.72}
+.item{padding:18px 20px}
+.i-body{position:relative}
+.i-body.clamp{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.i-body.open{display:block;overflow:visible}
+.i-toggle{margin-left:10px;font-size:12.5px;color:var(--sport-action);border-bottom:1px dashed currentColor;padding:0 0 1px}
+.readbar{display:flex;align-items:center;gap:10px;margin:0 0 12px;font-size:12px;color:var(--sys-label-2)}
+.readbar button{margin-left:auto;font-size:12px;color:var(--sport-action);border:1px solid var(--sys-sep);border-radius:999px;padding:5px 12px;background:var(--sys-bg-3)}
+.readbar button:hover{border-color:var(--sport-action)}
+@media (max-width:640px){.shell{grid-template-columns:minmax(0,1fr);gap:16px}.side{position:static}.prose{max-width:100%}}
+.sb-m .note{display:block;font-size:11px;color:var(--sys-label-3);padding:0 4px 7px;line-height:1.45;text-align:center}
+.sb,.pm{max-height:none;overflow:visible}
+.prose blockquote p{font-size:15.5px;line-height:1.7}
+.qbody{font-size:15.5px;line-height:1.7}
+.item .meta{display:flex;align-items:center;gap:8px;margin:0 0 6px}
+.item .meta time{font-family:var(--font-mono);font-size:11px;color:var(--sys-label-3);font-variant-numeric:tabular-nums}
+.item .more{display:flex;align-items:center;gap:12px}
+.i-toggle{margin-left:auto}
 </style>
 </head>
 <body>
@@ -263,6 +309,85 @@ loop();
 }
 build();
 new MutationObserver(function(){build()}).observe(document.body,{attributes:true,attributeFilter:['class']});
+})();
+</script>
+<script>
+(function(){
+  var pros=document.querySelector('.prose');
+  if(!pros){return;}
+  var bar=document.createElement('div');
+  bar.className='readbar';
+  var lbl=document.createElement('span');
+  lbl.textContent='速读模式：长段落默认折叠，点「展开」看全文';
+  bar.appendChild(lbl);
+  var all=document.createElement('button');
+  all.type='button';
+  all.textContent='全部展开';
+  bar.appendChild(all);
+  pros.insertBefore(bar,pros.firstChild);
+
+  var items=[].slice.call(document.querySelectorAll('.item'));
+  var pairs=[];
+  items.forEach(function(it){
+    var h3=it.querySelector('h3');
+    if(!h3){return;}
+    if(it.querySelector('.ann-list')){return;}
+    var more=it.querySelector('.more');
+    var wrap=document.createElement('div');
+    wrap.className='i-body clamp';
+    var nodes=[];
+    var started=false;
+    [].slice.call(it.children).forEach(function(c){
+      if(c===h3){started=true;return;}
+      if(!started){return;}
+      if(c.classList&&c.classList.contains('meta')){return;}
+      if(c===more){return;}
+      nodes.push(c);
+    });
+    if(!nodes.length){return;}
+    it.insertBefore(wrap,nodes[0]);
+    nodes.forEach(function(n){wrap.appendChild(n);});
+    var btn=document.createElement('button');
+    btn.type='button';
+    btn.className='i-toggle';
+    btn.textContent='展开';
+    var host=more||it;
+    host.appendChild(btn);
+    btn.addEventListener('click',function(e){
+      e.preventDefault();
+      var on=wrap.classList.toggle('open');
+      wrap.classList.toggle('clamp',!on);
+      btn.textContent=on?'收起':'展开';
+    });
+    pairs.push({w:wrap,b:btn});
+  });
+
+  var expanded=false;
+  all.addEventListener('click',function(){
+    expanded=!expanded;
+    pairs.forEach(function(p){
+      p.w.classList.toggle('open',expanded);
+      p.w.classList.toggle('clamp',!expanded);
+      p.b.textContent=expanded?'收起':'展开';
+    });
+    all.textContent=expanded?'全部收起':'全部展开';
+  });
+
+  var mc=document.getElementById('mat-cost');
+  if(mc){
+    var ml=mc.querySelector('.mat-list');
+    if(ml){
+      var mb=document.createElement('button');
+      mb.type='button';
+      mb.className='mat-toggle';
+      mb.textContent='展开 7 个品种';
+      mc.insertBefore(mb,ml);
+      mb.addEventListener('click',function(){
+        var on=mc.classList.toggle('open');
+        mb.textContent=on?'收起品种':'展开 7 个品种';
+      });
+    }
+  }
 })();
 </script>
 </body>
