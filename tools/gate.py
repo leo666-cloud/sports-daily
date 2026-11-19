@@ -94,6 +94,18 @@ def check(path):
             if need not in have:
                 err.append('aside 内缺 %s（侧栗组件被阔出 aside）' % need)
 
+    cards = find(body, klass='stock-card')
+    if len(cards) != 2:
+        err.append('.stock-card 数量=%d，应为2（重复开标签会造成卡片套圈）' % len(cards))
+    for el in cards:
+        for c in list(el):
+            if isinstance(c.tag, str) and 'stock-card' in cls(c):
+                err.append('存在嵌套 .stock-card（套圈）')
+    for cid in ('stk-lining', 'mat-cost'):
+        n = sum(1 for el in body.iter() if isinstance(el.tag, str) and el.get('id') == cid)
+        if n != 1:
+            err.append('id=%s 出现 %d 次，应为1' % (cid, n))
+
     if len(items) < 20:
         err.append('.item=%d，应>=20' % len(items))
     for k in ('qbody', 'sb', 'pm'):
