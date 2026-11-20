@@ -1,0 +1,41 @@
+name: publish-2026-11-20
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-1120.yml'
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch and validate
+        run: |
+          curl -fsSL 'https://aka.doubaocdn.com/s/OsZUjROt30' -o /tmp/index.html
+          curl -fsSL 'https://aka.doubaocdn.com/s/VWPIyKJCyn' -o /tmp/archive.html
+          test "$(wc -c < /tmp/index.html)" -ge 40000
+          test "$(wc -c < /tmp/archive.html)" -ge 40000
+          grep -q '2026-11-20' /tmp/index.html
+          grep -q "<base href='../'>" /tmp/archive.html
+          test "$(grep -o "class='item'" /tmp/index.html | wc -l)" -ge 20
+          test "$(grep -o "class='item'" /tmp/archive.html | wc -l)" -ge 20
+          test "$(grep -o "<a class='t'" /tmp/archive.html | wc -l)" -ge 6
+          test "$(grep -o "class='qbody'" /tmp/index.html | wc -l)" -ge 1
+          test "$(grep -o "id='stk-lining'" /tmp/index.html | wc -l)" -eq 1
+          test "$(grep -o "id='mat-cost'" /tmp/index.html | wc -l)" -eq 1
+      - name: Gate
+        run: |
+          curl -fsSL 'https://raw.githubusercontent.com/leo666-cloud/sports-daily/main/tools/gate.py' -o /tmp/gate.py
+          pip install html5lib
+          python3 /tmp/gate.py /tmp/index.html /tmp/archive.html
+      - name: Commit
+        run: |
+          cp /tmp/index.html index.html
+          mkdir -p archive
+          cp /tmp/archive.html archive/2026-11-20.html
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html archive/2026-11-20.html
+          git commit -m '2026-11-20'
+          git push
