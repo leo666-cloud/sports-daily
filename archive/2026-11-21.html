@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+<head>
+<base href='../'>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1,viewport-fit=cover'>
+<title>2026-11-21 归档 · 体育与运动品牌动态</title>
+<link rel='stylesheet' href='style.css'>
+<style>
+.masthead{position:relative;overflow:hidden;z-index:0}
+.shell{position:relative;z-index:2}
+#wx{position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:1}
+.mast-inner{position:relative;z-index:2}
+#weather{position:absolute;top:22px;right:32px;z-index:3;display:flex;align-items:center;gap:10px;padding:8px 14px;border:1px solid rgba(255,255,255,.14);border-radius:999px;background:rgba(255,255,255,.06);backdrop-filter:blur(8px);color:#F2F3F5;font:500 13px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.02em}
+#weather .w-ico{font-size:18px;line-height:1}
+#weather .w-city{color:#F2F3F5}
+#weather .w-temp{font-weight:700;font-size:15px}
+#weather .w-label{color:#F2F3F5}
+.masthead.wx-sun{background:radial-gradient(ellipse 55% 80% at 82% -10%, rgba(255,200,90,.45), rgba(255,150,50,.15) 45%, rgba(20,40,30,0) 75%),radial-gradient(ellipse 100% 100% at 20% 110%, rgba(60,90,70,.3), transparent 60%),linear-gradient(180deg,#2a1f10 0%,#3d2f1c 50%,#1a2a22 100%)!important}
+.masthead.wx-cloud{background:radial-gradient(ellipse 120% 100% at 50% -10%, rgba(200,210,225,.4), transparent 55%),linear-gradient(180deg,#3a404c 0%,#525a68 50%,#20242c 100%)!important}
+.masthead.wx-rain{background:radial-gradient(ellipse 120% 90% at 50% -10%, rgba(90,140,200,.45), transparent 60%),linear-gradient(180deg,#0a1828 0%,#1a3050 55%,#081018 100%)!important}
+.masthead.wx-snow{background:radial-gradient(ellipse 120% 90% at 50% -10%, rgba(230,240,255,.4), transparent 60%),linear-gradient(180deg,#253045 0%,#4a5a7a 55%,#182030 100%)!important}
+.masthead.wx-storm{background:radial-gradient(ellipse 120% 110% at 50% -10%, rgba(140,130,220,.5), transparent 60%),linear-gradient(180deg,#080818 0%,#1e1e3a 55%,#060610 100%)!important}
+.masthead.wx-fog{background:radial-gradient(ellipse 140% 110% at 50% 0%, rgba(180,188,196,.6), transparent 70%),linear-gradient(180deg,#3a4048 0%,#4a5058 55%,#2a2e34 100%)!important}
+.masthead.wx-haze{background:radial-gradient(ellipse 140% 110% at 50% 0%, rgba(160,150,130,.55), transparent 70%),linear-gradient(180deg,#4a453c 0%,#5a5448 55%,#2e2a24 100%)!important}
+.masthead.wx-dust{background:radial-gradient(ellipse 140% 110% at 50% 0%, rgba(190,160,100,.55), transparent 70%),linear-gradient(180deg,#5a4a2e 0%,#6b5a38 55%,#332a1a 100%)!important}
+body.wx-rain,body.wx-storm,body.wx-snow,body.wx-fog,body.wx-cloud,body.wx-sun,body.wx-haze,body.wx-dust{background:var(--sys-bg,#F6F5F1)!important}
+.shell{background:transparent!important}
+#wx{opacity:1;filter:brightness(1.9)}
+.masthead{position:relative;z-index:2}
+.pm{list-style:none;margin:0;padding:0;max-height:300px;overflow-y:auto;scrollbar-width:thin}
+.pm::-webkit-scrollbar{width:6px}
+.pm::-webkit-scrollbar-thumb{background:var(--sys-fill-3);border-radius:3px}
+.pm li{display:grid;grid-template-columns:58px minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 4px;border-top:1px solid var(--sys-sep);font-size:13.5px;min-height:44px}
+.pm li:first-child{border-top:0}
+.pm .d{font-family:var(--font-mono);font-size:11.5px;font-weight:700;color:var(--sport-action);background:var(--sys-fill-1);border-radius:var(--r-micro);padding:4px 7px;text-align:center;white-space:nowrap;font-variant-numeric:tabular-nums}
+.pm .t{color:var(--sys-label);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pm .r{font-family:var(--font-mono);font-size:11px;color:var(--sys-label-3);white-space:nowrap;font-variant-numeric:tabular-nums}
+.stock-card{background:var(--sys-bg-2);border:1px solid var(--sys-sep);border-radius:var(--r-card);padding:14px 16px;display:grid;gap:5px}
+.stk-h{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:13px;font-weight:600;color:var(--sys-label)}
+.stk-h .mono{font-size:11px;color:var(--sys-label-3)}
+.stk-price{display:flex;align-items:baseline;gap:6px;font-family:var(--font-mono);font-variant-numeric:tabular-nums;font-size:26px;font-weight:700;color:var(--sys-label);line-height:1.1}
+.stk-unit{font-size:12px;font-weight:500;color:var(--sys-label-3)}
+.stk-chg{font-family:var(--font-mono);font-variant-numeric:tabular-nums;font-size:14px;font-weight:700}
+.stk-chg.up{color:var(--sport-action)}
+.stk-chg.down{color:var(--sport-volt)}
+.stk-time{font-family:var(--font-mono);font-size:11px;color:var(--sys-label-3);font-variant-numeric:tabular-nums}
+.mat-list{display:grid;gap:0}
+.mat-row{display:grid;grid-template-columns:2.6em 1fr auto;gap:8px;align-items:center;padding:4px 0;border-top:1px solid var(--sys-sep);font-size:12.5px;line-height:1.4}
+.mat-row:first-child{border-top:0}
+.mat-sym{font-family:var(--font-mono);font-weight:700;color:var(--sys-label-2);font-size:10.5px}
+.mat-name{color:var(--sys-label-2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat-price{font-family:var(--font-mono);font-variant-numeric:tabular-nums;font-weight:600;color:var(--sys-label);font-size:12.5px;text-align:right}
+.mat-chg{font-family:var(--font-mono);font-variant-numeric:tabular-nums;font-size:11px;font-weight:700;text-align:right;min-width:42px}
+.mat-chg.up{color:var(--sport-action)}
+.mat-chg.down{color:var(--sport-volt)}
+.mat-loading{font-size:11px;color:var(--sys-label-3);padding:6px 0;text-align:center;margin:0}
+.prose blockquote p{display:flex;gap:var(--s4);align-items:flex-start}
+.qtag{flex:0 0 auto;font-weight:700;white-space:nowrap;line-height:1.58;color:var(--sport-action)}
+.qbody{flex:1 1 auto;min-width:0}
+.rpt-card{position:relative;display:flex;align-items:center;gap:12px;padding:16px 16px 16px 14px;border:1px solid var(--sys-sep);border-radius:var(--r-card);background:var(--sys-bg-2);color:var(--sys-label);text-decoration:none;overflow:hidden;transition:transform var(--dur-2) var(--ease-out),box-shadow var(--dur-2) var(--ease-out)}.rpt-card:hover{transform:translateY(-2px);box-shadow:var(--lift);text-decoration:none}.rpt-card::before{content:'';position:absolute;right:-16px;top:-20px;width:128px;height:128px;background:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22128%22 height=%22128%22 viewBox=%220 0 128 128%22><circle cx=%22100%22 cy=%2224%22 r=%2215%22 fill=%22%231F6F4A%22 fill-opacity=%220.10%22/><path d=%22M0 96 L32 62 L58 82 L88 46 L128 74 L128 128 L0 128 Z%22 fill=%22%231F6F4A%22 fill-opacity=%220.12%22/></svg>') no-repeat;background-size:cover;pointer-events:none}[data-theme='dark'] .rpt-card::before{filter:brightness(1.7)}.rpt-ico{flex:0 0 42px;width:42px;height:42px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:var(--sport-action);color:#fff}.rpt-ico svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.rpt-tx{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:3px}.rpt-tx b{font-size:17px;font-weight:600;letter-spacing:-.2px;color:var(--sys-label);line-height:1.2}.rpt-tx i{font-style:normal;font-size:11.5px;color:var(--sys-label-3);letter-spacing:-.1px;line-height:1.35;white-space:normal;overflow-wrap:anywhere}.rpt-go{flex:0 0 auto;color:var(--sport-action);font-size:18px;font-weight:700;line-height:1;transition:transform var(--dur-1) var(--ease-out)}.rpt-card:hover .rpt-go{transform:translateX(3px)}
+/* v2 布局：侧栏压缩为信息条，整页统一滚动；正文速读分层 */
+.shell{max-width:1120px;grid-template-columns:188px minmax(0,1fr);gap:32px}
+.side{position:sticky;top:12px;max-height:none;overflow:visible;gap:10px;padding-right:0}
+.side-h{display:none}
+.hist{background:transparent;padding:0}
+.dates{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;padding:0}
+.dates li{min-width:0}
+.dbtn{min-height:28px;padding:3px 4px;border-radius:8px;font-size:11px;gap:4px;width:100%;justify-content:center;letter-spacing:-.2px}
+.dbtn .w,.dbtn .badge-new{display:none}
+.dbtn[aria-current='true']{background:var(--sport-action);color:#fff;opacity:1}
+.dbtn[aria-current='true']::before{display:none}
+.foot{display:none}
+.rpt-card{padding:10px;gap:8px}
+.rpt-ico{width:32px;height:32px;flex:0 0 32px;border-radius:9px}
+.rpt-ico svg{width:17px;height:17px}
+.rpt-tx b{font-size:14px}
+.rpt-go{font-size:14px}
+.stock-card{padding:10px 12px;gap:2px;border-radius:12px}
+.stk-h{font-size:12px}
+.stk-price{font-size:20px}
+.stk-unit{font-size:10px}
+.stk-chg{font-size:12px}
+.stk-time{font-size:9.5px;line-height:1.45}
+#mat-cost .mat-list{display:none;margin-top:4px}
+#mat-cost.open .mat-list{display:grid}
+.mat-row{padding:3px 0;font-size:11.5px}
+.mat-toggle{margin-top:6px;font-size:11px;color:var(--sport-action);text-align:left;padding:2px 0}
+.prose{max-width:820px;margin:0 auto}
+.prose p{font-size:16.5px;line-height:1.72}
+.item{padding:18px 20px}
+.i-body{position:relative}
+.i-body.clamp{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.i-body.open{display:block;overflow:visible}
+.i-toggle{margin-left:10px;font-size:12.5px;color:var(--sport-action);border-bottom:1px dashed currentColor;padding:0 0 1px}
+.readbar{display:flex;align-items:center;gap:10px;margin:0 0 12px;font-size:12px;color:var(--sys-label-2)}
+.readbar button{margin-left:auto;font-size:12px;color:var(--sport-action);border:1px solid var(--sys-sep);border-radius:999px;padding:5px 12px;background:var(--sys-bg-3)}
+.readbar button:hover{border-color:var(--sport-action)}
+@media (max-width:640px){.shell{grid-template-columns:minmax(0,1fr);gap:16px}.side{position:static}.prose{max-width:100%}}
+.sb-m .note{display:block;font-size:11px;color:var(--sys-label-3);padding:0 4px 7px;line-height:1.45;text-align:center}
+.sb,.pm{max-height:none;overflow:visible}
+.prose blockquote p{font-size:15.5px;line-height:1.7}
+.qbody{font-size:15.5px;line-height:1.7}
+.item .meta{display:flex;align-items:center;gap:8px;margin:0 0 6px}
+.item .meta time{font-family:var(--font-mono);font-size:11px;color:var(--sys-label-3);font-variant-numeric:tabular-nums}
+.item .more{display:flex;align-items:center;gap:12px}
+.i-toggle{margin-left:auto}
+.dash{align-items:start}
+.sb-m a{min-height:36px;padding:6px 4px}
+.sb-m .note{padding:0 4px 5px}
+.sb{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:20px;align-content:start}
+.sb-g{grid-column:1/-1;padding:8px 2px 5px}
+.sb-m .note{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media (max-width:900px){.sb{grid-template-columns:minmax(0,1fr)}}
+.sb{max-height:320px;overflow-y:auto;overscroll-behavior:contain;padding-right:6px;scrollbar-width:thin}
+.sb::-webkit-scrollbar{width:6px}
+.sb::-webkit-scrollbar-thumb{background:var(--sys-fill-3);border-radius:3px}
+.sb::-webkit-scrollbar-track{background:transparent}
+.prose h2{scroll-margin-top:76px}
+</style>
+</head>
+<body>
+<div class='progress'><i id='prog'></i></div>
+<section class='masthead'>
+  <canvas id='wx'></canvas>
+  <div id='weather' aria-live='polite'></div>
+  <div class='mast-inner'>
+    <div>
+      <p class='eyebrow'><span class='livedot'></span>Sports &amp; Athletics · Daily Brief <span class='dim'>/ 每日 08:30 自动更新</span></p>
+      <h1>体育与运动品牌动态</h1>
+      <p class='lede'>赛事赛果 · 品牌营销与新品 · 运动品牌市场与渠道 · 资本业绩 · 行业公告</p>
+    </div>
+    <div class='stamp'>
+      <p class='k'>最新一期</p>
+      <b class='v mono'>2026-11-21 周六 08:30</b>
+    </div>
+  </div>
+    <div class='ticker'>
+    <span class='ticker-label'>赛果</span>
+    <div class='ticker-track'><div class='ticker-set'><span class='tk-item'>足协杯 海港2-0国安 武磊点射</span><span class='tk-item'>U17世界杯 中国0-5西班牙</span><span class='tk-item'>ATP 阿卡2-0科博利 梅总2-0蒂亚福</span><span class='tk-item'>ATP 兹维列夫2-0菲斯 小组全胜</span><span class='tk-item'>NBA 灰熊126-98勇士 5连胜</span><span class='tk-item'>NBA 开拓者124-114雄鹿 送12连败</span><span class='tk-item'>NBA 尼克斯102-99森林狼 马刺124-112快船</span><span class='tk-item'>CBA杯 北京93-87浙江 青岛102-85上海</span><span class='tk-item'>CBA杯 辽宁107-115山西 浙江86-84山东</span><span class='tk-item'>香港羽毛球 国羽3胜6负 男单男双覆没</span><span class='tk-item'>斯诺克 中国6人进德国赛32强</span><span class='tk-item'>三星杯 卞相壹2-1李钦诚夺冠</span></div><div class='ticker-set' aria-hidden='true'><span class='tk-item'>足协杯 海港2-0国安 武磊点射</span><span class='tk-item'>U17世界杯 中国0-5西班牙</span><span class='tk-item'>ATP 阿卡2-0科博利 梅总2-0蒂亚福</span><span class='tk-item'>ATP 兹维列夫2-0菲斯 小组全胜</span><span class='tk-item'>NBA 灰熊126-98勇士 5连胜</span><span class='tk-item'>NBA 开拓者124-114雄鹿 送12连败</span><span class='tk-item'>NBA 尼克斯102-99森林狼 马刺124-112快船</span><span class='tk-item'>CBA杯 北京93-87浙江 青岛102-85上海</span><span class='tk-item'>CBA杯 辽宁107-115山西 浙江86-84山东</span><span class='tk-item'>香港羽毛球 国羽3胜6负 男单男双覆没</span><span class='tk-item'>斯诺克 中国6人进德国赛32强</span><span class='tk-item'>三星杯 卞相壹2-1李钦诚夺冠</span></div></div></div></section>
+<div class='shell'>
+  <aside class='side'>
+    <p class='side-h'><span>历史期次</span><span class='mono'>7</span></p>
+    <div class='hist'><ul class='dates'><li>
+<button class='dbtn' type='button' aria-current='true'>
+<span class='d'>2026-11-21</span>
+<span class='w'>周六</span>
+<span class='badge-new'>最新</span>
+</button>
+</li>
+<li>
+<a class='dbtn' href='archive/2026-11-20.html'>
+<span class='d'>2026-11-20</span>
+<span class='w'>周五</span>
+</a>
+</li>
+<li>
+<a class='dbtn' href='archive/2026-11-19.html'>
+<span class='d'>2026-11-19</span>
+<span class='w'>周四</span>
+</a>
+</li>
+<li>
+<a class='dbtn' href='archive/2026-11-18.html'>
+<span class='d'>2026-11-18</span>
+<span class='w'>周三</span>
+</a>
+</li>
+<li>
+<a class='dbtn' href='archive/2026-11-17.html'>
+<span class='d'>2026-11-17</span>
+<span class='w'>周二</span>
+</a>
+</li>
+<li>
+<a class='dbtn' href='archive/2026-11-16.html'>
+<span class='d'>2026-11-16</span>
+<span class='w'>周一</span>
+</a>
+</li>
+<li>
+<a class='dbtn' href='archive/2026-11-15.html'>
+<span class='d'>2026-11-15</span>
+<span class='w'>周日</span>
+</a>
+</li></ul></div>
+    <p class='foot'>历史保留最近 7 个自然日。</p>
+    <a class='rpt-card' href='https://leo666-cloud.github.io/fitness-yoga-report/#overview' target='_blank' rel='noopener'><span class='rpt-ico'><svg viewBox='0 0 24 24'><path d='M4 5h16v14H4z'/><path d='M8 9h8M8 13h8M8 17h5'/></svg></span><span class='rpt-tx'><b>研究报告</b></span><span class='rpt-go'>→</span></a>
+    <div class='stock-card' id='stk-lining'>
+      <p class='stk-h'><span>李宁 LI NING</span><span class='mono'>2331.HK</span></p>
+      <p class='stk-price'><span>12.130</span><span class='stk-unit'>HKD</span></p>
+      <p class='stk-chg down'>-0.150  (-1.22%)</p>
+      <p class='stk-time mono'>2026/11/20 16:08:37 · 高12.260 低12.060</p>
+    </div>
+    <div class='stock-card' id='mat-cost'>
+      <p class='stk-h'><span>工业原材料成本</span><span class='mono'>期货主力</span></p>
+      <div class='mat-list'><div class='mat-row'><span class='mat-sym'>PP</span><span class='mat-name'>聚丙烯</span><span class='mat-price'>8655</span><span class='mat-chg down'>-1.76%</span></div><div class='mat-row'><span class='mat-sym'>TA</span><span class='mat-name'>PTA</span><span class='mat-price'>5918</span><span class='mat-chg down'>-0.10%</span></div><div class='mat-row'><span class='mat-sym'>PE</span><span class='mat-name'>聚乙烯</span><span class='mat-price'>7929</span><span class='mat-chg down'>-0.76%</span></div><div class='mat-row'><span class='mat-sym'>VC</span><span class='mat-name'>PVC</span><span class='mat-price'>4781</span><span class='mat-chg down'>-0.31%</span></div><div class='mat-row'><span class='mat-sym'>EB</span><span class='mat-name'>苯乙烯</span><span class='mat-price'>8187</span><span class='mat-chg down'>-3.05%</span></div><div class='mat-row'><span class='mat-sym'>RU</span><span class='mat-name'>天然橡胶</span><span class='mat-price'>18185</span><span class='mat-chg down'>-2.70%</span></div><div class='mat-row'><span class='mat-sym'>RB</span><span class='mat-name'>螺纹钢</span><span class='mat-price'>2997</span><span class='mat-chg down'>-0.46%</span></div></div></div>
+    <button class='totop' id='theme' title='切换亮暗'><span id='theme-ico'>☾</span><span>外观</span></button>
+    <button class='totop' id='totop' onclick='window.scrollTo(0,0)' title='回到顶部'><span>↑</span><span>回到顶部</span></button>
+  </aside>
+  <main>
+    <article>
+      <header class='rhead'>
+        <p class='kicker'><span>最新一期</span><span class='dt'>2026-11-21 · 周六</span></p>
+        <ul class='rmeta'>
+          <li><b>窗口</b>2026-11-20 08:30 ~ 2026-11-21 08:30</li>
+          <li><b>条目</b>30</li>
+        </ul>
+      </header>
+      <nav class='rail'>
+        <div class='rail-in'>
+          <button class='chip' data-sec='s1'><u>01</u>核心要点</button>
+          <button class='chip' data-sec='s2'><u>02</u>赛事竞技</button>
+          <button class='chip' data-sec='s3'><u>03</u>品牌营销</button>
+          <button class='chip' data-sec='s4'><u>04</u>渠道舆论</button>
+          <button class='chip' data-sec='s5'><u>05</u>资本业绩</button>
+          <button class='chip' data-sec='s6'><u>06</u>公告与市场</button>
+        </div>
+      </nav>
+      <div class='dash'>
+  <div class='board'><div class='board-h'><h3>近期赛果速读</h3><span class='cnt mono'>12</span></div><div class='filt' id='sb-filt'></div><ul class='sb'><li class='sb-g' data-g='cba'>CBA 俱乐部杯 小组赛 11-20</li>
+<li class='sb-m m' data-g='cba'>
+<a href='https://m.weibo.cn/detail/5367456714723904' target='_blank'>
+<span class='home'>北京</span>
+<span class='sc mono'>93-87</span>
+<span class='away'>浙江</span>
+</a>
+<span class='note'>北京两连胜 陈盈骏末节11分</span>
+</li>
+<li class='sb-m m' data-g='cba'>
+<a href='https://m.weibo.cn/detail/5367456714723904' target='_blank'>
+<span class='home'>青岛</span>
+<span class='sc mono'>102-85</span>
+<span class='away'>上海</span>
+</a>
+<span class='note'>上海杯赛14连胜终结</span>
+</li>
+<li class='sb-m m' data-g='cba'>
+<a href='https://m.weibo.cn/detail/5367456714723904' target='_blank'>
+<span class='home'>辽宁</span>
+<span class='sc mono'>107-115</span>
+<span class='away'>山西</span>
+</a>
+<span class='note'>辽宁领先19分被逆转</span>
+</li>
+<li class='sb-m m' data-g='cba'>
+<a href='https://m.weibo.cn/detail/5367456714723904' target='_blank'>
+<span class='home'>浙江</span>
+<span class='sc mono'>86-84</span>
+<span class='away'>山东</span>
+</a>
+<span class='note'>山东0.1秒绝平无效</span>
+</li>
+<li class='sb-g' data-g='facup'>足协杯 半决赛 11-20</li>
+<li class='sb-m m' data-g='facup'>
+<a href='http://www.shturl.cc/7d6913cbe073e6fd3026d0f0b1752d77' target='_blank'>
+<span class='home'>北京国安</span>
+<span class='sc mono'>0-2</span>
+<span class='away'>上海海港</span>
+</a>
+<span class='note'>武磊点射 维塔尔头球</span>
+</li>
+<li class='sb-g' data-g='nba'>NBA 常规赛 11-20</li>
+<li class='sb-m m' data-g='nba'>
+<a href='https://m.china.nba.cn/schedule/' target='_blank'>
+<span class='home'>灰熊</span>
+<span class='sc mono'>126-98</span>
+<span class='away'>勇士</span>
+</a>
+<span class='note'>勇士5连败</span>
+</li>
+<li class='sb-m m' data-g='nba'>
+<a href='https://m.china.nba.cn/schedule/' target='_blank'>
+<span class='home'>开拓者</span>
+<span class='sc mono'>124-114</span>
+<span class='away'>雄鹿</span>
+</a>
+<span class='note'>利拉德33分 雄鹿12连败</span>
+</li>
+<li class='sb-m m' data-g='nba'>
+<a href='https://m.china.nba.cn/schedule/' target='_blank'>
+<span class='home'>尼克斯</span>
+<span class='sc mono'>102-99</span>
+<span class='away'>森林狼</span>
+</a>
+<span class='note'>尼克斯3连胜</span>
+</li>
+<li class='sb-m m' data-g='nba'>
+<a href='https://m.china.nba.cn/schedule/' target='_blank'>
+<span class='home'>马刺</span>
+<span class='sc mono'>124-112</span>
+<span class='away'>快船</span>
+</a>
+<span class='note'>文班亚马关键球</span>
+</li>
+<li class='sb-g' data-g='atp'>ATP 总决赛 小组赛 11-20</li>
+<li class='sb-m m' data-g='atp'>
+<a href='https://m.weibo.cn/detail/5367230800855552' target='_blank'>
+<span class='home'>阿尔卡拉斯</span>
+<span class='sc mono'>2-0</span>
+<span class='away'>科博利</span>
+</a>
+<span class='note'>6-4 6-1</span>
+</li>
+<li class='sb-m m' data-g='atp'>
+<a href='https://m.weibo.cn/detail/5367230800855552' target='_blank'>
+<span class='home'>梅德韦杰夫</span>
+<span class='sc mono'>2-0</span>
+<span class='away'>蒂亚福</span>
+</a>
+<span class='note'>6-3 6-4</span>
+</li>
+<li class='sb-m m' data-g='atp'>
+<a href='https://m.dongqiudi.com/wangqiu/54648239' target='_blank'>
+<span class='home'>兹维列夫</span>
+<span class='sc mono'>2-0</span>
+<span class='away'>菲斯</span>
+</a>
+<span class='note'>6-4 7-6(6) 小组全胜</span>
+</li></ul></div>
+
+  <div class='board'><div class='board-h'><h3>新品与发售日历</h3><span class='cnt mono'>6</span></div><ul class='pm'><li>
+<span class='d'>11-20</span>
+<a class='t' href='https://sneakernews.com/2026/11/20/corteiz-nike-shox-r419-silver-surfer/' target='_blank' rel='noopener' title='Corteiz x Nike Shox R419 Silver Surfer 11月20日 SNKRS 全球发售 定价190美元'>Corteiz x Shox R419</a>
+<span class='r'>$190</span>
+</li>
+<li>
+<span class='d'>11-20</span>
+<a class='t' href='https://www.newbalance.com/pd/kawhi-v/KV5.html' target='_blank' rel='noopener' title='New Balance Kawhi V 11月20日发售 Slate Grey 与 Oxford Blue 两配色 定价159.99美元'>NB Kawhi V</a>
+<span class='r'>$159.99</span>
+</li>
+<li>
+<span class='d'>11-20</span>
+<a class='t' href='http://news.qq.com/rain/a/20261120A0EPKK00' target='_blank' rel='noopener' title='ALO 阳光之境 淮海限时体验空间 11月20日正式开放 面积近1200平方米'>ALO 淮海空间</a>
+<span class='r'>开放</span>
+</li>
+<li>
+<span class='d'>11-21</span>
+<a class='t' href='https://sneakernews.com/2026/11/20/sneaker-politics-asics-oyster-pack/' target='_blank' rel='noopener' title='Sneaker Politics x ASICS Oyster Pack 11月21日线上发售 GEL-Kayano 12.1 190美元 GEL-Cumulus 16 180美元'>ASICS Oyster Pack</a>
+<span class='r'>发售</span>
+</li>
+<li>
+<span class='d'>11-27</span>
+<a class='t' href='https://gearpatrol.com/2026/11/21/hoka-wtaps-speedgoat-ts/' target='_blank' rel='noopener' title='HOKA x WTAPS Speedgoat TS 11月27日发售 定价175美元 两配色'>HOKA x WTAPS</a>
+<span class='r'>$175</span>
+</li>
+<li>
+<span class='d'>11-19</span>
+<a class='t' href='https://sneakernews.com/2026/11/19/noah-converse-chuck-70-black-watch/' target='_blank' rel='noopener' title='Noah x Converse Chuck 70 Black Watch 11月19日发售 定价110美元'>Noah x Converse</a>
+<span class='r'>$110</span>
+</li></ul></div>
+
+</div>
+
+<div class='prose'><h2 id='s1'>核心要点</h2><blockquote><p><span class='qtag'>[重磅]</span><span class='qbody'>上海海港在足协杯半决赛客场<strong>2-0</strong>击败北京国安：第26分钟王刚门线手球被红牌罚下，武磊第30分钟点球命中，维塔尔第59分钟头球锁定胜局，现场<strong>45277</strong>名观众；决赛12月6日苏州对阵云南玉昆。U17世界杯中国<strong>0-5</strong>西班牙，时隔21年再战世少赛，第40分钟送点、上半场补时任意球失守，第73、79、85分钟连丢三球；下一场11月23日23:00对摩洛哥。ATP总决赛阿尔卡拉斯<strong>6-4/6-1</strong>科博利、梅德韦杰夫<strong>6-3/6-4</strong>蒂亚福，半决赛阿尔卡拉斯对谢尔顿、梅德韦杰夫对兹维列夫。NBA灰熊<strong>126-98</strong>勇士取5连胜，开拓者<strong>124-114</strong>雄鹿送对手12连败，利拉德33分、亨德森27分，杨瀚森12分钟2分1篮板1助攻；尼克斯102-99森林狼、马刺124-112快船。李宁11月20日回购<strong>643万股</strong>、耗资<strong>7791.64万港元</strong>，价格12.08-12.17港元；连续2日回购<strong>1007.35万股</strong>、<strong>1.22亿港元</strong>，年内第3次回购累计<strong>1152.35万股</strong>、<strong>1.41亿港元</strong>。</span></p></blockquote>
+<h2 id='s2'>一、赛事与竞技动态</h2>
+<div class='item'><p class='meta'><span class='src'>新华社</span><time>11-20 23:44</time></p><h3>足协杯半决赛 海港客场2-0国安 与云南玉昆争冠</h3><p>上海海港20日客场2-0击败北京国安，晋级足协杯决赛。第26分钟王刚门线手球，VAR介入后红牌加点球，武磊第30分钟主罚命中；第59分钟杨希助攻维塔尔头球扩大比分。国安十人应战未能改写比分，现场45277名观众。海港12月6日将在苏州对阵首次进决赛的云南玉昆。</p><p class='more'><a href='http://www.shturl.cc/7d6913cbe073e6fd3026d0f0b1752d77' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>新华社</span><time>11-21 00:38</time></p><h3>U17世界杯 中国0-5西班牙 时隔21年再战世少赛</h3><p>U17世界杯H组首轮，中国U17男足0-5不敌西班牙。第40分钟邝兆镭禁区内拉人送点，佩斯克尔命中；上半场补时通卡拉任意球直挂死角。下半场第73、79分钟埃梅卡梅开二度，第85分钟特鲁希亚诺推射锁定比分。中国队全场3次射门1次射正，西班牙17次射门11次射正；下一场11月23日23:00对摩洛哥。</p><p class='more'><a href='http://www.shturl.cc/6ab10b4a648ef6f44504d5c5e1fb055d' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>ATP巡回赛</span><time>11-20 07:30</time></p><h3>ATP总决赛 阿尔卡拉斯、梅德韦杰夫晋级四强</h3><p>ATP年终总决赛小组赛收官：阿尔卡拉斯6-4、6-1击败科博利，梅德韦杰夫6-3、6-4战胜蒂亚福。半决赛对阵确定为阿尔卡拉斯对谢尔顿、梅德韦杰夫对兹维列夫。阿尔卡拉斯小组三战全胜，梅德韦杰夫以小组第二出线。</p><p class='more'><a href='https://m.weibo.cn/detail/5367230800855552' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>懂球帝</span><time>11-20 03:40</time></p><h3>ATP总决赛 兹维列夫6-4 7-6(6)菲斯 小组全胜</h3><p>兹维列夫20日以6-4、7-6(6)击败菲斯，小组赛三战全胜、以头名晋级四强。首盘第7局完成唯一破发；第二盘抢七一度6-1领先，被菲斯连追5分后连拿2分，以8-6赢下抢七。全场兹维列夫ACE球10比7、总得分69比64，交手记录改写为6-2。</p><p class='more'><a href='https://m.dongqiudi.com/wangqiu/54648239' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>NBA中国</span><time>11-20 09:08</time></p><h3>NBA 灰熊126-98勇士 开拓者送雄鹿12连败</h3><p>NBA常规赛20日四场：灰熊126-98大胜勇士，取5连胜，杰伦·威尔斯22分、塞德里克·考沃德19分，勇士5连败；开拓者124-114雄鹿，利拉德33分、亨德森27分，雄鹿12连败；尼克斯102-99森林狼取3连胜；马刺124-112快船。杨瀚森替补12分钟，2分1篮板1助攻。</p><p class='more'><a href='https://m.china.nba.cn/schedule/' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>新华社</span><time>11-20 23:04</time></p><h3>CBA俱乐部杯 北京、青岛不败 NBL两队爆冷</h3><p>CBA俱乐部杯20日小组赛：北京93-87浙江，北京两连胜，陈盈骏末节11分；青岛102-85上海，上海跨届14连胜终结、最多落后17分；辽宁107-115山西，辽宁领先19分被逆转；浙江86-84山东，山东0.1秒绝平无效。NBL上海玄鸟87-83深圳，合肥狂风此前92-71南京。</p><p class='more'><a href='https://english.news.cn/20261120/88a622d938c34276b2dc473c13039183/c.html' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>京报体育</span><time>11-20 20:37</time></p><h3>香港羽毛球公开赛 国羽3胜6负 男单男双覆没</h3><p>香港羽毛球公开赛20日1/4决赛，国羽3胜6负：王祉怡22-20、22-20胜瓦尔达尼；冯彦哲/黄东萍21-9、21-10横扫吴轩毅/杨筑云；蒋振邦/魏雅欣因对手退赛晋级。男单朱轩辰18-21、21-14、22-24惜败安东森；男双梁伟铿/王昶19-21、21-19、18-21不敌姜珉赫/李钟民，何济霆/任翔宇、胡珂源/林祥毅同样止步；郭新娃/陈芳卉15-21、15-21出局。</p><p class='more'><a href='https://news.bjd.com.cn/2026/11/20/12038038.shtml' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>网易体育</span><time>11-20 09:15</time></p><h3>德国大师赛资格赛 中国6人进32强 常冰玉轰147</h3><p>斯诺克德国大师赛资格赛第三轮，中国9人出战6人晋级32强：丁俊晖5-3舒尔第，袁思俊5-3克劳利，张安达5-2奥利弗·布朗，范争一5-1乔·奥康纳，周跃龙5-3逆转佩奇，斯佳辉5-3斯坦·穆迪。庞俊旭4-5不敌64岁吉米·怀特，雷佩凡2-5威尔斯，吕昊天4-5加里·威尔逊。常冰玉在另一场资格赛轰出职业生涯首杆147，但2-5出局。</p><p class='more'><a href='https://c.m.163.com/news/a/LC5S95HD0525QH7I.html' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>新浪棋牌</span><time>11-20 22:00</time></p><h3>三星杯 卞相壹2-1李钦诚夺冠</h3><p>三星杯世界围棋大师赛决赛决胜局20日在韩国济州结束，卞相壹执黑271手中盘击败李钦诚，以总比分2-1夺冠。冠军奖金3亿韩元（约合149万元人民币），李钦诚获亚军1亿韩元。韩国第15次夺冠，中国14次。</p><p class='more'><a href='https://sports.sina.com.cn/go/' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>中国篮球之队</span><time>11-20 08:40</time></p><h3>中国男篮世预赛14人名单 赵睿领衔</h3><p>中国男篮公布2027年世界杯预选赛第一窗口期14人名单：赵睿、胡明轩、廖三宁、程帅澎、高诗岩、朱俊龙、张镇麟、曾凡博、周琦、胡金秋、焦泊乔、李祥波、蒋浩然、王岚嵚。余嘉豪、王俊杰等未在列。球队11月26日客场对沙特、11月30日主场对黎巴嫩。</p><p class='more'><a href='https://www.cba.net.cn/' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>澎湃新闻</span><time>11-21 07:47</time></p><h3>速度滑冰世界杯 廉子文1分07秒48破场地纪录</h3><p>速度滑冰世界杯男子1000米，中国选手廉子文滑出1分07秒48，刷新场地纪录并摘得银牌；荷兰选手获铜。廉子文此前在哈尔滨站该项目排名第四，本赛季状态持续上升。</p><p class='more'><a href='https://www.thepaper.cn/' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>沙特联赛</span><time>11-21 03:00</time></p><h3>沙特联 利雅得胜利1-3吉达国民 C罗破门</h3><p>沙特联赛第10轮，利雅得胜利主场1-3不敌吉达国民。C罗第65分钟接直塞单刀破门，打入赛季第12球；马内第54分钟罚失点球，凯西为吉达国民梅开二度，伊万·托尼补时锁定胜局。利雅得胜利遭遇联赛两连败。</p><p class='more'><a href='https://www.espn.com/soccer/' target='_blank'>阅读原文</a></p></div>
+<h2 id='s3'>二、品牌营销与代言动态</h2>
+<div class='item'><p class='meta'><span class='src'>Gear Patrol</span><time>11-20 05:00</time></p><h3>HOKA与WTAPS联名 Speedgoat TS 11月27日发售</h3><p>HOKA与WTAPS首个联名鞋款Speedgoat TS将于11月27日发售，定价175美元，两个配色为Galactic Grey/High Rise与Black/Volcanic Ash。鞋面采用WTAPS工装语汇，保留Vibram Megagrip外底；同系列还有8L水袋背心180美元、帽款45美元。</p><p class='more'><a href='https://gearpatrol.com/2026/11/21/hoka-wtaps-speedgoat-ts/' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>Sneaker News</span><time>11-20 10:30</time></p><h3>Corteiz与Nike Shox R419「Silver Surfer」11月20日SNKRS发售</h3><p>Corteiz与Nike联名Shox R419「Silver Surfer」20日通过SNKRS全球发售，定价190美元/189.99欧元/174.99英镑。鞋面金属银配大学红细节，后跟Shox柱体回归；Corteiz官网11月15日先行发售已售罄，二级市场溢价明显。</p><p class='more'><a href='https://sneakernews.com/2026/11/20/corteiz-nike-shox-r419-silver-surfer/' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>Sneaker News</span><time>11-20 11:00</time></p><h3>Sneaker Politics与ASICS「Oyster Pack」11月21日线上发售</h3><p>Sneaker Politics与ASICS推出「Oyster Pack」：GEL-Kayano 12.1与GEL-Cumulus 16两双，定价190/180美元，灵感来自路易斯安那牡蛎壳与海岸修复。20日11:00 CT门店发售，21日09:00 CT线上发售；每双附带牡蛎壳主题吊牌，部分收益捐给CRCL海岸修复项目。</p><p class='more'><a href='https://sneakernews.com/2026/11/20/sneaker-politics-asics-oyster-pack/' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>New Balance</span><time>11-20 00:00</time></p><h3>New Balance Kawhi V 11月20日发售 定价159.99美元</h3><p>New Balance Kawhi V于20日发售，首发Slate Grey与Oxford Blue两配色，定价159.99美元。鞋款为低帮签名鞋，单只约406克，采用双密度FuelCell中底与Y形推进板，鞋面为工程网布加热熔加固；定位兼顾爆发与场地感。</p><p class='more'><a href='https://www.newbalance.com/pd/kawhi-v/KV5.html' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>HOKA</span><time>11-20 12:00</time></p><h3>HOKA品牌大使王玉雯 冬季campaign「破风暖行」</h3><p>HOKA 20日12:00发布冬季campaign「破风暖行」，品牌大使王玉雯出镜，演绎TRANSPORT JACKET GTX 3L硬壳与MAFATE SPEED 2 GTX越野鞋。王玉雯9月15日官宣加入HOKA，此次为首支冬季服饰主视觉，主题强调城市与山野之间的切换。</p><p class='more'><a href='https://m.weibo.cn/detail/5367485456051896' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>Sneaker News</span><time>11-19 09:00</time></p><h3>Noah与Converse Chuck 70「Black Watch」11月19日发售</h3><p>Noah与Converse联名Chuck 70「Black Watch」19日发售，定价110美元。鞋面采用300年历史的Black Watch格纹羊毛，保留Chuck 70高帮轮廓与OrthoLite鞋垫；同步推出同格纹帽款与托特包，仅在Noah官网及门店发售。</p><p class='more'><a href='https://sneakernews.com/2026/11/19/noah-converse-chuck-70-black-watch/' target='_blank'>阅读原文</a></p></div>
+<h2 id='s4'>三、运动品牌渠道与舆论动态</h2>
+<div class='item'><p class='meta'><span class='src'>国家体育总局</span><time>11-20 00:00</time></p><h3>江苏出台12条措施 推进体育赛事进商圈</h3><p>江苏省体育局联合省商务厅、省文旅厅印发《关于深入推进体育赛事进商圈 进一步激发消费活力的指导意见》，围绕4个方面提出12条措施：丰富商圈赛事供给、优化布局、培育「一商圈一特色、一季度一主题、一节日一赛事」品牌；打造融合消费场景、创新惠民措施、完善配套；强化协同、人才支撑；加强精准宣推与消费统计监测。</p><p class='more'><a href='http://www.sport.gov.cn/n14471/n14481/n14518/c30179522/content.html' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>新闻晨报</span><time>11-07 22:03</time></p><h3>始祖鸟进博首秀 用ReBIRD把「修」写进购买条款</h3><p>始祖鸟首次参加进博会，以System 0循环平台和Sperro SV硬壳为核心。ReBIRD体系截至2026年上半年在中国内地有9个服务中心，覆盖养护、维修、租赁；Sperro SV中国消费者可享3年不限次维修，维修团队预备80多种独立方案；衣身激光蚀刻二维码作为数字产品护照，寿命终期尼龙部分交Aquafil化学回收。</p><p class='more'><a href='http://m.toutiao.com/group/7705429947392852520/' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>黑猫投诉/消费保</span><time>11-20 00:00</time></p><h3>双11后售后投诉集中 滔搏、adidas、FILA被点名</h3><p>黑猫投诉与消费保20日出现多条售后投诉：有消费者称滔搏10月27日下单、11月2日申请退货、仓库11月5日签收，至11月20日仍未退款；有消费者称adidas退货被拒收，收到退回鞋款大面积发霉；有消费者称FILA把女装裤标为男装售卖，企业20日电话承认运营标错但称无方案。均为消费者单方投诉，未经平台判定。</p><p class='more'><a href='https://gd.tousu.sina.com.cn/company/view/?couid=7411138606' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>新浪财经</span><time>11-20 14:15</time></p><h3>Sierra Designs中国首店落地上海 滔搏三年引入五个专业品牌</h3><p>Sierra Designs中国首店11月7日在上海西岸梦中心开业，由滔搏独家运营。品牌2023年9月在韩国上市，2025年销售额126亿韩元、较2023年6亿韩元大幅增长，轻量羽绒系列增长478%；截至2026年7月韩国网点40个。滔搏近三年已引入norda、Norrøna、Soar、Ciele、Sierra Designs五个专业运动品牌。</p><p class='more'><a href='https://cj.sina.com.cn/articles/view/5211109597/1369b38dd02701ccqq?froms=ttmp' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>腾讯新闻</span><time>11-20 20:22</time></p><h3>ALO「阳光之境」淮海限时空间开放 面积近1200平方米</h3><p>ALO上海第二家限时体验空间「阳光之境」20日在淮海中路开放，面积近1200平方米，为品牌迄今最大限时空间。空间由ALO与CLOSER打造，以Air、Land、Ocean三大元素为灵感，设圆形灯光装置、水晶手袋展陈与室外冥想花园；上海环贸iapm旗舰店围挡同日亮相，计划2027年Q2启幕。</p><p class='more'><a href='http://news.qq.com/rain/a/20261120A0EPKK00' target='_blank'>阅读原文</a></p></div>
+<h2 id='s5'>四、资本、业绩与市场变化</h2>
+<div class='item'><p class='meta'><span class='src'>AASTOCKS</span><time>11-20 16:08</time></p><h3>港股运动板块收盘 安踏跌2.00% 李宁跌1.22%</h3><p>11月20日港股运动板块收盘：安踏体育81.05港元、-2.00%，李宁12.13港元、-1.22%，特步国际3.50港元、-2.78%，361度4.525港元、-2.90%，滔搏1.105港元、-0.90%。五只样本股全线下跌，361度与特步跌幅居前。</p><p class='more'><a href='https://www.aastocks.com/sc/stocks/quote/detail-quote.aspx?symbol=02331' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>东方财富</span><time>11-20 16:14</time></p><h3>A股体育概念重挫 探路者跌13.58% 英派斯跌9.53%</h3><p>11月20日A股体育概念样本个股全线重挫：中体产业5.90元、-5.90%，金陵体育12.32元、-6.10%，力盛体育8.78元、-4.77%，舒华体育9.14元、-5.38%，英派斯15.56元、-9.53%，探路者7.57元、-13.58%。小市值赛事、器材与鞋服标的跌幅显著大于大盘。</p><p class='more'><a href='https://quote.eastmoney.com/sz002899.html' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>新浪财经</span><time>11-20 18:00</time></p><h3>安踏20日遭南向净卖出41.2万股 连续3日净卖出130.32万股</h3><p>南向资金11月20日净卖出安踏体育41.2万股；11月17日至19日分别净增持94.34万、1.14万、70.24万股，20日转为净卖出。另有媒体口径称安踏连续3日净卖出130.32万股、近20日累计净卖出399.80万股，统计区间不同，需以交易所披露为准。</p><p class='more'><a href='https://www.aastocks.com/sc/stocks/analysis/company-fundamental/transaction?symbol=02020' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>AASTOCKS</span><time>11-20 06:29</time></p><h3>美股运动股19日走弱 lululemon跌4.74% Amer跌4.65%</h3><p>美股运动股11月19日收盘：lululemon 105.53美元、-4.74%，Amer Sports 29.51美元、-4.65%，Under Armour 4.60美元、-0.65%，Nike 36.00美元、-0.85%。lululemon与Amer跌幅明显大于Nike、UA，高端运动服饰估值继续承压。</p><p class='more'><a href='https://www.aastocks.com/sc/stocks/quote/detail-quote.aspx?symbol=LULU' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>东方财富</span><time>11-20 16:08</time></p><h3>361度TTM股息率7.29% 市盈率6.23倍</h3><p>361度20日收4.525港元、-2.90%，总市值约98.09亿港元；TTM股息率7.29%、市盈率TTM 6.23倍。按2025年派息与当前股价测算，股息率在港股运动板块中处于高位；低估值与高股息并存，但需跟踪订单与流水增速。</p><p class='more'><a href='https://quote.eastmoney.com/hk/01361.html' target='_blank'>阅读原文</a></p></div>
+<h2 id='s6'>五、体育行业公告与市场影响</h2>
+<div class='item'><p class='meta'><span class='src'>公告 · 回购</span><time>11-20 17:10</time></p><h3>李宁（2331.HK）回购643万股 耗资7791.64万港元</h3><ul class='ann-list'>
+<li>
+<b>公告要点</b>：11月20日回购643.00万股，价格12.08-12.17港元，耗资7791.64万港元，占期初已发行股份0.249%，拟注销；自11月19日以来连续2日回购1007.35万股、1.22亿港元；年内第3次回购累计1152.35万股、1.41亿港元。</li>
+<li>
+<b>市场影响</b>：回购价上限12.17港元高于当日收盘12.13港元，释放管理层托底信号；金额约相当于当日成交额3.05亿港元的25.6%，托底作用强于基本面反转。直接受益主体为股东；证伪信号是后续回购节奏放缓、四季度流水继续负增长。</li>
+<li>
+<b>业绩看点</b>：股东回报=自由现金流×回购/分红比例；跟踪经营活动现金流、净现金、四季度零售流水与毛利率。</li>
+<li>
+<b>后续关注</b>：下一次回购披露、2027年3月年报、特别股息派付安排。</li>
+</ul><p class='more'><a href='https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1120/2026112000426.pdf' target='_blank'>阅读原文</a></p></div>
+<div class='item'><p class='meta'><span class='src'>公告 · 解禁</span><time>11-20 00:00</time></p><h3>力盛体育2275.86万股限售股11月23日解禁 占总股本12.19%</h3><ul class='ann-list'>
+<li>
+<b>公告要点</b>：解除限售22,758,620股，占公司总股本186,678,458股的12.19%，占解除前无限售条件股份的15.44%；11月23日上市流通；涉及13名发行对象、73个证券账户；定增发行价14.50元，新增股份5月20日上市，限售期6个月。</li>
+<li>
+<b>市场影响</b>：按8.78元收盘价计，解禁市值约2.0亿元，约为当日成交额5639.8万元的3.5倍，短期供给压力明显；定增价14.50元较现价折价39.4%，解禁股东浮亏，减持意愿仍需观察。直接受压的是股价，潜在受益方为解禁股东；证伪信号是股东承诺不减持或通过大宗交易平稳承接。</li>
+<li>
+<b>业绩看点</b>：收入=赛事运营场次×客单价+场馆与体育服务；跟踪三季度营收、扣非净利润、赛事数量与毛利率。</li>
+<li>
+<b>后续关注</b>：11月23日解禁后的减持公告、四季度赛事排期、2026年年报。</li>
+</ul><p class='more'><a href='https://finance.sina.com.cn/jjxw/2026-11-20/doc-inizinvp5808737.shtml' target='_blank'>阅读原文</a></p>
+<p class='ann-note'>除上述两项外，近24小时无其他重大公告或需单独提示的体育上市公司事项；A股体育概念当日大幅调整，原因更多来自板块情绪与资金面，而非新增基本面信息。</p>
+</div>
+</article>
+</main>
+</div>
+<p class='colophon'>每日 08:30 自动更新 · 历史保留最近 7 天</p>
+<script>
+var p=document.getElementById('prog');
+function paint(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;if(p)p.style.transform='scaleX('+(m>0?h.scrollTop/m:0)+')'}
+addEventListener('scroll',paint,{passive:true});paint();
+var t=document.querySelector('.ticker-track');
+if(t){var w=t.scrollWidth/2;if(w>0)t.style.setProperty('--marquee',Math.round(Math.min(Math.max(w/85,26),90))+'s')}
+try{document.getElementById('totop').onclick=function(){scrollTo({top:0,behavior:'smooth'})}}catch(e){}
+var s=null;try{s=localStorage.getItem('sd-theme')}catch(e){}
+function ap(v){document.documentElement.setAttribute('data-theme',v);var ic=document.getElementById('theme-ico');ic.textContent=v==='dark'?'☀':'☾'}
+if(s){ap(s)}else{ap(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}
+document.getElementById('theme').onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';ap(n);try{localStorage.setItem('sd-theme',n)}catch(e){}};
+document.querySelectorAll('.chip').forEach(function(c){c.onclick=function(){var el=document.getElementById(c.dataset.sec);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}});
+</script>
+<script>
+(function(){
+var w=document.getElementById('weather');if(!w)return;
+var c=document.getElementById('wx');
+var mh=document.querySelector('.masthead');
+var ALL_WX=['wx-sun','wx-cloud','wx-rain','wx-snow','wx-storm','wx-fog','wx-haze','wx-dust'];
+function wxOn(cls){mh.classList.add(cls);document.body.classList.add(cls)}
+function wxClear(){ALL_WX.forEach(function(cl){mh.classList.remove(cl);document.body.classList.remove(cl)})}
+function resize(){if(!c)return;c.width=window.innerWidth;c.height=window.innerHeight}
+resize();addEventListener('resize',resize);
+var drops=[],flash=0;
+function loop(){if(!c)return;var ctx=c.getContext('2d');ctx.clearRect(0,0,c.width,c.height);var t=Date.now();var W=c.width,H=c.height;
+drops.forEach(function(d){if(d.kind==='rain'){ctx.strokeStyle=d.bright;ctx.lineWidth=d.lw;ctx.beginPath();ctx.moveTo(d.x,d.y);ctx.lineTo(d.x-d.slant,d.y+d.len);ctx.stroke();d.y+=d.speed;d.x-=d.slant*0.4;if(d.y>H){d.y=-30-Math.random()*40;d.x=Math.random()*(W+200)-100}}
+else if(d.kind==='snow'){ctx.fillStyle=d.color||'rgba(255,255,255,'+d.a+')';ctx.beginPath();ctx.arc(d.x,d.y,d.r,0,Math.PI*2);ctx.fill();d.y+=d.speed;d.x+=Math.sin(d.y/d.amp+t/d.freq)*d.swing;if(d.y>H+10){d.y=-10;d.x=Math.random()*W}}
+else if(d.kind==='cloud'){var g=ctx.createRadialGradient(d.x,d.y,0,d.x,d.y,d.r);g.addColorStop(0,d.color);g.addColorStop(1,'rgba(200,210,225,0)');ctx.fillStyle=g;ctx.beginPath();ctx.arc(d.x,d.y,d.r,0,Math.PI*2);ctx.fill();d.x+=d.v;if(d.x-d.r>W+50){d.x=-d.r-50;d.y=Math.random()*H*0.6}}
+else if(d.kind==='sun'){ctx.fillStyle='rgba(255,210,130,'+(d.a||0.15)+')';ctx.beginPath();ctx.arc(d.x,d.y,d.r,0,Math.PI*2);ctx.fill();d.y-=d.v;if(d.y<-30){d.y=H+30;d.x=Math.random()*W}}
+else if(d.kind==='suncore'){ctx.fillStyle='rgba(255,225,160,0.45)';ctx.beginPath();ctx.arc(W*0.82,H*0.1,d.r,0,Math.PI*2);ctx.fill()}});
+if(flash>0){ctx.fillStyle='rgba(255,255,255,'+flash+')';ctx.fillRect(0,0,W,H);flash-=0.04}
+requestAnimationFrame(loop)}
+function setFX(code){drops=[];flash=0;wxClear();
+if(code>=95){wxOn('wx-storm');for(var i=0;i<360;i++){drops.push({kind:'rain',x:Math.random()*2000-100,y:Math.random()*800,len:20,speed:18,slant:6,bright:'rgba(210,230,255,.9)',lw:1.5})}}
+else if([51,53,55,56,57,61,63,65,66,67,80,81,82].indexOf(code)>=0){wxOn('wx-rain');for(var i=0;i<220;i++){drops.push({kind:'rain',x:Math.random()*2000-100,y:Math.random()*800,len:16,speed:12,slant:4,bright:'rgba(200,225,255,.8)',lw:1.2})}}
+else if([71,73,75,77,85,86].indexOf(code)>=0){wxOn('wx-snow');for(var i=0;i<200;i++){var l=Math.random();drops.push({kind:'snow',x:Math.random()*2000,y:Math.random()*800,r:l>0.7?3:1.5,speed:1.2,a:0.8,swing:1,amp:40,freq:1200})}}
+else if(code===0||code===1){wxOn('wx-sun');drops.push({kind:'suncore',r:180});for(var i=0;i<22;i++){drops.push({kind:'sun',x:Math.random()*2000,y:Math.random()*800,r:12+Math.random()*14,a:0.05,v:0.25})}}
+else if(code===45||code===48){wxOn('wx-fog');for(var i=0;i<14;i++){drops.push({kind:'cloud',x:Math.random()*2000,y:Math.random()*600,r:180+Math.random()*150,color:'rgba(180,188,196,.18)',v:0.4})}}else if(code===2||code===3){wxOn('wx-cloud');for(var i=0;i<20;i++){drops.push({kind:'cloud',x:Math.random()*2000,y:Math.random()*400,r:120,color:'rgba(180,190,210,.2)',v:0.6})}}
+loop()}
+function setWX(city,text,temp,wind,code){
+var ico=code===0?'☀️':code===3?'⛅':code>=95?'⛈️':'⛅';
+var html='<span class=w-ico>'+ico+'</span>'
++'<span class=w-city>'+city+'</span>'
++'<span class=w-temp>'+temp+'°C</span>'
++'<span class=w-label>'+text+' · 风'+wind+'km/h</span>';
+w.innerHTML=html;
+setFX(code);
+}
+(async function(){
+function om(){
+var ctl=new AbortController();
+var t=setTimeout(function(){ctl.abort()},8000);
+return fetch('https://api.open-meteo.com/v1/forecast?latitude=30.28&longitude=120.15&current=temperature_2m,weather_code,wind_speed_10m&timezone=auto&_cb='+Date.now(),{signal:ctl.signal})
+.then(function(r){clearTimeout(t);if(!r.ok)throw new Error('OM '+r.status);return r.json()});
+}
+function qw(){
+return fetch('https://pg3qqubnkm.re.qweatherapi.com/v7/weather/now?location=101210101&key=e83435ce53fb48448342b3c2602a3e43&_='+Date.now())
+.then(function(r){if(!r.ok)throw new Error('QW '+r.status);return r.json()})
+.then(function(j){
+if(j.code!=='200')throw new Error('QW code '+j.code);
+var t=j.now.text,code=2;
+if(/晴/.test(t))code=0;else if(/多云/.test(t))code=2;else if(/阴/.test(t))code=3;else if(/雾/.test(t))code=45;
+else if(/雷/.test(t))code=95;else if(/雪/.test(t))code=71;else if(/雨/.test(t))code=61;
+return {current:{temperature_2m:Number(j.now.temp),weather_code:code,wind_speed_10m:Number(j.now.wind_speed)}};
+});
+}
+function apply(j){
+var n=j.current,code=n.weather_code,temp=Math.round(n.temperature_2m),wind=Math.round(n.wind_speed_10m);
+var txt;if(code===0)txt='晴';else if(code===1)txt='多云';else if(code===2||code===3)txt='阴';else if(code===45||code===48)txt='雾';else if(code>=51&&code<=57)txt='毛毛雨';else if(code>=61&&code<=67)txt='雨';else if(code>=80&&code<=82)txt='阵雨';else if(code>=71&&code<=77)txt='雪';else if(code>=85&&code<=86)txt='雨夹雪';else if(code>=95)txt='雷暴';else txt='多云';
+setWX('杭州',txt,temp,wind,code);
+}
+om().catch(function(){return new Promise(function(res){setTimeout(function(){res(om())},400)})}).catch(qw).then(apply).catch(function(e){console.error('weather',e);
+w.innerHTML='<span class=w-ico>🌡️</span><span class=w-city>杭州</span><span class=w-temp>--</span><span class=w-label>天气暂不可用</span>';
+});
+})();
+})();
+</script>
+<script src='history.js'></script>
+<script>(function(){var filt=document.getElementById('sb-filt');if(!filt)return;var labels={all:'全部',nba:'NBA',cb:'CBA',cba:'CBA',fb:'足球',ucl:'足球',ten:'网球',tennis:'网球',golf:'高尔夫',uel:'欧联',bwf:'羽乒',bike:'自行车',cycling:'自行车',esports:'电竞',motor:'F1',f1:'F1',og:'综合',nfl:'NFL',ipl:'板球',rugby:'橄榄球'};var order=['all','nba','cb','fb','ten','og','ucl','uel','tennis','golf','bwf','bike','cycling','esports','motor','f1','nfl','cba','ipl','rugby'];var groups={};document.querySelectorAll('.sb li[data-g]').forEach(function(li){var g=li.getAttribute('data-g');if(g)groups[g]=1});var keys=Object.keys(groups);keys.sort(function(a,b){var ia=order.indexOf(a);var ib=order.indexOf(b);if(ib<0)ib=99;return ia-ib});keys.unshift('all');function apply(f){document.querySelectorAll('.sb li[data-g]').forEach(function(row){row.style.display=(f==='all'||row.getAttribute('data-g')===f)?'':'none'})}keys.forEach(function(g,i){var b=document.createElement('button');b.type='button';b.className='f'+(i===0?' active':'');b.setAttribute('data-f',g);b.textContent=labels[g]||'其他';b.addEventListener('click',function(){filt.querySelectorAll('.f').forEach(function(x){x.classList.remove('active')});b.classList.add('active');apply(g)});filt.appendChild(b)});apply('all')})();</script>
+<script>
+(function(){
+function build(){
+var cls=document.body.className;
+var rain=/wx-rain|wx-storm/.test(cls),snow=/wx-snow/.test(cls),fog=/wx-fog|wx-haze/.test(cls);
+var old=document.getElementById('fx2');if(old)old.remove();
+if(!rain&&!snow&&!fog)return;
+var cv=document.createElement('canvas');cv.id='fx2';
+cv.style.cssText='position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:1';
+document.body.appendChild(cv);
+var c=cv.getContext('2d'),W,H;
+function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight}rs();addEventListener('resize',rs);
+var P=[],N=rain?300:snow?240:44;
+for(var i=0;i<N;i++){P.push({x:Math.random()*W,y:Math.random()*H,v:rain?4.2:snow?1.0:0.4,r:rain?1.9:snow?2.8:80+Math.random()*H,a:rain?0.7:snow?0.7:0.22})}
+function loop(){c.clearRect(0,0,W,H);P.forEach(function(p){
+if(p.y>H){p.y=-20;p.x=Math.random()*W}
+});requestAnimationFrame(loop)}
+loop();
+}
+build();
+new MutationObserver(function(){build()}).observe(document.body,{attributes:true,attributeFilter:['class']});
+})();
+</script>
+<script>
+(function(){
+  var items=[].slice.call(document.querySelectorAll('.item'));
+  var pairs=[];
+  items.forEach(function(it){
+    var h3=it.querySelector('h3');
+    if(!h3){return;}
+    if(it.querySelector('.ann-list')){return;}
+    var more=it.querySelector('.more');
+    var wrap=document.createElement('div');
+    wrap.className='i-body clamp';
+    var nodes=[];
+    var started=false;
+    [].slice.call(it.children).forEach(function(c){
+      if(c===h3){started=true;return;}
+      if(!started){return;}
+      if(c.classList&&c.classList.contains('meta')){return;}
+      if(c===more){return;}
+      nodes.push(c);
+    });
+    if(!nodes.length){return;}
+    it.insertBefore(wrap,nodes[0]);
+    nodes.forEach(function(n){wrap.appendChild(n);});
+    var over=wrap.scrollHeight-wrap.clientHeight;
+    if(over<48){wrap.classList.remove('clamp');return;}
+    var btn=document.createElement('button');
+    btn.type='button';
+    btn.className='i-toggle';
+    btn.textContent='展开';
+    var host=more||it;
+    host.appendChild(btn);
+    btn.addEventListener('click',function(e){
+      e.preventDefault();
+      var on=wrap.classList.toggle('open');
+      wrap.classList.toggle('clamp',!on);
+      btn.textContent=on?'收起':'展开';
+    });
+    pairs.push({w:wrap,b:btn});
+  });
+
+  if(pairs.length<3){return;}
+  var pros=document.querySelector('.prose');
+  if(!pros){return;}
+  var bar=document.createElement('div');
+  bar.className='readbar';
+  var lbl=document.createElement('span');
+  lbl.textContent='长段落已折叠，可逐条展开';
+  bar.appendChild(lbl);
+  var all=document.createElement('button');
+  all.type='button';
+  all.textContent='全部展开';
+  bar.appendChild(all);
+  pros.insertBefore(bar,pros.firstChild);
+  var expanded=false;
+  all.addEventListener('click',function(){
+    expanded=!expanded;
+    pairs.forEach(function(p){
+      p.w.classList.toggle('open',expanded);
+      p.w.classList.toggle('clamp',!expanded);
+      p.b.textContent=expanded?'收起':'展开';
+    });
+    all.textContent=expanded?'全部收起':'全部展开';
+  });
+})();
+</script>
+</body>
+</html>
