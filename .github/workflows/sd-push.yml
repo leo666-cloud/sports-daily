@@ -1,0 +1,32 @@
+name: 'sd-push'
+on:
+  push:
+    paths:
+      - '.github/workflows/sd-push.yml'
+permissions:
+  contents: write
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: download-and-gate
+        run: |
+          curl -L -sS 'https://aka.doubaocdn.com/s/LlUJqNbETN' -o /tmp/index.html
+          curl -L -sS 'https://aka.doubaocdn.com/s/1HrgVGYITs' -o /tmp/archive.html
+          curl -L -sS 'https://aka.doubaocdn.com/s/UEsNurOSi1' -o /tmp/gate.py
+          wc -c /tmp/index.html /tmp/archive.html
+          test $(wc -c < /tmp/index.html) -ge 40000
+          test $(wc -c < /tmp/archive.html) -ge 40000
+          pip install html5lib
+          python3 /tmp/gate.py /tmp/index.html /tmp/archive.html
+          cp /tmp/index.html index.html
+          mkdir -p archive
+          cp /tmp/archive.html archive/2026-11-21.html
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html archive/2026-11-21.html
+          git commit -m '2026-11-21'
+          git push origin main
