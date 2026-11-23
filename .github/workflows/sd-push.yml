@@ -1,0 +1,31 @@
+name: sd-push
+on:
+  push:
+    paths:
+      - '.github/workflows/sd-push.yml'
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: fetch-and-gate
+        run: |
+          curl -fsSL 'https://aka.doubaocdn.com/s/d45UtE9HOr' -o /tmp/index.html
+          curl -fsSL 'https://aka.doubaocdn.com/s/7OCLjfgSDE' -o /tmp/archive.html
+          test $(wc -c < /tmp/index.html) -ge 40000
+          test $(wc -c < /tmp/archive.html) -ge 40000
+          cp /tmp/index.html index.html
+          cp /tmp/archive.html archive/2026-11-23.html
+          python3 -m pip install --quiet html5lib
+          curl -fsSL 'https://raw.githubusercontent.com/leo666-cloud/sports-daily/main/tools/gate.py' -o /tmp/gate.py
+          python3 /tmp/gate.py index.html archive/2026-11-23.html
+      - name: commit
+        run: |
+          git config user.name 'sports-daily-bot'
+          git config user.email 'bot@example.com'
+          git add index.html archive/2026-11-23.html
+          if git diff --cached --quiet; then echo 'no changes'; exit 0; fi
+          git commit -m '2026-11-23'
+          git push
