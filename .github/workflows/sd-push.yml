@@ -15,8 +15,8 @@ jobs:
       - name: Download and verify
         run: |
           set -euo pipefail
-          curl -L --retry 3 -o index.html 'https://aka.doubaocdn.com/s/U4b2UQh8iy'
-          curl -L --retry 3 -o archive/2026-11-24.html 'https://aka.doubaocdn.com/s/fUDuP4b2I5'
+          curl -L --retry 3 -o index.html 'https://aka.doubaocdn.com/s/mCuZyv4uUh'
+          curl -L --retry 3 -o archive/2026-11-24.html 'https://aka.doubaocdn.com/s/jAx5JRyGwE'
           test $(wc -c < index.html) -ge 40000
           test $(wc -c < archive/2026-11-24.html) -ge 40000
           grep -q '2026-11-24' index.html
