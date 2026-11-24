@@ -1,0 +1,36 @@
+name: SD Push 1124c
+on:
+  push:
+    paths:
+      - '.github/workflows/sd-push3.yml'
+permissions:
+  contents: write
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Download and verify
+        run: |
+          set -euo pipefail
+          curl -L --retry 3 -H 'Cache-Control: no-cache' -o index.html 'https://paste.rs/mIuDK'
+          curl -L --retry 3 -H 'Cache-Control: no-cache' -o archive/2026-11-24.html 'https://paste.rs/JuWX6'
+          test $(wc -c < index.html) -ge 40000
+          test $(wc -c < archive/2026-11-24.html) -ge 40000
+          sha256sum index.html archive/2026-11-24.html
+          grep -q '2026-11-24' index.html
+          grep -q 'base href=' archive/2026-11-24.html
+          python3 -m pip install --quiet html5lib
+          curl -L --retry 3 -o /tmp/gate.py 'https://raw.githubusercontent.com/leo666-cloud/sports-daily/main/tools/gate.py'
+          python3 /tmp/gate.py index.html archive/2026-11-24.html
+      - name: Commit
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html archive/2026-11-24.html
+          if git diff --cached --quiet; then echo 'no changes'; exit 0; fi
+          git commit -m '2026-11-24 final'
+          git push origin HEAD:main
