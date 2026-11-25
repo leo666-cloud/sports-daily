@@ -1,0 +1,30 @@
+name: sd-push-1125
+on:
+  push:
+    paths:
+      - '.github/workflows/sd-push-1125.yml'
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch files
+        run: |
+          curl -fsSL 'https://paste.rs/cj8TH' -o /tmp/index.html
+          curl -fsSL 'https://paste.rs/aMUTM' -o /tmp/archive.html
+          echo '7141248a0a87a4945db5226466c906919425a6ecb3e9371e65f71d4739b1c568  /tmp/index.html' | sha256sum -c
+          echo '5820e40edadde1e397a3a6fc78e574f81f18f4dd90365269acf428856453cfeb  /tmp/archive.html' | sha256sum -c
+          wc -c /tmp/index.html /tmp/archive.html
+      - name: Commit
+        run: |
+          cp /tmp/index.html index.html
+          mkdir -p archive
+          cp /tmp/archive.html archive/2026-11-25.html
+          git config user.name 'sports-daily-bot'
+          git config user.email 'bot@users.noreply.github.com'
+          git add index.html archive/2026-11-25.html
+          if git diff --cached --quiet; then echo 'no changes'; exit 0; fi
+          git commit -m '2026-11-25'
+          git push
