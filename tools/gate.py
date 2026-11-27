@@ -75,7 +75,6 @@ def check(path):
         if frag not in raw:
             err.append('脚本/CSS 关键片段缺失：%s' % frag)
 
-    return err, raw, len(items)
     sk = kids(shell[0])
     main = next((c for c in sk if c.tag == 'main'), None)
     aside = next((c for c in sk if c.tag == 'aside'), None)
